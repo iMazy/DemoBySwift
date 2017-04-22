@@ -123,6 +123,7 @@
 				TargetAttributes = {
 					64042D621EAB20360064D565 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CSR7UB94J4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -334,6 +335,7 @@
 			baseConfigurationReference = 9F37210CFD24B88BEBD9A0AC /* Pods-GPUImage_AddFilterToCamera.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CSR7UB94J4;
 				INFOPLIST_FILE = GPUImage_AddFilterToCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mazy.GPUImage-AddFilterToCamera";
@@ -347,6 +349,7 @@
 			baseConfigurationReference = F6E916552B45FD1E7E699C5E /* Pods-GPUImage_AddFilterToCamera.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CSR7UB94J4;
 				INFOPLIST_FILE = GPUImage_AddFilterToCamera/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Mazy.GPUImage-AddFilterToCamera";
@@ -374,6 +377,7 @@
 				64042D771EAB20360064D565 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

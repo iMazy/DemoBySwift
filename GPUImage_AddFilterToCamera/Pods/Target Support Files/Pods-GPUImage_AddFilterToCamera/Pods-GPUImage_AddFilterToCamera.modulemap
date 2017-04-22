@@ -1,0 +1,6 @@
+framework module Pods_GPUImage_AddFilterToCamera {
+  umbrella header "Pods-GPUImage_AddFilterToCamera-umbrella.h"
+
+  export *
+  module * { export * }
+}
