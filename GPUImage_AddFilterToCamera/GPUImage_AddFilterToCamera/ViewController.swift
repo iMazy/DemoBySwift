@@ -53,7 +53,6 @@ class ViewController: UIViewController {
     let invertFilter = GPUImageColorInvertFilter()
     // 饱和度
     let saturationFilter = GPUImageSaturationFilter()
-    
     // 美白滤镜
     let brightnessFilter = GPUImageBrightnessFilter()
     
@@ -152,7 +151,7 @@ extension ViewController {
         sender.backgroundColor = .orange
         
         switch(sender.tag-100) {
-        case 2,3,4,6:
+        case 4,5,6:
             slider.isHidden = true
             break
         default:
@@ -191,9 +190,18 @@ extension ViewController {
     }
     
     @objc func sliderValueChanged(sender:UISlider) {
-        if currentFilter.self == GPUImageStretchDistortionFilter() {
-            (currentFilter as! GPUImageStretchDistortionFilter).center = CGPoint(x: Double(sender.value), y: 0.5)
-        } 
+        if let currentFilter = currentFilter as? GPUImageGammaFilter {
+            currentFilter.gamma = CGFloat(sender.value*3)
+        } else if let currentFilter = currentFilter as?GPUImageStretchDistortionFilter {
+            currentFilter.center = CGPoint(x: Double(sender.value), y: 0.5)
+        } else if let currentFilter = currentFilter as? GPUImageBilateralFilter {
+            currentFilter.distanceNormalizationFactor = CGFloat(sender.value*10)
+        } else if let currentFilter = currentFilter as? GPUImageBrightnessFilter {
+            currentFilter.brightness = CGFloat(sender.value)
+        } else if let currentFilter = currentFilter as? GPUImageSaturationFilter {
+            currentFilter.saturation = CGFloat(sender.value*2)
+        }
+        
     }
     
     /// 切换摄像头
