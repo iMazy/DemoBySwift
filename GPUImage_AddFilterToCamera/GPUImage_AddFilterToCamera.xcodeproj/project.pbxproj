@@ -12,6 +12,7 @@
 		64042D6C1EAB20360064D565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64042D6A1EAB20360064D565 /* Main.storyboard */; };
 		64042D6E1EAB20360064D565 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64042D6D1EAB20360064D565 /* Assets.xcassets */; };
 		64042D711EAB20360064D565 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64042D6F1EAB20360064D565 /* LaunchScreen.storyboard */; };
+		64042D791EAB69DD0064D565 /* demoPic.png in Resources */ = {isa = PBXBuildFile; fileRef = 64042D781EAB69DD0064D565 /* demoPic.png */; };
 		DB0BF7E4D97C1CC7DA6921CC /* Pods_GPUImage_AddFilterToCamera.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40694E244213C7D8F80DC7B8 /* Pods_GPUImage_AddFilterToCamera.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		64042D6D1EAB20360064D565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64042D701EAB20360064D565 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64042D721EAB20360064D565 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64042D781EAB69DD0064D565 /* demoPic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demoPic.png; sourceTree = "<group>"; };
 		9F37210CFD24B88BEBD9A0AC /* Pods-GPUImage_AddFilterToCamera.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImage_AddFilterToCamera.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImage_AddFilterToCamera/Pods-GPUImage_AddFilterToCamera.debug.xcconfig"; sourceTree = "<group>"; };
 		F6E916552B45FD1E7E699C5E /* Pods-GPUImage_AddFilterToCamera.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImage_AddFilterToCamera.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImage_AddFilterToCamera/Pods-GPUImage_AddFilterToCamera.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				64042D6D1EAB20360064D565 /* Assets.xcassets */,
 				64042D6F1EAB20360064D565 /* LaunchScreen.storyboard */,
 				64042D721EAB20360064D565 /* Info.plist */,
+				64042D781EAB69DD0064D565 /* demoPic.png */,
 			);
 			path = GPUImage_AddFilterToCamera;
 			sourceTree = "<group>";
@@ -154,6 +157,7 @@
 				64042D711EAB20360064D565 /* LaunchScreen.storyboard in Resources */,
 				64042D6E1EAB20360064D565 /* Assets.xcassets in Resources */,
 				64042D6C1EAB20360064D565 /* Main.storyboard in Resources */,
+				64042D791EAB69DD0064D565 /* demoPic.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
