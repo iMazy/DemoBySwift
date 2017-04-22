@@ -32,11 +32,13 @@ class ViewController: UIViewController {
 
     // 步骤一：初始化相机，第一个参数表示相册的尺寸，第二个参数表示前后摄像头
     let camera: GPUImageStillCamera = GPUImageStillCamera(sessionPreset: AVCaptureSessionPreset1280x720, cameraPosition: AVCaptureDevicePosition.front)
-    
+    // 设置图像图层
     let imageView = GPUImageView(frame: CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size))
-    
+    // 设置当前选中的按钮
     var selectedBtn: UIButton?
+    // 控制属性的
     let slider = UISlider()
+    // 保存当前滤镜
     var currentFilter: GPUImageFilter?
     
     // 磨皮滤镜(美颜)
@@ -55,40 +57,39 @@ class ViewController: UIViewController {
     let saturationFilter = GPUImageSaturationFilter()
     // 美白滤镜
     let brightnessFilter = GPUImageBrightnessFilter()
-    
-    var filtersArray: [AnyObject] = [AnyObject]()
+    // 滤镜数组,保存所有的滤镜到一个数组，便于后面的切换
+    var filtersArray: [AnyObject] {
+           return [bilateralFilter,stretchDistortionFilter,brightnessFilter,gammaFilter,xYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter]
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.insertSubview(imageView, at: 0)
-        
         // 设置相机方向为竖屏
         camera.outputImageOrientation = .portrait
-        
-        // 滤镜组
-//        let groupFilter = GPUImageFilterGroup()
-//        // 将磨皮加美白加入到滤镜组
-//        groupFilter.addTarget(bilateralFilter)
-//        groupFilter.addTarget(brightnessFilter)
-//        
-//        // 设置滤镜组链
-//        bilateralFilter.addTarget(brightnessFilter)
-//        groupFilter.initialFilters = [bilateralFilter]
-//        groupFilter.terminalFilter = brightnessFilter
-        
-        currentFilter = bilateralFilter
-        
-        
-        camera.addTarget(bilateralFilter)
-        
+        // 取出第一个滤镜，并添加到相机中
+        let firstFilter = filtersArray.first as! GPUImageFilter
+        currentFilter = firstFilter
+        camera.addTarget(firstFilter)
+        // 将滤镜添加到图像图层
         bilateralFilter.addTarget(imageView)
-        
+        // 添加相机图层，相机图层需要强引用
+        view.insertSubview(imageView, at: 0)
+        // 开始图像获取
         camera.startCapture()
-        
-        
-        filtersArray = [bilateralFilter,stretchDistortionFilter,brightnessFilter,gammaFilter,xYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter]
-        
+        /*
+         //滤镜组
+        let groupFilter = GPUImageFilterGroup()
+        // 将磨皮加美白加入到滤镜组
+        groupFilter.addTarget(bilateralFilter)
+        groupFilter.addTarget(brightnessFilter)
+
+        // 设置滤镜组链
+        bilateralFilter.addTarget(brightnessFilter)
+        groupFilter.initialFilters = [bilateralFilter]
+        groupFilter.terminalFilter = brightnessFilter
+        */
+// MARK: - 设置界面
         setupUI()
         
     }
@@ -145,6 +146,7 @@ extension ViewController {
     }
     
     
+    /// 点击滤镜切换按钮，切换滤镜
     @objc func filterStyleIsClicked(sender: UIButton) {
 
         selectedBtn?.backgroundColor = .lightGray
@@ -170,6 +172,7 @@ extension ViewController {
         
     }
     
+    /// 拍照并保存图片到相册
     @objc func catchAction() {
         camera.capturePhotoAsPNGProcessedUp(toFilter: currentFilter) { (pngData, error) in
             
@@ -189,6 +192,8 @@ extension ViewController {
         }
     }
     
+    
+    /// slider值改变控制滤镜的属性
     @objc func sliderValueChanged(sender:UISlider) {
         if let currentFilter = currentFilter as? GPUImageGammaFilter {
             currentFilter.gamma = CGFloat(sender.value*3)
