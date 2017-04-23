@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		640328031EACE6160047E8F1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640328021EACE6160047E8F1 /* AppDelegate.swift */; };
+		640328051EACE6160047E8F1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640328041EACE6160047E8F1 /* ViewController.swift */; };
+		640328081EACE6160047E8F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 640328061EACE6160047E8F1 /* Main.storyboard */; };
+		6403280A1EACE6160047E8F1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 640328091EACE6160047E8F1 /* Assets.xcassets */; };
+		6403280D1EACE6160047E8F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6403280B1EACE6160047E8F1 /* LaunchScreen.storyboard */; };
 		64042D671EAB20360064D565 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64042D661EAB20360064D565 /* AppDelegate.swift */; };
 		64042D691EAB20360064D565 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64042D681EAB20360064D565 /* ViewController.swift */; };
 		64042D6C1EAB20360064D565 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64042D6A1EAB20360064D565 /* Main.storyboard */; };
@@ -18,6 +23,13 @@
 
 /* Begin PBXFileReference section */
 		40694E244213C7D8F80DC7B8 /* Pods_GPUImage_AddFilterToCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GPUImage_AddFilterToCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		640328001EACE6160047E8F1 /* EmitterCellsDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmitterCellsDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		640328021EACE6160047E8F1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		640328041EACE6160047E8F1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		640328071EACE6160047E8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		640328091EACE6160047E8F1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6403280C1EACE6160047E8F1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6403280E1EACE6160047E8F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64042D631EAB20360064D565 /* GPUImage_AddFilterToCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImage_AddFilterToCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64042D661EAB20360064D565 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64042D681EAB20360064D565 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -31,6 +43,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		640327FD1EACE6160047E8F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64042D601EAB20360064D565 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -51,10 +70,24 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		640328011EACE6160047E8F1 /* EmitterCellsDemo */ = {
+			isa = PBXGroup;
+			children = (
+				640328021EACE6160047E8F1 /* AppDelegate.swift */,
+				640328041EACE6160047E8F1 /* ViewController.swift */,
+				640328061EACE6160047E8F1 /* Main.storyboard */,
+				640328091EACE6160047E8F1 /* Assets.xcassets */,
+				6403280B1EACE6160047E8F1 /* LaunchScreen.storyboard */,
+				6403280E1EACE6160047E8F1 /* Info.plist */,
+			);
+			path = EmitterCellsDemo;
+			sourceTree = "<group>";
+		};
 		64042D5A1EAB20360064D565 = {
 			isa = PBXGroup;
 			children = (
 				64042D651EAB20360064D565 /* GPUImage_AddFilterToCamera */,
+				640328011EACE6160047E8F1 /* EmitterCellsDemo */,
 				64042D641EAB20360064D565 /* Products */,
 				5039BF78B3633CF27747AFD2 /* Pods */,
 				96056FC948911862A4CF1303 /* Frameworks */,
@@ -65,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				64042D631EAB20360064D565 /* GPUImage_AddFilterToCamera.app */,
+				640328001EACE6160047E8F1 /* EmitterCellsDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +128,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		640327FF1EACE6160047E8F1 /* EmitterCellsDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6403280F1EACE6160047E8F1 /* Build configuration list for PBXNativeTarget "EmitterCellsDemo" */;
+			buildPhases = (
+				640327FC1EACE6160047E8F1 /* Sources */,
+				640327FD1EACE6160047E8F1 /* Frameworks */,
+				640327FE1EACE6160047E8F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EmitterCellsDemo;
+			productName = EmitterCellsDemo;
+			productReference = 640328001EACE6160047E8F1 /* EmitterCellsDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
 		64042D621EAB20360064D565 /* GPUImage_AddFilterToCamera */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64042D751EAB20360064D565 /* Build configuration list for PBXNativeTarget "GPUImage_AddFilterToCamera" */;
@@ -124,6 +175,10 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = Mazy;
 				TargetAttributes = {
+					640327FF1EACE6160047E8F1 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					64042D621EAB20360064D565 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = CSR7UB94J4;
@@ -145,11 +200,22 @@
 			projectRoot = "";
 			targets = (
 				64042D621EAB20360064D565 /* GPUImage_AddFilterToCamera */,
+				640327FF1EACE6160047E8F1 /* EmitterCellsDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		640327FE1EACE6160047E8F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6403280D1EACE6160047E8F1 /* LaunchScreen.storyboard in Resources */,
+				6403280A1EACE6160047E8F1 /* Assets.xcassets in Resources */,
+				640328081EACE6160047E8F1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64042D611EAB20360064D565 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,6 +278,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		640327FC1EACE6160047E8F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640328051EACE6160047E8F1 /* ViewController.swift in Sources */,
+				640328031EACE6160047E8F1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		64042D5F1EAB20360064D565 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -224,6 +299,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		640328061EACE6160047E8F1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				640328071EACE6160047E8F1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6403280B1EACE6160047E8F1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6403280C1EACE6160047E8F1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		64042D6A1EAB20360064D565 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -243,6 +334,32 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		640328101EACE6160047E8F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmitterCellsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Mazy.EmitterCellsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		640328111EACE6160047E8F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = EmitterCellsDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Mazy.EmitterCellsDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		64042D731EAB20360064D565 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -365,6 +482,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6403280F1EACE6160047E8F1 /* Build configuration list for PBXNativeTarget "EmitterCellsDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				640328101EACE6160047E8F1 /* Debug */,
+				640328111EACE6160047E8F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		64042D5E1EAB20360064D565 /* Build configuration list for PBXProject "GPUImage_AddFilterToCamera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
