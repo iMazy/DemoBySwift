@@ -1,14 +1,20 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FacialRecognitionDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +22,49 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolder" translatesAutoresizingMaskIntoConstraints="NO" id="0XA-D5-jHK">
+                                <rect key="frame" x="0.0" y="245" width="375" height="422"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="上传头像" translatesAutoresizingMaskIntoConstraints="NO" id="MvB-kS-bVe">
+                                <rect key="frame" x="100" y="40" width="175" height="175"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MvB-kS-bVe" secondAttribute="height" id="ca3-du-9kR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击选取图片" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K2R-2s-Bc6">
+                                <rect key="frame" x="16" y="222" width="104" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0XA-D5-jHK" firstAttribute="top" secondItem="K2R-2s-Bc6" secondAttribute="bottom" constant="2" id="9XF-Kc-Xg9"/>
+                            <constraint firstItem="MvB-kS-bVe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MhL-Nu-2xX"/>
+                            <constraint firstItem="K2R-2s-Bc6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="QIv-ba-Loj"/>
+                            <constraint firstAttribute="trailing" secondItem="MvB-kS-bVe" secondAttribute="trailing" constant="100" id="b5g-7b-wEt"/>
+                            <constraint firstItem="0XA-D5-jHK" firstAttribute="top" secondItem="MvB-kS-bVe" secondAttribute="bottom" constant="30" id="cVK-6C-NrR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0XA-D5-jHK" secondAttribute="bottom" id="cff-al-stF"/>
+                            <constraint firstItem="MvB-kS-bVe" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="exH-br-Z7h"/>
+                            <constraint firstItem="0XA-D5-jHK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gXl-b5-OIZ"/>
+                            <constraint firstItem="MvB-kS-bVe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="100" id="mkd-64-rQe"/>
+                            <constraint firstAttribute="trailing" secondItem="0XA-D5-jHK" secondAttribute="trailing" id="ym0-pL-cRe"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="iconImageView" destination="MvB-kS-bVe" id="8ph-gl-adL"/>
+                        <outlet property="originalImageView" destination="0XA-D5-jHK" id="FLg-Zz-ORv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="placeHolder" width="128" height="128"/>
+        <image name="上传头像" width="128" height="128"/>
+    </resources>
 </document>

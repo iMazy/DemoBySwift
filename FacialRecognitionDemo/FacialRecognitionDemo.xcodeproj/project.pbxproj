@@ -12,6 +12,7 @@
 		64342B7F1EAEED6E00800195 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64342B7D1EAEED6E00800195 /* Main.storyboard */; };
 		64342B811EAEED6E00800195 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64342B801EAEED6E00800195 /* Assets.xcassets */; };
 		64342B841EAEED6E00800195 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64342B821EAEED6E00800195 /* LaunchScreen.storyboard */; };
+		64342B8C1EAEEDD800800195 /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64342B8B1EAEEDD800800195 /* UIKitExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		64342B801EAEED6E00800195 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64342B831EAEED6E00800195 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64342B851EAEED6E00800195 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64342B8B1EAEEDD800800195 /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				64342B791EAEED6E00800195 /* AppDelegate.swift */,
 				64342B7B1EAEED6E00800195 /* ViewController.swift */,
+				64342B8B1EAEEDD800800195 /* UIKitExtension.swift */,
 				64342B7D1EAEED6E00800195 /* Main.storyboard */,
 				64342B801EAEED6E00800195 /* Assets.xcassets */,
 				64342B821EAEED6E00800195 /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64342B8C1EAEEDD800800195 /* UIKitExtension.swift in Sources */,
 				64342B7C1EAEED6E00800195 /* ViewController.swift in Sources */,
 				64342B7A1EAEED6E00800195 /* AppDelegate.swift in Sources */,
 			);
@@ -259,6 +263,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FacialRecognitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.FacialRecognitionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,6 +276,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = FacialRecognitionDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.FacialRecognitionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -297,6 +303,7 @@
 				64342B8A1EAEED6E00800195 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
