@@ -28,7 +28,6 @@ class ViewController: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         
-        
     }
     
     @objc private func selectedImage() {
