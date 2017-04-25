@@ -20,10 +20,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>相册</string>
-	<key>NSCameraUsageDescription</key>
-	<string>相机</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>请允许使用相册</string>
 	<key>UILaunchStoryboardName</key>
