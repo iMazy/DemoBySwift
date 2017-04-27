@@ -10,29 +10,101 @@ import UIKit
 import Alamofire
 import RealmSwift
 
+let reuseID = "cell"
+
 class ViewController: UIViewController {
 
+    var dataSource:[RealmModel] = [RealmModel]()
+    
+    lazy var tableView: UITableView = {
+        return UITableView(frame: self.view.bounds, style: .plain)
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let url = URL(string: "http://live.9158.com/Fans/GetHotLive?page=1") else {
             return
         }
-        Alamofire.request(url).responseJSON { (result) in
-            print(result)
+        Alamofire.request(url).validate().responseJSON { (response) in
+
+            switch response.result {
+            case .success:
+                if let JSON:[String: AnyObject] = response.result.value as? [String: AnyObject] {
+                    let data = JSON["data"]
+                    let dataArray = data?["list"] as! [[String: AnyObject]]
+                    
+                    for item in dataArray {
+                        let model = RealmModel()
+                        model.setValuesForKeys(item)
+                        self.dataSource.append(model)
+                    }
+                    
+                    // 通过Realm存储数据
+                    self.writeJsonToRealm(source: self.dataSource)
+                    
+                }
+            case .failure(let error):
+                print(error)
+                let localSource = self.readJsonFromRealm()
+                self.dataSource.removeAll()
+                self.dataSource.append(contentsOf: localSource)
+            }
+            
+            self.tableView.reloadData()
+            
         }
         
+        tableView.dataSource = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseID)
+        view.addSubview(tableView)
+        
     }
     
         
     
-    @IBAction func writeJsonToRealm() {
+    fileprivate func writeJsonToRealm(source: [RealmModel]) {
+        let realm = try! Realm()
         
+        try! realm.write {
+            realm.add(source)
+        }
     }
 
 
-    @IBAction func readJsonFromRealm() {
+    fileprivate func readJsonFromRealm() -> [RealmModel] {
+        let realm = try! Realm()
+        let results = realm.objects(RealmModel.self).sorted(byKeyPath: "pos")
+        var newSource = [RealmModel]()
+        newSource.append(contentsOf: results)
+        return newSource
+    }
+    
+    
+    @IBAction func clearCache(_ sender: Any) {
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
         
+        let localSource = readJsonFromRealm()
+        dataSource.removeAll()
+        dataSource.append(contentsOf: localSource)
+        tableView.reloadData()
+    }
+    
+}
+
+extension ViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID)
+        let model = dataSource[indexPath.row]
+        cell?.textLabel?.text = model.myname
+        return cell!
     }
 }
 
