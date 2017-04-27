@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(selectedImage))
@@ -53,7 +54,6 @@ extension ViewController: UINavigationControllerDelegate,UIImagePickerController
         originalImageView.image = image
         /// 设置面部图
         iconImageView.set(image, focusOnFaces: true)
-
         
     }
     
