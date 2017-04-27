@@ -7,24 +7,32 @@
 //
 
 import UIKit
+import Alamofire
+import RealmSwift
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
+        guard let url = URL(string: "http://live.9158.com/Fans/GetHotLive?page=1") else {
+            return
+        }
+        Alamofire.request(url).responseJSON { (result) in
+            print(result)
+        }
         
     }
     
         
     
     @IBAction func writeJsonToRealm() {
+        
     }
 
 
     @IBAction func readJsonFromRealm() {
+        
     }
 }
 

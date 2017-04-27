@@ -374,6 +374,7 @@
 				64A225DA1EB199C100DE3604 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
