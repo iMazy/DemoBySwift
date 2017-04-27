@@ -8,6 +8,6 @@ target 'RealmSwiftDemo' do
   # Pods for RealmSwiftDemo
 pod "RealmSwift"
 pod "Alamofire"
-
+pod "YYWebImage"
 
 end

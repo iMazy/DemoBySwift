@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import RealmSwift
+import YYWebImage
 
 let reuseID = "cell"
 
@@ -33,7 +34,7 @@ class ViewController: UIViewController {
                 if let JSON:[String: AnyObject] = response.result.value as? [String: AnyObject] {
                     let data = JSON["data"]
                     let dataArray = data?["list"] as! [[String: AnyObject]]
-                    
+                    print(dataArray)
                     for item in dataArray {
                         let model = RealmModel()
                         model.setValuesForKeys(item)
@@ -56,7 +57,7 @@ class ViewController: UIViewController {
         }
         
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: reuseID)
+        tableView.rowHeight = 80
         view.addSubview(tableView)
         
     }
@@ -67,7 +68,9 @@ class ViewController: UIViewController {
         let realm = try! Realm()
         
         try! realm.write {
-            realm.add(source)
+//            realm.add(source)
+            // 通过主键更新数据
+            realm.add(source, update: true)
         }
     }
 
@@ -101,9 +104,15 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID)
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseID)
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: reuseID)
+            cell?.accessoryType = .disclosureIndicator
+        }
         let model = dataSource[indexPath.row]
         cell?.textLabel?.text = model.myname
+        cell?.detailTextLabel?.text = model.signatures
+        cell?.imageView?.yy_setImage(with: URL(string: model.smallpic!), options: [])
         return cell!
     }
 }
