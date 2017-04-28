@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zulan" translatesAutoresizingMaskIntoConstraints="NO" id="Sps-G8-3Ko">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zulan" translatesAutoresizingMaskIntoConstraints="NO" id="Sps-G8-3Ko">
                                 <rect key="frame" x="0.0" y="64" width="375" height="503"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WZO-np-yW5">
@@ -30,6 +30,9 @@
                                     <constraint firstAttribute="height" constant="40" id="qha-pt-4N3"/>
                                 </constraints>
                                 <state key="normal" title="Strat Decet"/>
+                                <connections>
+                                    <action selector="startDetec" destination="BYZ-38-t0r" eventType="touchUpInside" id="0nd-4Z-3Dr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oO-ha-HbA">
                                 <rect key="frame" x="280" y="602" width="85" height="30"/>
