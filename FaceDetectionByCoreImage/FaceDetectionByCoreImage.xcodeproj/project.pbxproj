@@ -12,6 +12,7 @@
 		6425C70E1EB32595007F0A2C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6425C70C1EB32595007F0A2C /* Main.storyboard */; };
 		6425C7101EB32595007F0A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6425C70F1EB32595007F0A2C /* Assets.xcassets */; };
 		6425C7131EB32595007F0A2C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6425C7111EB32595007F0A2C /* LaunchScreen.storyboard */; };
+		6425C71B1EB3400D007F0A2C /* Simulator Screen Shot 2017年4月28日 下午5.14.31.png in Resources */ = {isa = PBXBuildFile; fileRef = 6425C71A1EB3400D007F0A2C /* Simulator Screen Shot 2017年4月28日 下午5.14.31.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		6425C70F1EB32595007F0A2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6425C7121EB32595007F0A2C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6425C7141EB32595007F0A2C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6425C71A1EB3400D007F0A2C /* Simulator Screen Shot 2017年4月28日 下午5.14.31.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年4月28日 下午5.14.31.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				6425C70A1EB32595007F0A2C /* ViewController.swift */,
 				6425C70C1EB32595007F0A2C /* Main.storyboard */,
 				6425C70F1EB32595007F0A2C /* Assets.xcassets */,
+				6425C71A1EB3400D007F0A2C /* Simulator Screen Shot 2017年4月28日 下午5.14.31.png */,
 				6425C7111EB32595007F0A2C /* LaunchScreen.storyboard */,
 				6425C7141EB32595007F0A2C /* Info.plist */,
 			);
@@ -124,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6425C7131EB32595007F0A2C /* LaunchScreen.storyboard in Resources */,
+				6425C71B1EB3400D007F0A2C /* Simulator Screen Shot 2017年4月28日 下午5.14.31.png in Resources */,
 				6425C7101EB32595007F0A2C /* Assets.xcassets in Resources */,
 				6425C70E1EB32595007F0A2C /* Main.storyboard in Resources */,
 			);
