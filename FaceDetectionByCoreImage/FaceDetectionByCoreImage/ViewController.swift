@@ -12,10 +12,15 @@ import CoreImage
 class ViewController: UIViewController {
 
     @IBOutlet weak var personPicView: UIImageView!
+    
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        detect()
+        imagePicker.delegate = self
+        
+//        detect()
         
     }
     
@@ -37,11 +42,19 @@ class ViewController: UIViewController {
         
         for face in faces as! [CIFaceFeature] {
             
-//            var faceViewBounds = CGRect()
+            var faceViewBounds = face.bounds.applying(transform)
+            let viewSize = personPicView.bounds.size
+            let scale = min(viewSize.width/ciImageSize.width,viewSize.height/ciImageSize.height)
+            let offsetX = (viewSize.width - ciImageSize.width*scale)/2
+            let offsetY = (viewSize.height - ciImageSize.height*scale)/2
+            
+            faceViewBounds = faceViewBounds.applying(CGAffineTransform(scaleX: scale, y: scale))
+            faceViewBounds.origin.x += offsetX
+            faceViewBounds.origin.y += offsetY
             
             
-            let faceBox = UIView(frame: face.bounds)
-            faceBox.layer.borderWidth = 1
+            let faceBox = UIView(frame: faceViewBounds)
+            faceBox.layer.borderWidth = 3
             faceBox.layer.borderColor = UIColor.red.cgColor
             faceBox.backgroundColor = .clear
             personPicView.addSubview(faceBox)
@@ -51,13 +64,42 @@ class ViewController: UIViewController {
             }
             
             if face.hasRightEyePosition {
-                print("Right eye bounds are \(face.hasRightEyePosition)")
+                print("Right eye bounds are \(face.rightEyePosition)")
 
             }
         }
         
     }
 
+    @IBAction func pickerImageAction() {
+        // 检查是否有访问权限
+        if !UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            return
+        }
+        
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        
+        present(imagePicker, animated: true, completion: nil)
+    }
 
 }
 
+
+extension ViewController: UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickerImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            personPicView.image = pickerImage
+        }
+        dismiss(animated: true, completion: nil)
+        
+        detect()
+    }
+    
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+}
