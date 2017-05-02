@@ -58,6 +58,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="speechButton" destination="BX1-a5-rUw" id="rO7-zQ-Wag"/>
                         <outlet property="textView" destination="aMh-wQ-gha" id="3aT-VC-TQa"/>
                     </connections>
                 </viewController>
