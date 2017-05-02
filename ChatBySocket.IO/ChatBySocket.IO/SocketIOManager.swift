@@ -16,8 +16,9 @@ class SocketIOManager: NSObject {
         super.init()
     }
     
-    var socket: SocketIOClient = SocketIOClient(socketURL:
-        URL(string: "http://127.0.0.1:3000")!)
+//    var socket: SocketIOClient = SocketIOClient(socketURL:
+//        URL(string: "http://127.0.0.1:3000")!)
+    let socket: SocketIOClient = SocketIOClient(socketURL: URL(string: "http://127.0.0.1:3000")!, config: [.log(true), .forcePolling(true)])
 
 
     func startConnection() {
@@ -28,4 +29,16 @@ class SocketIOManager: NSObject {
         socket.disconnect()
     }
 
+    func connectToServerWithNickname(nickname: String, completionHandler: @escaping (_ userList: [[String: AnyObject]]?) -> Void) {
+//       _ = socket.emitWithAck("connectUser", with: [nickname])
+        socket.emit("connectUser", with: [nickname])
+        
+        socket.on("userList") { (dataArray, ack) in
+            completionHandler(dataArray.first as? [[String: AnyObject]])
+        }
+    }
+    
+
+    
+    
 }
