@@ -28,7 +28,9 @@ class ViewController: UIViewController {
             askForNickName()
         }
         
-    }
+        // 设置下一个界面的返回按钮只显示图标
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        }
     
     func askForNickName() {
         let alertVC = UIAlertController(title: "SocketChat", message: "please enter a nickname", preferredStyle: .alert)
@@ -96,7 +98,7 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let chatVC = ChatViewController()
-        chatVC.title = nickname
+        chatVC.nickname = nickname
         show(chatVC, sender: nil)
     }
     
