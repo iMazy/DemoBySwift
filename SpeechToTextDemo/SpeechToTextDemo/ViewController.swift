@@ -15,11 +15,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView!
     /// 控制语音动作按钮
     @IBOutlet weak var speechButton: UIButton!
-    
-    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en-US"))
-    
+    /// 初始化语音识别
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "zh-cn"))
+    /// 语音识别请求
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
+    /// 语音识别任务Task
     private var recognitionTask: SFSpeechRecognitionTask?
+    /// 音频引擎
     private let audioEngine = AVAudioEngine()
     
     
@@ -27,9 +29,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         speechButton.isEnabled = false
-        
+        // 代理
         speechRecognizer?.delegate = self
         
+        // 查看 授权 状态
         SFSpeechRecognizer.requestAuthorization { (authState) in
             var isButtonEnabled = false
             switch authState {
@@ -45,7 +48,7 @@ class ViewController: UIViewController {
                 isButtonEnabled = false
                 print("Speech recognition restricted on this device")
             }
-            
+            // 主线程设置UI
             OperationQueue.main.addOperation {
                 self.speechButton.isEnabled = isButtonEnabled
             }
@@ -53,14 +56,17 @@ class ViewController: UIViewController {
         
     }
     
+    /// 开始语音识别
     private func startRecording() {
+        // 检查是否有语音未结束
         if recognitionTask != nil {
             recognitionTask?.cancel()
             recognitionTask = nil
         }
         
+        /// 获取语音session
         let audioSession = AVAudioSession.sharedInstance()
-        
+        /// config 配置语音任务
         do {
             try audioSession.setCategory(AVAudioSessionCategoryRecord)
             try audioSession.setMode(AVAudioSessionModeMeasurement)
@@ -79,10 +85,11 @@ class ViewController: UIViewController {
         }
 
         recognitionRequest.shouldReportPartialResults = true
-        
+        /// 语音识别任务
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             var isFinal = false
             if result != nil {
+                // 识别的结果放到TextView中
                 self.textView.text = result?.bestTranscription.formattedString
                 isFinal = (result?.isFinal)!
             }
@@ -102,9 +109,9 @@ class ViewController: UIViewController {
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) {(buffer, when) in
             self.recognitionRequest?.append(buffer)
         }
-        
+        /// 准备
         audioEngine.prepare()
-        
+        /// 开始
         do {
             try audioEngine.start()
         } catch {
@@ -115,6 +122,7 @@ class ViewController: UIViewController {
         
     }
     
+    /// 开始识别按钮事件
     @IBAction func speechAction(_ sender: UIButton) {
         if audioEngine.isRunning {
             audioEngine.stop()
@@ -128,6 +136,7 @@ class ViewController: UIViewController {
     }
 }
 
+// MARK: - SFSpeechRecognizerDelegate 识别代理
 extension ViewController: SFSpeechRecognizerDelegate {
     func speechRecognizer(_ speechRecognizer: SFSpeechRecognizer, availabilityDidChange available: Bool) {
         if available {
