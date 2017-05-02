@@ -63,7 +63,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func exitAction(_ sender: UIBarButtonItem) {
-        
+        SocketIOManager.shareInstance.exitChatWithNickname(nickname: self.nickname!) {
+            DispatchQueue.main.async {
+                self.nickname = nil
+                self.users.removeAll()
+                self.tableView.isHidden = true
+                self.askForNickName()
+            }
+        }
     }
     
 

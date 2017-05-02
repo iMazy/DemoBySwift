@@ -39,6 +39,23 @@ class SocketIOManager: NSObject {
     }
     
 
+    func exitChatWithNickname(nickname: String,completionHandler:()->Void) {
+        socket.emit("exitUser", with: [nickname])
+        completionHandler()
+    }
     
+    func sendMessage(message: String, withNickname nickname: String) {
+        socket.emit("chatMessage", with: [nickname,message])
+    }
     
+    func getChatMessage(completionHandler: @escaping (_ messageInfo: [String:AnyObject])->Void) {
+        socket.on("newChatMessage") { (dataArray, socketAck) in
+            var messageDict = [String: String]()
+            messageDict["nickname"] = dataArray[0] as? String
+            messageDict["message"] = dataArray[1] as? String
+            messageDict["date"] = dataArray[2] as? String
+            
+            completionHandler(messageDict as [String : AnyObject])
+        }
+    }
 }
