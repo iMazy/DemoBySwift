@@ -12,6 +12,8 @@ import SocketIO
 class SocketIOManager: NSObject {
     static let shareInstance = SocketIOManager()
     
+    var currentUser = ""
+    
     override init() {
         super.init()
     }
@@ -36,6 +38,8 @@ class SocketIOManager: NSObject {
         socket.on("userList") { (dataArray, ack) in
             completionHandler(dataArray.first as? [[String: AnyObject]])
         }
+        
+        currentUser = nickname
         
         listenForOtherMessages()
     }

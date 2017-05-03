@@ -97,8 +97,14 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let friendName = users[indexPath.row]["nickname"] as? String
+        if friendName == nickname {
+            return
+        }
+        
         let chatVC = ChatViewController()
-        chatVC.nickname = nickname
+        chatVC.nickname = friendName
         show(chatVC, sender: nil)
     }
     
