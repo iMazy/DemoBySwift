@@ -11,9 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChatViewController" customModule="ChatBySocket_IO" customModuleProvider="target">
             <connections>
+                <outlet property="bannerLabel" destination="vjG-4F-jUU" id="X6X-Qw-Z8Q"/>
+                <outlet property="bannerView" destination="Jbp-lq-UVx" id="lnB-RR-hUz"/>
                 <outlet property="sendButton" destination="sTg-hV-oD4" id="6EZ-m5-w80"/>
                 <outlet property="tableView" destination="Gts-dQ-xC1" id="bhc-5A-CVK"/>
                 <outlet property="textField" destination="eOn-fH-hFf" id="TOI-mz-hJ6"/>
+                <outlet property="typeStatusLabel" destination="IOy-B1-MfR" id="BKV-kG-5Rj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -72,15 +75,35 @@
                         <outlet property="dataSource" destination="-1" id="ywI-dc-Tch"/>
                     </connections>
                 </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jbp-lq-UVx">
+                    <rect key="frame" x="0.0" y="34" width="375" height="30"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjG-4F-jUU">
+                            <rect key="frame" x="168.5" y="6" width="37.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="0.9551316352739726" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="34b-4K-PWd"/>
+                        <constraint firstItem="vjG-4F-jUU" firstAttribute="centerX" secondItem="Jbp-lq-UVx" secondAttribute="centerX" id="7yl-KP-gY6"/>
+                        <constraint firstItem="vjG-4F-jUU" firstAttribute="centerY" secondItem="Jbp-lq-UVx" secondAttribute="centerY" id="D2L-Hm-Lq6"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="Gts-dQ-xC1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0sC-Jh-P3N"/>
                 <constraint firstItem="d4C-YP-bh3" firstAttribute="top" secondItem="Gts-dQ-xC1" secondAttribute="bottom" id="5xM-1a-9kX"/>
+                <constraint firstAttribute="trailing" secondItem="Jbp-lq-UVx" secondAttribute="trailing" id="Bum-Vt-1a7"/>
                 <constraint firstAttribute="trailing" secondItem="d4C-YP-bh3" secondAttribute="trailing" id="KG4-tn-to8"/>
+                <constraint firstItem="Jbp-lq-UVx" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="34" id="Kin-SF-ewx"/>
                 <constraint firstAttribute="trailing" secondItem="Gts-dQ-xC1" secondAttribute="trailing" id="TEJ-X4-NK5"/>
                 <constraint firstItem="Gts-dQ-xC1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XX9-6d-P9c"/>
                 <constraint firstItem="d4C-YP-bh3" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="arA-Th-5jj"/>
+                <constraint firstItem="Jbp-lq-UVx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dh7-fi-4ZP"/>
                 <constraint firstAttribute="bottom" secondItem="d4C-YP-bh3" secondAttribute="bottom" id="ivp-YN-FQd"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="54.5"/>

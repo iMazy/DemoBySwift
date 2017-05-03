@@ -138,6 +138,7 @@
 				TargetAttributes = {
 					64D346871EB857EB0005213B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CSR7UB94J4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -354,6 +355,7 @@
 			baseConfigurationReference = 5476675D075D924BB7C1C4E3 /* Pods-ChatBySocket.IO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CSR7UB94J4;
 				INFOPLIST_FILE = ChatBySocket.IO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -368,6 +370,7 @@
 			baseConfigurationReference = 4E0A9659D9F7B5D12A8E28B3 /* Pods-ChatBySocket.IO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CSR7UB94J4;
 				INFOPLIST_FILE = ChatBySocket.IO/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -36,6 +36,8 @@ class SocketIOManager: NSObject {
         socket.on("userList") { (dataArray, ack) in
             completionHandler(dataArray.first as? [[String: AnyObject]])
         }
+        
+        listenForOtherMessages()
     }
     
 
@@ -58,4 +60,27 @@ class SocketIOManager: NSObject {
             completionHandler(messageDict as [String : AnyObject])
         }
     }
+    
+    private func listenForOtherMessages() {
+        socket.on("userConnectUpdate") { (dataArray, socketAck) in
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "userWasConnectedNotification"), object: dataArray.first as! [String: AnyObject])
+        }
+        
+        socket.on("userExitUpdate") { (dataArray, socketAck) in
+            NotificationCenter.default.post(name: NSNotification.Name("userWasDisconnectedNotification"), object: dataArray.first as! String)
+        }
+        
+        socket.on("userTypingUpdate") { (dataArray, socketAck) in
+            NotificationCenter.default.post(name: NSNotification.Name("userTypingNotification"), object: dataArray.first as? String)
+        }
+    }
+    
+    func sendStartTypingMessage(nickname: String) {
+        socket.emit("startType", nickname)
+    }
+    
+    func sendStopTypingMessage(nickname: String) {
+        socket.emit("stopType", nickname)
+    }
+    
 }
