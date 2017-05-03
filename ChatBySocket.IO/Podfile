@@ -9,4 +9,6 @@ target 'ChatBySocket.IO' do
 
 pod 'Socket.IO-Client-Swift'
 
+pod "SVProgressHUD"
+
 end
