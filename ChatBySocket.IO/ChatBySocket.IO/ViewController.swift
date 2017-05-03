@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SVProgressHUD
 
 let cellReuseID = "chatListCell"
 
@@ -100,6 +100,11 @@ extension ViewController: UITableViewDataSource,UITableViewDelegate {
         
         let friendName = users[indexPath.row]["nickname"] as? String
         if friendName == nickname {
+           
+            SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.setMaximumDismissTimeInterval(1.0)
+            SVProgressHUD.showError(withStatus: "不能自己和自己聊天")
+            
             return
         }
         

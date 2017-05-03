@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 let chatCellID = "chatCell"
 
@@ -31,6 +32,7 @@ class ChatViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = nickname
+        tableView.tableFooterView = UIView()
 
         tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         tableView.register(UINib.init(nibName: "ChatViewCell", bundle: nil), forCellReuseIdentifier: chatCellID)
@@ -110,6 +112,9 @@ class ChatViewController: UIViewController {
     @IBAction func sendMessage() {
         
         if (textField.text?.characters.count)! <= 0 {
+            SVProgressHUD.setDefaultStyle(.dark)
+            SVProgressHUD.setMaximumDismissTimeInterval(1.0)
+            SVProgressHUD.showError(withStatus: "不能发送空消息")
             return
         }
         
@@ -165,6 +170,4 @@ extension ChatViewController: UITextFieldDelegate {
         SocketIOManager.shareInstance.sendStartTypingMessage(nickname: nickname!)
         return true
     }
-    
-    
 }
