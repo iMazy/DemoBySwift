@@ -16,6 +16,7 @@
                 <outlet property="sendButton" destination="sTg-hV-oD4" id="6EZ-m5-w80"/>
                 <outlet property="tableView" destination="Gts-dQ-xC1" id="bhc-5A-CVK"/>
                 <outlet property="textField" destination="eOn-fH-hFf" id="TOI-mz-hJ6"/>
+                <outlet property="toolBarBottomConstraint" destination="ivp-YN-FQd" id="qOM-J6-M6R"/>
                 <outlet property="typeStatusLabel" destination="IOy-B1-MfR" id="BKV-kG-5Rj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

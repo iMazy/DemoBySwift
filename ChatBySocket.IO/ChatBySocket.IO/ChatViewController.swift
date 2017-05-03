@@ -25,30 +25,80 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var bannerLabel: UILabel!
 
     @IBOutlet weak var typeStatusLabel: UILabel!
+    
+    
+    @IBOutlet weak var toolBarBottomConstraint: NSLayoutConstraint!
+    
     var nickname: String?
     var chatMessages: [[String: AnyObject]] = [[String: AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        configMainUI()
+        configTableView()
+        configNotification()
+        configKeyboard()
+        
+    }
+    
+    private func configMainUI() {
+        
         navigationItem.title = nickname
+        bannerView.isHidden = true
+        typeStatusLabel.isHidden = true
+    }
+    
+    private func configTableView() {
         tableView.tableFooterView = UIView()
-
+        
         tableView.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         tableView.register(UINib.init(nibName: "ChatViewCell", bundle: nil), forCellReuseIdentifier: chatCellID)
         
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
-        
+    }
+    
+    private func configNotification() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleConnectedUserUpdateNotification), name: NSNotification.Name(rawValue: "userWasConnectedNotification"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleDisconnectedUserUpdateNotification), name: NSNotification.Name(rawValue: "userWasDisconnectedNotification"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(handleUserTypingNotification), name: NSNotification.Name(rawValue: "userTypingNotification"), object: nil)
+    }
+    
+    
+    private func configKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
         
-        bannerView.isHidden = true
-        typeStatusLabel.isHidden = true
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHidden), name: Notification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(notification: NSNotification) {
+        print(notification.userInfo ?? "dadddddd")
+        let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
         
+        let endFrame = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]  as! CGRect
+        UIView.animate(withDuration: duration) { 
+            
+            self.toolBarBottomConstraint.constant = endFrame.size.height
+            
+            if self.chatMessages.count > 0 {
+                let index = IndexPath(row: self.chatMessages.count-1, section: 0)
+                print(index)
+                self.tableView.scrollToRow(at: index, at: UITableViewScrollPosition.bottom, animated: true)
+                
+            }
+        }
+    }
+    
+    @objc func keyboardWillHidden(notification: NSNotification) {
+        print(notification.userInfo ?? "dadddddd")
+        let duration = notification.userInfo?[UIKeyboardAnimationDurationUserInfoKey] as! TimeInterval
+        UIView.animate(withDuration: duration) {
+            self.toolBarBottomConstraint.constant = 0
+        }
     }
     
     func handleUserTypingNotification(notification: NSNotification) {
@@ -125,7 +175,14 @@ class ChatViewController: UIViewController {
         SocketIOManager.shareInstance.sendMessage(message: message, withNickname: name)
         
         textField.text = ""
-        textField.resignFirstResponder()
+//        textField.resignFirstResponder()
+        
+        if self.chatMessages.count > 0 {
+            let index = IndexPath(row: self.chatMessages.count-1, section: 0)
+            print(index)
+            self.tableView.scrollToRow(at: index, at: UITableViewScrollPosition.bottom, animated: true)
+            
+        }
     }
     
     
