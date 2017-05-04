@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     func setupEmitterLayer() {
         
         // 发射器在xy平面的中心位置
-        emitterLayer.emitterPosition = CGPoint(x: view.bounds.width-50, y: view.bounds.height-50)
+        emitterLayer.emitterPosition = CGPoint(x: view.bounds.width/2, y: view.bounds.height-50)
         // 发射器的尺寸大小
         emitterLayer.emitterSize = CGSize(width: 20, height: 20)
         // 渲染模式

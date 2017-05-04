@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		640E3E561EB8775F0086B3AC /* ChatViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640E3E541EB8775F0086B3AC /* ChatViewCell.swift */; };
 		640E3E571EB8775F0086B3AC /* ChatViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 640E3E551EB8775F0086B3AC /* ChatViewCell.xib */; };
+		6499CF731EBB67E4005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.33.14.png in Resources */ = {isa = PBXBuildFile; fileRef = 6499CF721EBB67E4005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.33.14.png */; };
+		6499CF751EBB67E8005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.42.33.png in Resources */ = {isa = PBXBuildFile; fileRef = 6499CF741EBB67E8005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.42.33.png */; };
 		64D3468C1EB857EC0005213B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D3468B1EB857EC0005213B /* AppDelegate.swift */; };
 		64D3468E1EB857EC0005213B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64D3468D1EB857EC0005213B /* ViewController.swift */; };
 		64D346911EB857EC0005213B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64D3468F1EB857EC0005213B /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		5476675D075D924BB7C1C4E3 /* Pods-ChatBySocket.IO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatBySocket.IO.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatBySocket.IO/Pods-ChatBySocket.IO.debug.xcconfig"; sourceTree = "<group>"; };
 		640E3E541EB8775F0086B3AC /* ChatViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewCell.swift; sourceTree = "<group>"; };
 		640E3E551EB8775F0086B3AC /* ChatViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChatViewCell.xib; sourceTree = "<group>"; };
+		6499CF721EBB67E4005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.33.14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年5月4日 下午9.33.14.png"; sourceTree = "<group>"; };
+		6499CF741EBB67E8005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.42.33.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年5月4日 下午9.42.33.png"; sourceTree = "<group>"; };
 		64D346881EB857EC0005213B /* ChatBySocket.IO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatBySocket.IO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64D3468B1EB857EC0005213B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		64D3468D1EB857EC0005213B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				64D3468F1EB857EC0005213B /* Main.storyboard */,
 				64D346921EB857EC0005213B /* Assets.xcassets */,
 				64D346941EB857EC0005213B /* LaunchScreen.storyboard */,
+				6499CF741EBB67E8005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.42.33.png */,
+				6499CF721EBB67E4005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.33.14.png */,
 				64D346971EB857EC0005213B /* Info.plist */,
 			);
 			path = ChatBySocket.IO;
@@ -171,6 +177,8 @@
 				64D346A21EB86CE20005213B /* ChatViewController.xib in Resources */,
 				640E3E571EB8775F0086B3AC /* ChatViewCell.xib in Resources */,
 				64D346911EB857EC0005213B /* Main.storyboard in Resources */,
+				6499CF731EBB67E4005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.33.14.png in Resources */,
+				6499CF751EBB67E8005C1389 /* Simulator Screen Shot 2017年5月4日 下午9.42.33.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

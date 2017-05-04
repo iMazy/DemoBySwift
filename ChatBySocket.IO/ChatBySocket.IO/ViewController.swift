@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func joinChat(_ sender: UIBarButtonItem) {
-        
+
     }
     
     @IBAction func exitAction(_ sender: UIBarButtonItem) {
