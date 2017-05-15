@@ -12,6 +12,8 @@
 		21C752991EC962C6006DE2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C752971EC962C6006DE2D1 /* Main.storyboard */; };
 		21C7529B1EC962C6006DE2D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21C7529A1EC962C6006DE2D1 /* Assets.xcassets */; };
 		21C7529E1EC962C6006DE2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C7529C1EC962C6006DE2D1 /* LaunchScreen.storyboard */; };
+		21C752A71EC975AB006DE2D1 /* GPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C752A51EC975AB006DE2D1 /* GPSViewController.swift */; };
+		21C752A81EC975AB006DE2D1 /* GPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C752A61EC975AB006DE2D1 /* GPSViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		21C7529A1EC962C6006DE2D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21C7529D1EC962C6006DE2D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21C7529F1EC962C6006DE2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21C752A51EC975AB006DE2D1 /* GPSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSViewController.swift; sourceTree = "<group>"; };
+		21C752A61EC975AB006DE2D1 /* GPSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			children = (
 				21C752931EC962C6006DE2D1 /* AppDelegate.swift */,
 				21C752951EC962C6006DE2D1 /* ViewController.swift */,
+				21C752A51EC975AB006DE2D1 /* GPSViewController.swift */,
+				21C752A61EC975AB006DE2D1 /* GPSViewController.xib */,
 				21C752971EC962C6006DE2D1 /* Main.storyboard */,
 				21C7529A1EC962C6006DE2D1 /* Assets.xcassets */,
 				21C7529C1EC962C6006DE2D1 /* LaunchScreen.storyboard */,
@@ -126,6 +132,7 @@
 				21C7529E1EC962C6006DE2D1 /* LaunchScreen.storyboard in Resources */,
 				21C7529B1EC962C6006DE2D1 /* Assets.xcassets in Resources */,
 				21C752991EC962C6006DE2D1 /* Main.storyboard in Resources */,
+				21C752A81EC975AB006DE2D1 /* GPSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21C752961EC962C6006DE2D1 /* ViewController.swift in Sources */,
+				21C752A71EC975AB006DE2D1 /* GPSViewController.swift in Sources */,
 				21C752941EC962C6006DE2D1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +307,7 @@
 				21C752A41EC962C6006DE2D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
