@@ -14,6 +14,10 @@
 		21C7529E1EC962C6006DE2D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C7529C1EC962C6006DE2D1 /* LaunchScreen.storyboard */; };
 		21C752A71EC975AB006DE2D1 /* GPSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C752A51EC975AB006DE2D1 /* GPSViewController.swift */; };
 		21C752A81EC975AB006DE2D1 /* GPSViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C752A61EC975AB006DE2D1 /* GPSViewController.xib */; };
+		21C752AF1EC97D63006DE2D1 /* ReGeocodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C752AD1EC97D63006DE2D1 /* ReGeocodeViewController.swift */; };
+		21C752B01EC97D63006DE2D1 /* ReGeocodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C752AE1EC97D63006DE2D1 /* ReGeocodeViewController.xib */; };
+		21C752B31EC97D87006DE2D1 /* GeocodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C752B11EC97D87006DE2D1 /* GeocodeViewController.swift */; };
+		21C752B41EC97D87006DE2D1 /* GeocodeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21C752B21EC97D87006DE2D1 /* GeocodeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		21C7529F1EC962C6006DE2D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21C752A51EC975AB006DE2D1 /* GPSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSViewController.swift; sourceTree = "<group>"; };
 		21C752A61EC975AB006DE2D1 /* GPSViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPSViewController.xib; sourceTree = "<group>"; };
+		21C752AD1EC97D63006DE2D1 /* ReGeocodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReGeocodeViewController.swift; sourceTree = "<group>"; };
+		21C752AE1EC97D63006DE2D1 /* ReGeocodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReGeocodeViewController.xib; sourceTree = "<group>"; };
+		21C752B11EC97D87006DE2D1 /* GeocodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeocodeViewController.swift; sourceTree = "<group>"; };
+		21C752B21EC97D87006DE2D1 /* GeocodeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GeocodeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +70,10 @@
 				21C752951EC962C6006DE2D1 /* ViewController.swift */,
 				21C752A51EC975AB006DE2D1 /* GPSViewController.swift */,
 				21C752A61EC975AB006DE2D1 /* GPSViewController.xib */,
+				21C752B11EC97D87006DE2D1 /* GeocodeViewController.swift */,
+				21C752B21EC97D87006DE2D1 /* GeocodeViewController.xib */,
+				21C752AD1EC97D63006DE2D1 /* ReGeocodeViewController.swift */,
+				21C752AE1EC97D63006DE2D1 /* ReGeocodeViewController.xib */,
 				21C752971EC962C6006DE2D1 /* Main.storyboard */,
 				21C7529A1EC962C6006DE2D1 /* Assets.xcassets */,
 				21C7529C1EC962C6006DE2D1 /* LaunchScreen.storyboard */,
@@ -131,7 +143,9 @@
 			files = (
 				21C7529E1EC962C6006DE2D1 /* LaunchScreen.storyboard in Resources */,
 				21C7529B1EC962C6006DE2D1 /* Assets.xcassets in Resources */,
+				21C752B41EC97D87006DE2D1 /* GeocodeViewController.xib in Resources */,
 				21C752991EC962C6006DE2D1 /* Main.storyboard in Resources */,
+				21C752B01EC97D63006DE2D1 /* ReGeocodeViewController.xib in Resources */,
 				21C752A81EC975AB006DE2D1 /* GPSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,8 +158,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				21C752961EC962C6006DE2D1 /* ViewController.swift in Sources */,
+				21C752B31EC97D87006DE2D1 /* GeocodeViewController.swift in Sources */,
 				21C752A71EC975AB006DE2D1 /* GPSViewController.swift in Sources */,
 				21C752941EC962C6006DE2D1 /* AppDelegate.swift in Sources */,
+				21C752AF1EC97D63006DE2D1 /* ReGeocodeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
