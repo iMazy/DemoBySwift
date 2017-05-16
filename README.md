@@ -1,5 +1,6 @@
 # DemoBySwift
-将之前用OC写的Demo转成Swift版
+通过Swift编写Demo学习swift,同时将之前用OC写的Demo转成Swift版
+
 ***
 ### GPUImage_AddFilterToCamera（GPUImage各种图像滤镜） 截图
 ![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/GPUImage_AddFilterToCamera/GPUImage_AddFilterToCamera/demoPic.png)
