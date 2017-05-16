@@ -48,15 +48,20 @@ class ReGeocodeViewController: UIViewController {
             // 获取数组中的第一个地标
             let placemark = placemarks?.first
             
-            let array = placemark?.addressDictionary?["FormattedAddressLines"] as! [String]
-            var tempStr = ""
-            array.forEach({ (str) in
-                tempStr += str
-            })
-            
             self.countryLabel.text = placemark?.country
             self.cityLabel.text = placemark?.locality
             self.areaLabel.text = placemark?.name
+            
+            
+            var tempStr = ""
+            
+            guard let addressInfo: [String] = placemark?.addressDictionary?["FormattedAddressLines"] as! [String]? else {
+                return
+            }
+            addressInfo.forEach({ (str) in
+                tempStr += str
+            })
+            
             self.detailLabel.text = tempStr
         }
     }
