@@ -12,6 +12,7 @@
 		21BCEAF71ECEF43B0006FDDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BCEAF51ECEF43B0006FDDE /* Main.storyboard */; };
 		21BCEAF91ECEF43B0006FDDE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21BCEAF81ECEF43B0006FDDE /* Assets.xcassets */; };
 		21BCEAFC1ECEF43B0006FDDE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BCEAFA1ECEF43B0006FDDE /* LaunchScreen.storyboard */; };
+		21BCEB041ECEF48D0006FDDE /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21BCEB031ECEF48D0006FDDE /* MenuItems.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		21BCEAF81ECEF43B0006FDDE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21BCEAFB1ECEF43B0006FDDE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21BCEAFD1ECEF43B0006FDDE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21BCEB031ECEF48D0006FDDE /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				21BCEAF11ECEF43B0006FDDE /* AppDelegate.swift */,
 				21BCEAF31ECEF43B0006FDDE /* ViewController.swift */,
 				21BCEAF51ECEF43B0006FDDE /* Main.storyboard */,
+				21BCEB031ECEF48D0006FDDE /* MenuItems.plist */,
 				21BCEAF81ECEF43B0006FDDE /* Assets.xcassets */,
 				21BCEAFA1ECEF43B0006FDDE /* LaunchScreen.storyboard */,
 				21BCEAFD1ECEF43B0006FDDE /* Info.plist */,
@@ -123,6 +126,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BCEB041ECEF48D0006FDDE /* MenuItems.plist in Resources */,
 				21BCEAFC1ECEF43B0006FDDE /* LaunchScreen.storyboard in Resources */,
 				21BCEAF91ECEF43B0006FDDE /* Assets.xcassets in Resources */,
 				21BCEAF71ECEF43B0006FDDE /* Main.storyboard in Resources */,
