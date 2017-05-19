@@ -20,6 +20,8 @@ class ViewController: UIViewController {
     
     lazy var dataSource = [AVIMTypedMessage]()
     
+    var conversa: AVIMConversation?
+    
     let tomClient = AVIMClient(clientId: "Tom")
     let jerryClient = AVIMClient(clientId: "Jerry")
 
@@ -47,15 +49,15 @@ class ViewController: UIViewController {
             conversation?.send(message, callback: { (successed, error) in
                 if successed {
                     print("发送成功")
-                    self.dataSource.append(message)
-                    self.tableView.reloadData()
+//                    self.dataSource.append(message)
+//                    self.tableView.reloadData()
                 }
             })
         })
     }
     
     @IBAction func jerrySend() {
-        
+      
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -80,8 +82,11 @@ extension ViewController: UITableViewDataSource {
 
 extension ViewController: AVIMClientDelegate {
     func conversation(_ conversation: AVIMConversation, didReceive message: AVIMTypedMessage) {
+        
+        conversa = conversation
+        
         dataSource.append(message)
-//        tableView.reloadData()
+        tableView.reloadData()
     }
 }
 
