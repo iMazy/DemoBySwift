@@ -30,11 +30,7 @@
 #endif
 
 #import "LCRouter.h"
-#import "LCRouter_internal.h"
 #import "SDMacros.h"
-
-#define PUSH_GROUP_CN @"g0"
-#define PUSH_GROUP_US @"a0"
 
 static AVVerbosePolicy _verbosePolicy       = kAVVerboseShow;
 NSString * const LCRootDomain      = @"leancloud.cn";
@@ -80,8 +76,6 @@ AVServiceRegion LCEffectiveServiceRegion = AVServiceRegionDefault;
 
 + (void)updateRouterInBackground {
     LCRouter *router = [LCRouter sharedInstance];
-    router.serviceRegion = LCEffectiveServiceRegion;
-
     [router updateInBackground];
 }
 
@@ -160,21 +154,6 @@ AVServiceRegion LCEffectiveServiceRegion = AVServiceRegionDefault;
     [[AVPaasClient sharedInstance] clearLastModifyCache];
 }
 
-+ (void)useAVCloud
-{
-    [self setServiceRegion:AVServiceRegionUrulu];
-}
-
-+ (void)useAVCloudUS
-{
-    [self setServiceRegion:AVServiceRegionUS];
-}
-
-+ (void)useAVCloudCN
-{
-    [self setServiceRegion:AVServiceRegionCN];
-}
-
 + (void)setStorageType:(AVStorageType)storageType
 {
     [AVUploaderManager sharedInstance].storageType = storageType;
@@ -190,11 +169,6 @@ AVServiceRegion LCEffectiveServiceRegion = AVServiceRegionDefault;
     case AVServiceRegionUS:
         storageType = AVStorageTypeS3;
         break;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    case AVServiceRegionUrulu:
-        break;
-#pragma clang diagnostic pop
     }
 
     return storageType;
@@ -210,11 +184,6 @@ AVServiceRegion LCEffectiveServiceRegion = AVServiceRegionDefault;
     case AVServiceRegionUS:
         pushGroup = @"a0";
         break;
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-    case AVServiceRegionUrulu:
-        break;
-#pragma clang diagnostic pop
     }
 
     if (!pushGroup) {
@@ -222,10 +191,6 @@ AVServiceRegion LCEffectiveServiceRegion = AVServiceRegionDefault;
     }
 
     return pushGroup;
-}
-
-+ (NSURL *)RESTBaseURL {
-    return [[NSURL URLWithString:[LCRouter sharedInstance].APIURLString] URLByAppendingPathComponent:API_VERSION];
 }
 
 + (void)setServiceRegion:(AVServiceRegion)serviceRegion {
@@ -245,6 +210,30 @@ AVServiceRegion LCEffectiveServiceRegion = AVServiceRegionDefault;
     [AVWebSocketWrapper setDefaultPushGroup:pushGroup];
 #endif
     [AVUploaderManager sharedInstance].serviceRegion = serviceRegion;
+}
+
++ (NSString *)stringFromServiceModule:(AVServiceModule)serviceModule {
+    switch (serviceModule) {
+    case AVServiceModuleAPI:
+        return LCServiceModuleAPI;
+    case AVServiceModuleEngine:
+        return LCServiceModuleEngine;
+    case AVServiceModulePush:
+        return LCServiceModulePush;
+    case AVServiceModuleRTM:
+        return LCServiceModuleRTM;
+    case AVServiceModuleStatistics:
+        return LCServiceModuleStatistics;
+    }
+
+    return nil;
+}
+
++ (void)setServerURLString:(NSString *)URLString
+          forServiceModule:(AVServiceModule)serviceModule
+{
+    NSString *key = [self stringFromServiceModule:serviceModule];
+    [[LCRouter sharedInstance] presetURLString:URLString forServiceModule:key];
 }
 
 #pragma mark - Network
@@ -354,16 +343,13 @@ static AVLogLevel avlogLevel = AVLogLevelDefault;
     }];
 }
 
-+(void)verifySmsCode:(NSString *)code callback:(AVBooleanResultBlock)callback {
-    @throw [NSException exceptionWithName:@"Interface not supported" reason:@"This interface is altered by +[verifySmsCode:mobilePhoneNumber:callback:]" userInfo:nil];
-}
-
 +(void)verifySmsCode:(NSString *)code mobilePhoneNumber:(NSString *)phoneNumber callback:(AVBooleanResultBlock)callback {
     NSParameterAssert(code);
     NSParameterAssert(phoneNumber);
     
-    NSString *path=[NSString stringWithFormat:@"verifySmsCode/%@?mobilePhoneNumber=%@",code, phoneNumber];
-    [[AVPaasClient sharedInstance] postObject:path withParameters:nil block:^(id object, NSError *error) {
+    NSString *path=[NSString stringWithFormat:@"verifySmsCode/%@",code];
+    NSDictionary *params = @{ @"mobilePhoneNumber": phoneNumber };
+    [[AVPaasClient sharedInstance] postObject:path withParameters:params block:^(id object, NSError *error) {
         [AVUtils callBooleanResultBlock:callback error:error];
     }];
 }

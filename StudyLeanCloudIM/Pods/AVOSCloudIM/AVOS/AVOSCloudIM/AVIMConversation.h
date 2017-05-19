@@ -68,6 +68,21 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly, nullable) NSDate       *lastMessageAt;
 
 /**
+ *  The last timestamp your message read by other.
+ */
+@property (nonatomic, strong, readonly, nullable) NSDate       *lastReadAt;
+
+/**
+ *  The last timestamp your message delivered to other.
+ */
+@property (nonatomic, strong, readonly, nullable) NSDate       *lastDeliveredAt;
+
+/**
+ *  The count of unread messages in current conversation.
+ */
+@property (nonatomic, assign, readonly)           NSUInteger    unreadMessagesCount;
+
+/**
  *  The name of this conversation. Can be changed by update:callback: .
  */
 @property (nonatomic, copy, readonly, nullable) NSString     *name;
@@ -108,12 +123,28 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setObject:(nullable id)object forKey:(NSString *)key;
 
+/**
+ * Support to use subscript to set custom property.
+ *
+ * @see -[AVIMConversation setObject:forKey:]
+ */
+- (void)setObject:(nullable id)object forKeyedSubscript:(NSString *)key;
+
 /*!
  * Get custom property value for conversation.
+ *
  * @param key The custom property name.
+ *
  * @return The custom property value.
  */
 - (nullable id)objectForKey:(NSString *)key;
+
+/**
+ * Support to use subscript to set custom property.
+ *
+ * @see -[AVIMConversation objectForKey:]
+ */
+- (nullable id)objectForKeyedSubscript:(NSString *)key;
 
 /*!
  创建一个 AVIMKeyedConversation 对象。用于序列化，方便保存在本地。
@@ -124,42 +155,41 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  拉取服务器最新数据。
  @param callback － 结果回调
- @return None.
  */
 - (void)fetchWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
+ 拉取对话最近的回执时间。
+ */
+- (void)fetchReceiptTimestampsInBackground;
+
+/*!
  发送更新。
  @param callback － 结果回调
- @return None.
  */
 - (void)updateWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
  加入对话。
  @param callback － 结果回调
- @return None.
  */
 - (void)joinWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
  离开对话。
  @param callback － 结果回调
- @return None.
  */
 - (void)quitWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
  静音，不再接收此对话的离线推送。
  @param callback － 结果回调
- @return None.
  */
 - (void)muteWithCallback:(AVIMBooleanResultBlock)callback;
 
 /*!
  取消静音，开始接收此对话的离线推送。
  @param callback － 结果回调
- @return None.
  */
 - (void)unmuteWithCallback:(AVIMBooleanResultBlock)callback;
 
@@ -167,13 +197,18 @@ NS_ASSUME_NONNULL_BEGIN
  标记该会话已读。
  将服务端该会话的未读消息数置零。
  */
-- (void)markAsReadInBackground;
+- (void)markAsReadInBackground AVIM_DEPRECATED("Deprecated in AVOSCloudIM SDK 4.3.0. Use -[AVIMConversation readInBackground] instead.");
+
+/*!
+ 将对话标记为已读。
+ 该方法将本地对话中其他成员发出的最新消息标记为已读，该消息的发送者会收到已读通知。
+ */
+- (void)readInBackground;
 
 /*!
  邀请新成员加入对话。
  @param clientIds － 成员列表
  @param callback － 结果回调
- @return None.
  */
 - (void)addMembersWithClientIds:(NSArray *)clientIds
                        callback:(AVIMBooleanResultBlock)callback;
@@ -182,7 +217,6 @@ NS_ASSUME_NONNULL_BEGIN
  从对话踢出部分成员。
  @param clientIds － 成员列表
  @param callback － 结果回调
- @return None.
  */
 - (void)removeMembersWithClientIds:(NSArray *)clientIds
                           callback:(AVIMBooleanResultBlock)callback;
@@ -190,7 +224,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  查询成员人数（开放群组即为在线人数）。
  @param callback － 结果回调
- @return None.
  */
 - (void)countMembersWithCallback:(AVIMIntegerResultBlock)callback;
 
@@ -198,7 +231,6 @@ NS_ASSUME_NONNULL_BEGIN
  往对话中发送消息。
  @param message － 消息对象
  @param callback － 结果回调
- @return None.
  */
 - (void)sendMessage:(AVIMMessage *)message
            callback:(AVIMBooleanResultBlock)callback;
@@ -207,9 +239,7 @@ NS_ASSUME_NONNULL_BEGIN
  往对话中发送消息。
  @param message － 消息对象
  @param option － 消息发送选项
- @param progressBlock - 发送进度回调。仅对文件上传有效，发送文本消息时不进行回调。
  @param callback － 结果回调
- @return None.
  */
 - (void)sendMessage:(AVIMMessage *)message
              option:(nullable AVIMMessageOption *)option
@@ -220,7 +250,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param message － 消息对象
  @param progressBlock - 发送进度回调。仅对文件上传有效，发送文本消息时不进行回调。
  @param callback － 结果回调
- @return None.
  */
 - (void)sendMessage:(AVIMMessage *)message
       progressBlock:(nullable AVIMProgressBlock)progressBlock
@@ -232,7 +261,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param option － 消息发送选项
  @param progressBlock - 发送进度回调。仅对文件上传有效，发送文本消息时不进行回调。
  @param callback － 结果回调
- @return None.
  */
 - (void)sendMessage:(AVIMMessage *)message
              option:(nullable AVIMMessageOption *)option
@@ -243,7 +271,6 @@ NS_ASSUME_NONNULL_BEGIN
  从服务端拉取该会话的最近 limit 条消息。
  @param limit 返回结果的数量，默认 20 条，最多 1000 条。
  @param callback 查询结果回调。
- @return None。
  */
 - (void)queryMessagesFromServerWithLimit:(NSUInteger)limit
                                 callback:(AVIMArrayResultBlock)callback;
@@ -259,7 +286,6 @@ NS_ASSUME_NONNULL_BEGIN
  获取该会话的最近 limit 条消息。
  @param limit 返回结果的数量，默认 20 条，最多 1000 条。
  @param callback 查询结果回调。
- @return None。
  */
 - (void)queryMessagesWithLimit:(NSUInteger)limit
                       callback:(AVIMArrayResultBlock)callback;
@@ -270,7 +296,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param timestamp 此时间以前的消息。
  @param limit 返回结果的数量，默认 20 条，最多 1000 条。
  @param callback 查询结果回调。
- @return None。
  */
 - (void)queryMessagesBeforeId:(nullable NSString *)messageId
                     timestamp:(int64_t)timestamp
@@ -286,7 +311,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param message － 消息对象
  @param options － 可选参数，可以使用或 “|” 操作表示多个选项
  @param callback － 结果回调
- @return None.
  */
 - (void)sendMessage:(AVIMMessage *)message
             options:(AVIMMessageSendOption)options
@@ -298,7 +322,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param options － 可选参数，可以使用或 “|” 操作表示多个选项
  @param progressBlock - 发送进度回调。仅对文件上传有效，发送文本消息时不进行回调。
  @param callback － 结果回调
- @return None.
  */
 - (void)sendMessage:(AVIMMessage *)message
             options:(AVIMMessageSendOption)options
@@ -315,7 +338,6 @@ NS_ASSUME_NONNULL_BEGIN
  发送更新。
  @param updateDict － 需要更新的数据，可通过 AVIMConversationUpdateBuilder 生成
  @param callback － 结果回调
- @return None.
  */
 - (void)update:(NSDictionary *)updateDict
       callback:(AVIMBooleanResultBlock)callback AVIM_DEPRECATED("Deprecated in AVOSCloudIM SDK 3.7.0. Use -[AVIMConversation updateWithCallback:] instead.");

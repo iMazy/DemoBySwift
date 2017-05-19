@@ -8,6 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+FOUNDATION_EXPORT NSString *const LCServiceModuleAPI;
+FOUNDATION_EXPORT NSString *const LCServiceModuleEngine;
+FOUNDATION_EXPORT NSString *const LCServiceModulePush;
+FOUNDATION_EXPORT NSString *const LCServiceModuleRTM;
+FOUNDATION_EXPORT NSString *const LCServiceModuleStatistics;
+
 FOUNDATION_EXPORT NSString *const LCRouterDidUpdateNotification;
 
 @interface LCRouter : NSObject
@@ -15,54 +21,45 @@ FOUNDATION_EXPORT NSString *const LCRouterDidUpdateNotification;
 + (instancetype)sharedInstance;
 
 /**
- Get API URL string.
-
- @return API URL string.
+ Get cached RTM server table.
  */
-- (NSString *)APIURLString;
+- (NSDictionary *)cachedRTMServerTable;
 
 /**
- Get versioned API URL string.
+ Fetch RTM server table asynchronously.
 
- @return Versioned API URL string.
+ If fetching did succeed, it will cache the RTM server table for later use.
+
+ @param block The callback of fetching result.
  */
-- (NSString *)versionedAPIURLString;
+- (void)fetchRTMServerTableInBackground:(void(^)(NSDictionary *RTMServerTable, NSError *error))block;
 
 /**
- Get versioned API URL.
+ Get URL string for storage server.
 
- @return Versioned API URL.
+ @param path The API endpoint.
  */
-- (NSURL *)versionedAPIURL;
+- (NSString *)URLStringForPath:(NSString *)path;
 
 /**
- Get push router URL string.
+ Get batch path for the given path.
 
- @return push router URL string.
+ @brief Add a version prefix to the path.
+        For example, if the path given by you is "book", this method will return "/1.1/book".
+
+ @param path The API endpoint.
  */
-- (NSString *)pushRouterURLString;
+- (NSString *)batchPathForPath:(NSString *)path;
 
 /**
- Cache API host for service region.
+ Preset URL string for a service module.
 
- @param host          The API host to be cached.
- @param lastModified  The last modified timestamp since 1970 in seconds.
- @param TTL           The time-to-live timestamp in seconds.
+ The preset URL has the highest priority, it will override app router's result.
+
+ @param URLString     The URL string of service module.
+ @param serviceModule The service module which you want to preset.
  */
-- (void)cacheAPIHostWithHost:(NSString *)host
-                lastModified:(NSTimeInterval)lastModified
-                         TTL:(NSTimeInterval)TTL;
-
-/**
- Cache push router host for service region.
-
- @param host          The push router host to be cached.
- @param lastModified  The last modified timestamp since 1970 in seconds.
- @param TTL           The time-to-live timestamp in seconds.
- */
-- (void)cachePushRouterHostWithHost:(NSString *)host
-                       lastModified:(NSTimeInterval)lastModified
-                                TTL:(NSTimeInterval)TTL;
+- (void)presetURLString:(NSString *)URLString forServiceModule:(NSString *)serviceModule;
 
 /**
  Update router asynchronously.

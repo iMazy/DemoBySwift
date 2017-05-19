@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "AVCaptcha.h"
+#import "AVDynamicObject.h"
+#import "AVSMS.h"
 #import "AVACL.h"
 #import "AVRole.h"
 #import "AVSaveOption.h"

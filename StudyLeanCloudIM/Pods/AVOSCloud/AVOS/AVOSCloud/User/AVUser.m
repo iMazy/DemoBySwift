@@ -14,8 +14,6 @@
 #import "AVObjectUtils.h"
 #import "AVPaasClient.h"
 #import "AVErrorUtils.h"
-#import "AVOSCloud_Internal.h"
-
 #import "AVFriendQuery.h"
 #import "AVUtils.h"
 
@@ -275,11 +273,22 @@ static BOOL enableAutomatic = NO;
     }];
 }
 
-+(void)requestMobilePhoneVerify:(NSString *)phoneNumber withBlock:(AVBooleanResultBlock)block {
++ (void)requestMobilePhoneVerify:(NSString *)phoneNumber withBlock:(AVBooleanResultBlock)block {
+    [self requestVerificationCodeForPhoneNumber:phoneNumber options:nil callback:block];
+}
+
++ (void)requestVerificationCodeForPhoneNumber:(NSString *)phoneNumber
+                                      options:(AVUserShortMessageRequestOptions *)options
+                                     callback:(AVBooleanResultBlock)callback
+{
     NSParameterAssert(phoneNumber);
-    
-    [[AVPaasClient sharedInstance] postObject:@"requestMobilePhoneVerify" withParameters:@{ @"mobilePhoneNumber" : phoneNumber } block:^(id object, NSError *error) {
-        [AVUtils callBooleanResultBlock:block error:error];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+
+    parameters[@"mobilePhoneNumber"] = phoneNumber;
+    parameters[@"validate_token"] = options.validationToken;
+
+    [[AVPaasClient sharedInstance] postObject:@"requestMobilePhoneVerify" withParameters:parameters block:^(id object, NSError *error) {
+        [AVUtils callBooleanResultBlock:callback error:error];
     }];
 }
 
@@ -315,8 +324,7 @@ static BOOL enableAutomatic = NO;
 
 - (void)updatePassword:(NSString *)oldPassword newPassword:(NSString *)newPassword block:(AVIdResultBlock)block {
     if (self.isAuthDataExistInMemory && oldPassword && newPassword) {
-        NSString *pathComponent = [NSString stringWithFormat:@"users/%@/updatePassword", self.objectId];
-        NSString *path = [[[AVOSCloud RESTBaseURL] URLByAppendingPathComponent:pathComponent] absoluteString];
+        NSString *path = [NSString stringWithFormat:@"users/%@/updatePassword", self.objectId];
         NSDictionary *params = @{@"old_password":oldPassword,
                                  @"new_password":newPassword};
         [[AVPaasClient sharedInstance] putObject:path withParameters:params sessionToken:self.sessionToken block:^(id object, NSError *error) {
@@ -571,11 +579,22 @@ static BOOL enableAutomatic = NO;
     return user;
 }
 
-+(void)requestLoginSmsCode:(NSString *)phoneNumber withBlock:(AVBooleanResultBlock)block {
++ (void)requestLoginSmsCode:(NSString *)phoneNumber withBlock:(AVBooleanResultBlock)block {
+    [self requestLoginCodeForPhoneNumber:phoneNumber options:nil callback:block];
+}
+
++ (void)requestLoginCodeForPhoneNumber:(NSString *)phoneNumber
+                               options:(AVUserShortMessageRequestOptions *)options
+                              callback:(AVBooleanResultBlock)callback
+{
     NSParameterAssert(phoneNumber);
-    
-    [[AVPaasClient sharedInstance] postObject:@"requestLoginSmsCode" withParameters:@{ @"mobilePhoneNumber" : phoneNumber } block:^(id object, NSError *error) {
-        [AVUtils callBooleanResultBlock:block error:error];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+
+    parameters[@"mobilePhoneNumber"] = phoneNumber;
+    parameters[@"validate_token"] = options.validationToken;
+
+    [[AVPaasClient sharedInstance] postObject:@"requestLoginSmsCode" withParameters:parameters block:^(id object, NSError *error) {
+        [AVUtils callBooleanResultBlock:callback error:error];
     }];
 }
 
@@ -746,20 +765,8 @@ static BOOL enableAutomatic = NO;
     return theResult;
 }
 
-+(void)removeCookies {
-    // delete cookies
-    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *cookie in [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]) {
-        if ([[AVPaasClient sharedInstance].baseURL rangeOfString:cookie.domain].location != NSNotFound) {
-            [storage deleteCookie:cookie];
-        }
-    }
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
 + (void)logOut {
     [[NSUserDefaults standardUserDefaults] removeObjectForKey:AnonymousIdKey];
-    [AVUser removeCookies];
     [[self class] changeCurrentUser:nil save:YES];
 }
 
@@ -829,11 +836,22 @@ static BOOL enableAutomatic = NO;
     }];
 }
 
-+(void)requestPasswordResetWithPhoneNumber:(NSString *)phoneNumber block:(AVBooleanResultBlock)block {
++ (void)requestPasswordResetWithPhoneNumber:(NSString *)phoneNumber block:(AVBooleanResultBlock)block {
+    [self requestPasswordResetCodeForPhoneNumber:phoneNumber options:nil callback:block];
+}
+
++ (void)requestPasswordResetCodeForPhoneNumber:(NSString *)phoneNumber
+                                       options:(AVUserShortMessageRequestOptions *)options
+                                      callback:(AVBooleanResultBlock)callback
+{
     NSParameterAssert(phoneNumber);
-    
-    [[AVPaasClient sharedInstance] postObject:@"requestPasswordResetBySmsCode" withParameters:@{ @"mobilePhoneNumber" : phoneNumber } block:^(id object, NSError *error) {
-        [AVUtils callBooleanResultBlock:block error:error];
+    NSMutableDictionary *parameters = [NSMutableDictionary dictionary];
+
+    parameters[@"mobilePhoneNumber"] = phoneNumber;
+    parameters[@"validate_token"] = options.validationToken;
+
+    [[AVPaasClient sharedInstance] postObject:@"requestPasswordResetBySmsCode" withParameters:parameters block:^(id object, NSError *error) {
+        [AVUtils callBooleanResultBlock:callback error:error];
     }];
 }
 
@@ -1015,15 +1033,17 @@ static BOOL enableAutomatic = NO;
             @finally {
                 [AVUtils callIdResultBlock:callback object:dict error:error];
             }
-            
         } else {
             [AVUtils callIdResultBlock:callback object:object error:error];
         }
-        
     }];
 }
 
-
-
 @end
 
+
+@implementation AVUserShortMessageRequestOptions
+
+@dynamic validationToken;
+
+@end

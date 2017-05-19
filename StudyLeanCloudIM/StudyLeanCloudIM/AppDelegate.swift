@@ -8,6 +8,9 @@
 
 import UIKit
 
+import AVOSCloud
+import AVOSCloudIM
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +19,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        
+        configAVOS()
+        
+//        let loginVC = LoginViewController()
+//        
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        window?.rootViewController = loginVC
+//        window?.backgroundColor = .white
+//        window?.makeKeyAndVisible()
+        
+        
         return true
+    }
+    
+    func configAVOS() {
+       
+        AVOSCloud.setApplicationId("nu2TVGn2btIHvhtsmAgv2Aqh-gzGzoHsz", clientKey: "6YlVk88ULtFigC24jrzfvFT1")
+        
+        AVIMClient.setUserOptions([AVIMUserOptionUseUnread : true])
+        AVOSCloud.setAllLogsEnabled(false)
+    
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

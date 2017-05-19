@@ -9,8 +9,6 @@
 #import "AVIMCommon.h"
 #import "AVIMCommandCommon.h"
 
-#define PUSH_GROUP_CN @"g0"
-#define PUSH_GROUP_US @"a0"
 #define USE_DEBUG_SERVER 0
 #define DEBUG_SERVER @"ws://puppet.leancloud.cn:5779/"
 
@@ -20,10 +18,9 @@
 #define AVIM_NOTIFICATION_WEBSOCKET_RECONNECT @"AVIM_NOTIFICATION_WEBSOCKET_RECONNECT"
 #define AVIM_NOTIFICATION_WEBSOCKET_COMMAND @"AVIM_NOTIFICATION_WEBSOCKET_COMMAND"
 
-FOUNDATION_EXPORT NSString *const AVIMProtocolJSON1;
-FOUNDATION_EXPORT NSString *const AVIMProtocolJSON2;
 FOUNDATION_EXPORT NSString *const AVIMProtocolPROTOBUF1;
 FOUNDATION_EXPORT NSString *const AVIMProtocolPROTOBUF2;
+FOUNDATION_EXPORT NSString *const AVIMProtocolPROTOBUF3;
 
 @interface AVIMWebSocketWrapper : NSObject
 
@@ -39,9 +36,6 @@ FOUNDATION_EXPORT NSString *const AVIMProtocolPROTOBUF2;
 - (void)closeWebSocketConnection;
 - (void)closeWebSocketConnectionRetry:(BOOL)retry;
 - (void)sendCommand:(AVIMGenericCommand *)genericCommand;
-//- (void)sendMessage:(id)data;
 - (void)sendPing;
 - (BOOL)isConnectionOpen;
-- (BOOL)messageIdExists:(NSString *)messageId;
-- (void)addMessageId:(NSString *)messageId;
 @end

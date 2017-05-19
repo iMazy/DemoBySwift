@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tsp-4K-Snk">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Chat-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="StudyLeanCloudIM" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,99 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nlE-Ds-rGM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="493"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="9t1-Bx-xFl"/>
+                                </connections>
+                            </tableView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Jerry" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gsb-pg-InU">
+                                <rect key="frame" x="20" y="617" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHY-T6-9T8">
+                                <rect key="frame" x="305" y="617" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.48708517089999998" blue="0.42947068840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="awc-m5-BGn"/>
+                                </constraints>
+                                <state key="normal" title="Jerry">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="jerrySend" destination="BYZ-38-t0r" eventType="touchUpInside" id="5NS-Lq-6MW"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tom" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TSr-k6-YaJ">
+                                <rect key="frame" x="20" y="567" width="275" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW5-Ub-31H">
+                                <rect key="frame" x="305" y="567" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.48708517089999998" blue="0.42947068840000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="rL2-rp-kCk"/>
+                                </constraints>
+                                <state key="normal" title="Tom">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tomSend" destination="BYZ-38-t0r" eventType="touchUpInside" id="uPF-QE-slF"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Gsb-pg-InU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="4xD-ob-pIF"/>
+                            <constraint firstItem="RHY-T6-9T8" firstAttribute="leading" secondItem="Gsb-pg-InU" secondAttribute="trailing" constant="10" id="Dl5-DE-T9c"/>
+                            <constraint firstItem="nlE-Ds-rGM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="F5F-fv-ZRc"/>
+                            <constraint firstItem="TSr-k6-YaJ" firstAttribute="centerY" secondItem="zW5-Ub-31H" secondAttribute="centerY" id="PSs-3L-QtF"/>
+                            <constraint firstItem="zW5-Ub-31H" firstAttribute="top" secondItem="nlE-Ds-rGM" secondAttribute="bottom" constant="10" id="UjM-6K-yU4"/>
+                            <constraint firstItem="RHY-T6-9T8" firstAttribute="top" secondItem="zW5-Ub-31H" secondAttribute="bottom" constant="20" id="b6F-bZ-OIz"/>
+                            <constraint firstItem="Gsb-pg-InU" firstAttribute="centerY" secondItem="RHY-T6-9T8" secondAttribute="centerY" id="cCu-Za-Jan"/>
+                            <constraint firstItem="zW5-Ub-31H" firstAttribute="leading" secondItem="TSr-k6-YaJ" secondAttribute="trailing" constant="10" id="ePj-aa-ap3"/>
+                            <constraint firstAttribute="trailing" secondItem="zW5-Ub-31H" secondAttribute="trailing" constant="20" id="eXl-xt-733"/>
+                            <constraint firstItem="TSr-k6-YaJ" firstAttribute="leading" secondItem="Gsb-pg-InU" secondAttribute="leading" id="mxM-ax-A6D"/>
+                            <constraint firstAttribute="trailing" secondItem="RHY-T6-9T8" secondAttribute="trailing" constant="20" id="nTw-EI-kR1"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RHY-T6-9T8" secondAttribute="bottom" constant="20" id="uTo-aF-G4v"/>
+                            <constraint firstAttribute="trailing" secondItem="nlE-Ds-rGM" secondAttribute="trailing" id="w9T-RJ-eHN"/>
+                            <constraint firstItem="nlE-Ds-rGM" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zTW-KD-8eA"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Chat" id="Jem-Lo-Pp2"/>
+                    <connections>
+                        <outlet property="jerryField" destination="Gsb-pg-InU" id="jEJ-fa-Da2"/>
+                        <outlet property="tableView" destination="nlE-Ds-rGM" id="h8X-sD-NDg"/>
+                        <outlet property="tomField" destination="TSr-k6-YaJ" id="20h-ZF-hfe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1160.8" y="476.31184407796104"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="8ZW-6Z-paY">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tsp-4K-Snk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P8G-5M-bnh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Blb-y3-Sqw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmS-o9-brm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="439" y="478"/>
         </scene>
     </scenes>
 </document>

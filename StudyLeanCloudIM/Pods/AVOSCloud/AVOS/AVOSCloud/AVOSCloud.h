@@ -56,6 +56,9 @@
 #import "AVACL.h"
 #import "AVRole.h"
 
+#import "AVCaptcha.h"
+#import "AVSMS.h"
+
 #if AV_IOS_ONLY && !TARGET_OS_WATCH
 // IM 1.0
 #import "AVSession.h"
@@ -95,10 +98,17 @@ typedef enum AVLogLevel : NSUInteger {
 typedef NS_ENUM(NSInteger, AVServiceRegion) {
     AVServiceRegionCN = 1,
     AVServiceRegionUS,
-    AVServiceRegionUrulu AV_DEPRECATED("Deprecated in AVOSCloud SDK 3.2.3. You should not use this value."),
 
     /* Default service region */
     AVServiceRegionDefault = AVServiceRegionCN
+};
+
+typedef NS_ENUM(NSInteger, AVServiceModule) {
+    AVServiceModuleAPI = 1,
+    AVServiceModuleEngine,
+    AVServiceModulePush,
+    AVServiceModuleRTM,
+    AVServiceModuleStatistics
 };
 
 #define kAVDefaultNetworkTimeoutInterval 10.0
@@ -176,6 +186,15 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)setServiceRegion:(AVServiceRegion)region;
 
 /**
+ Custom server URL for specific service module.
+
+ @param URLString     The URL string of service module.
+ @param serviceModule The service module which you want to customize.
+ */
++ (void)setServerURLString:(NSString *)URLString
+          forServiceModule:(AVServiceModule)serviceModule;
+
+/**
  *  Get the timeout interval for network requests. Default is kAVDefaultNetworkTimeoutInterval (10 seconds)
  *
  *  @return timeout interval
@@ -223,53 +242,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param days the days you want to set
  */
 + (void)setFileCacheExpiredDays:(NSInteger)days;
-
-/*!
- *  请求短信验证码，需要开启手机短信验证 API 选项。
- *  发送短信到指定的手机上，发送短信到指定的手机上，获取6位数字验证码。
- *  @param phoneNumber 11位电话号码
- *  @param callback 回调结果
- */
-+(void)requestSmsCodeWithPhoneNumber:(NSString *)phoneNumber
-                            callback:(AVBooleanResultBlock)callback;
-/*!
- *  请求短信验证码，需要开启手机短信验证 API 选项。
- *  发送短信到指定的手机上，获取6位数字验证码。
- *  @param phoneNumber 11位电话号码
- *  @param appName 应用名称，传nil为默认值您的应用名称
- *  @param operation 操作名称，传nil为默认值"短信认证"
- *  @param ttl 短信过期时间，单位分钟，传0为默认值10分钟
- *  @param callback 回调结果
- */
-+(void)requestSmsCodeWithPhoneNumber:(NSString *)phoneNumber
-                             appName:(nullable NSString *)appName
-                           operation:(nullable NSString *)operation
-                          timeToLive:(NSUInteger)ttl
-                            callback:(AVBooleanResultBlock)callback;
-
-/*!
- *  请求短信验证码，需要开启手机短信验证 API 选项。
- *  发送短信到指定的手机上，获取6位数字验证码。
- *  @param phoneNumber 11位电话号码
- *  @param templateName 模板名称，传nil为默认模板
- *  @param variables 模板中使用的变量
- *  @param callback 回调结果
- */
-+(void)requestSmsCodeWithPhoneNumber:(NSString *)phoneNumber
-                        templateName:(nullable NSString *)templateName
-                           variables:(nullable NSDictionary *)variables
-                            callback:(AVBooleanResultBlock)callback;
-
-/*!
- * 请求语音短信验证码，需要开启手机短信验证 API 选项
- * 发送语音短信到指定手机上
- * @param phoneNumber 11 位电话号码
- * @param IDD 号码的所在地国家代码，如果传 nil，默认为 "+86"
- * @param callback 回调结果
- */
-+(void)requestVoiceCodeWithPhoneNumber:(NSString *)phoneNumber
-                                   IDD:(nullable NSString *)IDD
-                              callback:(AVBooleanResultBlock)callback;
 
 /*!
  *  验证短信验证码，需要开启手机短信验证 API 选项。
@@ -335,17 +307,53 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AVOSCloud (AVDeprecated)
 
-+ (void)useAVCloud AV_DEPRECATED("Deprecated in AVOSCloud SDK 2.3.3.");
-
-/**
- * Use LeanCloud US server.
+/*!
+ *  请求短信验证码，需要开启手机短信验证 API 选项。
+ *  发送短信到指定的手机上，发送短信到指定的手机上，获取6位数字验证码。
+ *  @param phoneNumber 11位电话号码
+ *  @param callback 回调结果
  */
-+ (void)useAVCloudUS AV_DEPRECATED("Deprecated in AVOSCloud SDK 3.2.3. Use +[AVOSCloud setServiceRegion:] instead.");
++(void)requestSmsCodeWithPhoneNumber:(NSString *)phoneNumber
+                            callback:(AVBooleanResultBlock)callback AV_DEPRECATED("Deprecated in AVOSCloud SDK 4.5.0. Use +[AVSMS requestShortMessageForPhoneNumber:options:callback:] instead.");
 
-/**
- * Use LeanCloud China Sever. Default option.
+/*!
+ *  请求短信验证码，需要开启手机短信验证 API 选项。
+ *  发送短信到指定的手机上，获取6位数字验证码。
+ *  @param phoneNumber 11位电话号码
+ *  @param appName 应用名称，传nil为默认值您的应用名称
+ *  @param operation 操作名称，传nil为默认值"短信认证"
+ *  @param ttl 短信过期时间，单位分钟，传0为默认值10分钟
+ *  @param callback 回调结果
  */
-+ (void)useAVCloudCN AV_DEPRECATED("Deprecated in AVOSCloud SDK 3.2.3. Use +[AVOSCloud setServiceRegion:] instead.");
++(void)requestSmsCodeWithPhoneNumber:(NSString *)phoneNumber
+                             appName:(nullable NSString *)appName
+                           operation:(nullable NSString *)operation
+                          timeToLive:(NSUInteger)ttl
+                            callback:(AVBooleanResultBlock)callback AV_DEPRECATED("Deprecated in AVOSCloud SDK 4.5.0. Use +[AVSMS requestShortMessageForPhoneNumber:options:callback:] instead.");
+
+/*!
+ *  请求短信验证码，需要开启手机短信验证 API 选项。
+ *  发送短信到指定的手机上，获取6位数字验证码。
+ *  @param phoneNumber 11位电话号码
+ *  @param templateName 模板名称，传nil为默认模板
+ *  @param variables 模板中使用的变量
+ *  @param callback 回调结果
+ */
++(void)requestSmsCodeWithPhoneNumber:(NSString *)phoneNumber
+                        templateName:(nullable NSString *)templateName
+                           variables:(nullable NSDictionary *)variables
+                            callback:(AVBooleanResultBlock)callback AV_DEPRECATED("Deprecated in AVOSCloud SDK 4.5.0. Use +[AVSMS requestShortMessageForPhoneNumber:options:callback:] instead.");
+
+/*!
+ * 请求语音短信验证码，需要开启手机短信验证 API 选项
+ * 发送语音短信到指定手机上
+ * @param phoneNumber 11 位电话号码
+ * @param IDD 号码的所在地国家代码，如果传 nil，默认为 "+86"
+ * @param callback 回调结果
+ */
++(void)requestVoiceCodeWithPhoneNumber:(NSString *)phoneNumber
+                                   IDD:(nullable NSString *)IDD
+                              callback:(AVBooleanResultBlock)callback AV_DEPRECATED("Deprecated in AVOSCloud SDK 4.5.0. Use +[AVSMS requestShortMessageForPhoneNumber:options:callback:] instead.");
 
 @end
 

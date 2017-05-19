@@ -123,7 +123,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  开启某个账户的聊天
  @param callback － 聊天开启之后的回调
- @return None.
  */
 - (void)openWithCallback:(AVIMBooleanResultBlock)callback;
 
@@ -138,7 +137,6 @@ NS_ASSUME_NONNULL_BEGIN
 /*!
  结束某个账户的聊天
  @param callback － 聊天关闭之后的回调
- @return None.
  */
 - (void)closeWithCallback:(AVIMBooleanResultBlock)callback;
 
@@ -148,7 +146,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param name - 会话名称。
  @param clientIds - 聊天参与者（发起人除外）的 clientId 列表。
  @param callback － 对话建立之后的回调
- @return None.
  */
 - (void)createConversationWithName:(NSString *)name
                          clientIds:(NSArray *)clientIds
@@ -162,7 +159,6 @@ NS_ASSUME_NONNULL_BEGIN
  @param attributes - 会话的自定义属性。
  @param options － 可选参数，可以使用或 “|” 操作表示多个选项
  @param callback － 对话建立之后的回调
- @return None.
  */
 - (void)createConversationWithName:(NSString *)name
                          clientIds:(NSArray *)clientIds
@@ -190,6 +186,16 @@ NS_ASSUME_NONNULL_BEGIN
  @return 对话查询对象.
  */
 - (AVIMConversationQuery *)conversationQuery;
+
+/*!
+ Query online clients within the given array of clients.
+
+ @note Currently, It only supports to query 20 clients at most.
+
+ @param clients  An array of clients you want to query.
+ @param callback The callback of query.
+ */
+- (void)queryOnlineClientsInClients:(NSArray<NSString *> *)clients callback:(AVIMArrayResultBlock)callback;
 
 @end
 
@@ -281,7 +287,17 @@ NS_ASSUME_NONNULL_BEGIN
  @param conversation 所属会话。
  @param unread 未读消息数量。
  */
-- (void)conversation:(AVIMConversation *)conversation didReceiveUnread:(NSInteger)unread;
+- (void)conversation:(AVIMConversation *)conversation didReceiveUnread:(NSInteger)unread AVIM_DEPRECATED("Deprecated in AVOSCloudIM SDK 4.3.0. Instead, use `-[AVIMClientDelegate conversation:propertyDidUpdate:]` instead.");
+
+/*!
+ Notification for conversation property update.
+ You can use this method to handle the properties that will be updated dynamicly during conversation's lifetime,
+ for example, unread message count, last message and receipt timestamp, etc.
+
+ @param conversation The updated conversation.
+ @param key          The property name of updated conversation.
+ */
+- (void)conversation:(AVIMConversation *)conversation didUpdateForKey:(NSString *)key;
 
 /*!
  客户端下线通知。

@@ -16,7 +16,6 @@
 #import "AVPaasClient.h"
 #import "AVOSCloud_Internal.h"
 #import "LCRouter.h"
-#import "LCKeyValueStore.h"
 #import "SDMacros.h"
 #import <arpa/inet.h>
 
@@ -40,7 +39,6 @@
     @"\n"
 
 static NSTimeInterval AVIMWebSocketDefaultTimeoutInterval = 15.0;
-static NSString *const LCPushRouterCacheKey = @"LCPushRouterCacheKey";
 
 typedef enum : NSUInteger {
     //mutually exclusive
@@ -55,13 +53,9 @@ typedef enum : NSUInteger {
     AVIMURLQueryOptionSortKeys = 16
 } AVIMURLQueryOptions;
 
-NSString *const AVIMProtocolJSON1 = @"lc.json.1";
-NSString *const AVIMProtocolMessagePack1 = @"lc.msgpack.1";
 NSString *const AVIMProtocolPROTOBUF1 = @"lc.protobuf.1";
-
-NSString *const AVIMProtocolJSON2 = @"lc.json.2";
-NSString *const AVIMProtocolMessagePack2 = @"lc.msgpack.2";
 NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
+NSString *const AVIMProtocolPROTOBUF3 = @"lc.protobuf.3";
 
 @interface AVIMCommandCarrier : NSObject
 @property(nonatomic, strong) AVIMGenericCommand *command;
@@ -91,11 +85,9 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
     BOOL _waitingForPong;
     NSMutableDictionary *_commandDictionary;
     NSMutableArray *_serialIdArray;
-    NSMutableArray *_messageIdArray;
 }
 
 @property (nonatomic, assign) BOOL security;
-@property (nonatomic, assign) BOOL isOpening;
 @property (nonatomic, assign) BOOL useSecondary;
 @property (nonatomic, assign) BOOL needRetry;
 @property (nonatomic, strong) LCNetworkReachabilityManager *reachabilityMonitor;
@@ -103,7 +95,6 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
 @property (nonatomic, strong) AVIMWebSocket *webSocket;
 @property (nonatomic, copy)   AVIMBooleanResultBlock openCallback;
 @property (nonatomic, strong) NSMutableDictionary *IPTable;
-@property (nonatomic, copy) NSString *routerPath;
 
 @end
 
@@ -137,11 +128,8 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
 - (id)init {
     self = [super init];
     if (self) {
-        //        _dataQueue = [[NSMutableArray alloc] init];
-        //        _commandQueue = [[NSMutableArray alloc] init];
         _commandDictionary = [[NSMutableDictionary alloc] init];
         _serialIdArray = [[NSMutableArray alloc] init];
-        _messageIdArray = [[NSMutableArray alloc] init];
         _ttl = -1;
         _observerCount = 0;
         _timeout = AVIMWebSocketDefaultTimeoutInterval;
@@ -149,12 +137,7 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
         _lastPongTimestamp = [[NSDate date] timeIntervalSince1970];
         
         _reconnectInterval = 1;
-        _isOpening = NO;
         _needRetry = YES;
-
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(routerDidUpdate:) name:LCRouterDidUpdateNotification object:nil];
-
-        _routerPath = [self absoluteRouterPath:[LCRouter sharedInstance].pushRouterURLString];
         
 #if defined(__IPHONE_OS_VERSION_MIN_REQUIRED)
         // Register for notification when the app shuts down
@@ -180,14 +163,6 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
         [self startNotifyReachability];
     }
     return self;
-}
-
-- (void)routerDidUpdate:(NSNotification *)notification {
-    self.routerPath = [self absoluteRouterPath:[LCRouter sharedInstance].pushRouterURLString];
-}
-
-- (NSString *)absoluteRouterPath:(NSString *)routerHost {
-    return [[[NSURL URLWithString:routerHost] URLByAppendingPathComponent:@"v1/route"] absoluteString];
 }
 
 - (void)startNotifyReachability {
@@ -233,49 +208,26 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
     }
 }
 
-- (void)addMessageId:(NSString *)messageId {
-    if (![_messageIdArray containsObject:messageId]) {
-        [_messageIdArray addObject:messageId];
-    }
-    while (1) {
-        if (_messageIdArray.count > 5) {
-            [_messageIdArray removeObjectAtIndex:0];
-        } else {
-            break;
-        }
-    }
-}
-
-- (BOOL)messageIdExists:(NSString *)messageId {
-    return [_messageIdArray containsObject:messageId];
-}
-
 #pragma mark - process application notification
+
 - (void)applicationDidFinishLaunching:(id)sender {
-    _messageIdArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"AVIMMessageIdArray"] mutableCopy];
+    /* Nothing to do. */
 }
 
 - (void)applicationDidEnterBackground:(id)sender {
     [self closeWebSocketConnectionRetry:NO];
-    [[NSUserDefaults standardUserDefaults] setObject:_messageIdArray forKey:@"AVIMMessageIdArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 - (void)applicationWillEnterForeground:(id)sender {
-    _messageIdArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"AVIMMessageIdArray"] mutableCopy];
-    _reconnectInterval = 1;
-    if (_observerCount > 0) {
-        [self openWebSocketConnection];
-    }
+    /* Nothing to do. */
 }
 
 - (void)applicationWillResignActive:(id)sender {
-    [[NSUserDefaults standardUserDefaults] setObject:_messageIdArray forKey:@"AVIMMessageIdArray"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    /* Nothing to do. */
 }
 
 - (void)applicationDidBecomeActive:(id)sender {
-    _messageIdArray = [[[NSUserDefaults standardUserDefaults] arrayForKey:@"AVIMMessageIdArray"] mutableCopy];
+    [self reopenWebSocketConnection];
 }
 
 - (void)applicationWillTerminate:(id)sender {
@@ -368,17 +320,7 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
 #pragma mark - API to use websocket
 
 - (void)networkDidBecomeReachable {
-    BOOL shouldOpen = YES;
-
-#if TARGET_OS_IOS
-    if (!getenv("LCIM_BACKGROUND_CONNECT_ENABLED") && [UIApplication sharedApplication].applicationState != UIApplicationStateActive)
-        shouldOpen = NO;
-#endif
-
-    if (shouldOpen) {
-        _reconnectInterval = 1;
-        [self openWebSocketConnection];
-    }
+    [self reopenWebSocketConnection];
 }
 
 - (void)networkDidBecomeUnreachable {
@@ -389,6 +331,25 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
     [self openWebSocketConnectionWithCallback:nil];
 }
 
+/**
+ Reopen websocket connection if application state is normal.
+ */
+- (void)reopenWebSocketConnection {
+    BOOL shouldOpen = YES;
+
+#if TARGET_OS_IOS
+    UIApplicationState state = [UIApplication sharedApplication].applicationState;
+
+    if (!getenv("LCIM_BACKGROUND_CONNECT_ENABLED") && state == UIApplicationStateBackground)
+        shouldOpen = NO;
+#endif
+
+    if (shouldOpen) {
+        _reconnectInterval = 1;
+        [self openWebSocketConnection];
+    }
+}
+
 - (void)openWebSocketConnectionWithCallback:(AVIMBooleanResultBlock)callback {
     @weakify(self);
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -396,14 +357,8 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
 
         AVLoggerInfo(AVLoggerDomainIM, @"Open websocket connection.");
         self.openCallback = callback;
-
-        if (self.isOpening) {
-            AVLoggerError(AVLoggerDomainIM, @"Return because websocket is opening.");
-            return;
-        }
         
         self.needRetry = YES;
-        self.isOpening = YES;
         [self.reconnectTimer invalidate];
         
         if (!(self.webSocket && (self.webSocket.readyState == AVIM_OPEN || self.webSocket.readyState == AVIM_CONNECTING))) {
@@ -411,49 +366,27 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
                 [[NSNotificationCenter defaultCenter] postNotificationName:AVIM_NOTIFICATION_WEBSOCKET_RECONNECT object:self userInfo:nil];
             }
 
-            NSDictionary *cachedRouterInformation = [self cachedRouterInformation];
+            LCRouter *router = [LCRouter sharedInstance];
+            NSDictionary *RTMServerTable = [router cachedRTMServerTable];
 
-            if (cachedRouterInformation) {
-                [self openConnectionForRouterInformation:cachedRouterInformation];
+            if (RTMServerTable) {
+                [self openConnectionForRTMServerTable:RTMServerTable];
                 return;
             }
 
             NSString *appId = [AVOSCloud getApplicationId];
 
             if (!appId) {
-                @throw [NSException exceptionWithName:@"AVOSCloudIM Exception" reason:@"Application id is nil." userInfo:nil];
+                @throw [NSException exceptionWithName:@"AVOSCloudIM Exception" reason:@"Application ID not found." userInfo:nil];
             }
 
-            NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
-
-            parameters[@"appId"] = appId;
-
-            /*
-             * iOS SDK *must* use IP address to access IM server to prevent DNS hijacking.
-             * And IM server *must* issue the pinned certificate.
-             */
-            parameters[@"ip"] = @"true";
-
-            if (self.security) {
-                parameters[@"secure"] = @"1";
-            }
-
-            /* Back door for user to connect to puppet environment. */
-            if (getenv("LC_IM_PUPPET_ENABLED") && getenv("SIMULATOR_UDID")) {
-                parameters[@"debug"] = @"true";
-            }
-
-            [[AVPaasClient sharedInstance] getObject:self.routerPath withParameters:parameters block:^(id object, NSError *error) {
+            [[LCRouter sharedInstance] fetchRTMServerTableInBackground:^(NSDictionary *object, NSError *error) {
                 NSInteger code = error.code;
 
                 if (object && !error) { /* Everything is OK. */
                     self.useSecondary = NO;
-                    [self openConnectionForRouterInformation:object];
-                    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                        [self cacheRouterInformationIfPossible:object];
-                    });
+                    [self openConnectionForRTMServerTable:object];
                 } else if (code == 404) { /* 404, stop reconnection. */
-                    self.isOpening = NO;
                     NSError *httpError = [AVIMErrorUtil errorWithCode:code reason:[NSHTTPURLResponse localizedStringForStatusCode:code]];
                     if (self.openCallback) {
                         [AVIMBlockHelper callBooleanResultBlock:self.openCallback error:httpError];
@@ -462,7 +395,6 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
                         [[NSNotificationCenter defaultCenter] postNotificationName:AVIM_NOTIFICATION_WEBSOCKET_CLOSED object:self userInfo:@{@"error": error}];
                     }
                 } else if ((!object && !error) || code >= 400 || error) { /* Something error, try to reconnect. */
-                    self.isOpening = NO;
                     if (!error) {
                         if (code >= 404) {
                             error = [AVIMErrorUtil errorWithCode:code reason:[NSHTTPURLResponse localizedStringForStatusCode:code]];
@@ -483,15 +415,15 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
 }
 
 /**
- Open connection for router information.
+ Open connection for RTM server table.
 
- It will choose a RTM server from router infomation firstly,
+ It will choose a RTM server from RTM server table firstly,
  then, create connection to that server.
 
  If RTM server not found, it will retry from scratch.
  */
-- (void)openConnectionForRouterInformation:(NSDictionary *)routerInformation {
-    NSString *server = [self chooseServerFromRouterInformation:routerInformation];
+- (void)openConnectionForRTMServerTable:(NSDictionary *)RTMServerTable {
+    NSString *server = [self chooseServerFromRTMServerTable:RTMServerTable];
 
     if (server) {
         [self internalOpenWebSocketConnection:server];
@@ -502,17 +434,17 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
 }
 
 /**
- Choose a RTM server from router information.
- Router information may contain both primary server and secondary server.
+ Choose a RTM server from RTM server table.
+ RTM server table may contain both primary server and secondary server.
 
  If `_useSecondary` is true, it will choose secondary server preferentially.
  Otherwise, it will choose primary server preferentially.
  */
-- (NSString *)chooseServerFromRouterInformation:(NSDictionary *)routerInformation {
+- (NSString *)chooseServerFromRTMServerTable:(NSDictionary *)RTMServerTable {
     NSString *server = nil;
 
-    NSString *primary   = routerInformation[@"server"];
-    NSString *secondary = routerInformation[@"secondary"];
+    NSString *primary   = RTMServerTable[@"server"];
+    NSString *secondary = RTMServerTable[@"secondary"];
 
     if (_useSecondary)
         server = secondary ?: primary;
@@ -520,91 +452,6 @@ NSString *const AVIMProtocolPROTOBUF2 = @"lc.protobuf.2";
         server = primary ?: secondary;
 
     return server;
-}
-
-/**
- Cache router infomation if possible. It will cache two things:
-     1. Push router
-     2. Response of push router
-
- Currently, SDK will not cache the router information if `ttl` is not given by server.
- */
-- (void)cacheRouterInformationIfPossible:(NSDictionary *)routerInformation {
-    NSTimeInterval TTL = [routerInformation[@"ttl"] doubleValue];
-
-    if (TTL <= 0)
-        return;
-
-    [self cachePushRouter:routerInformation TTL:TTL];
-    [self cacheRouterInformation:routerInformation TTL:TTL];
-}
-
-- (void)cachePushRouter:(NSDictionary *)routerInformation TTL:(NSTimeInterval)TTL {
-    NSString *routerUrl = routerInformation[@"groupUrl"];
-    NSString *routerHost = [[NSURL URLWithString:routerUrl] host];
-
-    if (!routerHost) {
-        AVLoggerInfo(AVLoggerDomainIM, @"Push router not found, nothing to cache.");
-        return;
-    }
-
-    NSTimeInterval lastModified = [[NSDate date] timeIntervalSince1970];
-
-    [[LCRouter sharedInstance] cachePushRouterHostWithHost:routerHost lastModified:lastModified TTL:TTL];
-}
-
-- (void)cacheRouterInformation:(NSDictionary *)routerInformation TTL:(NSTimeInterval)TTL {
-    NSDictionary *cacheItem = @{
-        @"ttl": @(TTL),
-        @"lastModified": @([[NSDate date] timeIntervalSince1970]),
-        @"router": routerInformation
-    };
-
-    NSError *error = nil;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:cacheItem options:0 error:&error];
-
-    if (error || !data) {
-        AVLoggerError(AVLoggerDomainIM, @"Cannot serialize push router information, error: %@", error);
-        return;
-    }
-
-    [[LCKeyValueStore sharedInstance] setData:data forKey:LCPushRouterCacheKey];
-}
-
-- (NSDictionary *)cachedRouterInformation {
-    NSData *data = [[LCKeyValueStore sharedInstance] dataForKey:LCPushRouterCacheKey];
-
-    if (!data)
-        return nil;
-
-    /* If connect has failed  3 times (2^3) continuously, we assume that the router information is expired. */
-    if (_reconnectInterval >= 8) {
-        [self clearRouterInformationCache];
-        return nil;
-    }
-
-    NSError *error = nil;
-    NSDictionary *cacheItem = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-
-    if (error || !cacheItem) {
-        [self clearRouterInformationCache];
-        return nil;
-    }
-
-    NSTimeInterval TTL = [cacheItem[@"ttl"] doubleValue];
-    NSTimeInterval lastModified = [cacheItem[@"lastModified"] doubleValue];
-    NSTimeInterval now = [[NSDate date] timeIntervalSince1970];
-
-    if (now < lastModified || now >= lastModified + TTL) {
-        [self clearRouterInformationCache];
-        return nil;
-    }
-
-    return cacheItem[@"router"];
-}
-
-- (void)clearRouterInformationCache {
-    [[LCKeyValueStore sharedInstance] deleteKey:LCPushRouterCacheKey];
 }
 
 SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
@@ -626,7 +473,7 @@ SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
     NSDictionary *userOptions = [AVIMClient userOptions];
 
     if ([userOptions[AVIMUserOptionUseUnread] boolValue]) {
-        [protocols addObject:AVIMProtocolPROTOBUF2];
+        [protocols addObject:AVIMProtocolPROTOBUF3];
     } else {
         [protocols addObject:AVIMProtocolPROTOBUF1];
     }
@@ -656,7 +503,6 @@ SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
 - (void)closeWebSocketConnection {
     AVLoggerInfo(AVLoggerDomainIM, @"Close websocket connection.");
     [_pingTimer invalidate];
-    _isOpening = NO;
     [_webSocket close];
     [[NSNotificationCenter defaultCenter] postNotificationName:AVIM_NOTIFICATION_WEBSOCKET_CLOSED object:self userInfo:nil];
     _isClosed = YES;
@@ -666,7 +512,6 @@ SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
     AVLoggerInfo(AVLoggerDomainIM, @"Close websocket connection.");
     [_pingTimer invalidate];
     _needRetry = retry;
-    _isOpening = NO;
     [_webSocket close];
     [[NSNotificationCenter defaultCenter] postNotificationName:AVIM_NOTIFICATION_WEBSOCKET_CLOSED object:self userInfo:nil];
     _isClosed = YES;
@@ -802,7 +647,6 @@ SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
 #pragma mark - SRWebSocketDelegate
 - (void)webSocketDidOpen:(AVIMWebSocket *)webSocket {
     AVLoggerInfo(AVLoggerDomainIM, @"Websocket connection opened.");
-    _isOpening = NO;
     
     [[NSNotificationCenter defaultCenter] postNotificationName:AVIM_NOTIFICATION_WEBSOCKET_OPENED object:self userInfo:nil];
     
@@ -874,7 +718,6 @@ SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
 
 - (void)webSocket:(AVIMWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean {
     AVLoggerDebug(AVLoggerDomainIM, @"Websocket closed with code:%ld, reason:%@.", (long)code, reason);
-    _isOpening = NO;
     
     NSError *error = [AVIMErrorUtil errorWithCode:code reason:reason];
     for (NSNumber *num in _serialIdArray) {
@@ -900,7 +743,6 @@ SecCertificateRef LCGetCertificateFromBase64String(NSString *base64);
 - (void)forwardError:(NSError *)error forWebSocket:(AVIMWebSocket *)webSocket {
     AVLoggerError(AVLoggerDomainIM, @"Websocket open failed with error:%@.", error);
 
-    _isOpening = NO;
     _useSecondary = YES;
 
     for (NSNumber *num in _serialIdArray) {

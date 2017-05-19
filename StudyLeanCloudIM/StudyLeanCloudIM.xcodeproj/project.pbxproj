@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		217AD0181ECE9B7D00785CF0 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217AD0161ECE9B7D00785CF0 /* LoginViewController.swift */; };
+		217AD0191ECE9B7D00785CF0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217AD0171ECE9B7D00785CF0 /* LoginViewController.xib */; };
 		21CE7FD51ECE8C6C00FB7F7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE7FD41ECE8C6C00FB7F7C /* AppDelegate.swift */; };
 		21CE7FD71ECE8C6C00FB7F7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21CE7FD61ECE8C6C00FB7F7C /* ViewController.swift */; };
 		21CE7FDA1ECE8C6C00FB7F7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21CE7FD81ECE8C6C00FB7F7C /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		217AD0161ECE9B7D00785CF0 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		217AD0171ECE9B7D00785CF0 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		21CE7FD11ECE8C6C00FB7F7C /* StudyLeanCloudIM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudyLeanCloudIM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21CE7FD41ECE8C6C00FB7F7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21CE7FD61ECE8C6C00FB7F7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +75,8 @@
 			children = (
 				21CE7FD41ECE8C6C00FB7F7C /* AppDelegate.swift */,
 				21CE7FD61ECE8C6C00FB7F7C /* ViewController.swift */,
+				217AD0161ECE9B7D00785CF0 /* LoginViewController.swift */,
+				217AD0171ECE9B7D00785CF0 /* LoginViewController.xib */,
 				21CE7FD81ECE8C6C00FB7F7C /* Main.storyboard */,
 				21CE7FDB1ECE8C6C00FB7F7C /* Assets.xcassets */,
 				21CE7FDD1ECE8C6C00FB7F7C /* LaunchScreen.storyboard */,
@@ -123,6 +129,7 @@
 				TargetAttributes = {
 					21CE7FD01ECE8C6C00FB7F7C = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = CSR7UB94J4;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,6 +157,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217AD0191ECE9B7D00785CF0 /* LoginViewController.xib in Resources */,
 				21CE7FDF1ECE8C6C00FB7F7C /* LaunchScreen.storyboard in Resources */,
 				21CE7FDC1ECE8C6C00FB7F7C /* Assets.xcassets in Resources */,
 				21CE7FDA1ECE8C6C00FB7F7C /* Main.storyboard in Resources */,
@@ -211,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				217AD0181ECE9B7D00785CF0 /* LoginViewController.swift in Sources */,
 				21CE7FD71ECE8C6C00FB7F7C /* ViewController.swift in Sources */,
 				21CE7FD51ECE8C6C00FB7F7C /* AppDelegate.swift in Sources */,
 			);
@@ -336,7 +345,9 @@
 			baseConfigurationReference = ED2AE383C2BC40D33C0C9260 /* Pods-StudyLeanCloudIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CSR7UB94J4;
 				INFOPLIST_FILE = StudyLeanCloudIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.StudyLeanCloudIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -349,7 +360,9 @@
 			baseConfigurationReference = D80DC2A5AC89FC11C7C8E21E /* Pods-StudyLeanCloudIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CSR7UB94J4;
 				INFOPLIST_FILE = StudyLeanCloudIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.StudyLeanCloudIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -376,6 +389,7 @@
 				21CE7FE51ECE8C6C00FB7F7C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
