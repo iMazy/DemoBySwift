@@ -1,0 +1,6 @@
+framework module ChatKit {
+  umbrella header "ChatKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

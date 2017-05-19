@@ -1,0 +1,11 @@
+CONFIGURATION_BUILD_DIR = $PODS_CONFIGURATION_BUILD_DIR/ChatKit
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/ChatKit/ChatKit/Class/Tool/Vendor/VoiceLib" "$PODS_CONFIGURATION_BUILD_DIR/AVOSCloud" "$PODS_CONFIGURATION_BUILD_DIR/AVOSCloudIM" "$PODS_CONFIGURATION_BUILD_DIR/CYLDeallocBlockExecutor" "$PODS_CONFIGURATION_BUILD_DIR/DACircularProgress" "$PODS_CONFIGURATION_BUILD_DIR/FDStackView" "$PODS_CONFIGURATION_BUILD_DIR/FMDB" "$PODS_CONFIGURATION_BUILD_DIR/MBProgressHUD" "$PODS_CONFIGURATION_BUILD_DIR/MJRefresh" "$PODS_CONFIGURATION_BUILD_DIR/MLLabel" "$PODS_CONFIGURATION_BUILD_DIR/MWPhotoBrowser" "$PODS_CONFIGURATION_BUILD_DIR/Masonry" "$PODS_CONFIGURATION_BUILD_DIR/SDWebImage" "$PODS_CONFIGURATION_BUILD_DIR/UITableView+FDTemplateLayoutCell" "$PODS_CONFIGURATION_BUILD_DIR/pop"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Public"
+OTHER_LDFLAGS = -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreGraphics" -framework "CoreLocation" -framework "CoreMedia" -framework "CoreTelephony" -framework "CoreText" -framework "Foundation" -framework "ImageIO" -framework "MapKit" -framework "MediaPlayer" -framework "MobileCoreServices" -framework "QuartzCore" -framework "Security" -framework "SystemConfiguration" -framework "UIKit" -framework "lame"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/ChatKit
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES

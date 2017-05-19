@@ -1,0 +1,6 @@
+framework module CYLDeallocBlockExecutor {
+  umbrella header "CYLDeallocBlockExecutor-umbrella.h"
+
+  export *
+  module * { export * }
+}
