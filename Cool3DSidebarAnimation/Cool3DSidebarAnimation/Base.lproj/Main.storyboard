@@ -170,6 +170,10 @@
                             <constraint firstItem="Ow8-DN-aQc" firstAttribute="top" secondItem="nyO-Kq-Rqy" secondAttribute="bottom" id="wHP-U4-pAt"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuContainerView" destination="Xof-vx-lJK" id="kiL-8z-kPO"/>
+                        <outlet property="scrollView" destination="nyO-Kq-Rqy" id="LxT-pe-64O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpG-IA-Tua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

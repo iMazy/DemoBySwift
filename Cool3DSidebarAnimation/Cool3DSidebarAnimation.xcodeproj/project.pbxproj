@@ -17,6 +17,7 @@
 		21BCEB081ECEF51A0006FDDE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCEB071ECEF51A0006FDDE /* DetailViewController.swift */; };
 		21BCEB0A1ECEF5400006FDDE /* UIKitExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCEB091ECEF5400006FDDE /* UIKitExtension.swift */; };
 		21BCEB0C1ECEF6D70006FDDE /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCEB0B1ECEF6D70006FDDE /* MenuItemCell.swift */; };
+		64204A721ED18EC9004E7938 /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64204A711ED18EC9004E7938 /* HamburgerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		21BCEB071ECEF51A0006FDDE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		21BCEB091ECEF5400006FDDE /* UIKitExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtension.swift; sourceTree = "<group>"; };
 		21BCEB0B1ECEF6D70006FDDE /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
+		64204A711ED18EC9004E7938 /* HamburgerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				21BCEB051ECEF50C0006FDDE /* MenuViewController.swift */,
 				21BCEB071ECEF51A0006FDDE /* DetailViewController.swift */,
 				21BCEB0B1ECEF6D70006FDDE /* MenuItemCell.swift */,
+				64204A711ED18EC9004E7938 /* HamburgerView.swift */,
 				21BCEB091ECEF5400006FDDE /* UIKitExtension.swift */,
 				21BCEAF51ECEF43B0006FDDE /* Main.storyboard */,
 				21BCEB031ECEF48D0006FDDE /* MenuItems.plist */,
@@ -156,6 +159,7 @@
 				21BCEB061ECEF50C0006FDDE /* MenuViewController.swift in Sources */,
 				21BCEAF21ECEF43B0006FDDE /* AppDelegate.swift in Sources */,
 				21BCEB0C1ECEF6D70006FDDE /* MenuItemCell.swift in Sources */,
+				64204A721ED18EC9004E7938 /* HamburgerView.swift in Sources */,
 				21BCEB0A1ECEF5400006FDDE /* UIKitExtension.swift in Sources */,
 				21BCEB081ECEF51A0006FDDE /* DetailViewController.swift in Sources */,
 			);
