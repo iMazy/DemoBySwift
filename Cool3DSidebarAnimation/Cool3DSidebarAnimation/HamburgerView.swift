@@ -27,5 +27,10 @@ class HamburgerView: UIView {
         imageView.contentMode = .center
         addSubview(imageView)
     }
+    
+    func rotate(fraction: CGFloat) {
+        let angle = Double(fraction) * M_PI_2
+        imageView.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+    }
 
 }
