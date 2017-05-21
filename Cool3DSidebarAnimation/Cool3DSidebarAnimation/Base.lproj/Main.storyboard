@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="80" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="80" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BDG-5x-2vy">
-                                <rect key="frame" x="0.0" y="64" width="80" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="menuItemCell" rowHeight="82" id="ehf-d5-Rmq" customClass="MenuItemCell" customModule="Cool3DSidebarAnimation" customModuleProvider="target">
@@ -80,11 +80,11 @@
                         <viewControllerLayoutGuide type="bottom" id="WjK-cK-SUP"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ffc-XL-eui">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h3i-v7-dmn">
-                                <rect key="frame" x="27.5" y="173.5" width="320" height="320"/>
+                                <rect key="frame" x="27.5" y="141.5" width="320" height="320"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="320" id="AeN-d7-UeY"/>
                                     <constraint firstAttribute="width" constant="320" id="hRL-Fp-Myl"/>
@@ -180,7 +180,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XjN-mK-XMB" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="rF7-qN-7Ht">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="rF7-qN-7Ht">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -199,7 +199,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Eig-8S-Bnq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="rXd-Db-VL1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="rXd-Db-VL1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

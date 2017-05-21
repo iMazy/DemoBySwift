@@ -21,7 +21,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Remove the drop shadow from the navigation bar
-//        navigationController!.navigationBar.clipsToBounds = true
+//        navigationController!.navigationBar.clipsToBounds = false
         
         tableView.rowHeight = tableView.bounds.height/CGFloat(menuItems.count)
         
