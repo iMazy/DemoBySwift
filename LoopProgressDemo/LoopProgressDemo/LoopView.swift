@@ -9,7 +9,7 @@
 import UIKit
 import pop
 
-class BlueView: UIView {
+class LoopView: UIView {
 
     private lazy var colorLayer = CAShapeLayer()
     private lazy var colorMaskLayer = CAShapeLayer()
@@ -18,8 +18,11 @@ class BlueView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        // 添加背景图遮挡图层
+        setupBackMaskLayer()
+        // 设置渐变色图层
         setupColorLayer()
-        setupBlueMaskLayer()
+        // 给渐变色图层添加遮挡图层
         setupColorMaskLayer()
     }
     
@@ -89,7 +92,7 @@ class BlueView: UIView {
     
     
     /// 设置蓝色背景图遮挡视图
-    fileprivate func setupBlueMaskLayer() {
+    fileprivate func setupBackMaskLayer() {
         let blueMaskLayer = generateMaskLayer()
         
         self.layer.mask = blueMaskLayer

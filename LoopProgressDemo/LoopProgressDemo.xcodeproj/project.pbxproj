@@ -12,7 +12,7 @@
 		2179381B1ED2B334007DBE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 217938191ED2B334007DBE43 /* Main.storyboard */; };
 		2179381D1ED2B334007DBE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2179381C1ED2B334007DBE43 /* Assets.xcassets */; };
 		217938201ED2B334007DBE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2179381E1ED2B334007DBE43 /* LaunchScreen.storyboard */; };
-		217938281ED2B4BF007DBE43 /* BlueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217938271ED2B4BF007DBE43 /* BlueView.swift */; };
+		217938281ED2B4BF007DBE43 /* LoopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217938271ED2B4BF007DBE43 /* LoopView.swift */; };
 		E6EDAE38444CD309E5774F70 /* Pods_LoopProgressDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10BC02CC8B1270493D884384 /* Pods_LoopProgressDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,7 +25,7 @@
 		2179381C1ED2B334007DBE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2179381F1ED2B334007DBE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		217938211ED2B334007DBE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		217938271ED2B4BF007DBE43 /* BlueView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlueView.swift; sourceTree = "<group>"; };
+		217938271ED2B4BF007DBE43 /* LoopView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoopView.swift; sourceTree = "<group>"; };
 		706D88513BDC48B209F53224 /* Pods-LoopProgressDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopProgressDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LoopProgressDemo/Pods-LoopProgressDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		DEEC0F984DD870DF05E15F4D /* Pods-LoopProgressDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LoopProgressDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-LoopProgressDemo/Pods-LoopProgressDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +73,7 @@
 			children = (
 				217938151ED2B334007DBE43 /* AppDelegate.swift */,
 				217938171ED2B334007DBE43 /* ViewController.swift */,
-				217938271ED2B4BF007DBE43 /* BlueView.swift */,
+				217938271ED2B4BF007DBE43 /* LoopView.swift */,
 				217938191ED2B334007DBE43 /* Main.storyboard */,
 				2179381C1ED2B334007DBE43 /* Assets.xcassets */,
 				2179381E1ED2B334007DBE43 /* LaunchScreen.storyboard */,
@@ -215,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				217938181ED2B334007DBE43 /* ViewController.swift in Sources */,
-				217938281ED2B4BF007DBE43 /* BlueView.swift in Sources */,
+				217938281ED2B4BF007DBE43 /* LoopView.swift in Sources */,
 				217938161ED2B334007DBE43 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,6 +380,7 @@
 				217938261ED2B334007DBE43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
