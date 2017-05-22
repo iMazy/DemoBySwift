@@ -29,7 +29,7 @@ class ViewController: UIViewController {
 
     func changeMaskValue(slider: UISlider) {
         
-        self.blueView?.colorMaskLayer.strokeEnd = CGFloat(slider.value)
+        self.blueView?.animationWithStrokeEnd(strokeEnd: CGFloat(slider.value))
     }
    
 }

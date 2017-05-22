@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import pop
 
 class BlueView: UIView {
 
-    lazy var colorLayer = CAShapeLayer()
-    lazy var colorMaskLayer = CAShapeLayer()
-    lazy var blueMaskLayer = CAShapeLayer()
+    private lazy var colorLayer = CAShapeLayer()
+    private lazy var colorMaskLayer = CAShapeLayer()
+    private lazy var blueMaskLayer = CAShapeLayer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -27,7 +28,7 @@ class BlueView: UIView {
     }
     
     /// 设置颜色图层
-    func setupColorLayer() {
+    fileprivate func setupColorLayer() {
         colorLayer.frame = bounds
         layer.addSublayer(colorLayer)
         
@@ -50,7 +51,7 @@ class BlueView: UIView {
     }
     
     /// 设置遮挡图层
-    func generateMaskLayer() -> CAShapeLayer {
+    fileprivate func generateMaskLayer() -> CAShapeLayer {
         let maskLayer = CAShapeLayer()
         maskLayer.frame = bounds
         // 创建一个圆心是父视图中点的圆,半径是父视图宽的2/5,起始角度是 -240 到 60
@@ -65,9 +66,10 @@ class BlueView: UIView {
     }
     
     
-    func setupColorMaskLayer() {
+    /// 设置颜色遮挡图层
+    fileprivate func setupColorMaskLayer() {
         let colorMaskLayer = generateMaskLayer()
-        colorMaskLayer.lineWidth = 20.5 // 渐变遮罩线宽较大，防止蓝色遮罩有边露出来
+        colorMaskLayer.lineWidth = 20 // 渐变遮罩线宽较大，防止蓝色遮罩有边露出来
         colorLayer.mask = colorMaskLayer
         
         self.colorMaskLayer = colorMaskLayer
@@ -76,9 +78,18 @@ class BlueView: UIView {
         
     }
     
+    /// 回弹动画
+    func animationWithStrokeEnd(strokeEnd: CGFloat) {
+        let strokeAnimation = POPSpringAnimation(propertyNamed: kPOPShapeLayerStrokeEnd)
+        strokeAnimation?.toValue = strokeEnd
+        strokeAnimation?.springBounciness = 12.0
+        strokeAnimation?.removedOnCompletion = false
+        self.colorMaskLayer.pop_add(strokeAnimation, forKey: "layerStrokeAnimation")
+    }
+    
     
     /// 设置蓝色背景图遮挡视图
-    func setupBlueMaskLayer() {
+    fileprivate func setupBlueMaskLayer() {
         let blueMaskLayer = generateMaskLayer()
         
         self.layer.mask = blueMaskLayer
