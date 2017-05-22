@@ -83,6 +83,7 @@ class LoopView: UIView {
     
     /// 回弹动画
     func animationWithStrokeEnd(strokeEnd: CGFloat) {
+        // pop stroke 属性动画
         let strokeAnimation = POPSpringAnimation(propertyNamed: kPOPShapeLayerStrokeEnd)
         strokeAnimation?.toValue = strokeEnd
         strokeAnimation?.springBounciness = 12.0
@@ -93,6 +94,7 @@ class LoopView: UIView {
     
     /// 设置蓝色背景图遮挡视图
     fileprivate func setupBackMaskLayer() {
+        
         let blueMaskLayer = generateMaskLayer()
         
         self.layer.mask = blueMaskLayer
