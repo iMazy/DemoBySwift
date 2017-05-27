@@ -15,6 +15,8 @@
 		21EC3F701ED916C900217D0D /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F6F1ED916C900217D0D /* CustomViewController.swift */; };
 		21EC3F721ED919D800217D0D /* VisualEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F711ED919D800217D0D /* VisualEffectViewController.swift */; };
 		21EC3F741ED9205400217D0D /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */; };
+		21EC3F761ED929E500217D0D /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F751ED929E500217D0D /* Math.swift */; };
+		21EC3F781ED92DA100217D0D /* MoreInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F771ED92DA100217D0D /* MoreInfoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		21EC3F6F1ED916C900217D0D /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		21EC3F711ED919D800217D0D /* VisualEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectViewController.swift; sourceTree = "<group>"; };
 		21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
+		21EC3F751ED929E500217D0D /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		21EC3F771ED92DA100217D0D /* MoreInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoreInfoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,8 +69,10 @@
 				21EC3F6F1ED916C900217D0D /* CustomViewController.swift */,
 				21EC3F711ED919D800217D0D /* VisualEffectViewController.swift */,
 				21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */,
+				21EC3F771ED92DA100217D0D /* MoreInfoView.swift */,
 				21EC3F611ED915D000217D0D /* Main.storyboard */,
 				21EC3F641ED915D000217D0D /* Assets.xcassets */,
+				21EC3F751ED929E500217D0D /* Math.swift */,
 				21EC3F661ED915D000217D0D /* LaunchScreen.storyboard */,
 				21EC3F691ED915D000217D0D /* Info.plist */,
 			);
@@ -149,7 +155,9 @@
 				21EC3F701ED916C900217D0D /* CustomViewController.swift in Sources */,
 				21EC3F601ED915D000217D0D /* ViewController.swift in Sources */,
 				21EC3F721ED919D800217D0D /* VisualEffectViewController.swift in Sources */,
+				21EC3F781ED92DA100217D0D /* MoreInfoView.swift in Sources */,
 				21EC3F5E1ED915D000217D0D /* AppDelegate.swift in Sources */,
+				21EC3F761ED929E500217D0D /* Math.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
