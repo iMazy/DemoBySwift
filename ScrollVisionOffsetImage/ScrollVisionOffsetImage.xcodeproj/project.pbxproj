@@ -12,6 +12,9 @@
 		21EC3F631ED915D000217D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EC3F611ED915D000217D0D /* Main.storyboard */; };
 		21EC3F651ED915D000217D0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21EC3F641ED915D000217D0D /* Assets.xcassets */; };
 		21EC3F681ED915D000217D0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EC3F661ED915D000217D0D /* LaunchScreen.storyboard */; };
+		21EC3F701ED916C900217D0D /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F6F1ED916C900217D0D /* CustomViewController.swift */; };
+		21EC3F721ED919D800217D0D /* VisualEffectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F711ED919D800217D0D /* VisualEffectViewController.swift */; };
+		21EC3F741ED9205400217D0D /* ScrollImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		21EC3F641ED915D000217D0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21EC3F671ED915D000217D0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21EC3F691ED915D000217D0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21EC3F6F1ED916C900217D0D /* CustomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
+		21EC3F711ED919D800217D0D /* VisualEffectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisualEffectViewController.swift; sourceTree = "<group>"; };
+		21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				21EC3F5D1ED915D000217D0D /* AppDelegate.swift */,
 				21EC3F5F1ED915D000217D0D /* ViewController.swift */,
+				21EC3F6F1ED916C900217D0D /* CustomViewController.swift */,
+				21EC3F711ED919D800217D0D /* VisualEffectViewController.swift */,
+				21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */,
 				21EC3F611ED915D000217D0D /* Main.storyboard */,
 				21EC3F641ED915D000217D0D /* Assets.xcassets */,
 				21EC3F661ED915D000217D0D /* LaunchScreen.storyboard */,
@@ -136,7 +145,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21EC3F741ED9205400217D0D /* ScrollImageViewController.swift in Sources */,
+				21EC3F701ED916C900217D0D /* CustomViewController.swift in Sources */,
 				21EC3F601ED915D000217D0D /* ViewController.swift in Sources */,
+				21EC3F721ED919D800217D0D /* VisualEffectViewController.swift in Sources */,
 				21EC3F5E1ED915D000217D0D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
