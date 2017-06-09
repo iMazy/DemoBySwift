@@ -39,7 +39,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="122" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-kn-pc8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-kn-pc8">
                                                     <rect key="frame" x="0.0" y="0.0" width="122" height="122"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="dIG-kn-pc8" secondAttribute="height" id="sBt-wf-GVn"/>
