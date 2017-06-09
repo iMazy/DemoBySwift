@@ -10,7 +10,6 @@ import UIKit
 
 class ScrollImageViewController: VisualEffectViewController {
     
-    let viewTag: Int = 1000
     var pictures: [UIImage] = [UIImage]()
     var pictureViews: [MoreInfoView] = [MoreInfoView]()
     var contentView: UIView!
