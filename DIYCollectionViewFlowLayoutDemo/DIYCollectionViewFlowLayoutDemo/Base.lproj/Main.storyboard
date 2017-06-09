@@ -25,7 +25,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jgL-xr-Y3P">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iMZ-6H-V0E">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="iMZ-6H-V0E" customClass="CollectionViewFlowLayout" customModule="DIYCollectionViewFlowLayoutDemo" customModuleProvider="target">
                                     <size key="itemSize" width="122" height="158"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -60,8 +60,15 @@
                                             <constraint firstItem="dIG-kn-pc8" firstAttribute="leading" secondItem="0BK-q8-MEI" secondAttribute="leading" id="XO7-1b-Eql"/>
                                             <constraint firstAttribute="trailing" secondItem="dIG-kn-pc8" secondAttribute="trailing" id="a4J-6u-yIh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="iconImageView" destination="dIG-kn-pc8" id="VdC-hy-G1U"/>
+                                            <outlet property="nameLabel" destination="aVs-MO-Eg9" id="0Es-CF-n3J"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="r07-nz-wI6"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
