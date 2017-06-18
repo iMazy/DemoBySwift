@@ -12,6 +12,8 @@ import LocalAuthentication
 
 class ViewController: UIViewController {
 
+    var password: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,9 +38,12 @@ class ViewController: UIViewController {
                     // want to deal with UI code here
                     DispatchQueue.main.async {
                         // 刷新UI
+                        let mainTabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBar")
+                        UIApplication.shared.keyWindow?.rootViewController = mainTabBarVC
                     }
                 } else {
                     if let error = error {
+                        self.loginWithPassword()
                         self.reportTouchIDError(error: error as NSError)
                     }
                 }
@@ -72,6 +77,38 @@ class ViewController: UIViewController {
         }
     }
 
+    
+    func loginWithPassword() {
+        let alertVC = UIAlertController(title: "请输入密码", message: "", preferredStyle: .alert)
+        alertVC.addTextField { (textField) in
+            textField.delegate = self
+            textField.placeholder = "请输入密码"
+        }
+        let cancel = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        let sure = UIAlertAction(title: "确定", style: .default) { (_) in
+            
+            if self.password == "abc" {
+                DispatchQueue.main.async {
+                    // 刷新UI
+                    let mainTabBarVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "mainTabBar")
+                    UIApplication.shared.keyWindow?.rootViewController = mainTabBarVC
+                }
+            }
+            
+        }
+        alertVC.addAction(cancel)
+        alertVC.addAction(sure)
+        self.present(alertVC, animated: true, completion: nil)
+    }
 
+    func password(textField: UITextField) {
+        print(textField.text ?? "000")
+    }
+}
+
+extension ViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        password = textField.text
+    }
 }
 
