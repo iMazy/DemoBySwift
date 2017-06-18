@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2179382C1ED2DA82007DBE43 /* cool3DSidebarAaimation3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2179382B1ED2DA82007DBE43 /* cool3DSidebarAaimation3.gif */; };
 		21BCEAF21ECEF43B0006FDDE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCEAF11ECEF43B0006FDDE /* AppDelegate.swift */; };
 		21BCEAF41ECEF43B0006FDDE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21BCEAF31ECEF43B0006FDDE /* ViewController.swift */; };
 		21BCEAF71ECEF43B0006FDDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21BCEAF51ECEF43B0006FDDE /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2179382B1ED2DA82007DBE43 /* cool3DSidebarAaimation3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = cool3DSidebarAaimation3.gif; sourceTree = "<group>"; };
 		21BCEAEE1ECEF43B0006FDDE /* Cool3DSidebarAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cool3DSidebarAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21BCEAF11ECEF43B0006FDDE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21BCEAF31ECEF43B0006FDDE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				64204A711ED18EC9004E7938 /* HamburgerView.swift */,
 				21BCEB091ECEF5400006FDDE /* UIKitExtension.swift */,
 				21BCEAF51ECEF43B0006FDDE /* Main.storyboard */,
+				2179382B1ED2DA82007DBE43 /* cool3DSidebarAaimation3.gif */,
 				21BCEB031ECEF48D0006FDDE /* MenuItems.plist */,
 				21BCEAF81ECEF43B0006FDDE /* Assets.xcassets */,
 				21BCEAFA1ECEF43B0006FDDE /* LaunchScreen.storyboard */,
@@ -143,6 +146,7 @@
 			files = (
 				21BCEB041ECEF48D0006FDDE /* MenuItems.plist in Resources */,
 				21BCEAFC1ECEF43B0006FDDE /* LaunchScreen.storyboard in Resources */,
+				2179382C1ED2DA82007DBE43 /* cool3DSidebarAaimation3.gif in Resources */,
 				21BCEAF91ECEF43B0006FDDE /* Assets.xcassets in Resources */,
 				21BCEAF71ECEF43B0006FDDE /* Main.storyboard in Resources */,
 			);
