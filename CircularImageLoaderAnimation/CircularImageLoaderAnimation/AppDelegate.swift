@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  TableViewOpenContextMenu
+//  CircularImageLoaderAnimation
 //
-//  Created by Mazy on 2017/6/27.
+//  Created by Mazy on 2017/6/28.
 //  Copyright © 2017年 Mazy. All rights reserved.
 //
 
@@ -16,14 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        let overlayClass = NSClassFromString("UIDebuggingInformationOverlay") as? UIWindow.Type
-        _ = overlayClass?.perform(NSSelectorFromString("prepareDebuggingOverlay"))
-        
-        
-        let uuid = UIDevice.current.identifierForVendor!.uuidString
-        print(uuid)
-        
         return true
     }
 
