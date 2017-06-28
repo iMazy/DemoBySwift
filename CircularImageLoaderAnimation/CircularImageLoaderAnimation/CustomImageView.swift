@@ -41,7 +41,6 @@ class CustomImageView: UIImageView {
             displayLink?.isPaused = true
             displayLink?.invalidate()
             displayLink = nil
-            
             // 切割
             progressIndicatorView.reveal()
         }

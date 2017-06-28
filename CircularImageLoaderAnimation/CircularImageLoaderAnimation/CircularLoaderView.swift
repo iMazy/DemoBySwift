@@ -10,9 +10,11 @@ import UIKit
 
 class CircularLoaderView: UIView {
 
+    // 画圆环
     let circlePathLayer = CAShapeLayer()
+    // 圆环半径
     let circleRadius: CGFloat = 20.0
-    
+    // 进度
     var progress: CGFloat {
         get {
             return circlePathLayer.strokeEnd
@@ -34,6 +36,7 @@ class CircularLoaderView: UIView {
         configure()
     }
     
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         circlePathLayer.frame = bounds
@@ -45,12 +48,12 @@ class CircularLoaderView: UIView {
         
         progress = 0
         
-        circlePathLayer.frame = bounds
+//        circlePathLayer.frame = bounds
         circlePathLayer.lineWidth = 2.0
         circlePathLayer.fillColor = UIColor.clear.cgColor
         circlePathLayer.strokeColor = UIColor.red.cgColor
         layer.addSublayer(circlePathLayer)
-        backgroundColor = UIColor.white
+        backgroundColor = UIColor.green
         
     }
     
@@ -84,23 +87,24 @@ class CircularLoaderView: UIView {
         let finalRadius = sqrt(center.x * center.x + center.y * center.y)
         let radiusInset = finalRadius - circleRadius
         let outerRect = circleFrame().insetBy(dx: -radiusInset, dy: -radiusInset)
-        let toPath = UIBezierPath(ovalIn: outerRect)
+        let toPath = UIBezierPath(ovalIn: outerRect).cgPath
         
         // 2-2
         let fromPath = circlePathLayer.path
-        let formLineWidth = circlePathLayer.lineWidth
+        let fromLineWidth = circlePathLayer.lineWidth
         
         // 2-3
         CATransaction.begin()
-        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        CATransaction.setValue(kCFBooleanFalse, forKey: kCATransactionDisableActions)
         circlePathLayer.lineWidth = 2*finalRadius
-        circlePathLayer.path = toPath.cgPath
+        circlePathLayer.path = toPath
         CATransaction.commit()
         
         // 2-4
         let lineWidthAnimation = CABasicAnimation(keyPath: "lineWidth")
-        lineWidthAnimation.fromValue = formLineWidth
+        lineWidthAnimation.fromValue = fromLineWidth
         lineWidthAnimation.toValue = 2*finalRadius
+        
         let pathAnimation = CABasicAnimation(keyPath: "path")
         pathAnimation.fromValue = fromPath
         pathAnimation.toValue = toPath
@@ -120,6 +124,7 @@ class CircularLoaderView: UIView {
 
 extension CircularLoaderView: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        
         superview?.layer.mask = nil
     }
 }
