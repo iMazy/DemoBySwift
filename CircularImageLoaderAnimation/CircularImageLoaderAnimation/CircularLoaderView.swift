@@ -10,10 +10,23 @@ import UIKit
 
 class CircularLoaderView: UIView {
 
-    let progressIndicatorView = CircularLoaderView(frame: CGRect.zero)
-
     let circlePathLayer = CAShapeLayer()
     let circleRadius: CGFloat = 20.0
+    
+    var progress: CGFloat {
+        get {
+            return circlePathLayer.strokeEnd
+        }
+        set {
+            if (newValue > 1) {
+                circlePathLayer.strokeEnd = 1
+            } else if (newValue < 0) {
+                circlePathLayer.strokeEnd = 0
+            } else {
+                circlePathLayer.strokeEnd = newValue
+            }
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,6 +42,9 @@ class CircularLoaderView: UIView {
     
     
     func configure() {
+        
+        progress = 0
+        
         circlePathLayer.frame = bounds
         circlePathLayer.lineWidth = 2.0
         circlePathLayer.fillColor = UIColor.clear.cgColor
@@ -50,15 +66,60 @@ class CircularLoaderView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func reveal() {
+        // 1
+        backgroundColor = UIColor.clear
+        progress = 1
+        // 2
+        circlePathLayer.removeAnimation(forKey: "strokeEnd")
+        // 3
+        circlePathLayer.removeFromSuperlayer()
+        superview?.layer.mask = circlePathLayer
+        
+        // 2-1
+        let center = CGPoint(x: bounds.midX, y: bounds.minY)
+        let finalRadius = sqrt(center.x * center.x + center.y * center.y)
+        let radiusInset = finalRadius - circleRadius
+        let outerRect = circleFrame().insetBy(dx: -radiusInset, dy: -radiusInset)
+        let toPath = UIBezierPath(ovalIn: outerRect)
+        
+        // 2-2
+        let fromPath = circlePathLayer.path
+        let formLineWidth = circlePathLayer.lineWidth
+        
+        // 2-3
+        CATransaction.begin()
+        CATransaction.setValue(kCFBooleanTrue, forKey: kCATransactionDisableActions)
+        circlePathLayer.lineWidth = 2*finalRadius
+        circlePathLayer.path = toPath.cgPath
+        CATransaction.commit()
+        
+        // 2-4
+        let lineWidthAnimation = CABasicAnimation(keyPath: "lineWidth")
+        lineWidthAnimation.fromValue = formLineWidth
+        lineWidthAnimation.toValue = 2*finalRadius
+        let pathAnimation = CABasicAnimation(keyPath: "path")
+        pathAnimation.fromValue = fromPath
+        pathAnimation.toValue = toPath
+        
+        // 2-5
+        let groupAnimation = CAAnimationGroup()
+        groupAnimation.duration = 1
+        groupAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        groupAnimation.animations = [pathAnimation, lineWidthAnimation]
+        groupAnimation.delegate = self
+        circlePathLayer.add(groupAnimation, forKey: "strokeWidth")
+        
         
     }
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
+}
 
+extension CircularLoaderView: CAAnimationDelegate {
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+        superview?.layer.mask = nil
+    }
 }

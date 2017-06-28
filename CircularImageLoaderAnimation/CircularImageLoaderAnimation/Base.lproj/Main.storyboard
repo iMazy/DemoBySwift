@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alejandro-escamilla-9" translatesAutoresizingMaskIntoConstraints="NO" id="qQ5-yY-vIE">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alejandro-escamilla-9" translatesAutoresizingMaskIntoConstraints="NO" id="qQ5-yY-vIE" customClass="CustomImageView" customModule="CircularImageLoaderAnimation" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="-801" width="375" height="2268"/>
                             </imageView>
                         </subviews>
