@@ -75,11 +75,13 @@ class CircularLoaderView: UIView {
     func reveal() {
         // 1
         backgroundColor = UIColor.clear
-        progress = 1
+//        progress = 1
         // 2
-        circlePathLayer.removeAnimation(forKey: "strokeEnd")
+//        circlePathLayer.removeAnimation(forKey: "strokeEnd")
+        circlePathLayer.removeAllAnimations()
         // 3
         circlePathLayer.removeFromSuperlayer()
+        
         superview?.layer.mask = circlePathLayer
         
         // 2-1
@@ -111,7 +113,7 @@ class CircularLoaderView: UIView {
         
         // 2-5
         let groupAnimation = CAAnimationGroup()
-        groupAnimation.duration = 1
+        groupAnimation.duration = 0.25
         groupAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         groupAnimation.animations = [pathAnimation, lineWidthAnimation]
         groupAnimation.delegate = self
@@ -124,7 +126,10 @@ class CircularLoaderView: UIView {
 
 extension CircularLoaderView: CAAnimationDelegate {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool) {
+      
+        circlePathLayer.removeFromSuperlayer()
         
         superview?.layer.mask = nil
+        
     }
 }
