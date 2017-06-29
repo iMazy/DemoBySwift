@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Iq-A7-R4x">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alejandro-escamilla-9" translatesAutoresizingMaskIntoConstraints="NO" id="qQ5-yY-vIE" customClass="CustomImageView" customModule="CircularImageLoaderAnimation" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="-801" width="375" height="2268"/>
+                                <rect key="frame" x="0.0" y="233" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="gF0-Nb-Jrf"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -32,9 +35,54 @@
                             <constraint firstAttribute="trailing" secondItem="qQ5-yY-vIE" secondAttribute="trailing" id="huI-g5-pHF"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9Rf-PJ-bfh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1618" y="-546"/>
+        </scene>
+        <!--CircularLoaderView-->
+        <scene sceneID="7cf-gC-d56">
+            <objects>
+                <viewController id="icK-Ef-IZk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1EU-YW-Omd"/>
+                        <viewControllerLayoutGuide type="bottom" id="19c-EZ-AS2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="I1w-Lr-luk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="CircularLoaderView" id="oPX-5c-RZt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="5Vj-cb-myH">
+                            <connections>
+                                <segue destination="BYZ-38-t0r" kind="show" id="W0M-gc-ri3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Km-b7-cH1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="927" y="-546"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Lz0-2u-8Xh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Iq-A7-R4x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j5F-2R-vn2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="icK-Ef-IZk" kind="relationship" relationship="rootViewController" id="Vy9-iy-q9g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjb-T2-Ua8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="240.80000000000001" y="-546.47676161919048"/>
         </scene>
     </scenes>
     <resources>
