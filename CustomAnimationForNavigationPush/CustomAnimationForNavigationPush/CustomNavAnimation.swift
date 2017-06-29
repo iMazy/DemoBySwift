@@ -42,16 +42,16 @@ extension CustomNavAnimation: UIViewControllerAnimatedTransitioning {
         
         let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)
         
-        let sharpLayer = CAShapeLayer()
-        sharpLayer.path = finialPath.cgPath
-        toVC?.view.layer.mask = sharpLayer
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = finialPath.cgPath
+        toVC?.view.layer.mask = shapeLayer
         
         let animation = CABasicAnimation(keyPath: "path")
         animation.delegate = self
         animation.fromValue = origionPath.cgPath
         animation.toValue = finialPath.cgPath
         animation.duration = 0.25
-        sharpLayer.add(animation, forKey: "path")
+        shapeLayer.add(animation, forKey: "path")
         
         containerView.addSubview((toVC?.view)!)
         
