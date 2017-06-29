@@ -12,6 +12,7 @@
 		2147BCDD1F04D0660070FA6C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2147BCDB1F04D0660070FA6C /* Main.storyboard */; };
 		2147BCDF1F04D0660070FA6C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2147BCDE1F04D0660070FA6C /* Assets.xcassets */; };
 		2147BCE21F04D0660070FA6C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2147BCE01F04D0660070FA6C /* LaunchScreen.storyboard */; };
+		2147BCEA1F04D0F10070FA6C /* CustomNavAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2147BCE91F04D0F10070FA6C /* CustomNavAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		2147BCDE1F04D0660070FA6C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2147BCE11F04D0660070FA6C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2147BCE31F04D0660070FA6C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2147BCE91F04D0F10070FA6C /* CustomNavAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				2147BCD71F04D0660070FA6C /* AppDelegate.swift */,
 				2147BCD91F04D0660070FA6C /* ViewController.swift */,
+				2147BCE91F04D0F10070FA6C /* CustomNavAnimation.swift */,
 				2147BCDB1F04D0660070FA6C /* Main.storyboard */,
 				2147BCDE1F04D0660070FA6C /* Assets.xcassets */,
 				2147BCE01F04D0660070FA6C /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2147BCDA1F04D0660070FA6C /* ViewController.swift in Sources */,
+				2147BCEA1F04D0F10070FA6C /* CustomNavAnimation.swift in Sources */,
 				2147BCD81F04D0660070FA6C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
