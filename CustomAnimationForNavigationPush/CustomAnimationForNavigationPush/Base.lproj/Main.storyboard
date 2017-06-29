@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NO-Gz-5lR">
-                                <rect key="frame" x="164.5" y="521" width="46" height="30"/>
+                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="bottomButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uht-NF-Kzg"/>
@@ -38,7 +38,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="6NO-Gz-5lR" secondAttribute="bottom" constant="116" id="VcO-34-4nH"/>
+                            <constraint firstItem="6NO-Gz-5lR" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="aCQ-m5-8o4"/>
                             <constraint firstItem="6NO-Gz-5lR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lGB-5X-oiU"/>
                             <constraint firstItem="ive-yd-R2n" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="oc5-ky-LqU"/>
                             <constraint firstItem="ive-yd-R2n" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="115" id="uRK-mv-XxW"/>

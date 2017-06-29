@@ -15,6 +15,8 @@ class TempViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor.green
+        
+        navigationItem.title = "Mazy"
     }
 
 }
