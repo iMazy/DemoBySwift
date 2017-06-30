@@ -18,6 +18,8 @@ class OvalLayer: CAShapeLayer {
         
         fillColor = Colors.red.cgColor
         
+        path = ovalPathSmall.cgPath
+        
     }
     
     var ovalPathSmall: UIBezierPath {

@@ -16,6 +16,8 @@
 		214D7E6C1F063FFA0092CB4F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E6B1F063FFA0092CB4F /* Colors.swift */; };
 		214D7E6F1F0640630092CB4F /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E6E1F0640630092CB4F /* OvalLayer.swift */; };
 		214D7E711F0641FE0092CB4F /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E701F0641FE0092CB4F /* TriangleLayer.swift */; };
+		214D7E731F06446F0092CB4F /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E721F06446F0092CB4F /* RectangleLayer.swift */; };
+		214D7E751F0645880092CB4F /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E741F0645880092CB4F /* ArcLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		214D7E6B1F063FFA0092CB4F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		214D7E6E1F0640630092CB4F /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
 		214D7E701F0641FE0092CB4F /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
+		214D7E721F06446F0092CB4F /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
+		214D7E741F0645880092CB4F /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 			children = (
 				214D7E6E1F0640630092CB4F /* OvalLayer.swift */,
 				214D7E701F0641FE0092CB4F /* TriangleLayer.swift */,
+				214D7E721F06446F0092CB4F /* RectangleLayer.swift */,
+				214D7E741F0645880092CB4F /* ArcLayer.swift */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -158,7 +164,9 @@
 			files = (
 				214D7E6F1F0640630092CB4F /* OvalLayer.swift in Sources */,
 				214D7E6A1F063E5D0092CB4F /* HolderView.swift in Sources */,
+				214D7E731F06446F0092CB4F /* RectangleLayer.swift in Sources */,
 				214D7E6C1F063FFA0092CB4F /* Colors.swift in Sources */,
+				214D7E751F0645880092CB4F /* ArcLayer.swift in Sources */,
 				214D7E711F0641FE0092CB4F /* TriangleLayer.swift in Sources */,
 				214D7E5A1F063DA60092CB4F /* ViewController.swift in Sources */,
 				214D7E581F063DA60092CB4F /* AppDelegate.swift in Sources */,
