@@ -77,10 +77,14 @@ class HolderView: UIView {
     }
     
     func drawRedAnimationRectangle() {
-        
+        layer.addSublayer(redRectangleLayer)
+        redRectangleLayer.animateStrokeWithColor(color: Colors.red)
     }
     
     func drawBlueAnimationRectangle() {
-    
+        layer.addSublayer(blueRectangleLayer)
+        blueRectangleLayer.animateStrokeWithColor(color: Colors.blue)
     }
+    
+    
 }

@@ -32,7 +32,13 @@ class RectangleLayer: CAShapeLayer {
         return rectanglePath
     }
     
-    func animationStrokeWithColor(_ color: UIColor) {
-        
+    func animateStrokeWithColor(color: UIColor) {
+        strokeColor = color.cgColor
+        let strokeAnimation: CABasicAnimation = CABasicAnimation(keyPath: "strokeEnd")
+        strokeAnimation.fromValue = 0.0
+        strokeAnimation.toValue = 1.0
+        strokeAnimation.duration = 0.4
+        add(strokeAnimation, forKey: nil)
     }
+    
 }
