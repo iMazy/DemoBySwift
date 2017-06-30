@@ -12,6 +12,10 @@
 		214D7E5D1F063DA60092CB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214D7E5B1F063DA60092CB4F /* Main.storyboard */; };
 		214D7E5F1F063DA60092CB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214D7E5E1F063DA60092CB4F /* Assets.xcassets */; };
 		214D7E621F063DA60092CB4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214D7E601F063DA60092CB4F /* LaunchScreen.storyboard */; };
+		214D7E6A1F063E5D0092CB4F /* HolderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E691F063E5D0092CB4F /* HolderView.swift */; };
+		214D7E6C1F063FFA0092CB4F /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E6B1F063FFA0092CB4F /* Colors.swift */; };
+		214D7E6F1F0640630092CB4F /* OvalLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E6E1F0640630092CB4F /* OvalLayer.swift */; };
+		214D7E711F0641FE0092CB4F /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E701F0641FE0092CB4F /* TriangleLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		214D7E5E1F063DA60092CB4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214D7E611F063DA60092CB4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		214D7E631F063DA60092CB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		214D7E691F063E5D0092CB4F /* HolderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HolderView.swift; sourceTree = "<group>"; };
+		214D7E6B1F063FFA0092CB4F /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		214D7E6E1F0640630092CB4F /* OvalLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalLayer.swift; sourceTree = "<group>"; };
+		214D7E701F0641FE0092CB4F /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,12 +64,24 @@
 			children = (
 				214D7E571F063DA60092CB4F /* AppDelegate.swift */,
 				214D7E591F063DA60092CB4F /* ViewController.swift */,
+				214D7E691F063E5D0092CB4F /* HolderView.swift */,
+				214D7E6D1F0640360092CB4F /* Layers */,
 				214D7E5B1F063DA60092CB4F /* Main.storyboard */,
 				214D7E5E1F063DA60092CB4F /* Assets.xcassets */,
+				214D7E6B1F063FFA0092CB4F /* Colors.swift */,
 				214D7E601F063DA60092CB4F /* LaunchScreen.storyboard */,
 				214D7E631F063DA60092CB4F /* Info.plist */,
 			);
 			path = ComplexLoadingAnimation;
+			sourceTree = "<group>";
+		};
+		214D7E6D1F0640360092CB4F /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				214D7E6E1F0640630092CB4F /* OvalLayer.swift */,
+				214D7E701F0641FE0092CB4F /* TriangleLayer.swift */,
+			);
+			name = Layers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214D7E6F1F0640630092CB4F /* OvalLayer.swift in Sources */,
+				214D7E6A1F063E5D0092CB4F /* HolderView.swift in Sources */,
+				214D7E6C1F063FFA0092CB4F /* Colors.swift in Sources */,
+				214D7E711F0641FE0092CB4F /* TriangleLayer.swift in Sources */,
 				214D7E5A1F063DA60092CB4F /* ViewController.swift in Sources */,
 				214D7E581F063DA60092CB4F /* AppDelegate.swift in Sources */,
 			);
