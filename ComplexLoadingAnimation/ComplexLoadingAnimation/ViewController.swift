@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         holderView.frame = CGRect(x: view.bounds.width/2 - boxSize/2, y: view.bounds.height/2-boxSize/2, width: boxSize, height: boxSize)
         holderView.parentFrame = view.frame
         holderView.delegate = self
+        holderView.addOval()
         view.addSubview(holderView)
     }
     

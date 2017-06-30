@@ -18,6 +18,10 @@ class HolderView: UIView {
     
     weak var delegate: HolderViewDelegate?
     
+    let ovalLayer = OvalLayer()
+    
+    let triangleLayer = TriangleLayer()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Colors.clear
@@ -27,5 +31,40 @@ class HolderView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func addOval() {
+        layer.addSublayer(ovalLayer)
+        ovalLayer.expand()
+        Timer.scheduledTimer(timeInterval: 0.3, target: self, selector: #selector(wobbleOval), userInfo: nil, repeats: false)
+    }
+    
+    func wobbleOval() {
+        
+        layer.addSublayer(triangleLayer)
+        
+        ovalLayer.wobble()
+        
+        Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(drawAnimatedTriangle), userInfo: nil, repeats: false)
+    }
+    
+    
+    func drawAnimatedTriangle() {
+        triangleLayer.animate()
+        
+        Timer.scheduledTimer(timeInterval: 0.9, target: self, selector: #selector(spinAndTransform), userInfo: nil, repeats: false)
+    }
 
+    func spinAndTransform() {
+        // 1
+        layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        // 2
+        let rotateAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotateAnimation.toValue  = CGFloat(M_PI*2)
+        rotateAnimation.duration = 0.45
+        rotateAnimation.isRemovedOnCompletion = true
+        layer.add(rotateAnimation, forKey: nil)
+        
+        // 3
+        ovalLayer.contract()
+    }
 }
