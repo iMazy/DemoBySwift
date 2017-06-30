@@ -22,6 +22,9 @@ class HolderView: UIView {
     
     let triangleLayer = TriangleLayer()
     
+    let redRectangleLayer = RectangleLayer()
+    let blueRectangleLayer = RectangleLayer()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Colors.clear
@@ -66,5 +69,18 @@ class HolderView: UIView {
         
         // 3
         ovalLayer.contract()
+        
+        // 4
+        Timer.scheduledTimer(timeInterval: 0.45, target: self, selector: #selector(drawRedAnimationRectangle), userInfo: nil, repeats: false)
+        
+        Timer.scheduledTimer(timeInterval: 0.65, target: self, selector: #selector(drawBlueAnimationRectangle), userInfo: nil, repeats: false)
+    }
+    
+    func drawRedAnimationRectangle() {
+        
+    }
+    
+    func drawBlueAnimationRectangle() {
+    
     }
 }
