@@ -60,7 +60,7 @@ class HolderView: UIView {
 
     func spinAndTransform() {
         // 1
-        layer.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        layer.anchorPoint = CGPoint(x: 0.5, y: 0.6)
         
         // 2
         let rotateAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
@@ -88,10 +88,34 @@ class HolderView: UIView {
         blueRectangleLayer.animateStrokeWithColor(color: Colors.blue)
         
         Timer.scheduledTimer(withTimeInterval: 0.40, repeats: false) { (timer) in
-            self.layer.addSublayer(self.arcLayer)
-            self.arcLayer.animate()
+            self.drawArc()
         }
     }
     
+    func drawArc() {
+        
+        layer.addSublayer(arcLayer)
+        arcLayer.animate()
+        
+        Timer.scheduledTimer(withTimeInterval: 0.90, repeats: false) { (timer) in
+            self.backgroundColor = Colors.blue
+            
+            self.frame = CGRect(x: self.frame.origin.x - self.blueRectangleLayer.lineWidth,
+                                y: self.frame.origin.y - self.blueRectangleLayer.lineWidth,
+                                width: self.frame.width + self.blueRectangleLayer.lineWidth * 2,
+                                height: self.frame.height + self.blueRectangleLayer.lineWidth * 2)
+            self.layer.sublayers = nil
+            
+            UIView.animate(withDuration: 0.3, delay: 0.0, options: UIViewAnimationOptions.curveEaseInOut, animations: {
+                self.frame = self.parentFrame
+            }, completion: { (_) in
+                self.addLabel()
+            })
+        }
+    }
+    
+    func addLabel() {
+        delegate?.animationLabel()
+    }
     
 }
