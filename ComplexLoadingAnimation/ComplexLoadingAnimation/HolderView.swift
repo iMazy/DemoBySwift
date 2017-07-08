@@ -25,6 +25,8 @@ class HolderView: UIView {
     let redRectangleLayer = RectangleLayer()
     let blueRectangleLayer = RectangleLayer()
     
+    let arcLayer = ArcLayer()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = Colors.clear
@@ -84,6 +86,11 @@ class HolderView: UIView {
     func drawBlueAnimationRectangle() {
         layer.addSublayer(blueRectangleLayer)
         blueRectangleLayer.animateStrokeWithColor(color: Colors.blue)
+        
+        Timer.scheduledTimer(withTimeInterval: 0.40, repeats: false) { (timer) in
+            self.layer.addSublayer(self.arcLayer)
+            self.arcLayer.animate()
+        }
     }
     
     
