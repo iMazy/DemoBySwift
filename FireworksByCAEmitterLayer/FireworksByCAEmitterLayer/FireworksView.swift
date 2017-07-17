@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FireworksView.swift
 //  FireworksByCAEmitterLayer
 //
 //  Created by Mazy on 2017/7/17.
@@ -8,40 +8,36 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class FireworksView: UIView {
 
-    
     var emitterLayer: CAEmitterLayer = CAEmitterLayer()
     
-    lazy var fireworksView: FireworksView = {
-       let fv = FireworksView()
-        return fv
-    }()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-//        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        
+    override init(frame: CGRect) {
+        let newFrame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
+        super.init(frame: newFrame)
+            backgroundColor = UIColor.black.withAlphaComponent(0.7)
     }
     
-    @IBAction func startAnimation(_ sender: UIButton) {
-        view.addSubview(fireworksView)
-        fireworksView.startFireworks()
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {
-            self.fireworksView.stopFireworks()
-            self.fireworksView.removeFromSuperview()
-        }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
-    @IBAction func stopAnimation(_ sender: UIButton) {
+    func startFireworks() {
+        setupFireworks()
+    }
+    
+    func stopFireworks() {
+        emitterLayer.removeFromSuperlayer()
+        layer.removeAllAnimations()
     }
     
 
+}
+
+extension FireworksView {
     func setupFireworks() {
         // 发射源
-        emitterLayer.emitterPosition = CGPoint(x: view.bounds.width/2, y: view.bounds.height-50)
+        emitterLayer.emitterPosition = CGPoint(x: bounds.width/2, y: bounds.height-50)
         // 发射源尺寸大小
         emitterLayer.emitterSize = CGSize(width: 50, height: 0)
         // 发射源模式
@@ -100,7 +96,7 @@ class ViewController: UIViewController {
         burst.greenSpeed = +1.0
         // 生命周期
         burst.lifetime = 0.35
-
+        
         // 火花 and finally, the sparks
         let spark: CAEmitterCell = CAEmitterCell()
         // 粒子产生系数，默认为1.0
@@ -133,9 +129,7 @@ class ViewController: UIViewController {
         emitterLayer.emitterCells = [cell]
         cell.emitterCells = [burst]
         burst.emitterCells = [spark]
-        self.view.layer.addSublayer(emitterLayer)
-        
+        layer.addSublayer(emitterLayer)
+
     }
-
 }
-
