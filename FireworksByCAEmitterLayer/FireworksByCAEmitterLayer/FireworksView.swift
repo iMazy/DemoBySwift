@@ -25,7 +25,7 @@ class FireworksView: UIView {
         let newFrame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
         super.init(frame: newFrame)
         
-        backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        backgroundColor = UIColor(white: 0, alpha: 0.3)
         
     }
     
@@ -44,6 +44,7 @@ class FireworksView: UIView {
         setupFireworks()
         // 添加礼物
         addSubview(imageView!)
+        setupAnimationHeatrBeat(imageView!)
         bringSubview(toFront: imageView!)
     }
     
@@ -56,6 +57,7 @@ class FireworksView: UIView {
 }
 
 extension FireworksView {
+    
     func setupFireworks() {
         // 发射源
         emitterLayer.emitterPosition = CGPoint(x: bounds.width/2, y: bounds.height/2)
@@ -152,5 +154,15 @@ extension FireworksView {
         burst.emitterCells = [spark]
         layer.addSublayer(emitterLayer)
 
+    }
+    
+    func setupAnimationHeatrBeat(_ view: UIView) {
+        let pulseAnimation: CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        pulseAnimation.duration = 0.5
+        pulseAnimation.toValue = 1.1
+        pulseAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        pulseAnimation.autoreverses = true
+        pulseAnimation.repeatCount = MAXFLOAT
+        view.layer.add(pulseAnimation, forKey: "transform.scale")
     }
 }

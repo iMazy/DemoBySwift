@@ -20,9 +20,19 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let backImage = UIImage(named: "backImage")
+        let backImageView = UIImageView(image: backImage)
+        backImageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        backImageView.contentMode = .scaleAspectFit
+        view.addSubview(backImageView)
+        backImageView.isUserInteractionEnabled = true
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(startAnimation))
+        backImageView.addGestureRecognizer(gesture)
     }
     
-    @IBAction func startAnimation(_ sender: UIButton) {
+    func startAnimation() {
         view.addSubview(fireworksView)
         fireworksView.giftImage = UIImage(named: "flower")
         fireworksView.startFireworks()
@@ -31,9 +41,6 @@ class ViewController: UIViewController {
             self.fireworksView.stopFireworks()
             self.fireworksView.removeFromSuperview()
         }
-    }
-    
-    @IBAction func stopAnimation(_ sender: UIButton) {
     }
     
 
