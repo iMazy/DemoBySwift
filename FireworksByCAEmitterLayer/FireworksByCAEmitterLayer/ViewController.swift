@@ -20,13 +20,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        view.backgroundColor = UIColor.black.withAlphaComponent(0.2)
-        
     }
     
     @IBAction func startAnimation(_ sender: UIButton) {
         view.addSubview(fireworksView)
+        fireworksView.giftImage = UIImage(named: "flower")
         fireworksView.startFireworks()
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2) {

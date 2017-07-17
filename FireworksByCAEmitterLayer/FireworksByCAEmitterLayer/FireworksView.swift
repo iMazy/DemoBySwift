@@ -10,12 +10,30 @@ import UIKit
 
 class FireworksView: UIView {
 
-    var emitterLayer: CAEmitterLayer = CAEmitterLayer()
+    var giftImage: UIImage? {
+        didSet {
+            imageView = UIImageView(image: giftImage)
+            imageView?.frame.size = CGSize(width: 200, height: 200)
+            imageView?.contentMode = .scaleAspectFit
+        }
+    }
+    
+    fileprivate var emitterLayer: CAEmitterLayer = CAEmitterLayer()
+    fileprivate var imageView: UIImageView?
     
     override init(frame: CGRect) {
         let newFrame = CGRect(origin: CGPoint.zero, size: UIScreen.main.bounds.size)
         super.init(frame: newFrame)
-            backgroundColor = UIColor.black.withAlphaComponent(0.7)
+        
+        backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        imageView?.center = self.center
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -24,6 +42,9 @@ class FireworksView: UIView {
     
     func startFireworks() {
         setupFireworks()
+        // 添加礼物
+        addSubview(imageView!)
+        bringSubview(toFront: imageView!)
     }
     
     func stopFireworks() {
@@ -37,7 +58,7 @@ class FireworksView: UIView {
 extension FireworksView {
     func setupFireworks() {
         // 发射源
-        emitterLayer.emitterPosition = CGPoint(x: bounds.width/2, y: bounds.height-50)
+        emitterLayer.emitterPosition = CGPoint(x: bounds.width/2, y: bounds.height/2)
         // 发射源尺寸大小
         emitterLayer.emitterSize = CGSize(width: 50, height: 0)
         // 发射源模式
@@ -58,11 +79,11 @@ extension FireworksView {
         // 发射的角度
         cell.emissionRange = 0.11 * CGFloat(M_PI)
         // 速度
-        cell.velocity = 300
+//        cell.velocity = 300
         // 范围
-        cell.velocityRange = 150
+        cell.velocityRange = 100
         // Y轴，加速度分量
-        cell.yAcceleration = 75
+//        cell.yAcceleration = 75
         // 声明周期
         cell.lifetime = 2.04
         // 内容：是个CGImageRef的对象,既粒子要展现的图片
@@ -102,7 +123,7 @@ extension FireworksView {
         // 粒子产生系数，默认为1.0
         spark.birthRate = 400
         // 速度
-        spark.velocity = 125
+        spark.velocity = 300
         // 360 deg //周围发射角度
         spark.emissionRange = 2 * CGFloat(M_PI)
         // gravity //y方向上的加速度分量
