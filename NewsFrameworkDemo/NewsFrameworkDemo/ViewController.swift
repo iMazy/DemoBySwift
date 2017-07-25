@@ -14,7 +14,16 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let titleArray: [String] = ["金土星","木","水红","火大时代","土收到"]
-        let containerView = ContainerView(frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height-64), titles: titleArray, childVC: [UIViewController()])
+        
+        var childVC: [UIViewController] = [UIViewController]()
+        
+        for _ in 0..<titleArray.count {
+            let vc = UIViewController()
+            vc.view.backgroundColor = UIColor.randomColor()
+            childVC.append(vc)
+        }
+        
+        let containerView = ContainerView(frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height-64), titles: titleArray, childVC: childVC, parentVC: self)
         
         view.addSubview(containerView)
     }

@@ -13,10 +13,13 @@ class ContainerView: UIView {
     fileprivate var titles: [String]
     fileprivate var childVC: [UIViewController]
     fileprivate var titlesView: TopTitlesView!
+    fileprivate var contentView: MainContentView!
+    fileprivate var parentVC: UIViewController!
     
-    init(frame: CGRect, titles: [String], childVC: [UIViewController]) {
+    init(frame: CGRect, titles: [String], childVC: [UIViewController], parentVC: UIViewController) {
         self.titles = titles
         self.childVC = childVC
+        self.parentVC = parentVC
         
         super.init(frame: frame)
         
@@ -35,6 +38,9 @@ extension ContainerView {
         
         titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 36), titles: titles, isScrollEnable: false)
         addSubview(titlesView)
+        
+        contentView = MainContentView(frame: CGRect(x: 0, y: 36, width: bounds.width, height: bounds.height-36), childVC: childVC, parentViewController: parentVC)
+        addSubview(contentView)
     }
     
 }
