@@ -10,12 +10,32 @@ import UIKit
 
 class ContainerView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    fileprivate var titles: [String]
+    fileprivate var childVC: [UIViewController]
+    fileprivate var titlesView: TopTitlesView!
+    
+    init(frame: CGRect, titles: [String], childVC: [UIViewController]) {
+        self.titles = titles
+        self.childVC = childVC
+        
+        super.init(frame: frame)
+        
+        setupUI()
     }
-    */
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
+}
+
+extension ContainerView {
+    
+    func setupUI() {
+//        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 40), titles: titles)
+        
+        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 40), titles: titles, titleWidth: 100)
+        addSubview(titlesView)
+    }
+    
 }

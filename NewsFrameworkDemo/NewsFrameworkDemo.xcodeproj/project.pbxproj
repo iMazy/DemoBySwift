@@ -15,6 +15,7 @@
 		21D4E4B71F26E0880073869B /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E4B61F26E0880073869B /* ContainerView.swift */; };
 		21D4E4B91F26E0A40073869B /* TopTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E4B81F26E0A40073869B /* TopTitlesView.swift */; };
 		21D4E4BB1F26E0C20073869B /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E4BA1F26E0C20073869B /* MainContentView.swift */; };
+		21D4E4BD1F26E7820073869B /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E4BC1F26E7820073869B /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		21D4E4B61F26E0880073869B /* ContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 		21D4E4B81F26E0A40073869B /* TopTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTitlesView.swift; sourceTree = "<group>"; };
 		21D4E4BA1F26E0C20073869B /* MainContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		21D4E4BC1F26E7820073869B /* UIColor-Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				21D4E4B51F26E05A0073869B /* NewsFramework */,
 				21D4E4A31F26E0080073869B /* AppDelegate.swift */,
 				21D4E4A51F26E0080073869B /* ViewController.swift */,
+				21D4E4BC1F26E7820073869B /* UIColor-Extension.swift */,
 				21D4E4A71F26E0080073869B /* Main.storyboard */,
 				21D4E4AA1F26E0080073869B /* Assets.xcassets */,
 				21D4E4AC1F26E0080073869B /* LaunchScreen.storyboard */,
@@ -154,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21D4E4A61F26E0080073869B /* ViewController.swift in Sources */,
+				21D4E4BD1F26E7820073869B /* UIColor-Extension.swift in Sources */,
 				21D4E4B91F26E0A40073869B /* TopTitlesView.swift in Sources */,
 				21D4E4A41F26E0080073869B /* AppDelegate.swift in Sources */,
 				21D4E4B71F26E0880073869B /* ContainerView.swift in Sources */,
