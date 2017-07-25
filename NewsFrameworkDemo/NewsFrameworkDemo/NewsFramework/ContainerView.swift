@@ -32,9 +32,8 @@ class ContainerView: UIView {
 extension ContainerView {
     
     func setupUI() {
-//        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 40), titles: titles)
         
-        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 40), titles: titles, titleWidth: 100)
+        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 36), titles: titles, isScrollEnable: false)
         addSubview(titlesView)
     }
     
