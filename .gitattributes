@@ -1,3 +1,2 @@
 * linguist-vendored
-*.c++ linguist-vendored=false
-*.rb linguist-language=Swift
+*.Objective-C linguist-vendored=false
