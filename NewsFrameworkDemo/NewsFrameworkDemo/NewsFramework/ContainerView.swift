@@ -15,12 +15,13 @@ class ContainerView: UIView {
     fileprivate var titlesView: TopTitlesView!
     fileprivate var contentView: MainContentView!
     fileprivate var parentVC: UIViewController!
+    fileprivate var titleProperty: TitleViewProperty
     
-    init(frame: CGRect, titles: [String], childVC: [UIViewController], parentVC: UIViewController) {
+    init(frame: CGRect, titles: [String], childVC: [UIViewController], parentVC: UIViewController, titleProperty: TitleViewProperty) {
         self.titles = titles
         self.childVC = childVC
         self.parentVC = parentVC
-        
+        self.titleProperty = titleProperty
         super.init(frame: frame)
         
         setupUI()
@@ -36,11 +37,11 @@ extension ContainerView {
     
     func setupUI() {
         
-        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 36), titles: titles, isScrollEnable: false)
+        titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: titleProperty.titleHeight), titles: titles, titleProperty: titleProperty)
         titlesView.delegate = self
         addSubview(titlesView)
         
-        contentView = MainContentView(frame: CGRect(x: 0, y: 36, width: bounds.width, height: bounds.height-36), childVC: childVC, parentViewController: parentVC)
+        contentView = MainContentView(frame: CGRect(x: 0, y: titleProperty.titleHeight, width: bounds.width, height: bounds.height-titleProperty.titleHeight), childVC: childVC, parentViewController: parentVC)
         contentView.delegate = self
         addSubview(contentView)
     }
@@ -49,7 +50,7 @@ extension ContainerView {
 
 extension ContainerView: TopTitlesViewDelegate {
     func didClickTopTitleView(_ titlesView: TopTitlesView, selectedIndex index: Int) {
-        contentView.setCurrentIndex(index, animated: false)
+        contentView.setCurrentIndex(index, animated: titleProperty.contentOffsetAnimated)
     }
 }
 

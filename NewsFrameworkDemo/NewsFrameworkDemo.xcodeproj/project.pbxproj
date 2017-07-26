@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		214729F31F286A3F0092B300 /* TitleViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214729F21F286A3F0092B300 /* TitleViewProperty.swift */; };
 		21D4E4A41F26E0080073869B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E4A31F26E0080073869B /* AppDelegate.swift */; };
 		21D4E4A61F26E0080073869B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D4E4A51F26E0080073869B /* ViewController.swift */; };
 		21D4E4A91F26E0080073869B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D4E4A71F26E0080073869B /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		214729F21F286A3F0092B300 /* TitleViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewProperty.swift; sourceTree = "<group>"; };
 		21D4E4A01F26E0080073869B /* NewsFrameworkDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewsFrameworkDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D4E4A31F26E0080073869B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21D4E4A51F26E0080073869B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				21D4E4B61F26E0880073869B /* ContainerView.swift */,
 				21D4E4B81F26E0A40073869B /* TopTitlesView.swift */,
 				21D4E4BA1F26E0C20073869B /* MainContentView.swift */,
+				214729F21F286A3F0092B300 /* TitleViewProperty.swift */,
 			);
 			path = NewsFramework;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 				21D4E4BD1F26E7820073869B /* UIColor-Extension.swift in Sources */,
 				21D4E4B91F26E0A40073869B /* TopTitlesView.swift in Sources */,
 				21D4E4A41F26E0080073869B /* AppDelegate.swift in Sources */,
+				214729F31F286A3F0092B300 /* TitleViewProperty.swift in Sources */,
 				21D4E4B71F26E0880073869B /* ContainerView.swift in Sources */,
 				21D4E4BB1F26E0C20073869B /* MainContentView.swift in Sources */,
 			);
@@ -323,6 +327,7 @@
 				21D4E4B41F26E0080073869B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

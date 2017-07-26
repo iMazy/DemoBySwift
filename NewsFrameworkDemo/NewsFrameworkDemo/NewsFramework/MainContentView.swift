@@ -107,9 +107,7 @@ extension MainContentView: UICollectionViewDelegate {
 extension MainContentView {
     func setCurrentIndex(_ currentIndex : Int, animated: Bool) {
         
-        // 1.记录需要进制执行代理方法
-        
-        // 2.滚动正确的位置
+        // 滚动正确的位置
         let offsetX = CGFloat(currentIndex) * collectionView.frame.width
         
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
