@@ -31,4 +31,8 @@ class TitleViewProperty {
     
     /// contentView 切换动画
     var contentOffsetAnimated: Bool = true
+    
+    /// titleView 是否需要阴影
+    var isNeedShadowInBottom: Bool = false
+    var shadowOffsetHeight: CGFloat = 0
 }
