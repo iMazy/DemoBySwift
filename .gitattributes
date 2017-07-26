@@ -1,2 +1,3 @@
-static/* linguist-vendored
-*.Objective-C linguist-vendored=false
+*.gitattributes text
+.gitignore text
+*.md text
