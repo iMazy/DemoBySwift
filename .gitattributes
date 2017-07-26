@@ -1,3 +1,2 @@
-*.gitattributes Swift
-.gitignore Swift
-*.md Swift
+*.h linguist-language=swift
+*.m linguist-language=swift
