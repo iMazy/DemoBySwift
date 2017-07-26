@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         let property: TitleViewProperty = TitleViewProperty()
         
         property.isScrollEnable = true
+        property.contentOffsetAnimated = false
         
         let containerView = ContainerView(frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height-64), titles: titleArray, childVC: childVC, parentVC: self, titleProperty: property)
         

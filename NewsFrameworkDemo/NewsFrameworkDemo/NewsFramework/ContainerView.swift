@@ -58,4 +58,8 @@ extension ContainerView: MainContentViewDelegate {
     func contentView(_ contentView: MainContentView, contentOffsetX: CGFloat) {
         titlesView.setTitleWithContentOffset(contentOffsetX)
     }
+    
+    func contentViewDidEndScroll(_ contentView: MainContentView) {
+        titlesView.contentViewDidEndScrollAndAdjustLabelPosition()
+    }
 }

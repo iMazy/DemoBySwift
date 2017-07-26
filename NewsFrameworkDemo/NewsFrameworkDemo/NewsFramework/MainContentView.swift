@@ -10,6 +10,7 @@ import UIKit
 
 protocol MainContentViewDelegate {
     func contentView(_ contentView : MainContentView, contentOffsetX: CGFloat)
+    func contentViewDidEndScroll(_ contentView : MainContentView)
 }
 
 private let kContentCellID = "kContentCellID"
@@ -98,8 +99,21 @@ extension MainContentView: UICollectionViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
         delegate?.contentView(self, contentOffsetX: scrollView.contentOffset.x)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        delegate?.contentViewDidEndScroll(self)
+    }
+    
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            delegate?.contentViewDidEndScroll(self)
+        }
+    }
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        delegate?.contentViewDidEndScroll(self)
     }
 }
 

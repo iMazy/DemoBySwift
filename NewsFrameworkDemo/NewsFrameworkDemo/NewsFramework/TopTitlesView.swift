@@ -136,10 +136,36 @@ extension TopTitlesView {
         oldLabel.textColor = UIColor.darkGray
         
         currentIndex = currentLabel.tag-1024
-
+        
         delegate?.didClickTopTitleView(self, selectedIndex: currentIndex)
         
+        contentViewDidEndScrollAndAdjustLabelPosition()
     }
+    
+    func contentViewDidEndScrollAndAdjustLabelPosition() {
+        // 0.如果是不需要滚动,则不需要调整中间位置
+        guard titleProperty.isScrollEnable else { return }
+        
+        // 1.获取获取目标的Label
+        let targetLabel = titleLabels[currentIndex]
+        
+        // 2.计算和中间位置的偏移量
+        var offSetX = targetLabel.center.x - bounds.width * 0.5
+        if offSetX < 0 {
+            offSetX = 0
+        }
+        
+        let maxOffset = scrollView.contentSize.width - bounds.width
+        if offSetX > maxOffset {
+            offSetX = maxOffset
+        }
+        
+        // 3.滚动UIScrollView
+        UIView.animate(withDuration: 0.25) {
+            self.scrollView.setContentOffset(CGPoint(x: offSetX, y: 0), animated: false)
+        }
+    }
+
 }
 
 // MARK:- 对外暴露的方法
@@ -148,7 +174,7 @@ extension TopTitlesView {
         let index: Int = Int(contentOffsetX/bounds.width + 0.5)
         
         currentIndex = index
-        
+                
         _ = titleLabels.map({ $0.textColor = titleProperty.normalColor })
 
         let currentLabel = titleLabels[index]
