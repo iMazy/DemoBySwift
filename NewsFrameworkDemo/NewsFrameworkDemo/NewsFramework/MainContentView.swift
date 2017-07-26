@@ -8,12 +8,19 @@
 
 import UIKit
 
+protocol MainContentViewDelegate {
+    func contentView(_ contentView : MainContentView, contentOffsetX: CGFloat)
+}
+
 private let kContentCellID = "kContentCellID"
 
 class MainContentView: UIView {
 
+    var delegate: MainContentViewDelegate?
+    
     fileprivate var childVC: [UIViewController]
     fileprivate var parentVC: UIViewController
+    fileprivate var startOffsetX : CGFloat = 0
     
     // MARK: 控件属性
     fileprivate lazy var collectionView : UICollectionView = {
@@ -30,6 +37,7 @@ class MainContentView: UIView {
         collectionView.frame = self.bounds
         collectionView.isPagingEnabled = true
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kContentCellID)
         collectionView.backgroundColor = UIColor.clear
         
@@ -81,5 +89,29 @@ extension MainContentView: UICollectionViewDataSource {
         cell.contentView.addSubview(childVc.view)
         
         return cell
+    }
+}
+
+extension MainContentView: UICollectionViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        startOffsetX = scrollView.contentOffset.x
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        delegate?.contentView(self, contentOffsetX: scrollView.contentOffset.x)
+    }
+}
+
+// MARK:- 对外暴露的方法
+extension MainContentView {
+    func setCurrentIndex(_ currentIndex : Int, animated: Bool) {
+        
+        // 1.记录需要进制执行代理方法
+        
+        // 2.滚动正确的位置
+        let offsetX = CGFloat(currentIndex) * collectionView.frame.width
+        
+        collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
     }
 }

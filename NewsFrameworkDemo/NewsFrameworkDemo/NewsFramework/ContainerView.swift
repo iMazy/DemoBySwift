@@ -37,10 +37,24 @@ extension ContainerView {
     func setupUI() {
         
         titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 36), titles: titles, isScrollEnable: false)
+        titlesView.delegate = self
         addSubview(titlesView)
         
         contentView = MainContentView(frame: CGRect(x: 0, y: 36, width: bounds.width, height: bounds.height-36), childVC: childVC, parentViewController: parentVC)
+        contentView.delegate = self
         addSubview(contentView)
     }
     
+}
+
+extension ContainerView: TopTitlesViewDelegate {
+    func didClickTopTitleView(_ titlesView: TopTitlesView, selectedIndex index: Int) {
+        contentView.setCurrentIndex(index, animated: false)
+    }
+}
+
+extension ContainerView: MainContentViewDelegate {
+    func contentView(_ contentView: MainContentView, contentOffsetX: CGFloat) {
+        titlesView.setTitleWithContentOffset(contentOffsetX)
+    }
 }

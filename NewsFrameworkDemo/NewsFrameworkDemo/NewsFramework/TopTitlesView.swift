@@ -8,7 +8,14 @@
 
 import UIKit
 
+protocol TopTitlesViewDelegate {
+    func didClickTopTitleView(_ titlesView: TopTitlesView, selectedIndex index : Int)
+}
+
 class TopTitlesView: UIView {
+    
+    // MARK: 对外属性
+    var delegate: TopTitlesViewDelegate?
 
     fileprivate lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -62,6 +69,9 @@ extension TopTitlesView {
             label.textColor = UIColor.darkGray
             label.tag = 100 + index
             label.isUserInteractionEnabled = true
+            if index == 0 {
+                label.textColor = UIColor.red
+            }
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(titleLabelClick))
             label.addGestureRecognizer(tapGesture)
             scrollView.addSubview(label)
@@ -89,7 +99,6 @@ extension TopTitlesView {
                 titleX = titleW * CGFloat(index)
             }
             label.frame = CGRect(x: titleX, y: titleY, width: titleW, height: titleH)
-            label.backgroundColor = UIColor.randomColor().withAlphaComponent(0.3)
             if isScrollEnable {
                 scrollView.contentSize = CGSize(width: titleLabels.last!.frame.maxX + titleMargin*0.5, height: 0)
             }
@@ -117,9 +126,47 @@ extension TopTitlesView {
     func titleLabelClick(tapGesture: UITapGestureRecognizer) {
         // 获取当前Label
         guard let currentLabel = tapGesture.view as? UILabel else { return }
+        
         // 如果是重复点击同一个Title,那么直接返回
-        if (currentLabel.tag == currentIndex) { return }
-        currentIndex = currentLabel.tag
+        if (currentLabel.tag-100 == currentIndex) { return }
+        
+        // 获取之前的Label
+        let oldLabel = titleLabels[currentIndex]
+        // 切换文字的颜色
+        currentLabel.textColor = UIColor.red
+        oldLabel.textColor = UIColor.darkGray
+        
+        currentIndex = currentLabel.tag-100
+//        var offset: CGFloat = 0
+//        if isScrollEnable {
+//            offset = currentLabel.frame.origin.x
+//        } else {
+//            offset = currentLabel.frame.origin.x + (currentLabel.bounds.width - currentLabel.intrinsicContentSize.width)/2
+//        }
+//        
+//        UIView.animate(withDuration: 0.25) {
+//            self.indicatorView.frame.origin.x = offset
+//            self.indicatorView.frame.size.width = currentLabel.intrinsicContentSize.width
+//        }
+
+        delegate?.didClickTopTitleView(self, selectedIndex: currentIndex)
+        
+    }
+}
+
+// MARK:- 对外暴露的方法
+extension TopTitlesView {
+    func setTitleWithContentOffset(_ contentOffsetX: CGFloat) {
+        let index: Int = Int(contentOffsetX/bounds.width + 0.5)
+        
+        currentIndex = index
+        
+        _ = titleLabels.map({ $0.textColor = UIColor.darkGray })
+
+        let currentLabel = titleLabels[index]
+        
+        currentLabel.textColor = UIColor.red
+        
         var offset: CGFloat = 0
         if isScrollEnable {
             offset = currentLabel.frame.origin.x
@@ -131,6 +178,5 @@ extension TopTitlesView {
             self.indicatorView.frame.origin.x = offset
             self.indicatorView.frame.size.width = currentLabel.intrinsicContentSize.width
         }
-        
     }
 }
