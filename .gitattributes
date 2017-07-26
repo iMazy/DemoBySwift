@@ -1,4 +1,1 @@
-* linguist-vendored
-//*.Objective-C linguist-vendored=false
-
 *.rb linguist-language=Swift
