@@ -34,5 +34,4 @@ class TitleViewProperty {
     
     /// titleView 是否需要阴影
     var isNeedShadowInBottom: Bool = false
-    var shadowOffsetHeight: CGFloat = 0
 }

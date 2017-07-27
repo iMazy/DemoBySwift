@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let titleArray: [String] = ["推荐","热点","北京","视频","社会","图片","娱乐","科技","汽车"]
+        let titleArray: [String] = ["推啊荐","热点不","北京"]//,"视频","社会","图片","娱乐","科技","汽车"]
         var childVC: [UIViewController] = [UIViewController]()
         
         for _ in 0..<titleArray.count {
@@ -24,10 +24,10 @@ class ViewController: UIViewController {
         
         let property: TitleViewProperty = TitleViewProperty()
         
-        property.isScrollEnable = true
+//        property.isScrollEnable = true
         property.contentOffsetAnimated = false
         
-//        property.shadowOffsetHeight = 2
+        property.isNeedShadowInBottom = true
         
         let containerView = ContainerView(frame: CGRect(x: 0, y: 64, width: view.bounds.width, height: view.bounds.height-64), titles: titleArray, childVC: childVC, parentVC: self, titleProperty: property)
         

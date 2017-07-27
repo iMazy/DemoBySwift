@@ -39,11 +39,13 @@ extension ContainerView {
         
         titlesView = TopTitlesView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: titleProperty.titleHeight), titles: titles, titleProperty: titleProperty)
         titlesView.delegate = self
-        addSubview(titlesView)
         
-        contentView = MainContentView(frame: CGRect(x: 0, y: titleProperty.titleHeight+titleProperty.shadowOffsetHeight, width: bounds.width, height: bounds.height-titleProperty.titleHeight-titleProperty.shadowOffsetHeight), childVC: childVC, parentViewController: parentVC)
+        contentView = MainContentView(frame: CGRect(x: 0, y: titleProperty.titleHeight, width: bounds.width, height: bounds.height-titleProperty.titleHeight), childVC: childVC, parentViewController: parentVC)
         contentView.delegate = self
+
         addSubview(contentView)
+        
+        addSubview(titlesView)
     }
     
 }

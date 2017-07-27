@@ -63,13 +63,13 @@ extension TopTitlesView {
     }
     
     fileprivate func setShadow(){
-        if titleProperty.shadowOffsetHeight <= 0 { return }
+        if !titleProperty.isNeedShadowInBottom { return }
         self.layer.shadowColor   = UIColor.lightGray.cgColor
         self.layer.shadowOpacity = 0.3
-        self.layer.shadowOffset  = CGSize(width: 0, height: 3)
-        self.layer.shadowRadius  = 3
+        self.layer.shadowOffset  = CGSize(width: 0, height: 2)
+        self.layer.shadowRadius  = 2
         self.layer.masksToBounds = false
-        self.layer.magnificationFilter = kCAFilterLinear
+//        self.layer.magnificationFilter = kCAFilterLinear
     }
     
     fileprivate func setupTitleLabels() {
@@ -186,24 +186,26 @@ extension TopTitlesView {
 extension TopTitlesView {
     func setTitleWithContentOffset(_ contentOffsetX: CGFloat) {
         let index: Int = Int(contentOffsetX/bounds.width + 0.5)
-        
+
         currentIndex = index
                 
         _ = titleLabels.map({ $0.textColor = titleProperty.normalColor })
 
         let currentLabel = titleLabels[index]
         
+        let tempLabel = titleLabels[0]
+        
         currentLabel.textColor = titleProperty.selectedColor
         
         var offset: CGFloat = 0
         if titleProperty.isScrollEnable {
-            offset = currentLabel.frame.origin.x
+            offset = currentLabel.frame.origin.x + currentLabel.intrinsicContentSize.width/2
         } else {
-            offset = currentLabel.frame.origin.x + (currentLabel.bounds.width - currentLabel.intrinsicContentSize.width)/2
+            offset = contentOffsetX/CGFloat(self.titles.count) + tempLabel.center.x
         }
         
         UIView.animate(withDuration: 0.25) {
-            self.indicatorView.frame.origin.x = offset
+            self.indicatorView.center.x = offset
             self.indicatorView.frame.size.width = currentLabel.intrinsicContentSize.width
         }
     }
