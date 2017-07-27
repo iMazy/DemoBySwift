@@ -39,6 +39,10 @@ class TopTitlesView: UIView {
         self.titles = titles
         self.titleProperty = titleProperty
         super.init(frame: frame)
+        
+        layoutIfNeeded()
+        setNeedsLayout()
+        
         setupUI()
     }
     
@@ -185,15 +189,16 @@ extension TopTitlesView {
 // MARK:- 对外暴露的方法
 extension TopTitlesView {
     func setTitleWithContentOffset(_ contentOffsetX: CGFloat) {
+        
         let index: Int = Int(contentOffsetX/bounds.width + 0.5)
-
+        
         currentIndex = index
                 
         _ = titleLabels.map({ $0.textColor = titleProperty.normalColor })
 
         let currentLabel = titleLabels[index]
         
-        let tempLabel = titleLabels[0]
+        let firstLabel = titleLabels[0]
         
         currentLabel.textColor = titleProperty.selectedColor
         
@@ -201,7 +206,7 @@ extension TopTitlesView {
         if titleProperty.isScrollEnable {
             offset = currentLabel.frame.origin.x + currentLabel.intrinsicContentSize.width/2
         } else {
-            offset = contentOffsetX/CGFloat(self.titles.count) + tempLabel.center.x
+            offset = contentOffsetX/CGFloat(self.titles.count) + firstLabel.center.x
         }
         
         UIView.animate(withDuration: 0.25) {

@@ -21,7 +21,7 @@ class MainContentView: UIView {
     
     fileprivate var childVC: [UIViewController]
     fileprivate var parentVC: UIViewController
-    fileprivate var startOffsetX : CGFloat = 0
+//    fileprivate var startOffsetX : CGFloat = 0
     
     // MARK: 控件属性
     fileprivate lazy var collectionView : UICollectionView = {
@@ -94,9 +94,6 @@ extension MainContentView: UICollectionViewDataSource {
 }
 
 extension MainContentView: UICollectionViewDelegate {
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        startOffsetX = scrollView.contentOffset.x
-    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         delegate?.contentView(self, contentOffsetX: scrollView.contentOffset.x)
@@ -123,7 +120,8 @@ extension MainContentView {
         
         // 滚动正确的位置
         let offsetX = CGFloat(currentIndex) * collectionView.frame.width
-        
+        if !animated { scrollViewDidScroll(collectionView) }
         collectionView.setContentOffset(CGPoint(x: offsetX, y: 0), animated: animated)
+        scrollViewDidScroll(collectionView)
     }
 }
