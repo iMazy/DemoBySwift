@@ -8,14 +8,32 @@
 
 #import "HamburgerView.h"
 
+@interface HamburgerView()
+
+@property (nonatomic, strong) UIImageView *hamburgerView;
+
+@end
+
 @implementation HamburgerView
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self setupUI];
+    }
+    return self;
 }
-*/
+
+- (void)setupUI {
+    self.hamburgerView = [[UIImageView alloc] initWithImage: [UIImage imageNamed: @"Hamburger"]];
+    self.hamburgerView.userInteractionEnabled = YES;
+    [self addSubview:self.hamburgerView];
+}
+
+- (void)rotate: (CGFloat)fraction {
+    CGFloat angle = fraction * M_PI_2;
+    self.hamburgerView.transform = CGAffineTransformMakeRotation(angle);
+}
 
 @end

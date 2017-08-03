@@ -7,10 +7,14 @@
 //
 
 #import "DetailViewController.h"
+#import "ViewController.h"
+#import "HamburgerView.h"
 
 @interface DetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
+@property (nonatomic, strong) HamburgerView *hamburgerView;
 
 @end
 
@@ -31,6 +35,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hamburgerViewTapped:)];
+    self.hamburgerView = [[HamburgerView alloc] initWithFrame: CGRectMake(0, 0, 20, 20)];
+    [self.hamburgerView addGestureRecognizer:tapGesture];
+    
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.hamburgerView];
+}
+
+- (void)hamburgerViewTapped: (UIGestureRecognizer *)gesture {
+    UINavigationController *nav = (UINavigationController *)self.parentViewController;
+    ViewController *containerVC = (ViewController *)nav.parentViewController;
+    [containerVC hideOrShowMenu:!containerVC.showingMenu animated:YES];
 }
 
 @end

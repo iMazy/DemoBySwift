@@ -17,5 +17,7 @@
 
 @property (nonatomic, strong) NSDictionary *menuItem;
 
+- (void) hideOrShowMenu:(BOOL)show animated: (BOOL)animated;
+
 @end
 

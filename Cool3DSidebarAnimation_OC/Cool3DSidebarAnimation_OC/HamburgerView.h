@@ -10,4 +10,6 @@
 
 @interface HamburgerView : UIView
 
+- (void)rotate: (CGFloat)fraction;
+
 @end

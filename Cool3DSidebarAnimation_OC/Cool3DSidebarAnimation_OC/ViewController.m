@@ -64,7 +64,7 @@
     CGFloat menuOffset = self.menuContainerView.bounds.size.width;
     CGPoint p1 = CGPointMake(menuOffset, 0);
     CGPoint p2 = scrollView.contentOffset;
-    self.showingMenu = CGPointEqualToPoint(p1, p2);
+    self.showingMenu = !CGPointEqualToPoint(p1, p2);
 }
 
 - (CATransform3D) transformForFraction: (CGFloat) fracton {
