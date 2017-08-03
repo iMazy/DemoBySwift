@@ -13,6 +13,11 @@
 		214570E51F32ACE000BD65A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214570E31F32ACE000BD65A3 /* Main.storyboard */; };
 		214570E71F32ACE000BD65A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 214570E61F32ACE000BD65A3 /* Assets.xcassets */; };
 		214570EA1F32ACE000BD65A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 214570E81F32ACE000BD65A3 /* LaunchScreen.storyboard */; };
+		214570F31F32AD2900BD65A3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214570F21F32AD2900BD65A3 /* MenuViewController.m */; };
+		214570F61F32AD3800BD65A3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214570F51F32AD3800BD65A3 /* DetailViewController.m */; };
+		214570F91F32AD6400BD65A3 /* MenuItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214570F81F32AD6400BD65A3 /* MenuItemCell.m */; };
+		214570FC1F32AD9000BD65A3 /* HamburgerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 214570FB1F32AD9000BD65A3 /* HamburgerView.m */; };
+		214570FE1F32ADDC00BD65A3 /* MenuItems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 214570FD1F32ADDC00BD65A3 /* MenuItems.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,15 @@
 		214570E61F32ACE000BD65A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		214570E91F32ACE000BD65A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		214570EB1F32ACE000BD65A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		214570F11F32AD2900BD65A3 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		214570F21F32AD2900BD65A3 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		214570F41F32AD3800BD65A3 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		214570F51F32AD3800BD65A3 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		214570F71F32AD6400BD65A3 /* MenuItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuItemCell.h; sourceTree = "<group>"; };
+		214570F81F32AD6400BD65A3 /* MenuItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuItemCell.m; sourceTree = "<group>"; };
+		214570FA1F32AD9000BD65A3 /* HamburgerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HamburgerView.h; sourceTree = "<group>"; };
+		214570FB1F32AD9000BD65A3 /* HamburgerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HamburgerView.m; sourceTree = "<group>"; };
+		214570FD1F32ADDC00BD65A3 /* MenuItems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = MenuItems.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +76,19 @@
 				214570DE1F32ACE000BD65A3 /* AppDelegate.m */,
 				214570E01F32ACE000BD65A3 /* ViewController.h */,
 				214570E11F32ACE000BD65A3 /* ViewController.m */,
+				214570F11F32AD2900BD65A3 /* MenuViewController.h */,
+				214570F21F32AD2900BD65A3 /* MenuViewController.m */,
+				214570F41F32AD3800BD65A3 /* DetailViewController.h */,
+				214570F51F32AD3800BD65A3 /* DetailViewController.m */,
+				214570FA1F32AD9000BD65A3 /* HamburgerView.h */,
+				214570FB1F32AD9000BD65A3 /* HamburgerView.m */,
+				214570F71F32AD6400BD65A3 /* MenuItemCell.h */,
+				214570F81F32AD6400BD65A3 /* MenuItemCell.m */,
 				214570E31F32ACE000BD65A3 /* Main.storyboard */,
 				214570E61F32ACE000BD65A3 /* Assets.xcassets */,
 				214570E81F32ACE000BD65A3 /* LaunchScreen.storyboard */,
 				214570EB1F32ACE000BD65A3 /* Info.plist */,
+				214570FD1F32ADDC00BD65A3 /* MenuItems.plist */,
 				214570DA1F32ACE000BD65A3 /* Supporting Files */,
 			);
 			path = Cool3DSidebarAnimation_OC;
@@ -137,6 +160,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214570FE1F32ADDC00BD65A3 /* MenuItems.plist in Resources */,
 				214570EA1F32ACE000BD65A3 /* LaunchScreen.storyboard in Resources */,
 				214570E71F32ACE000BD65A3 /* Assets.xcassets in Resources */,
 				214570E51F32ACE000BD65A3 /* Main.storyboard in Resources */,
@@ -150,9 +174,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				214570F61F32AD3800BD65A3 /* DetailViewController.m in Sources */,
 				214570E21F32ACE000BD65A3 /* ViewController.m in Sources */,
 				214570DF1F32ACE000BD65A3 /* AppDelegate.m in Sources */,
 				214570DC1F32ACE000BD65A3 /* main.m in Sources */,
+				214570FC1F32AD9000BD65A3 /* HamburgerView.m in Sources */,
+				214570F31F32AD2900BD65A3 /* MenuViewController.m in Sources */,
+				214570F91F32AD6400BD65A3 /* MenuItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
