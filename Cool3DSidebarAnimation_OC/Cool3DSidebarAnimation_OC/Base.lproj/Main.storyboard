@@ -41,11 +41,11 @@
                                                 <rect key="frame" x="80" y="0.0" width="375" height="667"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <connections>
-                                                    <segue destination="1Y7-fQ-SxH" kind="embed" id="Cbq-UJ-dqO"/>
+                                                    <segue destination="1Y7-fQ-SxH" kind="embed" identifier="DetailViewSegue" id="Cbq-UJ-dqO"/>
                                                 </connections>
                                             </containerView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="GhO-F9-QWf" secondAttribute="trailing" id="Gey-Jz-8EM"/>
                                             <constraint firstAttribute="bottom" secondItem="xCX-hZ-Yfd" secondAttribute="bottom" id="N0T-GM-2v8"/>
@@ -75,6 +75,10 @@
                             <constraint firstItem="zs3-NG-JOA" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gml-4x-cKw"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="menuContainerView" destination="xCX-hZ-Yfd" id="Mb0-w1-ov3"/>
+                        <outlet property="scrollView" destination="0wZ-sw-Bwk" id="9zh-eP-Yt7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

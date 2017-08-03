@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) DetailViewController *detailVC;
+
+@property (nonatomic, assign) BOOL showingMenu;
+
+@property (nonatomic, strong) NSDictionary *menuItem;
 
 @end
 

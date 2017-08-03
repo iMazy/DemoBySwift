@@ -11,28 +11,26 @@
 @interface DetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
+
 @end
 
 @implementation DetailViewController
 
+- (void)setMenuItem:(NSDictionary *)menuItem {
+    _menuItem = menuItem;
+    
+    NSArray *colorArray = menuItem[@"colors"];
+    CGFloat r = [colorArray[0] floatValue];
+    CGFloat g = [colorArray[1] floatValue];
+    CGFloat b = [colorArray[2] floatValue];
+    self.view.backgroundColor = [UIColor colorWithRed: r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
+    
+    self.backgroundImageView.image = [UIImage imageNamed:menuItem[@"bigImage"]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
