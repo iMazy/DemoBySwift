@@ -12,7 +12,7 @@ class MenuViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    lazy var menuItems: NSArray =  {
+    lazy var menuItems: NSArray = {
         let path = Bundle.main.path(forResource: "MenuItems", ofType: "plist")
         return NSArray(contentsOfFile: path!)!
     }()

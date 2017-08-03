@@ -10,6 +10,7 @@
 
 @interface DetailViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 @end
 
 @implementation DetailViewController

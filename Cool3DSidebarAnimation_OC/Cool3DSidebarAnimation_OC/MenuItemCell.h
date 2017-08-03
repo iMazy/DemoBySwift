@@ -10,4 +10,8 @@
 
 @interface MenuItemCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *menuImageView;
+
+- (void)configForMenuItem: (NSDictionary *) menuItem;
+
 @end
