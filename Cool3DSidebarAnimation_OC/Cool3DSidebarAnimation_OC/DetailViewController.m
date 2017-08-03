@@ -27,6 +27,7 @@
     self.view.backgroundColor = [UIColor colorWithRed: r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0];
     
     self.backgroundImageView.image = [UIImage imageNamed:menuItem[@"bigImage"]];
+    self.navigationItem.title = menuItem[@"title"];
 }
 
 - (void)viewDidLoad {
