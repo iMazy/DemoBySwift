@@ -8,13 +8,10 @@
 
 #import "DetailViewController.h"
 #import "ViewController.h"
-#import "HamburgerView.h"
 
 @interface DetailViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-
-@property (nonatomic, strong) HamburgerView *hamburgerView;
 
 @end
 

@@ -58,6 +58,9 @@
     self.menuContainerView.layer.transform = [self transformForFraction:fraction];
     self.menuContainerView.alpha = fraction;
     
+    // 设置左上角按钮的旋转动画
+    [self.detailVC.hamburgerView rotate:fraction];
+    
 }
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {

@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HamburgerView.h"
 
 @interface DetailViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *menuItem;
+
+@property (nonatomic, strong) HamburgerView *hamburgerView;
 
 @end

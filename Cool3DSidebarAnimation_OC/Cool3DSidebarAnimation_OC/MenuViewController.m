@@ -7,8 +7,8 @@
 //
 
 #import "MenuViewController.h"
-#import "MenuItemCell.h"
 #import "ViewController.h"
+#import "MenuItemCell.h"
 
 @interface MenuViewController()<UITableViewDelegate, UITableViewDataSource>
 
@@ -32,7 +32,7 @@
     self.tableView.dataSource = self;
     
     ViewController *parentVC = (ViewController *)self.navigationController.parentViewController;
-
+    parentVC.menuItem = self.menuItems.firstObject;
     
 }
 
