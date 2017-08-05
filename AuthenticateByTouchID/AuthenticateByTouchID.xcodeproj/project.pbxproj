@@ -13,6 +13,7 @@
 		643B4C1F1EF6136A007C63D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 643B4C1E1EF6136A007C63D8 /* Assets.xcassets */; };
 		643B4C221EF6136A007C63D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 643B4C201EF6136A007C63D8 /* LaunchScreen.storyboard */; };
 		643B4C2A1EF61CA7007C63D8 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643B4C291EF61CA7007C63D8 /* MainTabBarController.swift */; };
+		64A2CC6D1F35489D00586EF8 /* Simulator Screen Shot 2017年8月5日 上午8.26.56.png in Resources */ = {isa = PBXBuildFile; fileRef = 64A2CC6C1F35489D00586EF8 /* Simulator Screen Shot 2017年8月5日 上午8.26.56.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		643B4C211EF6136A007C63D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		643B4C231EF6136A007C63D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		643B4C291EF61CA7007C63D8 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		64A2CC6C1F35489D00586EF8 /* Simulator Screen Shot 2017年8月5日 上午8.26.56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年8月5日 上午8.26.56.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				643B4C291EF61CA7007C63D8 /* MainTabBarController.swift */,
 				643B4C1B1EF6136A007C63D8 /* Main.storyboard */,
 				643B4C1E1EF6136A007C63D8 /* Assets.xcassets */,
+				64A2CC6C1F35489D00586EF8 /* Simulator Screen Shot 2017年8月5日 上午8.26.56.png */,
 				643B4C201EF6136A007C63D8 /* LaunchScreen.storyboard */,
 				643B4C231EF6136A007C63D8 /* Info.plist */,
 			);
@@ -130,6 +133,7 @@
 				643B4C221EF6136A007C63D8 /* LaunchScreen.storyboard in Resources */,
 				643B4C1F1EF6136A007C63D8 /* Assets.xcassets in Resources */,
 				643B4C1D1EF6136A007C63D8 /* Main.storyboard in Resources */,
+				64A2CC6D1F35489D00586EF8 /* Simulator Screen Shot 2017年8月5日 上午8.26.56.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +308,7 @@
 				643B4C281EF6136A007C63D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
