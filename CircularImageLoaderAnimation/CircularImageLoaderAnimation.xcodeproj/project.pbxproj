@@ -14,6 +14,7 @@
 		2145B5291F039CEA009FDEF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2145B5271F039CEA009FDEF6 /* LaunchScreen.storyboard */; };
 		2145B5311F039F1A009FDEF6 /* CircularLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145B5301F039F1A009FDEF6 /* CircularLoaderView.swift */; };
 		2145B5331F03A318009FDEF6 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145B5321F03A318009FDEF6 /* CustomImageView.swift */; };
+		64F8FCDC1F37416700081A79 /* circularImageLoader.gif in Resources */ = {isa = PBXBuildFile; fileRef = 64F8FCDB1F37416700081A79 /* circularImageLoader.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		2145B52A1F039CEA009FDEF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2145B5301F039F1A009FDEF6 /* CircularLoaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularLoaderView.swift; sourceTree = "<group>"; };
 		2145B5321F03A318009FDEF6 /* CustomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		64F8FCDB1F37416700081A79 /* circularImageLoader.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = circularImageLoader.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2145B5201F039CEA009FDEF6 /* ViewController.swift */,
 				2145B5301F039F1A009FDEF6 /* CircularLoaderView.swift */,
 				2145B5321F03A318009FDEF6 /* CustomImageView.swift */,
+				64F8FCDB1F37416700081A79 /* circularImageLoader.gif */,
 				2145B5221F039CEA009FDEF6 /* Main.storyboard */,
 				2145B5251F039CEA009FDEF6 /* Assets.xcassets */,
 				2145B5271F039CEA009FDEF6 /* LaunchScreen.storyboard */,
@@ -131,6 +134,7 @@
 			files = (
 				2145B5291F039CEA009FDEF6 /* LaunchScreen.storyboard in Resources */,
 				2145B5261F039CEA009FDEF6 /* Assets.xcassets in Resources */,
+				64F8FCDC1F37416700081A79 /* circularImageLoader.gif in Resources */,
 				2145B5241F039CEA009FDEF6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +311,7 @@
 				2145B52F1F039CEA009FDEF6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
