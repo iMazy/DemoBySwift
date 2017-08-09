@@ -18,6 +18,7 @@
 		214D7E711F0641FE0092CB4F /* TriangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E701F0641FE0092CB4F /* TriangleLayer.swift */; };
 		214D7E731F06446F0092CB4F /* RectangleLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E721F06446F0092CB4F /* RectangleLayer.swift */; };
 		214D7E751F0645880092CB4F /* ArcLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214D7E741F0645880092CB4F /* ArcLayer.swift */; };
+		2177A8281F3B097E00E33B81 /* complexloa.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2177A8271F3B097E00E33B81 /* complexloa.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		214D7E701F0641FE0092CB4F /* TriangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleLayer.swift; sourceTree = "<group>"; };
 		214D7E721F06446F0092CB4F /* RectangleLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleLayer.swift; sourceTree = "<group>"; };
 		214D7E741F0645880092CB4F /* ArcLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArcLayer.swift; sourceTree = "<group>"; };
+		2177A8271F3B097E00E33B81 /* complexloa.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = complexloa.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				214D7E6D1F0640360092CB4F /* Layers */,
 				214D7E5B1F063DA60092CB4F /* Main.storyboard */,
 				214D7E5E1F063DA60092CB4F /* Assets.xcassets */,
+				2177A8271F3B097E00E33B81 /* complexloa.gif */,
 				214D7E6B1F063FFA0092CB4F /* Colors.swift */,
 				214D7E601F063DA60092CB4F /* LaunchScreen.storyboard */,
 				214D7E631F063DA60092CB4F /* Info.plist */,
@@ -151,6 +154,7 @@
 			files = (
 				214D7E621F063DA60092CB4F /* LaunchScreen.storyboard in Resources */,
 				214D7E5F1F063DA60092CB4F /* Assets.xcassets in Resources */,
+				2177A8281F3B097E00E33B81 /* complexloa.gif in Resources */,
 				214D7E5D1F063DA60092CB4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
