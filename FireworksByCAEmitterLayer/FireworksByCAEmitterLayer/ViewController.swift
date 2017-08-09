@@ -24,7 +24,7 @@ class ViewController: UIViewController {
         let backImage = UIImage(named: "backImage")
         let backImageView = UIImageView(image: backImage)
         backImageView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-        backImageView.contentMode = .scaleAspectFit
+        backImageView.contentMode = .scaleAspectFill
         view.addSubview(backImageView)
         backImageView.isUserInteractionEnabled = true
         

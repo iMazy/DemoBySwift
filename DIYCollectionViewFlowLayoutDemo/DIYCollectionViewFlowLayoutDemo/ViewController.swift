@@ -25,6 +25,9 @@ extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as! CollectionViewCell
         cell.iconImageView.image = UIImage(named: "\(indexPath.row+1)")
+        var names: [String] = ["Mazy", "Lucy", "Marry", "Eric", "Owen", "Jerry", "Vivian", "Vickey", "Lura", "Angula", "Bob", "Brouth", "Jeck"]
+        names = names + names
+        cell.nameLabel.text = names[indexPath.row]
         return cell
     }
 }

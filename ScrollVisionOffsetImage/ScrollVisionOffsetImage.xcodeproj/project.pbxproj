@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2177A8341F3B0DFA00E33B81 /* scrollViewoffset.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2177A8331F3B0DFA00E33B81 /* scrollViewoffset.gif */; };
 		21EC3F5E1ED915D000217D0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F5D1ED915D000217D0D /* AppDelegate.swift */; };
 		21EC3F601ED915D000217D0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EC3F5F1ED915D000217D0D /* ViewController.swift */; };
 		21EC3F631ED915D000217D0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21EC3F611ED915D000217D0D /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2177A8331F3B0DFA00E33B81 /* scrollViewoffset.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = scrollViewoffset.gif; sourceTree = "<group>"; };
 		21EC3F5A1ED915D000217D0D /* ScrollVisionOffsetImage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScrollVisionOffsetImage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21EC3F5D1ED915D000217D0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21EC3F5F1ED915D000217D0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				21EC3F731ED9205400217D0D /* ScrollImageViewController.swift */,
 				21EC3F771ED92DA100217D0D /* MoreInfoView.swift */,
 				21EC3F611ED915D000217D0D /* Main.storyboard */,
+				2177A8331F3B0DFA00E33B81 /* scrollViewoffset.gif */,
 				21EC3F641ED915D000217D0D /* Assets.xcassets */,
 				21EC3F751ED929E500217D0D /* Math.swift */,
 				21EC3F661ED915D000217D0D /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21EC3F681ED915D000217D0D /* LaunchScreen.storyboard in Resources */,
+				2177A8341F3B0DFA00E33B81 /* scrollViewoffset.gif in Resources */,
 				21EC3F651ED915D000217D0D /* Assets.xcassets in Resources */,
 				21EC3F631ED915D000217D0D /* Main.storyboard in Resources */,
 			);
@@ -319,6 +323,7 @@
 				21EC3F6E1ED915D000217D0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

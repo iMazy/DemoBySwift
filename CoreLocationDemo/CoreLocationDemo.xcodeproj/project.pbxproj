@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2177A82B1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.26.png in Resources */ = {isa = PBXBuildFile; fileRef = 2177A8291F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.26.png */; };
+		2177A82C1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.19.png in Resources */ = {isa = PBXBuildFile; fileRef = 2177A82A1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.19.png */; };
 		21C752941EC962C6006DE2D1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C752931EC962C6006DE2D1 /* AppDelegate.swift */; };
 		21C752961EC962C6006DE2D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C752951EC962C6006DE2D1 /* ViewController.swift */; };
 		21C752991EC962C6006DE2D1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21C752971EC962C6006DE2D1 /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2177A8291F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年8月9日 下午5.15.26.png"; sourceTree = "<group>"; };
+		2177A82A1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年8月9日 下午5.15.19.png"; sourceTree = "<group>"; };
 		21C752901EC962C6006DE2D1 /* CoreLocationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreLocationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21C752931EC962C6006DE2D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21C752951EC962C6006DE2D1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +79,8 @@
 				21C752AD1EC97D63006DE2D1 /* ReGeocodeViewController.swift */,
 				21C752AE1EC97D63006DE2D1 /* ReGeocodeViewController.xib */,
 				21C752971EC962C6006DE2D1 /* Main.storyboard */,
+				2177A8291F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.26.png */,
+				2177A82A1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.19.png */,
 				21C7529A1EC962C6006DE2D1 /* Assets.xcassets */,
 				21C7529C1EC962C6006DE2D1 /* LaunchScreen.storyboard */,
 				21C7529F1EC962C6006DE2D1 /* Info.plist */,
@@ -141,11 +147,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2177A82B1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.26.png in Resources */,
 				21C7529E1EC962C6006DE2D1 /* LaunchScreen.storyboard in Resources */,
 				21C7529B1EC962C6006DE2D1 /* Assets.xcassets in Resources */,
 				21C752B41EC97D87006DE2D1 /* GeocodeViewController.xib in Resources */,
 				21C752991EC962C6006DE2D1 /* Main.storyboard in Resources */,
 				21C752B01EC97D63006DE2D1 /* ReGeocodeViewController.xib in Resources */,
+				2177A82C1F3B0A5D00E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.15.19.png in Resources */,
 				21C752A81EC975AB006DE2D1 /* GPSViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

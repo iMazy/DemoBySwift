@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2177A8301F3B0C6700E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.24.06.png in Resources */ = {isa = PBXBuildFile; fileRef = 2177A82F1F3B0C6700E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.24.06.png */; };
 		21D5260F1EEA7B780023CF3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D5260E1EEA7B780023CF3B /* AppDelegate.swift */; };
 		21D526111EEA7B780023CF3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D526101EEA7B780023CF3B /* ViewController.swift */; };
 		21D526141EEA7B780023CF3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D526121EEA7B780023CF3B /* Main.storyboard */; };
@@ -14,10 +15,10 @@
 		21D526191EEA7B780023CF3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21D526171EEA7B780023CF3B /* LaunchScreen.storyboard */; };
 		21D526211EEA7CAC0023CF3B /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D526201EEA7CAC0023CF3B /* CollectionViewFlowLayout.swift */; };
 		21D526231EEA7CBC0023CF3B /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D526221EEA7CBC0023CF3B /* CollectionViewCell.swift */; };
-		21D526251EEA80ED0023CF3B /* Simulator Screen Shot 2017年6月9日 下午3.06.03.png in Resources */ = {isa = PBXBuildFile; fileRef = 21D526241EEA80ED0023CF3B /* Simulator Screen Shot 2017年6月9日 下午3.06.03.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2177A82F1F3B0C6700E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.24.06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年8月9日 下午5.24.06.png"; sourceTree = "<group>"; };
 		21D5260B1EEA7B780023CF3B /* DIYCollectionViewFlowLayoutDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DIYCollectionViewFlowLayoutDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D5260E1EEA7B780023CF3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21D526101EEA7B780023CF3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -27,7 +28,6 @@
 		21D5261A1EEA7B780023CF3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21D526201EEA7CAC0023CF3B /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		21D526221EEA7CBC0023CF3B /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		21D526241EEA80ED0023CF3B /* Simulator Screen Shot 2017年6月9日 下午3.06.03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot 2017年6月9日 下午3.06.03.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +64,9 @@
 				21D526101EEA7B780023CF3B /* ViewController.swift */,
 				21D526201EEA7CAC0023CF3B /* CollectionViewFlowLayout.swift */,
 				21D526221EEA7CBC0023CF3B /* CollectionViewCell.swift */,
+				2177A82F1F3B0C6700E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.24.06.png */,
 				21D526121EEA7B780023CF3B /* Main.storyboard */,
 				21D526151EEA7B780023CF3B /* Assets.xcassets */,
-				21D526241EEA80ED0023CF3B /* Simulator Screen Shot 2017年6月9日 下午3.06.03.png */,
 				21D526171EEA7B780023CF3B /* LaunchScreen.storyboard */,
 				21D5261A1EEA7B780023CF3B /* Info.plist */,
 			);
@@ -134,8 +134,8 @@
 			files = (
 				21D526191EEA7B780023CF3B /* LaunchScreen.storyboard in Resources */,
 				21D526161EEA7B780023CF3B /* Assets.xcassets in Resources */,
+				2177A8301F3B0C6700E33B81 /* Simulator Screen Shot 2017年8月9日 下午5.24.06.png in Resources */,
 				21D526141EEA7B780023CF3B /* Main.storyboard in Resources */,
-				21D526251EEA80ED0023CF3B /* Simulator Screen Shot 2017年6月9日 下午3.06.03.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,6 +311,7 @@
 				21D5261F1EEA7B780023CF3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

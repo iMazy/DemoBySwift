@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2177A8321F3B0D3100E33B81 /* fireworks.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2177A8311F3B0D3100E33B81 /* fireworks.gif */; };
 		21952AD71F1C44F000D0AD84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21952AD61F1C44F000D0AD84 /* AppDelegate.swift */; };
 		21952AD91F1C44F000D0AD84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21952AD81F1C44F000D0AD84 /* ViewController.swift */; };
 		21952ADC1F1C44F000D0AD84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21952ADA1F1C44F000D0AD84 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2177A8311F3B0D3100E33B81 /* fireworks.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fireworks.gif; sourceTree = "<group>"; };
 		21952AD31F1C44F000D0AD84 /* FireworksByCAEmitterLayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FireworksByCAEmitterLayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21952AD61F1C44F000D0AD84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21952AD81F1C44F000D0AD84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				21952AE81F1C4B4100D0AD84 /* FireworksView.swift */,
 				21952ADA1F1C44F000D0AD84 /* Main.storyboard */,
 				21952ADD1F1C44F000D0AD84 /* Assets.xcassets */,
+				2177A8311F3B0D3100E33B81 /* fireworks.gif */,
 				21952ADF1F1C44F000D0AD84 /* LaunchScreen.storyboard */,
 				21952AE21F1C44F000D0AD84 /* Info.plist */,
 			);
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21952AE11F1C44F000D0AD84 /* LaunchScreen.storyboard in Resources */,
+				2177A8321F3B0D3100E33B81 /* fireworks.gif in Resources */,
 				21952ADE1F1C44F000D0AD84 /* Assets.xcassets in Resources */,
 				21952ADC1F1C44F000D0AD84 /* Main.storyboard in Resources */,
 			);
@@ -303,6 +307,7 @@
 				21952AE71F1C44F000D0AD84 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

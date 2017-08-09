@@ -22,15 +22,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6NO-Gz-5lR">
-                                <rect key="frame" x="164.5" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="168.5" y="318.5" width="38" height="30"/>
+                                <state key="normal" title="Show"/>
                                 <connections>
                                     <action selector="bottomButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uht-NF-Kzg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ive-yd-R2n">
-                                <rect key="frame" x="164.5" y="179" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <rect key="frame" x="170" y="179" width="35" height="30"/>
+                                <state key="normal" title="Push"/>
                                 <connections>
                                     <action selector="topButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fhi-L3-U2f"/>
                                 </connections>
