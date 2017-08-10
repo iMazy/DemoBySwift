@@ -3,12 +3,7 @@
 
 ***
 
-![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/AuthenticateByTouchID/AuthenticateByTouchID/Simulator%20Screen%20Shot%202017%E5%B9%B48%E6%9C%885%E6%97%A58.26.56.png)
-![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/ChatBySocket.IO/ChatBySocket.IO/Simulator%20Screen%20Shot%202017%E5%B9%B45%E6%9C%884%E6%97%A5%20%E4%B8%8B%E5%8D%889.33.14.png)
-![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/ChatBySocket.IO/ChatBySocket.IO/Simulator%20Screen%20Shot%202017%E5%B9%B45%E6%9C%884%E6%97%A5%20%E4%B8%8B%E5%8D%889.42.33.png)
-![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/CircularImageLoaderAnimation/CircularImageLoaderAnimation/circularImageLoader.gif)
-![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/ComplexLoadingAnimation/ComplexLoadingAnimation/complexloa.gif)
-![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/Cool3DSidebarAnimation/Cool3DSidebarAnimation/cool3DSidebarAaimation3.gif)
+![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/AuthenticateByTouchID/AuthenticateByTouchID/Simulator%20Screen%20Shot%202017%E5%B9%B48%E6%9C%885%E6%97%A58.26.56.png)![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/ChatBySocket.IO/ChatBySocket.IO/Simulator%20Screen%20Shot%202017%E5%B9%B45%E6%9C%884%E6%97%A5%20%E4%B8%8B%E5%8D%889.33.14.png)![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/ChatBySocket.IO/ChatBySocket.IO/Simulator%20Screen%20Shot%202017%E5%B9%B45%E6%9C%884%E6%97%A5%20%E4%B8%8B%E5%8D%889.42.33.png)![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/CircularImageLoaderAnimation/CircularImageLoaderAnimation/circularImageLoader.gif)![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/ComplexLoadingAnimation/ComplexLoadingAnimation/complexloa.gif)![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/Cool3DSidebarAnimation/Cool3DSidebarAnimation/cool3DSidebarAaimation3.gif)
 ![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/CoreLocationDemo/CoreLocationDemo/Simulator%20Screen%20Shot%202017%E5%B9%B48%E6%9C%889%E6%97%A5%20%E4%B8%8B%E5%8D%885.15.26.png)
 ![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/CustomAnimationForNavigationPush/CustomAnimationForNavigationPush/customPush.gif)
 ![image](https://github.com/Mazy-ma/DemoBySwift/blob/master/DIYCollectionViewFlowLayoutDemo/DIYCollectionViewFlowLayoutDemo/Simulator%20Screen%20Shot%202017%E5%B9%B48%E6%9C%889%E6%97%A5%20%E4%B8%8B%E5%8D%885.24.06.png)
