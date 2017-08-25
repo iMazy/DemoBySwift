@@ -12,6 +12,7 @@
 		21B1AA601F4FF80600E33F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B1AA5E1F4FF80600E33F60 /* Main.storyboard */; };
 		21B1AA621F4FF80600E33F60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21B1AA611F4FF80600E33F60 /* Assets.xcassets */; };
 		21B1AA651F4FF80600E33F60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B1AA631F4FF80600E33F60 /* LaunchScreen.storyboard */; };
+		21B1AA6E1F4FF89500E33F60 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AA6D1F4FF89500E33F60 /* EmotionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		21B1AA611F4FF80600E33F60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21B1AA641F4FF80600E33F60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		21B1AA661F4FF80600E33F60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21B1AA6D1F4FF89500E33F60 /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		21B1AA591F4FF80600E33F60 /* EmotionKeyboard */ = {
 			isa = PBXGroup;
 			children = (
+				21B1AA6C1F4FF87C00E33F60 /* EmotionKeyboardView */,
 				21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */,
 				21B1AA5C1F4FF80600E33F60 /* ViewController.swift */,
 				21B1AA5E1F4FF80600E33F60 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				21B1AA661F4FF80600E33F60 /* Info.plist */,
 			);
 			path = EmotionKeyboard;
+			sourceTree = "<group>";
+		};
+		21B1AA6C1F4FF87C00E33F60 /* EmotionKeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				21B1AA6D1F4FF89500E33F60 /* EmotionView.swift */,
+			);
+			path = EmotionKeyboardView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21B1AA6E1F4FF89500E33F60 /* EmotionView.swift in Sources */,
 				21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */,
 				21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */,
 			);
