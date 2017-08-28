@@ -13,9 +13,11 @@
         <scene sceneID="0Gh-ZP-a3M">
             <objects>
                 <navigationController id="hMM-9c-iBa" customClass="MainNavigationController" customModule="Solive" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="5wa-O9-bxQ">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="5wa-O9-bxQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="goc-Ac-xo5" kind="relationship" relationship="rootViewController" id="7nu-tp-ZUV"/>
@@ -34,7 +36,7 @@
                         <viewControllerLayoutGuide type="bottom" id="8lD-SV-vkG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RRv-b7-bkL">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
