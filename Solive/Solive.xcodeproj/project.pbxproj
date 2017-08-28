@@ -7,21 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		216E4DBE1F53E5A600D239E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E4DBD1F53E5A600D239E4 /* AppDelegate.swift */; };
-		216E4DC01F53E5A600D239E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E4DBF1F53E5A600D239E4 /* ViewController.swift */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
 		216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC41F53E5A600D239E4 /* Assets.xcassets */; };
 		216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */; };
+		216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E4DD41F53F23B00D239E4 /* AppDelegate.swift */; };
+		216E4DDB1F53F23B00D239E4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E4DD51F53F23B00D239E4 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		216E4DBD1F53E5A600D239E4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		216E4DBF1F53E5A600D239E4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		216E4DC21F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216E4DC41F53E5A600D239E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		216E4DC71F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		216E4DC91F53E5A600D239E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		216E4DD41F53F23B00D239E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		216E4DD51F53F23B00D239E4 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +54,118 @@
 		216E4DBC1F53E5A600D239E4 /* Solive */ = {
 			isa = PBXGroup;
 			children = (
-				216E4DBD1F53E5A600D239E4 /* AppDelegate.swift */,
-				216E4DBF1F53E5A600D239E4 /* ViewController.swift */,
+				216E4DD31F53F23B00D239E4 /* Main */,
+				216E4DCF1F53F23B00D239E4 /* Home */,
+				216E4DD61F53F23B00D239E4 /* Mine */,
+				216E4DE01F53F27E00D239E4 /* Tools */,
+				216E4DDC1F53F24200D239E4 /* System */,
+			);
+			path = Solive;
+			sourceTree = "<group>";
+		};
+		216E4DCF1F53F23B00D239E4 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				216E4DD01F53F23B00D239E4 /* Controller */,
+				216E4DD11F53F23B00D239E4 /* Model */,
+				216E4DD21F53F23B00D239E4 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		216E4DD01F53F23B00D239E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		216E4DD11F53F23B00D239E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		216E4DD21F53F23B00D239E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		216E4DD31F53F23B00D239E4 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				216E4DD41F53F23B00D239E4 /* AppDelegate.swift */,
+				216E4DD51F53F23B00D239E4 /* ViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		216E4DD61F53F23B00D239E4 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				216E4DD71F53F23B00D239E4 /* Controller */,
+				216E4DD81F53F23B00D239E4 /* Model */,
+				216E4DD91F53F23B00D239E4 /* View */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		216E4DD71F53F23B00D239E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		216E4DD81F53F23B00D239E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		216E4DD91F53F23B00D239E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		216E4DDC1F53F24200D239E4 /* System */ = {
+			isa = PBXGroup;
+			children = (
 				216E4DC11F53E5A600D239E4 /* Main.storyboard */,
 				216E4DC41F53E5A600D239E4 /* Assets.xcassets */,
 				216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */,
 				216E4DC91F53E5A600D239E4 /* Info.plist */,
 			);
-			path = Solive;
+			name = System;
+			sourceTree = "<group>";
+		};
+		216E4DE01F53F27E00D239E4 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				216E4DE11F53F27E00D239E4 /* Extension */,
+				216E4DE21F53F27E00D239E4 /* Protocol */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		216E4DE11F53F27E00D239E4 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		216E4DE21F53F27E00D239E4 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +240,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				216E4DC01F53E5A600D239E4 /* ViewController.swift in Sources */,
-				216E4DBE1F53E5A600D239E4 /* AppDelegate.swift in Sources */,
+				216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */,
+				216E4DDB1F53F23B00D239E4 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
