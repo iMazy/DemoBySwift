@@ -47,7 +47,13 @@ extension HomeViewController {
         let types: [[String: AnyObject]] = NSArray(contentsOfFile: titlesPath) as! [[String: AnyObject]]
         let titles: [String] = types.flatMap({ $0["title"] }) as! [String]
         
-        let pageView = PageScrollView(frame: CGRect(x: 0, y: 64, width: kScreenW, height: kScreenH-64), titles: titles, childVC: [UIViewController()], parentVC: self)
+        var childVCs: [UIViewController] = [UIViewController]()
+        for _ in 0..<titles.count {
+            let vc = UIViewController()
+            childVCs.append(vc)
+        }
+        
+        let pageView = PageScrollView(frame: CGRect(x: 0, y: 64, width: kScreenW, height: kScreenH-64), titles: titles, childVC: childVCs, parentVC: self)
         view.addSubview(pageView)
     }
 }

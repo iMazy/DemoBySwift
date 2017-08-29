@@ -105,8 +105,8 @@ private extension PageTitleView {
         let coverX: CGFloat = firstLabel.frame.origin.x - 5
         let coverY: CGFloat = (topScrollView.frame.height - coverH) * 0.5
         coverView = UIView(frame: CGRect(x: coverX, y: coverY, width: coverW, height: coverH))
-        coverView.alpha = 0.7
         coverView.backgroundColor = UIColor.lightGray
+        coverView.alpha = 0.7
         coverView.layer.cornerRadius = coverH * 0.5
         topScrollView.addSubview(coverView)
         topScrollView.insertSubview(coverView, at: 0)
@@ -178,18 +178,6 @@ extension PageTitleView {
         coverView.frame.size.width = (sourceLabel.frame.width + 2 * 5 + moveTotalW * progress)
         coverView.frame.origin.x = (sourceLabel.frame.origin.x - 5 + moveTotalX * progress)
         
-        // 2.计算和中间位置的偏移量
-        var offSetX = targetLabel.center.x - bounds.width * 0.5
-        if offSetX < 0 {
-            offSetX = 0
-        }
-        let maxOffset = topScrollView.contentSize.width - bounds.width
-        if offSetX > maxOffset {
-            offSetX = maxOffset
-        }
-        
-        // 3.滚动UIScrollView
-        topScrollView.setContentOffset(CGPoint(x: offSetX, y: 0), animated: true)
     }
     
     func contentViewDidEndScroll() {

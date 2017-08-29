@@ -8,8 +8,6 @@
 
 import UIKit
 
-let kContentCollectionCellIndentifier = "contentCollectionCellIndentifier"
-
 class PageScrollView: UIView {
 
     fileprivate var topTitlesView: PageTitleView!
@@ -51,19 +49,20 @@ private extension PageScrollView {
 }
 
 extension PageScrollView: PageTitleViewDelegate {
+    
     func titleView(_ titleView: PageTitleView, selectedIndex index: Int) {
-        
+        contentView.setCurrentIndex(index)
     }
 }
 
 extension PageScrollView: PageContentViewDelegate {
     
     func contentViewEndScroll(_ contentView: PageContentView) {
-        
+        topTitlesView.contentViewDidEndScroll()
     }
     
     func contentView(_ contentView: PageContentView, progress: CGFloat, sourceIndex: Int, targetIndex: Int) {
-        
+        topTitlesView.setTitleWithProgress(progress, sourceIndex: sourceIndex, targetIndex: targetIndex)
     }
 }
 
