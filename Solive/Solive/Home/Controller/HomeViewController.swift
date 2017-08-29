@@ -47,9 +47,9 @@ extension HomeViewController {
         let types: [[String: AnyObject]] = NSArray(contentsOfFile: titlesPath) as! [[String: AnyObject]]
         let titles: [String] = types.flatMap({ $0["title"] }) as! [String]
         
-        var childVCs: [UIViewController] = [UIViewController]()
+        var childVCs: [AnchorViewController] = [AnchorViewController]()
         for _ in 0..<titles.count {
-            let vc = UIViewController()
+            let vc = AnchorViewController()
             childVCs.append(vc)
         }
         

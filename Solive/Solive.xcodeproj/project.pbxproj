@@ -24,6 +24,7 @@
 		21797A271F5502F7000D30E8 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A241F5502F7000D30E8 /* types.plist */; };
 		21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A281F554E70000D30E8 /* PageTitleView.swift */; };
 		21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A2A1F554E81000D30E8 /* PageContentView.swift */; };
+		21797A2D1F556B5A000D30E8 /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		21797A241F5502F7000D30E8 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
 		21797A281F554E70000D30E8 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		21797A2A1F554E81000D30E8 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
+		21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				216E4DEB1F53F73D00D239E4 /* HomeViewController.swift */,
+				21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */,
 				21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */,
 				216E4DE61F53F43000D239E4 /* MainNavigationController.swift in Sources */,
+				21797A2D1F556B5A000D30E8 /* AnchorViewController.swift in Sources */,
 				216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */,
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,

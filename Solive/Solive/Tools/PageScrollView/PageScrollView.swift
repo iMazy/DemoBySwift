@@ -14,10 +14,10 @@ class PageScrollView: UIView {
     fileprivate var contentView: PageContentView!
     
     fileprivate var titles: [String]
-    fileprivate var childVC: [UIViewController]
+    fileprivate var childVC: [AnchorViewController]
     fileprivate var parentVC: UIViewController    
     
-    init(frame: CGRect, titles: [String], childVC: [UIViewController], parentVC: UIViewController) {
+    init(frame: CGRect, titles: [String], childVC: [AnchorViewController], parentVC: UIViewController) {
         self.titles = titles
         self.childVC = childVC
         self.parentVC = parentVC
@@ -40,7 +40,7 @@ private extension PageScrollView {
         topTitlesView.delegate = self
         addSubview(topTitlesView)
         
-        let contentRect = CGRect(x: 0, y: topTitlesView.frame.maxY, width: kScreenW, height: kScreenH-topTitlesView.bounds.height)
+        let contentRect = CGRect(x: 0, y: topTitlesView.frame.maxY, width: kScreenW, height: bounds.height-topTitlesView.bounds.height)
         contentView = PageContentView(frame: contentRect, childVC: childVC, parentVC: parentVC)
         contentView.delegate = self
         addSubview(contentView)

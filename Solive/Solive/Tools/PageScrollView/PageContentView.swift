@@ -23,13 +23,13 @@ class PageContentView: UIView {
     var delegate : PageContentViewDelegate?
     
     fileprivate var contentCollectionView: UICollectionView!
-    fileprivate var childVC: [UIViewController]
+    fileprivate var childVC: [AnchorViewController]
     fileprivate var parentVC: UIViewController
     
     fileprivate var startOffsetX: CGFloat = 0
     fileprivate var isForbidScrollDelegate : Bool = false
     
-    init(frame: CGRect, childVC: [UIViewController], parentVC: UIViewController) {
+    init(frame: CGRect, childVC: [AnchorViewController], parentVC: UIViewController) {
         self.childVC = childVC
         self.parentVC = parentVC
         super.init(frame: frame)
@@ -71,7 +71,14 @@ extension PageContentView: UICollectionViewDataSource, UICollectionViewDelegate 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kContentCollectionCellIndentifier, for: indexPath)
-        cell.backgroundColor = UIColor.randomColor()
+        
+        for subView in cell.contentView.subviews {
+            subView.removeFromSuperview()
+        }
+        
+        let child = self.childVC[indexPath.row]
+        child.view.frame = cell.contentView.bounds
+        cell.contentView.addSubview(child.view)
         return cell
     }
 }
