@@ -13,7 +13,11 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        automaticallyAdjustsScrollViewInsets = false
+        
         setupNavigationBar()
+        
+        setupContentView()
     }
 }
 
@@ -36,5 +40,14 @@ extension HomeViewController {
     
     @objc private func rightItemAction() {
         print("rightItemAction")
+    }
+    
+    func setupContentView() {
+        let titlesPath = Bundle.main.path(forResource: "types.plist", ofType: nil)!
+        let types: [[String: AnyObject]] = NSArray(contentsOfFile: titlesPath) as! [[String: AnyObject]]
+        let titles: [String] = types.flatMap({ $0["title"] }) as! [String]
+        
+        let pageView = PageScrollView(frame: CGRect(x: 0, y: 64, width: kScreenW, height: kScreenH-64), titles: titles, childVC: [UIViewController()], parentVC: self)
+        view.addSubview(pageView)
     }
 }

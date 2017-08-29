@@ -17,6 +17,11 @@
 		216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DE71F53F4AD00D239E4 /* Home.storyboard */; };
 		216E4DEA1F53F4B900D239E4 /* Mine.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DE91F53F4B900D239E4 /* Mine.storyboard */; };
 		216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216E4DEB1F53F73D00D239E4 /* HomeViewController.swift */; };
+		21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A1D1F54F953000D30E8 /* PageScrollView.swift */; };
+		21797A211F54FC40000D30E8 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A201F54FC40000D30E8 /* Const.swift */; };
+		21797A251F5502F7000D30E8 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */; };
+		21797A261F5502F7000D30E8 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */; };
+		21797A271F5502F7000D30E8 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A241F5502F7000D30E8 /* types.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +34,14 @@
 		216E4DD41F53F23B00D239E4 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		216E4DE31F53F3C100D239E4 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		216E4DE51F53F43000D239E4 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
-		216E4DE71F53F4AD00D239E4 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = Home/View/Home.storyboard; sourceTree = "<group>"; };
+		216E4DE71F53F4AD00D239E4 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Home.storyboard; path = View/Home.storyboard; sourceTree = "<group>"; };
 		216E4DE91F53F4B900D239E4 /* Mine.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Mine.storyboard; sourceTree = "<group>"; };
 		216E4DEB1F53F73D00D239E4 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		21797A1D1F54F953000D30E8 /* PageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageScrollView.swift; sourceTree = "<group>"; };
+		21797A201F54FC40000D30E8 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
+		21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
+		21797A241F5502F7000D30E8 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +76,6 @@
 			children = (
 				216E4DD31F53F23B00D239E4 /* Main */,
 				216E4DCF1F53F23B00D239E4 /* Home */,
-				216E4DE71F53F4AD00D239E4 /* Home.storyboard */,
 				216E4DD61F53F23B00D239E4 /* Mine */,
 				216E4DE01F53F27E00D239E4 /* Tools */,
 				216E4DDC1F53F24200D239E4 /* System */,
@@ -80,6 +89,7 @@
 				216E4DD01F53F23B00D239E4 /* Controller */,
 				216E4DD11F53F23B00D239E4 /* Model */,
 				216E4DD21F53F23B00D239E4 /* View */,
+				216E4DE71F53F4AD00D239E4 /* Home.storyboard */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -151,6 +161,9 @@
 		216E4DDC1F53F24200D239E4 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */,
+				21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */,
+				21797A241F5502F7000D30E8 /* types.plist */,
 				216E4DC11F53E5A600D239E4 /* Main.storyboard */,
 				216E4DC41F53E5A600D239E4 /* Assets.xcassets */,
 				216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */,
@@ -162,6 +175,8 @@
 		216E4DE01F53F27E00D239E4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				21797A1F1F54FC30000D30E8 /* Const */,
+				21797A1C1F54F930000D30E8 /* PageScrollView */,
 				216E4DE11F53F27E00D239E4 /* Extension */,
 				216E4DE21F53F27E00D239E4 /* Protocol */,
 			);
@@ -181,6 +196,22 @@
 			children = (
 			);
 			path = Protocol;
+			sourceTree = "<group>";
+		};
+		21797A1C1F54F930000D30E8 /* PageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				21797A1D1F54F953000D30E8 /* PageScrollView.swift */,
+			);
+			path = PageScrollView;
+			sourceTree = "<group>";
+		};
+		21797A1F1F54FC30000D30E8 /* Const */ = {
+			isa = PBXGroup;
+			children = (
+				21797A201F54FC40000D30E8 /* Const.swift */,
+			);
+			path = Const;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +275,9 @@
 			files = (
 				216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */,
 				216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */,
+				21797A271F5502F7000D30E8 /* types.plist in Resources */,
+				21797A261F5502F7000D30E8 /* QHSohuGifSort.plist in Resources */,
+				21797A251F5502F7000D30E8 /* QHNormalEmotionSort.plist in Resources */,
 				216E4DEA1F53F4B900D239E4 /* Mine.storyboard in Resources */,
 				216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
@@ -261,7 +295,9 @@
 				216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */,
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
+				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
 				216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */,
+				21797A211F54FC40000D30E8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
