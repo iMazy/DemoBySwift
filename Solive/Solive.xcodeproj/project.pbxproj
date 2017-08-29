@@ -22,6 +22,8 @@
 		21797A251F5502F7000D30E8 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */; };
 		21797A261F5502F7000D30E8 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */; };
 		21797A271F5502F7000D30E8 /* types.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21797A241F5502F7000D30E8 /* types.plist */; };
+		21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A281F554E70000D30E8 /* PageTitleView.swift */; };
+		21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A2A1F554E81000D30E8 /* PageContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
 		21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
 		21797A241F5502F7000D30E8 /* types.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = types.plist; sourceTree = "<group>"; };
+		21797A281F554E70000D30E8 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
+		21797A2A1F554E81000D30E8 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				21797A1D1F54F953000D30E8 /* PageScrollView.swift */,
+				21797A281F554E70000D30E8 /* PageTitleView.swift */,
+				21797A2A1F554E81000D30E8 /* PageContentView.swift */,
 			);
 			path = PageScrollView;
 			sourceTree = "<group>";
@@ -291,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */,
+				21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */,
 				216E4DE61F53F43000D239E4 /* MainNavigationController.swift in Sources */,
 				216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */,
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
