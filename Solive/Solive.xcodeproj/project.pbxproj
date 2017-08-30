@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		210D81C61F540C1800710C0F /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D81C51F540C1800710C0F /* Foundation.swift */; };
 		213017271F56526900FBE68C /* CollectionViewWaterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */; };
+		2130172A1F56866B00FBE68C /* AnchorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017281F56866B00FBE68C /* AnchorViewCell.swift */; };
+		2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213017291F56866B00FBE68C /* AnchorViewCell.xib */; };
+		2130172D1F56895E00FBE68C /* AnchorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2130172C1F56895E00FBE68C /* AnchorViewModel.swift */; };
+		2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2130172E1F56898B00FBE68C /* AnchorModel.swift */; };
+		213017321F568ABA00FBE68C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017311F568ABA00FBE68C /* BaseModel.swift */; };
+		213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017331F568B4B00FBE68C /* HomeTypeModel.swift */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
 		216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC41F53E5A600D239E4 /* Assets.xcassets */; };
 		216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */; };
@@ -31,6 +37,12 @@
 /* Begin PBXFileReference section */
 		210D81C51F540C1800710C0F /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterFlowLayout.swift; sourceTree = "<group>"; };
+		213017281F56866B00FBE68C /* AnchorViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewCell.swift; sourceTree = "<group>"; };
+		213017291F56866B00FBE68C /* AnchorViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnchorViewCell.xib; sourceTree = "<group>"; };
+		2130172C1F56895E00FBE68C /* AnchorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewModel.swift; sourceTree = "<group>"; };
+		2130172E1F56898B00FBE68C /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
+		213017311F568ABA00FBE68C /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		213017331F568B4B00FBE68C /* HomeTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTypeModel.swift; sourceTree = "<group>"; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216E4DC21F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216E4DC41F53E5A600D239E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +75,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213017301F568AAE00FBE68C /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				213017311F568ABA00FBE68C /* BaseModel.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
 		216E4DB11F53E5A600D239E4 = {
 			isa = PBXGroup;
 			children = (
@@ -82,6 +102,7 @@
 		216E4DBC1F53E5A600D239E4 /* Solive */ = {
 			isa = PBXGroup;
 			children = (
+				213017301F568AAE00FBE68C /* Base */,
 				216E4DD31F53F23B00D239E4 /* Main */,
 				216E4DCF1F53F23B00D239E4 /* Home */,
 				216E4DD61F53F23B00D239E4 /* Mine */,
@@ -115,6 +136,9 @@
 		216E4DD11F53F23B00D239E4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2130172C1F56895E00FBE68C /* AnchorViewModel.swift */,
+				2130172E1F56898B00FBE68C /* AnchorModel.swift */,
+				213017331F568B4B00FBE68C /* HomeTypeModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -122,6 +146,8 @@
 		216E4DD21F53F23B00D239E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				213017281F56866B00FBE68C /* AnchorViewCell.swift */,
+				213017291F56866B00FBE68C /* AnchorViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -292,6 +318,7 @@
 				21797A251F5502F7000D30E8 /* QHNormalEmotionSort.plist in Resources */,
 				216E4DEA1F53F4B900D239E4 /* Mine.storyboard in Resources */,
 				216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */,
+				2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,7 +335,12 @@
 				216E4DE61F53F43000D239E4 /* MainNavigationController.swift in Sources */,
 				21797A2D1F556B5A000D30E8 /* AnchorViewController.swift in Sources */,
 				216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */,
+				2130172A1F56866B00FBE68C /* AnchorViewCell.swift in Sources */,
+				2130172D1F56895E00FBE68C /* AnchorViewModel.swift in Sources */,
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
+				2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */,
+				213017321F568ABA00FBE68C /* BaseModel.swift in Sources */,
+				213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
 				216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */,

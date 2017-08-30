@@ -31,7 +31,7 @@ class AnchorViewController: UIViewController {
         collectionView.dataSource = self
         view.addSubview(collectionView)
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: kAnchorReuseIdentifier)
+        collectionView.register(UINib(nibName: "AnchorViewCell", bundle: nil), forCellWithReuseIdentifier: kAnchorReuseIdentifier)
     }
 
 }
@@ -42,8 +42,7 @@ extension AnchorViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kAnchorReuseIdentifier, for: indexPath)
-        cell.backgroundColor = UIColor.randomColor()
+        let cell: AnchorViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kAnchorReuseIdentifier, for: indexPath) as! AnchorViewCell
         return cell
     }
 }

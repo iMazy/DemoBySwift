@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="AnchorViewCell" customModule="Solive" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="170" height="221"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="170" height="221"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-EB-5Ah">
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="221"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon_live" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-WK-njQ">
+                        <rect key="frame" x="137" y="10" width="23" height="13"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjx-hb-Xzu">
+                        <rect key="frame" x="10" y="191.5" width="32.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-vD-rTq">
+                        <rect key="frame" x="119" y="195.5" width="41" height="11"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                        <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="-3" maxY="0.0"/>
+                        <state key="normal" title="8888" image="home_icon_people"/>
+                    </button>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Xjx-hb-Xzu" secondAttribute="bottom" constant="10" id="6km-JR-P8r"/>
+                <constraint firstAttribute="bottom" secondItem="fBq-EB-5Ah" secondAttribute="bottom" id="E5U-8A-tXW"/>
+                <constraint firstAttribute="trailing" secondItem="fBq-EB-5Ah" secondAttribute="trailing" id="EG6-B5-2sZ"/>
+                <constraint firstAttribute="trailing" secondItem="7Td-WK-njQ" secondAttribute="trailing" constant="10" id="EvX-XN-tkW"/>
+                <constraint firstItem="7Td-WK-njQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Xyl-SM-pVq"/>
+                <constraint firstAttribute="trailing" secondItem="9JK-vD-rTq" secondAttribute="trailing" constant="10" id="Ys9-mc-Vzd"/>
+                <constraint firstItem="fBq-EB-5Ah" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZRd-v9-8lB"/>
+                <constraint firstItem="Xjx-hb-Xzu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="eIl-7d-BLt"/>
+                <constraint firstItem="9JK-vD-rTq" firstAttribute="centerY" secondItem="Xjx-hb-Xzu" secondAttribute="centerY" id="mQ2-Aw-Yzm"/>
+                <constraint firstItem="fBq-EB-5Ah" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oaZ-dR-XCh"/>
+            </constraints>
+            <size key="customSize" width="170" height="221"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="-137" y="-38.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="home_icon_live" width="23" height="13"/>
+        <image name="home_icon_people" width="7" height="7"/>
+    </resources>
+</document>
