@@ -28,7 +28,7 @@ extension HomeViewController {
     func setupNavigationBar() {
         let searchBar = UISearchBar()
         searchBar.placeholder = "主播昵称/房间号/链接"
-        searchBar.barStyle = .black
+        searchBar.searchBarStyle = .minimal
         searchBar.isTranslucent = true
         searchBar.sizeToFit()
         navigationItem.titleView = searchBar

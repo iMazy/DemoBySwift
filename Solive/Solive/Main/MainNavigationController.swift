@@ -13,6 +13,14 @@ class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationBar.barTintColor = UIColor.black
+        self.navigationBar.isTranslucent = true
+        
+        // 通过运行时，添加全屏 pop 返回
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func show(_ vc: UIViewController, sender: Any?) {

@@ -12,8 +12,8 @@
         <!--Main Navigation Controller-->
         <scene sceneID="0Gh-ZP-a3M">
             <objects>
-                <navigationController id="hMM-9c-iBa" customClass="MainNavigationController" customModule="Solive" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="5wa-O9-bxQ">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hMM-9c-iBa" customClass="MainNavigationController" customModule="Solive" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="5wa-O9-bxQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -30,13 +30,13 @@
         <!--Home View Controller-->
         <scene sceneID="9Gh-q9-ttM">
             <objects>
-                <viewController id="goc-Ac-xo5" customClass="HomeViewController" customModule="Solive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="goc-Ac-xo5" customClass="HomeViewController" customModule="Solive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ADI-D4-flo"/>
                         <viewControllerLayoutGuide type="bottom" id="8lD-SV-vkG"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RRv-b7-bkL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
