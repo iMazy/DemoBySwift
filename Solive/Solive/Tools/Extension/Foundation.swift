@@ -7,6 +7,23 @@
 //
 
 import UIKit
+import YYWebImage
+
+extension UIImageView {
+    
+    func setImage(_ urlString: String?, _ placeHolderName: String?) {
+        guard let URLString = urlString, let url = URL(string: URLString) else {
+            return
+        }
+        
+        if let placeHolderName = placeHolderName {
+            yy_setImage(with: url, placeholder: UIImage(named: placeHolderName))
+        } else {
+            yy_setImage(with: url, options: .progressiveBlur)
+        }
+        
+    }
+}
 
 extension UIColor {
     convenience init(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat = 1.0) {

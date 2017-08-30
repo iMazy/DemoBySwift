@@ -15,6 +15,7 @@
 		2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2130172E1F56898B00FBE68C /* AnchorModel.swift */; };
 		213017321F568ABA00FBE68C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017311F568ABA00FBE68C /* BaseModel.swift */; };
 		213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017331F568B4B00FBE68C /* HomeTypeModel.swift */; };
+		213017371F568D3000FBE68C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017361F568D3000FBE68C /* NetworkManager.swift */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
 		216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC41F53E5A600D239E4 /* Assets.xcassets */; };
 		216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */; };
@@ -32,9 +33,11 @@
 		21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A281F554E70000D30E8 /* PageTitleView.swift */; };
 		21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A2A1F554E81000D30E8 /* PageContentView.swift */; };
 		21797A2D1F556B5A000D30E8 /* AnchorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */; };
+		D237FD52D134BB209517EC4C /* Pods_Solive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CE2C4E6682F8DF5BD302AE6 /* Pods_Solive.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1EDF580C32AABAB867808DCF /* Pods-Solive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solive/Pods-Solive.debug.xcconfig"; sourceTree = "<group>"; };
 		210D81C51F540C1800710C0F /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
 		213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterFlowLayout.swift; sourceTree = "<group>"; };
 		213017281F56866B00FBE68C /* AnchorViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewCell.swift; sourceTree = "<group>"; };
@@ -43,6 +46,7 @@
 		2130172E1F56898B00FBE68C /* AnchorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorModel.swift; sourceTree = "<group>"; };
 		213017311F568ABA00FBE68C /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		213017331F568B4B00FBE68C /* HomeTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTypeModel.swift; sourceTree = "<group>"; };
+		213017361F568D3000FBE68C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216E4DC21F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216E4DC41F53E5A600D239E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 		21797A281F554E70000D30E8 /* PageTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageTitleView.swift; sourceTree = "<group>"; };
 		21797A2A1F554E81000D30E8 /* PageContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageContentView.swift; sourceTree = "<group>"; };
 		21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnchorViewController.swift; sourceTree = "<group>"; };
+		2CE2C4E6682F8DF5BD302AE6 /* Pods_Solive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57F5D4AF9DD42264B8E2583 /* Pods-Solive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solive/Pods-Solive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D237FD52D134BB209517EC4C /* Pods_Solive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,11 +90,21 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		213017351F568D1000FBE68C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				213017361F568D3000FBE68C /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		216E4DB11F53E5A600D239E4 = {
 			isa = PBXGroup;
 			children = (
 				216E4DBC1F53E5A600D239E4 /* Solive */,
 				216E4DBB1F53E5A600D239E4 /* Products */,
+				6A7FD49CEA9D40630A801B3D /* Pods */,
+				B552837D15BC0F45CC01FB1C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,6 +228,7 @@
 		216E4DE01F53F27E00D239E4 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				213017351F568D1000FBE68C /* Network */,
 				21797A1F1F54FC30000D30E8 /* Const */,
 				21797A1C1F54F930000D30E8 /* PageScrollView */,
 				216E4DE11F53F27E00D239E4 /* Extension */,
@@ -252,6 +270,23 @@
 			path = Const;
 			sourceTree = "<group>";
 		};
+		6A7FD49CEA9D40630A801B3D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EDF580C32AABAB867808DCF /* Pods-Solive.debug.xcconfig */,
+				F57F5D4AF9DD42264B8E2583 /* Pods-Solive.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B552837D15BC0F45CC01FB1C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2CE2C4E6682F8DF5BD302AE6 /* Pods_Solive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -259,9 +294,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 216E4DCC1F53E5A600D239E4 /* Build configuration list for PBXNativeTarget "Solive" */;
 			buildPhases = (
+				44597EB8A832F56B956F0FCC /* [CP] Check Pods Manifest.lock */,
 				216E4DB61F53E5A600D239E4 /* Sources */,
 				216E4DB71F53E5A600D239E4 /* Frameworks */,
 				216E4DB81F53E5A600D239E4 /* Resources */,
+				ECA294A171510675B6AF4A67 /* [CP] Embed Pods Frameworks */,
+				779D1EA27D0D414CAA587B57 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,6 +363,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44597EB8A832F56B956F0FCC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Solive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		779D1EA27D0D414CAA587B57 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Solive/Pods-Solive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECA294A171510675B6AF4A67 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Solive/Pods-Solive-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCache/YYCache.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCache.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Solive/Pods-Solive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		216E4DB61F53E5A600D239E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -340,6 +438,7 @@
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
 				2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */,
 				213017321F568ABA00FBE68C /* BaseModel.swift in Sources */,
+				213017371F568D3000FBE68C /* NetworkManager.swift in Sources */,
 				213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
@@ -468,6 +567,7 @@
 		};
 		216E4DCD1F53E5A600D239E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EDF580C32AABAB867808DCF /* Pods-Solive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -481,6 +581,7 @@
 		};
 		216E4DCE1F53E5A600D239E4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F57F5D4AF9DD42264B8E2583 /* Pods-Solive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
