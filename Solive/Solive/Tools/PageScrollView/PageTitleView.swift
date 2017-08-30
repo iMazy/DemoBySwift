@@ -26,6 +26,14 @@ class PageTitleView: UIView {
     
     fileprivate var currentIndex : Int = 0
     
+    fileprivate lazy var splitLineView : UIView = {
+        let splitView = UIView()
+        splitView.backgroundColor = UIColor.lightGray
+        let h : CGFloat = 0.5
+        splitView.frame = CGRect(x: 0, y: self.frame.height - h, width: self.frame.width, height: h)
+        return splitView
+    }()
+    
     // MARK: 计算属性
     fileprivate lazy var normalColorRGB : (r : CGFloat, g : CGFloat, b : CGFloat) = self.getRGBWithColor(UIColor(r: 0, g: 0, b: 0))
     
@@ -52,6 +60,9 @@ private extension PageTitleView {
         setLabelsFrame()
         
         setCoverView()
+        /// 添加分割线
+        addSubview(splitLineView)
+        
     }
     
     func setupTopViewAndLabels() {

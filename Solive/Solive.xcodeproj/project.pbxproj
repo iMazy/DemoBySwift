@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		210D81C61F540C1800710C0F /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210D81C51F540C1800710C0F /* Foundation.swift */; };
+		213017271F56526900FBE68C /* CollectionViewWaterFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
 		216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC41F53E5A600D239E4 /* Assets.xcassets */; };
 		216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		210D81C51F540C1800710C0F /* Foundation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewWaterFlowLayout.swift; sourceTree = "<group>"; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216E4DC21F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216E4DC41F53E5A600D239E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			children = (
 				216E4DEB1F53F73D00D239E4 /* HomeViewController.swift */,
 				21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */,
+				213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
 				216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */,
+				213017271F56526900FBE68C /* CollectionViewWaterFlowLayout.swift in Sources */,
 				21797A211F54FC40000D30E8 /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

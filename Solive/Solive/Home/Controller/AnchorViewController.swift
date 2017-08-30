@@ -12,18 +12,22 @@ let kAnchorReuseIdentifier = "anchorReuseIdentifier"
 
 class AnchorViewController: UIViewController {
 
-    fileprivate lazy var flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+    fileprivate lazy var flowLayout: CollectionViewWaterFlowLayout = CollectionViewWaterFlowLayout()
     fileprivate var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        automaticallyAdjustsScrollViewInsets = false
 
-        flowLayout.itemSize = CGSize(width: kScreenW*0.5, height: kScreenW*0.7)
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 5
+        flowLayout.minimumInteritemSpacing = 5
+        flowLayout.dataSource = self
+        flowLayout.sectionInset = UIEdgeInsetsMake(5, 5, 5, 5)
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = UIColor.white
-//        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 49+64, 0)
+        collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        collectionView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0)
         collectionView.dataSource = self
         view.addSubview(collectionView)
         
@@ -42,4 +46,19 @@ extension AnchorViewController: UICollectionViewDataSource {
         cell.backgroundColor = UIColor.randomColor()
         return cell
     }
+}
+
+
+
+// MARK: - CollectionViewWaterFlowLayoutDataSource
+extension AnchorViewController: CollectionViewWaterFlowLayoutDataSource {
+    
+    func numberOfColsInWaterFlowLayout(_ layout: CollectionViewWaterFlowLayout) -> Int {
+        return 2
+    }
+    
+    func waterFlowLayout(_ layout: CollectionViewWaterFlowLayout, indexPath: IndexPath) -> CGFloat {
+        return indexPath.row % 2 == 0 ? kScreenW * 2/3 : kScreenW * 0.5
+    }
+    
 }
