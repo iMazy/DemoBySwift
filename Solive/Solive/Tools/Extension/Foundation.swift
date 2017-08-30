@@ -11,7 +11,7 @@ import YYWebImage
 
 extension UIImageView {
     
-    func setImage(_ urlString: String?, _ placeHolderName: String?) {
+    func setImage(_ urlString: String?, _ placeHolderName: String? = nil) {
         guard let URLString = urlString, let url = URL(string: URLString) else {
             return
         }

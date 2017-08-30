@@ -18,21 +18,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="170" height="221"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-EB-5Ah">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-EB-5Ah">
                         <rect key="frame" x="0.0" y="0.0" width="170" height="221"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon_live" translatesAutoresizingMaskIntoConstraints="NO" id="7Td-WK-njQ">
                         <rect key="frame" x="137" y="10" width="23" height="13"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjx-hb-Xzu">
-                        <rect key="frame" x="10" y="191.5" width="32.5" height="19.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <rect key="frame" x="10" y="193" width="31" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-vD-rTq">
-                        <rect key="frame" x="119" y="195.5" width="41" height="11"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                        <rect key="frame" x="112" y="194.5" width="48" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                         <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="-3" maxY="0.0"/>
                         <state key="normal" title="8888" image="home_icon_people"/>
@@ -44,6 +44,7 @@
                 <constraint firstAttribute="bottom" secondItem="fBq-EB-5Ah" secondAttribute="bottom" id="E5U-8A-tXW"/>
                 <constraint firstAttribute="trailing" secondItem="fBq-EB-5Ah" secondAttribute="trailing" id="EG6-B5-2sZ"/>
                 <constraint firstAttribute="trailing" secondItem="7Td-WK-njQ" secondAttribute="trailing" constant="10" id="EvX-XN-tkW"/>
+                <constraint firstItem="9JK-vD-rTq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xjx-hb-Xzu" secondAttribute="trailing" constant="10" id="Lmw-Jr-lHb"/>
                 <constraint firstItem="7Td-WK-njQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Xyl-SM-pVq"/>
                 <constraint firstAttribute="trailing" secondItem="9JK-vD-rTq" secondAttribute="trailing" constant="10" id="Ys9-mc-Vzd"/>
                 <constraint firstItem="fBq-EB-5Ah" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZRd-v9-8lB"/>
@@ -58,6 +59,12 @@
                 </userDefinedRuntimeAttribute>
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="anchorImageView" destination="fBq-EB-5Ah" id="OVY-Fm-q3J"/>
+                <outlet property="anchorNameLabel" destination="Xjx-hb-Xzu" id="rRh-md-PF4"/>
+                <outlet property="focusCountButton" destination="9JK-vD-rTq" id="JYa-1h-1fz"/>
+                <outlet property="isShowImageView" destination="7Td-WK-njQ" id="4HD-vP-qUc"/>
+            </connections>
             <point key="canvasLocation" x="-137" y="-38.5"/>
         </collectionViewCell>
     </objects>

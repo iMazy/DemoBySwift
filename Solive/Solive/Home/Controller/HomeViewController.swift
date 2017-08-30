@@ -43,17 +43,30 @@ extension HomeViewController {
     }
     
     func setupContentView() {
-        let titlesPath = Bundle.main.path(forResource: "types.plist", ofType: nil)!
-        let types: [[String: AnyObject]] = NSArray(contentsOfFile: titlesPath) as! [[String: AnyObject]]
-        let titles: [String] = types.flatMap({ $0["title"] }) as! [String]
+        
+        let homeTypes = loadTypeData()
+        
+        let titles: [String] = homeTypes.flatMap({ $0.title })
         
         var childVCs: [AnchorViewController] = [AnchorViewController]()
-        for _ in 0..<titles.count {
+        for type in homeTypes {
             let vc = AnchorViewController()
+            vc.homeType = type
             childVCs.append(vc)
         }
         
         let pageView = PageScrollView(frame: CGRect(x: 0, y: 64, width: kScreenW, height: kScreenH-64), titles: titles, childVC: childVCs, parentVC: self)
         view.addSubview(pageView)
+    }
+    
+    fileprivate func loadTypeData() -> [HomeTypeModel] {
+        let path = Bundle.main.path(forResource: "types.plist", ofType: nil) ?? ""
+        let dataArray = NSArray(contentsOfFile: path) as! [[String: Any]]
+        var tempArray = [HomeTypeModel]()
+        for dict in dataArray {
+            let m = HomeTypeModel(with: dict)
+            tempArray.append(m)
+        }
+        return tempArray
     }
 }

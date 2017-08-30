@@ -12,14 +12,24 @@ let kAnchorReuseIdentifier = "anchorReuseIdentifier"
 
 class AnchorViewController: UIViewController {
 
+    var homeType: HomeTypeModel!
+    
     fileprivate lazy var flowLayout: CollectionViewWaterFlowLayout = CollectionViewWaterFlowLayout()
     fileprivate var collectionView: UICollectionView!
+    
+    fileprivate lazy var anchorVM: AnchorViewModel = AnchorViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupUI()
+        
+        loadData(index: 0)
+    }
+    
+    private func setupUI() {
         automaticallyAdjustsScrollViewInsets = false
-
+        
         flowLayout.minimumLineSpacing = 5
         flowLayout.minimumInteritemSpacing = 5
         flowLayout.dataSource = self
@@ -32,17 +42,24 @@ class AnchorViewController: UIViewController {
         view.addSubview(collectionView)
         
         collectionView.register(UINib(nibName: "AnchorViewCell", bundle: nil), forCellWithReuseIdentifier: kAnchorReuseIdentifier)
+        
     }
 
+    func loadData(index: Int) {
+        anchorVM.loadHomeData(type: homeType, index: index) { 
+            self.collectionView.reloadData()
+        }
+    }
 }
 
 extension AnchorViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 30
+        return anchorVM.anchorModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: AnchorViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kAnchorReuseIdentifier, for: indexPath) as! AnchorViewCell
+        cell.config(anchorVM.anchorModels[indexPath.row])
         return cell
     }
 }
@@ -57,7 +74,7 @@ extension AnchorViewController: CollectionViewWaterFlowLayoutDataSource {
     }
     
     func waterFlowLayout(_ layout: CollectionViewWaterFlowLayout, indexPath: IndexPath) -> CGFloat {
-        return indexPath.row % 2 == 0 ? kScreenW * 2/3 : kScreenW * 0.5
+        return anchorVM.anchorModels[indexPath.row].isEvenIndex ? kScreenW * 2/3 : kScreenW * 0.5
     }
     
 }

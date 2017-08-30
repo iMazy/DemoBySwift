@@ -1,0 +1,10 @@
+platform :ios, '8.0'
+
+target 'Solive' do
+
+use_frameworks!
+
+pod "Alamofire"
+pod "YYWebImage"
+
+end
