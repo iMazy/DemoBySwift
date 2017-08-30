@@ -39,6 +39,7 @@ class AnchorViewController: UIViewController {
         collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         collectionView.contentInset = UIEdgeInsetsMake(0, 0, 49, 0)
         collectionView.dataSource = self
+        collectionView.delegate = self
         view.addSubview(collectionView)
         
         collectionView.register(UINib(nibName: "AnchorViewCell", bundle: nil), forCellWithReuseIdentifier: kAnchorReuseIdentifier)
@@ -52,7 +53,7 @@ class AnchorViewController: UIViewController {
     }
 }
 
-extension AnchorViewController: UICollectionViewDataSource {
+extension AnchorViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return anchorVM.anchorModels.count
     }
@@ -60,7 +61,17 @@ extension AnchorViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: AnchorViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: kAnchorReuseIdentifier, for: indexPath) as! AnchorViewCell
         cell.config(anchorVM.anchorModels[indexPath.row])
+        
+        if indexPath.item == anchorVM.anchorModels.count - 1 {
+            loadData(index: anchorVM.anchorModels.count)
+        }
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let roomVC = LiveShowViewController()
+        show(roomVC, sender: nil)
     }
 }
 

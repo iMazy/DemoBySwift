@@ -10,4 +10,4 @@ import UIKit
 
 let kScreenW: CGFloat = UIScreen.main.bounds.width
 let kScreenH: CGFloat = UIScreen.main.bounds.height
-let kNaviHeight: CGFloat = 35
+let kNaviHeight: CGFloat = 40

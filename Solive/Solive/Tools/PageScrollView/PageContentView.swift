@@ -79,6 +79,7 @@ extension PageContentView: UICollectionViewDataSource, UICollectionViewDelegate 
         let child = self.childVC[indexPath.row]
         child.view.frame = cell.contentView.bounds
         cell.contentView.addSubview(child.view)
+        parentVC.addChildViewController(child)
         return cell
     }
 }

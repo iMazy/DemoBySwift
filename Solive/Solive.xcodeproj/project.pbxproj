@@ -16,6 +16,8 @@
 		213017321F568ABA00FBE68C /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017311F568ABA00FBE68C /* BaseModel.swift */; };
 		213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017331F568B4B00FBE68C /* HomeTypeModel.swift */; };
 		213017371F568D3000FBE68C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017361F568D3000FBE68C /* NetworkManager.swift */; };
+		2130173A1F56ADB600FBE68C /* LiveShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017381F56ADB600FBE68C /* LiveShowViewController.swift */; };
+		2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213017391F56ADB600FBE68C /* LiveShowViewController.xib */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
 		216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC41F53E5A600D239E4 /* Assets.xcassets */; };
 		216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */; };
@@ -47,6 +49,8 @@
 		213017311F568ABA00FBE68C /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		213017331F568B4B00FBE68C /* HomeTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTypeModel.swift; sourceTree = "<group>"; };
 		213017361F568D3000FBE68C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		213017381F56ADB600FBE68C /* LiveShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveShowViewController.swift; sourceTree = "<group>"; };
+		213017391F56ADB600FBE68C /* LiveShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveShowViewController.xib; sourceTree = "<group>"; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216E4DC21F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216E4DC41F53E5A600D239E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 				216E4DEB1F53F73D00D239E4 /* HomeViewController.swift */,
 				21797A2C1F556B5A000D30E8 /* AnchorViewController.swift */,
 				213017261F56526900FBE68C /* CollectionViewWaterFlowLayout.swift */,
+				213017381F56ADB600FBE68C /* LiveShowViewController.swift */,
+				213017391F56ADB600FBE68C /* LiveShowViewController.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -358,6 +364,7 @@
 				216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */,
 				2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
+				2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +446,7 @@
 				2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */,
 				213017321F568ABA00FBE68C /* BaseModel.swift in Sources */,
 				213017371F568D3000FBE68C /* NetworkManager.swift in Sources */,
+				2130173A1F56ADB600FBE68C /* LiveShowViewController.swift in Sources */,
 				213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
