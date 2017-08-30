@@ -17,7 +17,7 @@ class AnchorViewCell: UICollectionViewCell {
     @IBOutlet weak var focusCountButton: UIButton!
     
     func config(_ model: AnchorModel) {
-        anchorImageView.setImage(model.isEvenIndex ? model.pic74 : model.pic51)
+        anchorImageView.xm_setImage(model.isEvenIndex ? model.pic74 : model.pic51)
         isShowImageView.isHidden = model.live == 0
         anchorNameLabel.text = model.name
         focusCountButton.setTitle("\(model.focus)", for: .normal)

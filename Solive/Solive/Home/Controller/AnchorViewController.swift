@@ -71,6 +71,7 @@ extension AnchorViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let roomVC = LiveShowViewController()
+        roomVC.anchor = anchorVM.anchorModels[indexPath.row]
         show(roomVC, sender: nil)
     }
 }

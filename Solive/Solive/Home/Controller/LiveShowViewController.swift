@@ -11,11 +11,46 @@ import UIKit
 class LiveShowViewController: UIViewController {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
+    @IBOutlet weak var topContainerView: UIView!
+    
+    @IBOutlet weak var anchorIconView: UIImageView!
+    @IBOutlet weak var anchorNameLabel: UILabel!
+    @IBOutlet weak var roomIDLabel: UILabel!
+    @IBOutlet weak var focusButton: UIButton!
+    
+    var anchor : AnchorModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupBlurView()
+        
+        setupUI()
+        
+        setData()
+        
+    }
+    
+    fileprivate func setupUI() {
+        topContainerView.layer.cornerRadius = topContainerView.bounds.height * 0.5
+        anchorIconView.layer.cornerRadius = anchorIconView.bounds.height * 0.5
+        anchorIconView.layer.masksToBounds = true
+        focusButton.layer.cornerRadius = focusButton.bounds.height * 0.5
+        
+    }
+    
+    fileprivate func setData() {
+        anchorIconView.xm_setImage(anchor?.pic51)
+        anchorNameLabel.text = anchor?.name ?? ""
+        roomIDLabel.text = "房间号: " + String(describing: anchor?.roomid ?? 0)
+    }
+    
+    fileprivate func setupBlurView() {
+        let blur = UIBlurEffect(style: .dark)
+        let blurView = UIVisualEffectView(effect: blur)
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        blurView.frame = backgroundImageView.bounds
+        backgroundImageView.addSubview(blurView)
     }
     
     @IBAction func toolBarButtonClick(_ sender: UIButton) {
@@ -39,6 +74,4 @@ class LiveShowViewController: UIViewController {
     @IBAction func closeButtonClick() {
         self.navigationController?.popViewController(animated: true)
     }
-    
-
 }
