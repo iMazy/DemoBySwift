@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="NormalEmotionCell" customModule="EmotionKeyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Tn0-S4-EmE">
+                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    </imageView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Tn0-S4-EmE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="642-A3-1tZ"/>
+                <constraint firstItem="Tn0-S4-EmE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="F1W-fd-Mhw"/>
+                <constraint firstAttribute="bottom" secondItem="Tn0-S4-EmE" secondAttribute="bottom" id="RM8-3v-g00"/>
+                <constraint firstAttribute="trailing" secondItem="Tn0-S4-EmE" secondAttribute="trailing" id="n6S-Sb-Yzd"/>
+            </constraints>
+            <connections>
+                <outlet property="emotionImageView" destination="Tn0-S4-EmE" id="l6e-SU-3UN"/>
+            </connections>
+        </collectionViewCell>
+    </objects>
+</document>
