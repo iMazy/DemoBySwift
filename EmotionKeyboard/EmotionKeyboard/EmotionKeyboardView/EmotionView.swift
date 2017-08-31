@@ -12,9 +12,9 @@ class EmotionView: UIView {
     
     var collectionView: UICollectionView?
     
-    fileprivate var layout: UICollectionViewFlowLayout
+    fileprivate var layout: CollectionViewHorizontalFlowLayout
     
-    init(frame: CGRect, layout: UICollectionViewFlowLayout) {
+    init(frame: CGRect, layout: CollectionViewHorizontalFlowLayout) {
         
         self.layout = layout
         

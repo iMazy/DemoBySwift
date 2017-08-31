@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */; };
 		21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */; };
 		21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AA5C1F4FF80600E33F60 /* ViewController.swift */; };
 		21B1AA601F4FF80600E33F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B1AA5E1F4FF80600E33F60 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		21B1AA571F4FF80600E33F60 /* EmotionKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B1AA5C1F4FF80600E33F60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				21B1AA6D1F4FF89500E33F60 /* EmotionView.swift */,
+				215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */,
 			);
 			path = EmotionKeyboardView;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				21B1AA6E1F4FF89500E33F60 /* EmotionView.swift in Sources */,
 				21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */,
+				215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */,
 				21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,6 +317,7 @@
 				21B1AA6B1F4FF80600E33F60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

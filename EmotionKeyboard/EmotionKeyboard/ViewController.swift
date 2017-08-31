@@ -13,11 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        flowLayout.itemSize = CGSize(width: 50, height: 50)
+        let flowLayout: CollectionViewHorizontalFlowLayout = CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
+        
         
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         
         flowLayout.scrollDirection = .horizontal
         let eView = EmotionView(frame: CGRect(x: 0, y: 200, width: view.bounds.width, height: 300), layout: flowLayout)

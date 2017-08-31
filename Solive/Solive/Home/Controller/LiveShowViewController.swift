@@ -26,7 +26,6 @@ class LiveShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
         setupUI()
         
         setupBlurView()
