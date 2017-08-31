@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IJKMediaFramework
 
 class LiveShowViewController: UIViewController {
     
@@ -20,15 +21,25 @@ class LiveShowViewController: UIViewController {
     
     var anchor : AnchorModel?
     
+    fileprivate var ijkPlayer: IJKFFMoviePlayerController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupBlurView()
         
         setupUI()
         
+        setupBlurView()
+        
         setData()
         
+        loadAnchorLiveAddress()
+        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        ijkPlayer?.shutdown()
     }
     
     fileprivate func setupUI() {
@@ -73,5 +84,52 @@ class LiveShowViewController: UIViewController {
     
     @IBAction func closeButtonClick() {
         self.navigationController?.popViewController(animated: true)
+    }
+}
+
+extension LiveShowViewController {
+    
+    func loadAnchorLiveAddress() {
+        // 请求主播的地址
+        let urlString = "http://qf.56.com/play/v2/preLoading.ios"
+        // 请求参数
+        let parameters: [String: Any] = ["imei" : "36301BB0-8BBA-48B0-91F5-33F1517FA056", "signature" : "f69f4d7d2feb3840f9294179cbcb913f", "roomId" : anchor!.roomid, "userId" : anchor!.uid]
+        NetworkManager.requestData(.GET, urlString: urlString, parameters: parameters) { (result) in
+            // 将 result 转出字典类型
+            let resultDict = result as? [String: Any]
+            // 从字典中取出数据
+            let infoDict = resultDict?["message"] as? [String: Any]
+            // 获取主播地址 URL
+            guard let rURL = infoDict?["rUrl"] as? String else {
+                return
+            }
+            // 请求直播地址
+            NetworkManager.requestData(.GET, urlString: rURL, completed: { (result) in
+                let resultDict = result as? [String : Any]
+                let liveURLString = resultDict?["url"] as? String
+                self.displayLiveView(liveURLString)
+            })
+        }
+    }
+    
+    private func displayLiveView(_ liveURLString: String?) {
+        // 获取直播地址
+        guard let liveURLString = liveURLString else { return }
+        // 使用 IJKPlayer 播放视频
+        let options = IJKFFOptions.byDefault()
+        options?.setOptionIntValue(1, forKey: "videotoolbox", of: kIJKFFOptionCategoryPlayer)
+        ijkPlayer = IJKFFMoviePlayerController(contentURLString: liveURLString, with: options)
+        // 设置 frame 并添加到视图上
+        if anchor?.push == 1 {
+            ijkPlayer?.view.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: backgroundImageView.bounds.width, height: backgroundImageView.bounds.width*3/4))
+            ijkPlayer?.view.center = backgroundImageView.center
+        } else {
+            ijkPlayer?.view.frame = backgroundImageView.bounds
+        }
+        backgroundImageView.addSubview(ijkPlayer!.view)
+        ijkPlayer?.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        // 开始播放
+        ijkPlayer?.prepareToPlay()
+        
     }
 }

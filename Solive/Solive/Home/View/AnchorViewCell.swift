@@ -10,7 +10,6 @@ import UIKit
 
 class AnchorViewCell: UICollectionViewCell {
 
-    
     @IBOutlet weak var anchorImageView: UIImageView!
     @IBOutlet weak var isShowImageView: UIImageView!
     @IBOutlet weak var anchorNameLabel: UILabel!

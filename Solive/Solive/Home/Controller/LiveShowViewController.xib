@@ -162,7 +162,6 @@
                     <state key="normal" image="zhibo_btn_people"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.107828776" green="0.1647058824" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="Pny-fe-vGh" secondAttribute="trailing" constant="10" id="0kC-Zj-cPV"/>
                 <constraint firstAttribute="bottom" secondItem="Sdq-7V-vJp" secondAttribute="bottom" id="1SA-6c-5er"/>
