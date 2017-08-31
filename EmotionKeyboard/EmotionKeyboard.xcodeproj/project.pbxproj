@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */; };
+		215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */; };
+		215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */; };
 		21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */; };
 		21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B1AA5C1F4FF80600E33F60 /* ViewController.swift */; };
 		21B1AA601F4FF80600E33F60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21B1AA5E1F4FF80600E33F60 /* Main.storyboard */; };
@@ -18,6 +20,8 @@
 
 /* Begin PBXFileReference section */
 		215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
+		215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
+		215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
 		21B1AA571F4FF80600E33F60 /* EmotionKeyboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmotionKeyboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21B1AA5C1F4FF80600E33F60 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +66,8 @@
 				21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */,
 				21B1AA5C1F4FF80600E33F60 /* ViewController.swift */,
 				21B1AA5E1F4FF80600E33F60 /* Main.storyboard */,
+				215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */,
+				215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */,
 				21B1AA611F4FF80600E33F60 /* Assets.xcassets */,
 				21B1AA631F4FF80600E33F60 /* LaunchScreen.storyboard */,
 				21B1AA661F4FF80600E33F60 /* Info.plist */,
@@ -137,9 +143,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */,
 				21B1AA651F4FF80600E33F60 /* LaunchScreen.storyboard in Resources */,
 				21B1AA621F4FF80600E33F60 /* Assets.xcassets in Resources */,
 				21B1AA601F4FF80600E33F60 /* Main.storyboard in Resources */,
+				215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

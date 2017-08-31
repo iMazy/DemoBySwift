@@ -15,7 +15,6 @@ class ViewController: UIViewController {
     
         let flowLayout: CollectionViewHorizontalFlowLayout = CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
         
-        
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)

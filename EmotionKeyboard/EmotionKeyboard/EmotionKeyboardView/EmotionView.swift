@@ -53,6 +53,13 @@ extension EmotionView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
         cell.backgroundColor = .red
+        cell.subviews.forEach({ $0.removeFromSuperview() })
+        let label = UILabel()
+        label.textAlignment = .center
+        label.text = "\(indexPath.section)-\(indexPath.item)"
+        label.sizeToFit()
+        label.frame = cell.contentView.bounds
+        cell.addSubview(label)
         return cell
     }
 }
