@@ -30,39 +30,37 @@
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9JK-vD-rTq">
-                        <rect key="frame" x="112" y="194.5" width="48" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8888" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysg-nz-gdC">
+                        <rect key="frame" x="129" y="194.5" width="31" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                        <inset key="titleEdgeInsets" minX="3" minY="0.0" maxX="-3" maxY="0.0"/>
-                        <state key="normal" title="8888" image="home_icon_people"/>
-                    </button>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_icon_people" translatesAutoresizingMaskIntoConstraints="NO" id="GWK-pw-CMV">
+                        <rect key="frame" x="119" y="198.5" width="7" height="7"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Xjx-hb-Xzu" secondAttribute="bottom" constant="10" id="6km-JR-P8r"/>
+                <constraint firstAttribute="trailing" secondItem="ysg-nz-gdC" secondAttribute="trailing" constant="10" id="DgT-QN-01e"/>
                 <constraint firstAttribute="bottom" secondItem="fBq-EB-5Ah" secondAttribute="bottom" id="E5U-8A-tXW"/>
                 <constraint firstAttribute="trailing" secondItem="fBq-EB-5Ah" secondAttribute="trailing" id="EG6-B5-2sZ"/>
                 <constraint firstAttribute="trailing" secondItem="7Td-WK-njQ" secondAttribute="trailing" constant="10" id="EvX-XN-tkW"/>
-                <constraint firstItem="9JK-vD-rTq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xjx-hb-Xzu" secondAttribute="trailing" constant="10" id="Lmw-Jr-lHb"/>
+                <constraint firstItem="ysg-nz-gdC" firstAttribute="leading" secondItem="GWK-pw-CMV" secondAttribute="trailing" constant="3" id="HFJ-j3-isU"/>
+                <constraint firstItem="GWK-pw-CMV" firstAttribute="centerY" secondItem="ysg-nz-gdC" secondAttribute="centerY" id="OVh-Gm-omK"/>
+                <constraint firstItem="GWK-pw-CMV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xjx-hb-Xzu" secondAttribute="trailing" constant="10" id="VCU-pt-fAL"/>
                 <constraint firstItem="7Td-WK-njQ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Xyl-SM-pVq"/>
-                <constraint firstAttribute="trailing" secondItem="9JK-vD-rTq" secondAttribute="trailing" constant="10" id="Ys9-mc-Vzd"/>
+                <constraint firstItem="ysg-nz-gdC" firstAttribute="centerY" secondItem="Xjx-hb-Xzu" secondAttribute="centerY" id="Z1u-a8-0fm"/>
                 <constraint firstItem="fBq-EB-5Ah" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZRd-v9-8lB"/>
                 <constraint firstItem="Xjx-hb-Xzu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="eIl-7d-BLt"/>
-                <constraint firstItem="9JK-vD-rTq" firstAttribute="centerY" secondItem="Xjx-hb-Xzu" secondAttribute="centerY" id="mQ2-Aw-Yzm"/>
                 <constraint firstItem="fBq-EB-5Ah" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="oaZ-dR-XCh"/>
             </constraints>
             <size key="customSize" width="170" height="221"/>
-            <userDefinedRuntimeAttributes>
-                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                    <integer key="value" value="5"/>
-                </userDefinedRuntimeAttribute>
-                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="anchorImageView" destination="fBq-EB-5Ah" id="OVY-Fm-q3J"/>
                 <outlet property="anchorNameLabel" destination="Xjx-hb-Xzu" id="rRh-md-PF4"/>
-                <outlet property="focusCountButton" destination="9JK-vD-rTq" id="JYa-1h-1fz"/>
+                <outlet property="focusCountLabel" destination="ysg-nz-gdC" id="QqZ-DD-LX8"/>
                 <outlet property="isShowImageView" destination="7Td-WK-njQ" id="4HD-vP-qUc"/>
             </connections>
             <point key="canvasLocation" x="-137" y="-38.5"/>

@@ -14,18 +14,21 @@ class AnchorViewCell: UICollectionViewCell {
     @IBOutlet weak var anchorImageView: UIImageView!
     @IBOutlet weak var isShowImageView: UIImageView!
     @IBOutlet weak var anchorNameLabel: UILabel!
-    @IBOutlet weak var focusCountButton: UIButton!
+    @IBOutlet weak var focusCountLabel: UILabel!
     
     func config(_ model: AnchorModel) {
-        anchorImageView.xm_setImage(model.isEvenIndex ? model.pic74 : model.pic51)
+        anchorImageView.xm_setImage(model.isEvenIndex ? model.pic74 : model.pic51, "placeholder")
         isShowImageView.isHidden = model.live == 0
         anchorNameLabel.text = model.name
-        focusCountButton.setTitle("\(model.focus)", for: .normal)
+        focusCountLabel.text = "\(model.focus)"
+        focusCountLabel.sizeToFit()
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        anchorImageView.layer.cornerRadius = 5
+        anchorImageView.layer.masksToBounds = true
     }
 
 }

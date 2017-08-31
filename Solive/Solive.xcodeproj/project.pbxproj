@@ -18,6 +18,7 @@
 		213017371F568D3000FBE68C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017361F568D3000FBE68C /* NetworkManager.swift */; };
 		2130173A1F56ADB600FBE68C /* LiveShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017381F56ADB600FBE68C /* LiveShowViewController.swift */; };
 		2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213017391F56ADB600FBE68C /* LiveShowViewController.xib */; };
+		215DAB031F57D9BA00053E68 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
 		216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC41F53E5A600D239E4 /* Assets.xcassets */; };
 		216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC61F53E5A600D239E4 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 		213017361F568D3000FBE68C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		213017381F56ADB600FBE68C /* LiveShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveShowViewController.swift; sourceTree = "<group>"; };
 		213017391F56ADB600FBE68C /* LiveShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveShowViewController.xib; sourceTree = "<group>"; };
+		215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		216E4DC21F53E5A600D239E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		216E4DC41F53E5A600D239E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D237FD52D134BB209517EC4C /* Pods_Solive.framework in Frameworks */,
+				215DAB031F57D9BA00053E68 /* IJKMediaFramework.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +223,7 @@
 		216E4DDC1F53F24200D239E4 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */,
 				21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */,
 				21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */,
 				21797A241F5502F7000D30E8 /* types.plist */,
@@ -579,6 +583,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Solive",
+				);
 				INFOPLIST_FILE = Solive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.Solive;
@@ -593,6 +601,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Solive",
+				);
 				INFOPLIST_FILE = Solive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.Solive;
