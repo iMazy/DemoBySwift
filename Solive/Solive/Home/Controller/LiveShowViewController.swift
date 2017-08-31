@@ -48,8 +48,8 @@ class LiveShowViewController: UIViewController {
     fileprivate func setupBlurView() {
         let blur = UIBlurEffect(style: .dark)
         let blurView = UIVisualEffectView(effect: blur)
-        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         blurView.frame = backgroundImageView.bounds
+        blurView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         backgroundImageView.addSubview(blurView)
     }
     
