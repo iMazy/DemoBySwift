@@ -55,11 +55,12 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: EmotionViewDataSource {
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+
+    func numberOfSections(in emotionView: EmotionView) -> Int {
         return emotionsArray.count
     }
     
-    func numberOfItemsInSection(collectionView: UICollectionView, section: Int) -> Int {
+    func numberOfItemsInSection(emotionView: EmotionView, section: Int) -> Int {
         return emotionsArray[section].count
     }
     
@@ -74,6 +75,10 @@ extension ViewController: EmotionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let emotionString = emotionsArray[indexPath.section][indexPath.row]
         print(emotionString)
+        if emotionString == "delete-n" {
+            self.textView.deleteBackward()
+            return
+        }
         self.textView.insertText(emotionString)
     }
 }

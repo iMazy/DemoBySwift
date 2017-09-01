@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		210EE6FC1F58F47500F16969 /* TopTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE6FB1F58F47500F16969 /* TopTitlesView.swift */; };
+		210EE6FE1F58F48C00F16969 /* TitleViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE6FD1F58F48C00F16969 /* TitleViewProperty.swift */; };
 		215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */; };
 		215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */; };
 		215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		210EE6FB1F58F47500F16969 /* TopTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTitlesView.swift; sourceTree = "<group>"; };
+		210EE6FD1F58F48C00F16969 /* TitleViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewProperty.swift; sourceTree = "<group>"; };
 		215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
 		215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
@@ -85,6 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				21B1AA6D1F4FF89500E33F60 /* EmotionView.swift */,
+				210EE6FB1F58F47500F16969 /* TopTitlesView.swift */,
+				210EE6FD1F58F48C00F16969 /* TitleViewProperty.swift */,
 				215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */,
 			);
 			path = EmotionKeyboardView;
@@ -169,7 +175,9 @@
 				21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */,
 				215DAB0E1F58055B00053E68 /* NormalEmotionCell.swift in Sources */,
 				215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */,
+				210EE6FE1F58F48C00F16969 /* TitleViewProperty.swift in Sources */,
 				21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */,
+				210EE6FC1F58F47500F16969 /* TopTitlesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

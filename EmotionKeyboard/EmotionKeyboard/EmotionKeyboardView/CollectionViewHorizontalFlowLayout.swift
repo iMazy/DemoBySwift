@@ -11,9 +11,9 @@ import UIKit
 class CollectionViewHorizontalFlowLayout: UICollectionViewFlowLayout {
     
     /// 行
-    fileprivate var rows: Int = 2
+    var rows: Int = 2
     /// 列
-    fileprivate var cols: Int = 3
+    var cols: Int = 3
     
     init(rows: Int, cols: Int) {
         self.rows = rows
