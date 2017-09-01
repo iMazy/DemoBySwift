@@ -73,7 +73,7 @@ extension TopTitlesView {
         self.layer.shadowOffset  = CGSize(width: 0, height: 2)
         self.layer.shadowRadius  = 2
         self.layer.masksToBounds = false
-//        self.layer.magnificationFilter = kCAFilterLinear
+        self.layer.magnificationFilter = kCAFilterLinear
     }
     
     fileprivate func setupTitleLabels() {
@@ -124,7 +124,7 @@ extension TopTitlesView {
     fileprivate func setupIndicatorView() {
         indicatorView.isHidden = titleProperty.isHiddenBottomLine
         indicatorView.backgroundColor = UIColor.red
-        if titleProperty.isScrollEnable {
+        if !titleProperty.isScrollEnable {
             indicatorView.frame = titleLabels.first!.frame
         } else {
             let titleW: CGFloat = titleLabels.first!.intrinsicContentSize.width
@@ -156,6 +156,14 @@ extension TopTitlesView {
         currentIndex = currentLabel.tag-1024
         
         delegate?.didClickTopTitleView(self, selectedIndex: currentIndex)
+        
+        // 7.调整bottomLine
+        if !titleProperty.isHiddenBottomLine {
+            UIView.animate(withDuration: 0.25, animations: {
+                self.indicatorView.frame.origin.x = currentLabel.frame.origin.x
+                self.indicatorView.frame.size.width = currentLabel.frame.size.width
+            })
+        }
         
         contentViewDidEndScrollAndAdjustLabelPosition()
     }

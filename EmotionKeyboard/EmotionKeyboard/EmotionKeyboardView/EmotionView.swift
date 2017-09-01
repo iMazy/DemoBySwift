@@ -67,7 +67,8 @@ extension EmotionView {
         let property = TitleViewProperty()
         property.isScrollEnable = false
         property.isHiddenBottomLine = false
-        titleView = TopTitlesView(frame: CGRect(x: 0, y: pageControl.frame.maxY, width: kWidth, height: 40), titles: ["normal","gift"], titleProperty: property)
+        titleView = TopTitlesView(frame: CGRect(x: 0, y: pageControl.frame.maxY, width: kWidth, height: 40), titles: ["普通","会员专属"], titleProperty: property)
+        titleView.delegate = self
         addSubview(titleView)
         
     }
@@ -99,25 +100,27 @@ extension EmotionView: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        
-    }
-    
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollViewEndScroll()
     }
     
-    private func scrollViewEndScroll() {
+    func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if !decelerate {
+            scrollViewEndScroll()
+        }
+    }
+    
+    fileprivate func scrollViewEndScroll() {
         // 1.取出在屏幕中显示的Cell
-        let point = CGPoint(x: layout.sectionInset.left + 1 + collectionView!.contentOffset.x, y: layout.sectionInset.top + 1)
+        let point = CGPoint(x: layout.sectionInset.left + 2 + collectionView!.contentOffset.x, y: layout.sectionInset.top + 2)
         guard let indexPath = collectionView?.indexPathForItem(at: point) else { return }
+        // 3.2.设置titleView位置
+        titleView.setTitleWithContentOffset(UIScreen.main.bounds.width * CGFloat(indexPath.section))
         // 2.判断分组是否有发生改变
         if sourceIndexPath.section != indexPath.section {
             // 修改 pageControl 的个数
             let itemCount = dataSource?.numberOfItemsInSection(emotionView: self, section: indexPath.section) ?? 0
             pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
-            // 3.2.设置titleView位置
-            titleView.setTitleWithContentOffset(UIScreen.main.bounds.width * CGFloat(indexPath.section))
             // 3.3.记录最新indexPath
             sourceIndexPath = indexPath
         }
@@ -136,5 +139,19 @@ extension EmotionView {
     
     open func register(nib: UINib?, forCellWithReuseIdentifier identifier: String) {
         collectionView?.register(nib, forCellWithReuseIdentifier: identifier)
+    }
+}
+
+extension EmotionView: TopTitlesViewDelegate {
+    func didClickTopTitleView(_ titlesView: TopTitlesView, selectedIndex index: Int) {
+        let indexPath = IndexPath(item: 0, section: index)
+        collectionView?.scrollToItem(at: indexPath, at: .left, animated: false)
+        collectionView!.contentOffset.x -= layout.sectionInset.left
+
+        // 修改 pageControl 的个数
+        let itemCount = dataSource?.numberOfItemsInSection(emotionView: self, section: indexPath.section) ?? 0
+        pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
+        // 3.3.记录最新indexPath
+        sourceIndexPath = indexPath
     }
 }
