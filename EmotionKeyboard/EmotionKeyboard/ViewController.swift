@@ -12,75 +12,36 @@ let normalEmotionCellID = "normalEmotionCellID"
 
 class ViewController: UIViewController {
 
-    fileprivate lazy var emotionsArray: [[String]] = [[String]]()
+    fileprivate var inputToolView = InputToolView.loadFromNib()
     
     @IBOutlet weak var textView: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        setupUI()
         
-        loadEmotionData()
-
-    }
-    
-    func setupUI() {
+        inputToolView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 44)
+        view.addSubview(inputToolView)
         
-        let flowLayout: CollectionViewHorizontalFlowLayout = CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
+        let kScreenH = UIScreen.main.bounds.height
         
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.minimumInteritemSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        
-        flowLayout.scrollDirection = .horizontal
-        let eView = EmotionView(frame: CGRect(x: 0, y: 200, width: view.bounds.width, height: 300), layout: flowLayout)
-        eView.dataSource = self
-        eView.delegate = self
-        view.addSubview(eView)
-        
-        eView.register(nib: UINib(nibName: "NormalEmotionCell", bundle: nil), forCellWithReuseIdentifier: normalEmotionCellID)
-        
-    }
-    
-    func loadEmotionData() {
-        
-        guard let normalPath = Bundle.main.path(forResource: "QHNormalEmotionSort.plist", ofType: nil) else { return }
-        let normalEmotions: [String] = NSArray(contentsOfFile: normalPath) as! [String]
-        emotionsArray.append(normalEmotions)
-        
-        guard let giftPath = Bundle.main.path(forResource: "QHSohuGifSort.plist", ofType: nil) else { return }
-        let giftEmotions: [String] = NSArray(contentsOfFile: giftPath) as! [String]
-        emotionsArray.append(giftEmotions)
-    }
-}
-
-extension ViewController: EmotionViewDataSource {
-
-    func numberOfSections(in emotionView: EmotionView) -> Int {
-        return emotionsArray.count
-    }
-    
-    func numberOfItemsInSection(emotionView: EmotionView, section: Int) -> Int {
-        return emotionsArray[section].count
-    }
-    
-    func collectionView(emotionView: EmotionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: NormalEmotionCell = collectionView.dequeueReusableCell(withReuseIdentifier: normalEmotionCellID, for: indexPath) as! NormalEmotionCell
-        cell.emotionName = emotionsArray[indexPath.section][indexPath.row]
-        return cell
-    }
-}
-
-extension ViewController: EmotionViewDelegate {
-    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let emotionString = emotionsArray[indexPath.section][indexPath.row]
-        print(emotionString)
-        if emotionString == "delete-n" {
-            self.textView.deleteBackward()
-            return
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: nil) { (noti) in
+            let duration = noti.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+            let endFrame = (noti.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+            
+            let inputViewY = endFrame.origin.y - 44
+            let endY = inputViewY == (kScreenH - 44) ? kScreenH : inputViewY
+            
+            UIView.animate(withDuration: duration, animations: {
+                UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: 7)!)
+                self.inputToolView.frame.origin.y = endY
+            })
         }
-        self.textView.insertText(emotionString)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
     }
 }
+
 
 

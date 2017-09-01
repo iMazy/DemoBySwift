@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		210EE6FC1F58F47500F16969 /* TopTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE6FB1F58F47500F16969 /* TopTitlesView.swift */; };
 		210EE6FE1F58F48C00F16969 /* TitleViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE6FD1F58F48C00F16969 /* TitleViewProperty.swift */; };
+		210EE7001F59448200F16969 /* InputToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE6FF1F59448200F16969 /* InputToolView.swift */; };
+		210EE7021F5944B400F16969 /* InputToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210EE7011F5944B400F16969 /* InputToolView.xib */; };
+		210EE7041F5947B700F16969 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE7031F5947B700F16969 /* NibLoadable.swift */; };
 		215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */; };
 		215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */; };
 		215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */; };
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		210EE6FB1F58F47500F16969 /* TopTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTitlesView.swift; sourceTree = "<group>"; };
 		210EE6FD1F58F48C00F16969 /* TitleViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewProperty.swift; sourceTree = "<group>"; };
+		210EE6FF1F59448200F16969 /* InputToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputToolView.swift; sourceTree = "<group>"; };
+		210EE7011F5944B400F16969 /* InputToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputToolView.xib; sourceTree = "<group>"; };
+		210EE7031F5947B700F16969 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
 		215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
@@ -73,6 +79,9 @@
 				21B1AA6C1F4FF87C00E33F60 /* EmotionKeyboardView */,
 				21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */,
 				21B1AA5C1F4FF80600E33F60 /* ViewController.swift */,
+				210EE6FF1F59448200F16969 /* InputToolView.swift */,
+				210EE7011F5944B400F16969 /* InputToolView.xib */,
+				210EE7031F5947B700F16969 /* NibLoadable.swift */,
 				215DAB0C1F58055B00053E68 /* NormalEmotionCell.swift */,
 				215DAB0D1F58055B00053E68 /* NormalEmotionCell.xib */,
 				21B1AA5E1F4FF80600E33F60 /* Main.storyboard */,
@@ -156,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */,
+				210EE7021F5944B400F16969 /* InputToolView.xib in Resources */,
 				21B1AA651F4FF80600E33F60 /* LaunchScreen.storyboard in Resources */,
 				215DAB0F1F58055B00053E68 /* NormalEmotionCell.xib in Resources */,
 				21B1AA621F4FF80600E33F60 /* Assets.xcassets in Resources */,
@@ -174,10 +184,12 @@
 				21B1AA6E1F4FF89500E33F60 /* EmotionView.swift in Sources */,
 				21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */,
 				215DAB0E1F58055B00053E68 /* NormalEmotionCell.swift in Sources */,
+				210EE7041F5947B700F16969 /* NibLoadable.swift in Sources */,
 				215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */,
 				210EE6FE1F58F48C00F16969 /* TitleViewProperty.swift in Sources */,
 				21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */,
 				210EE6FC1F58F47500F16969 /* TopTitlesView.swift in Sources */,
+				210EE7001F59448200F16969 /* InputToolView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

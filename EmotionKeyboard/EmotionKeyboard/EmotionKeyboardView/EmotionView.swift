@@ -25,17 +25,14 @@ class EmotionView: UIView {
     
     fileprivate var collectionView: UICollectionView?
     
-    fileprivate var layout: CollectionViewHorizontalFlowLayout
+    fileprivate var flowLayout: CollectionViewHorizontalFlowLayout!
     
     fileprivate var titleView: TopTitlesView!
     fileprivate var pageControl: UIPageControl!
     
     fileprivate var sourceIndexPath : IndexPath = IndexPath(item: 0, section: 0)
     
-    init(frame: CGRect, layout: CollectionViewHorizontalFlowLayout) {
-        
-        self.layout = layout
-        
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         setupUI()
@@ -53,7 +50,15 @@ extension EmotionView {
         
         let kWidth: CGFloat = UIScreen.main.bounds.width
         
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 60), collectionViewLayout: layout)
+        flowLayout = CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
+        
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        
+        flowLayout.scrollDirection = .horizontal
+        
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 60), collectionViewLayout: flowLayout)
         collectionView?.isPagingEnabled = true
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -84,7 +89,7 @@ extension EmotionView: UICollectionViewDataSource, UICollectionViewDelegate {
         let itemCount = dataSource?.numberOfItemsInSection(emotionView: self, section: section) ?? 0
         
         if section == 0 {
-            pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
+            pageControl.numberOfPages = (itemCount - 1) / (flowLayout.cols * flowLayout.rows) + 1
         }
 
         return itemCount
@@ -112,7 +117,7 @@ extension EmotionView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     fileprivate func scrollViewEndScroll() {
         // 1.取出在屏幕中显示的Cell
-        let point = CGPoint(x: layout.sectionInset.left + 2 + collectionView!.contentOffset.x, y: layout.sectionInset.top + 2)
+        let point = CGPoint(x: flowLayout.sectionInset.left + 2 + collectionView!.contentOffset.x, y: flowLayout.sectionInset.top + 2)
         guard let indexPath = collectionView?.indexPathForItem(at: point) else { return }
         // 3.2.设置titleView位置
         titleView.setTitleWithContentOffset(UIScreen.main.bounds.width * CGFloat(indexPath.section))
@@ -120,12 +125,15 @@ extension EmotionView: UICollectionViewDataSource, UICollectionViewDelegate {
         if sourceIndexPath.section != indexPath.section {
             // 修改 pageControl 的个数
             let itemCount = dataSource?.numberOfItemsInSection(emotionView: self, section: indexPath.section) ?? 0
-            pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
+            pageControl.numberOfPages = (itemCount - 1) / (flowLayout.cols * flowLayout
+                
+                
+                .rows) + 1
             // 3.3.记录最新indexPath
             sourceIndexPath = indexPath
         }
         // 3.根据indexPath设置pageControl
-        pageControl.currentPage = indexPath.item / (layout.cols * layout.rows)
+        pageControl.currentPage = indexPath.item / (flowLayout.cols * flowLayout.rows)
     }
 }
 
@@ -146,11 +154,11 @@ extension EmotionView: TopTitlesViewDelegate {
     func didClickTopTitleView(_ titlesView: TopTitlesView, selectedIndex index: Int) {
         let indexPath = IndexPath(item: 0, section: index)
         collectionView?.scrollToItem(at: indexPath, at: .left, animated: false)
-        collectionView!.contentOffset.x -= layout.sectionInset.left
+        collectionView!.contentOffset.x -= flowLayout.sectionInset.left
 
         // 修改 pageControl 的个数
         let itemCount = dataSource?.numberOfItemsInSection(emotionView: self, section: indexPath.section) ?? 0
-        pageControl.numberOfPages = (itemCount - 1) / (layout.cols * layout.rows) + 1
+        pageControl.numberOfPages = (itemCount - 1) / (flowLayout.cols * flowLayout.rows) + 1
         // 3.3.记录最新indexPath
         sourceIndexPath = indexPath
     }
