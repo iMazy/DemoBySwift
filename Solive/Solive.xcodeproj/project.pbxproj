@@ -18,6 +18,12 @@
 		213017371F568D3000FBE68C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017361F568D3000FBE68C /* NetworkManager.swift */; };
 		2130173A1F56ADB600FBE68C /* LiveShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017381F56ADB600FBE68C /* LiveShowViewController.swift */; };
 		2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213017391F56ADB600FBE68C /* LiveShowViewController.xib */; };
+		213298F91F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F31F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift */; };
+		213298FA1F5D1D7300140563 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F41F5D1D7300140563 /* EmotionView.swift */; };
+		213298FB1F5D1D7300140563 /* NormalEmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F51F5D1D7300140563 /* NormalEmotionCell.swift */; };
+		213298FC1F5D1D7300140563 /* NormalEmotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213298F61F5D1D7300140563 /* NormalEmotionCell.xib */; };
+		213298FD1F5D1D7300140563 /* TitleViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F71F5D1D7300140563 /* TitleViewProperty.swift */; };
+		213298FE1F5D1D7300140563 /* TopTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F81F5D1D7300140563 /* TopTitlesView.swift */; };
 		215DAB031F57D9BA00053E68 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */; };
 		215DAB051F57E96C00053E68 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB041F57E96C00053E68 /* libz.tbd */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
@@ -53,6 +59,12 @@
 		213017361F568D3000FBE68C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		213017381F56ADB600FBE68C /* LiveShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveShowViewController.swift; sourceTree = "<group>"; };
 		213017391F56ADB600FBE68C /* LiveShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveShowViewController.xib; sourceTree = "<group>"; };
+		213298F31F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
+		213298F41F5D1D7300140563 /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
+		213298F51F5D1D7300140563 /* NormalEmotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalEmotionCell.swift; sourceTree = "<group>"; };
+		213298F61F5D1D7300140563 /* NormalEmotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalEmotionCell.xib; sourceTree = "<group>"; };
+		213298F71F5D1D7300140563 /* TitleViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewProperty.swift; sourceTree = "<group>"; };
+		213298F81F5D1D7300140563 /* TopTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTitlesView.swift; sourceTree = "<group>"; };
 		215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		215DAB041F57E96C00053E68 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +118,19 @@
 				213017361F568D3000FBE68C /* NetworkManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		213298F21F5D1D7300140563 /* EmotionKeyboardView */ = {
+			isa = PBXGroup;
+			children = (
+				213298F31F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift */,
+				213298F41F5D1D7300140563 /* EmotionView.swift */,
+				213298F51F5D1D7300140563 /* NormalEmotionCell.swift */,
+				213298F61F5D1D7300140563 /* NormalEmotionCell.xib */,
+				213298F71F5D1D7300140563 /* TitleViewProperty.swift */,
+				213298F81F5D1D7300140563 /* TopTitlesView.swift */,
+			);
+			path = EmotionKeyboardView;
 			sourceTree = "<group>";
 		};
 		216E4DB11F53E5A600D239E4 = {
@@ -175,6 +200,7 @@
 		216E4DD21F53F23B00D239E4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				213298F21F5D1D7300140563 /* EmotionKeyboardView */,
 				213017281F56866B00FBE68C /* AnchorViewCell.swift */,
 				213017291F56866B00FBE68C /* AnchorViewCell.xib */,
 			);
@@ -373,6 +399,7 @@
 				2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
 				2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */,
+				213298FC1F5D1D7300140563 /* NormalEmotionCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				213298FB1F5D1D7300140563 /* NormalEmotionCell.swift in Sources */,
 				21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */,
 				21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */,
 				216E4DE61F53F43000D239E4 /* MainNavigationController.swift in Sources */,
@@ -453,14 +481,18 @@
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
 				2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */,
 				213017321F568ABA00FBE68C /* BaseModel.swift in Sources */,
+				213298FA1F5D1D7300140563 /* EmotionView.swift in Sources */,
 				213017371F568D3000FBE68C /* NetworkManager.swift in Sources */,
 				2130173A1F56ADB600FBE68C /* LiveShowViewController.swift in Sources */,
 				213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
 				216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */,
+				213298FE1F5D1D7300140563 /* TopTitlesView.swift in Sources */,
+				213298FD1F5D1D7300140563 /* TitleViewProperty.swift in Sources */,
 				213017271F56526900FBE68C /* CollectionViewWaterFlowLayout.swift in Sources */,
 				21797A211F54FC40000D30E8 /* Const.swift in Sources */,
+				213298F91F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
