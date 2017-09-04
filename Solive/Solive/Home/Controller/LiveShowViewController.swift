@@ -19,6 +19,8 @@ class LiveShowViewController: UIViewController {
     @IBOutlet weak var roomIDLabel: UILabel!
     @IBOutlet weak var focusButton: UIButton!
     
+    fileprivate var inputToolView = InputToolView.loadFromNib()
+    
     var anchor : AnchorModel?
     
     fileprivate var ijkPlayer: IJKFFMoviePlayerController?
@@ -34,6 +36,7 @@ class LiveShowViewController: UIViewController {
         
         loadAnchorLiveAddress()
         
+        setupBottomToolViews()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -63,11 +66,46 @@ class LiveShowViewController: UIViewController {
         backgroundImageView.addSubview(blurView)
     }
     
+    fileprivate func setupBottomToolViews() {
+        
+        inputToolView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 44)
+        view.addSubview(inputToolView)
+        
+        let kScreenH = UIScreen.main.bounds.height
+        
+//        giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 300)
+//        view.addSubview(giftBoardView)
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: nil) { (noti) in
+            let duration = noti.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
+            let endFrame = (noti.userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+            
+            let inputViewY = endFrame.origin.y - 44
+            let endY = inputViewY == (kScreenH - 44) ? kScreenH : inputViewY
+            
+            UIView.animate(withDuration: duration, animations: {
+                UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: 7)!)
+                self.inputToolView.frame.origin.y = endY
+            })
+        }
+
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+
+    
     @IBAction func toolBarButtonClick(_ sender: UIButton) {
         
         switch sender.tag {
         case 101:
             print("消息")
+            self.inputToolView.textField.becomeFirstResponder()
         case 102:
             print("分享")
         case 103:

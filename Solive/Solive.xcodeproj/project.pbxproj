@@ -24,6 +24,9 @@
 		213298FC1F5D1D7300140563 /* NormalEmotionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213298F61F5D1D7300140563 /* NormalEmotionCell.xib */; };
 		213298FD1F5D1D7300140563 /* TitleViewProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F71F5D1D7300140563 /* TitleViewProperty.swift */; };
 		213298FE1F5D1D7300140563 /* TopTitlesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F81F5D1D7300140563 /* TopTitlesView.swift */; };
+		213299011F5D1E9900140563 /* InputToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298FF1F5D1E9900140563 /* InputToolView.swift */; };
+		213299021F5D1E9900140563 /* InputToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213299001F5D1E9900140563 /* InputToolView.xib */; };
+		213299041F5D1EBB00140563 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213299031F5D1EBB00140563 /* NibLoadable.swift */; };
 		215DAB031F57D9BA00053E68 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */; };
 		215DAB051F57E96C00053E68 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB041F57E96C00053E68 /* libz.tbd */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
@@ -65,6 +68,9 @@
 		213298F61F5D1D7300140563 /* NormalEmotionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NormalEmotionCell.xib; sourceTree = "<group>"; };
 		213298F71F5D1D7300140563 /* TitleViewProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewProperty.swift; sourceTree = "<group>"; };
 		213298F81F5D1D7300140563 /* TopTitlesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTitlesView.swift; sourceTree = "<group>"; };
+		213298FF1F5D1E9900140563 /* InputToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputToolView.swift; sourceTree = "<group>"; };
+		213299001F5D1E9900140563 /* InputToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputToolView.xib; sourceTree = "<group>"; };
+		213299031F5D1EBB00140563 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadable.swift; path = ../NibLoadable.swift; sourceTree = "<group>"; };
 		215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		215DAB041F57E96C00053E68 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +135,8 @@
 				213298F61F5D1D7300140563 /* NormalEmotionCell.xib */,
 				213298F71F5D1D7300140563 /* TitleViewProperty.swift */,
 				213298F81F5D1D7300140563 /* TopTitlesView.swift */,
+				213298FF1F5D1E9900140563 /* InputToolView.swift */,
+				213299001F5D1E9900140563 /* InputToolView.xib */,
 			);
 			path = EmotionKeyboardView;
 			sourceTree = "<group>";
@@ -287,6 +295,7 @@
 		216E4DE21F53F27E00D239E4 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				213299031F5D1EBB00140563 /* NibLoadable.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -396,6 +405,7 @@
 				21797A251F5502F7000D30E8 /* QHNormalEmotionSort.plist in Resources */,
 				216E4DEA1F53F4B900D239E4 /* Mine.storyboard in Resources */,
 				216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */,
+				213299021F5D1E9900140563 /* InputToolView.xib in Resources */,
 				2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
 				2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */,
@@ -477,6 +487,7 @@
 				21797A2D1F556B5A000D30E8 /* AnchorViewController.swift in Sources */,
 				216E4DDA1F53F23B00D239E4 /* AppDelegate.swift in Sources */,
 				2130172A1F56866B00FBE68C /* AnchorViewCell.swift in Sources */,
+				213299011F5D1E9900140563 /* InputToolView.swift in Sources */,
 				2130172D1F56895E00FBE68C /* AnchorViewModel.swift in Sources */,
 				216E4DE41F53F3C100D239E4 /* MainViewController.swift in Sources */,
 				2130172F1F56898B00FBE68C /* AnchorModel.swift in Sources */,
@@ -487,6 +498,7 @@
 				213017341F568B4B00FBE68C /* HomeTypeModel.swift in Sources */,
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
+				213299041F5D1EBB00140563 /* NibLoadable.swift in Sources */,
 				216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */,
 				213298FE1F5D1D7300140563 /* TopTitlesView.swift in Sources */,
 				213298FD1F5D1D7300140563 /* TitleViewProperty.swift in Sources */,
