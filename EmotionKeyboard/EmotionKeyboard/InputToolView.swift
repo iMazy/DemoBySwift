@@ -43,7 +43,7 @@ class InputToolView: UIView, NibLoadable {
         
         let property = TitleViewProperty()
         property.isInTop = true
-        emotionView = EmotionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 260), layout: flowLayout, property: property)
+        emotionView = EmotionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 260), titles: ["普通","会员专属"] ,layout: flowLayout, property: property)
         emotionView.dataSource = self
         emotionView.delegate = self
         emotionView.register(nib: UINib(nibName: "NormalEmotionCell", bundle: nil), forCellWithReuseIdentifier: normalEmotionCellID)

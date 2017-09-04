@@ -8,6 +8,8 @@
 
 import UIKit
 
+let giftViewCellID = "GiftViewCellIdentifier"
+
 class GiftBoardView: UIView, NibLoadable {
 
     var emotionButtonClickClosure: ((UIButton)->Void)?
@@ -33,12 +35,12 @@ class GiftBoardView: UIView, NibLoadable {
         
         let property = TitleViewProperty()
         
-        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.bounds.height - sendButton.bounds.height), layout: flowLayout, property: property)
+        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.bounds.height - sendButton.bounds.height),titles: ["普通","会员", "专属"], layout: flowLayout, property: property)
         addSubview(emotionView)
         
         emotionView.dataSource = self
         emotionView.delegate = self
-        emotionView.register(nib: UINib(nibName: "NormalEmotionCell", bundle: nil), forCellWithReuseIdentifier: normalEmotionCellID)
+        emotionView.register(nib: UINib(nibName: "GiftViewCell", bundle: nil), forCellWithReuseIdentifier: giftViewCellID)
         
         loadEmotionData()
     }
@@ -68,8 +70,7 @@ extension GiftBoardView: EmotionViewDataSource {
     }
     
     func collectionView(emotionView: EmotionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: NormalEmotionCell = collectionView.dequeueReusableCell(withReuseIdentifier: normalEmotionCellID, for: indexPath) as! NormalEmotionCell
-        cell.emotionName = emotionsArray[indexPath.section][indexPath.row]
+        let cell: GiftViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: giftViewCellID, for: indexPath) as! GiftViewCell
         return cell
     }
 }

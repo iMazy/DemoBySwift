@@ -14,6 +14,10 @@
 		210EE7041F5947B700F16969 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE7031F5947B700F16969 /* NibLoadable.swift */; };
 		213298E61F5CE34000140563 /* GiftBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298E51F5CE34000140563 /* GiftBoardView.swift */; };
 		213298E81F5CE35400140563 /* GiftBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213298E71F5CE35400140563 /* GiftBoardView.xib */; };
+		213298EA1F5D19C200140563 /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298E91F5D19C200140563 /* GiftModel.swift */; };
+		213298EC1F5D19CB00140563 /* GiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298EB1F5D19CB00140563 /* GiftViewModel.swift */; };
+		213298EE1F5D1BA400140563 /* GiftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298ED1F5D1BA400140563 /* GiftViewCell.swift */; };
+		213298F01F5D1BB700140563 /* GiftViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213298EF1F5D1BB700140563 /* GiftViewCell.xib */; };
 		215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */; };
 		215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */; };
 		215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */; };
@@ -35,6 +39,10 @@
 		210EE7031F5947B700F16969 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
 		213298E51F5CE34000140563 /* GiftBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftBoardView.swift; sourceTree = "<group>"; };
 		213298E71F5CE35400140563 /* GiftBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftBoardView.xib; sourceTree = "<group>"; };
+		213298E91F5D19C200140563 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		213298EB1F5D19CB00140563 /* GiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewModel.swift; sourceTree = "<group>"; };
+		213298ED1F5D1BA400140563 /* GiftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewCell.swift; sourceTree = "<group>"; };
+		213298EF1F5D1BB700140563 /* GiftViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewCell.xib; sourceTree = "<group>"; };
 		215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
 		215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
@@ -80,6 +88,19 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
+		213298F11F5D1D1B00140563 /* GiftBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				213298E51F5CE34000140563 /* GiftBoardView.swift */,
+				213298E71F5CE35400140563 /* GiftBoardView.xib */,
+				213298E91F5D19C200140563 /* GiftModel.swift */,
+				213298ED1F5D1BA400140563 /* GiftViewCell.swift */,
+				213298EF1F5D1BB700140563 /* GiftViewCell.xib */,
+				213298EB1F5D19CB00140563 /* GiftViewModel.swift */,
+			);
+			name = GiftBoardView;
+			sourceTree = "<group>";
+		};
 		21B1AA4E1F4FF80600E33F60 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +123,7 @@
 				21B1AA6C1F4FF87C00E33F60 /* EmotionKeyboardView */,
 				21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */,
 				21B1AA5C1F4FF80600E33F60 /* ViewController.swift */,
-				213298E51F5CE34000140563 /* GiftBoardView.swift */,
-				213298E71F5CE35400140563 /* GiftBoardView.xib */,
+				213298F11F5D1D1B00140563 /* GiftBoardView */,
 				213298E31F5CE2EA00140563 /* InputToolView */,
 				213298E41F5CE31100140563 /* Tools */,
 				21B1AA5E1F4FF80600E33F60 /* Main.storyboard */,
@@ -191,6 +211,7 @@
 				21B1AA651F4FF80600E33F60 /* LaunchScreen.storyboard in Resources */,
 				215DAB0F1F58055B00053E68 /* NormalEmotionCell.xib in Resources */,
 				21B1AA621F4FF80600E33F60 /* Assets.xcassets in Resources */,
+				213298F01F5D1BB700140563 /* GiftViewCell.xib in Resources */,
 				21B1AA601F4FF80600E33F60 /* Main.storyboard in Resources */,
 				215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */,
 				213298E81F5CE35400140563 /* GiftBoardView.xib in Resources */,
@@ -211,7 +232,10 @@
 				210EE7041F5947B700F16969 /* NibLoadable.swift in Sources */,
 				215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */,
 				210EE6FE1F58F48C00F16969 /* TitleViewProperty.swift in Sources */,
+				213298EE1F5D1BA400140563 /* GiftViewCell.swift in Sources */,
 				21B1AA5B1F4FF80600E33F60 /* AppDelegate.swift in Sources */,
+				213298EC1F5D19CB00140563 /* GiftViewModel.swift in Sources */,
+				213298EA1F5D19C200140563 /* GiftModel.swift in Sources */,
 				210EE6FC1F58F47500F16969 /* TopTitlesView.swift in Sources */,
 				210EE7001F59448200F16969 /* InputToolView.swift in Sources */,
 			);

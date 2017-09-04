@@ -28,12 +28,14 @@ class EmotionView: UIView {
     fileprivate var flowLayout: CollectionViewHorizontalFlowLayout
     fileprivate var titleView: TopTitlesView!
     fileprivate var titleProperty: TitleViewProperty
+    fileprivate var titles: [String]
     
     fileprivate var sourceIndexPath : IndexPath = IndexPath(item: 0, section: 0)
     
-    init(frame: CGRect, layout: CollectionViewHorizontalFlowLayout, property: TitleViewProperty) {
+    init(frame: CGRect,titles: [String], layout: CollectionViewHorizontalFlowLayout, property: TitleViewProperty) {
         self.flowLayout = layout
         self.titleProperty = property
+        self.titles = titles
         super.init(frame: frame)
     
         setupUI()
@@ -66,7 +68,7 @@ extension EmotionView {
         titleProperty.isHiddenBottomLine = false
         
         
-        titleView = TopTitlesView(frame: CGRect(x: 0, y: titleProperty.isInTop ? pageControl.frame.maxY : 0, width: kWidth, height: 40), titles: ["普通","会员专属"], titleProperty: titleProperty)
+        titleView = TopTitlesView(frame: CGRect(x: 0, y: titleProperty.isInTop ? pageControl.frame.maxY : 0, width: kWidth, height: 40), titles: titles, titleProperty: titleProperty)
         titleView.delegate = self
         addSubview(titleView)
         
