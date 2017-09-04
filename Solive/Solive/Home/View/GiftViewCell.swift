@@ -12,6 +12,14 @@ class GiftViewCell: UICollectionViewCell {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var giftNameLabel: UILabel!
-    @IBOutlet weak var giftCountLabel: UILabel!    
+    @IBOutlet weak var giftCountLabel: UILabel!
+    
+    var giftModel: GiftModel? {
+        didSet {
+            iconImageView.xm_setImage(giftModel?.img2)
+            giftNameLabel.text = giftModel?.subject
+            giftCountLabel.text = "\(giftModel?.coin ?? 0)"
+        }
+    }
     
 }

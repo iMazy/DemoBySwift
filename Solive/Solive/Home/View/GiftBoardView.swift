@@ -18,6 +18,8 @@ class GiftBoardView: UIView, NibLoadable {
     fileprivate var emotionView: EmotionView!
     fileprivate lazy var emotionsArray: [[String]] = [[String]]()
     
+    fileprivate var giftVM: GiftViewModel = GiftViewModel()
+    
     @IBOutlet weak var topSeparatorView: UIView!
     @IBOutlet weak var sendButton: UIButton!
     
@@ -31,12 +33,12 @@ class GiftBoardView: UIView, NibLoadable {
         
 //        flowLayout.minimumLineSpacing = 10
 //        flowLayout.minimumInteritemSpacing = 10
-//        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         flowLayout.scrollDirection = .horizontal
         
         let property = TitleViewProperty()
         
-        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.frame.maxY - sendButton.bounds.height - 20),titles: ["普通","会员", "专属"], layout: flowLayout, property: property)
+        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.frame.maxY - sendButton.bounds.height - 20),titles: ["热门", "高级", "豪华", "专属"], layout: flowLayout, property: property)
         emotionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(emotionView)
         
@@ -44,19 +46,15 @@ class GiftBoardView: UIView, NibLoadable {
         emotionView.delegate = self
         emotionView.register(nib: UINib(nibName: "GiftViewCell", bundle: nil), forCellWithReuseIdentifier: giftViewCellID)
         
-        loadEmotionData()
+        loadGiftData()
     }
     
     
-    func loadEmotionData() {
+    func loadGiftData() {
         
-        guard let normalPath = Bundle.main.path(forResource: "QHNormalEmotionSort.plist", ofType: nil) else { return }
-        let normalEmotions: [String] = NSArray(contentsOfFile: normalPath) as! [String]
-        emotionsArray.append(normalEmotions)
-        
-        guard let giftPath = Bundle.main.path(forResource: "QHSohuGifSort.plist", ofType: nil) else { return }
-        let giftEmotions: [String] = NSArray(contentsOfFile: giftPath) as! [String]
-        emotionsArray.append(giftEmotions)
+        self.giftVM.loadGiftData { 
+            self.emotionView.collectionView?.reloadData()
+        }
     }
     
 }
@@ -64,16 +62,16 @@ class GiftBoardView: UIView, NibLoadable {
 extension GiftBoardView: EmotionViewDataSource {
     
     func numberOfSections(in emotionView: EmotionView) -> Int {
-        return emotionsArray.count
+        return giftVM.giftList.count
     }
     
     func numberOfItemsInSection(emotionView: EmotionView, section: Int) -> Int {
-        return emotionsArray[section].count
+        return giftVM.giftList[section].list.count
     }
     
     func collectionView(emotionView: EmotionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GiftViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: giftViewCellID, for: indexPath) as! GiftViewCell
-        cell.backgroundColor = .red
+        cell.giftModel = giftVM.giftList[indexPath.section].list[indexPath.row]
         return cell
     }
 }

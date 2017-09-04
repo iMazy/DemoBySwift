@@ -23,7 +23,7 @@ class EmotionView: UIView {
     var dataSource: EmotionViewDataSource?
     var delegate: EmotionViewDelegate?
     
-    fileprivate var collectionView: UICollectionView?
+    var collectionView: UICollectionView?
     fileprivate var pageControl: UIPageControl!
     fileprivate var flowLayout: CollectionViewHorizontalFlowLayout
     fileprivate var titleView: TopTitlesView!
@@ -55,11 +55,11 @@ extension EmotionView {
         
         collectionView = UICollectionView(frame: CGRect(x: 0, y: titleProperty.isInTop ? 0 : titleProperty.titleHeight, width: self.bounds.width, height: self.bounds.height - titleProperty.titleHeight - titleProperty.titleMargin), collectionViewLayout: flowLayout)
         collectionView?.isPagingEnabled = true
+        collectionView?.showsHorizontalScrollIndicator = false
         collectionView?.dataSource = self
         collectionView?.delegate = self
         addSubview(collectionView!)
         collectionView?.autoresizingMask = [.flexibleWidth, .flexibleBottomMargin, .flexibleHeight]
-        collectionView?.backgroundColor = .green
         
         pageControl = UIPageControl(frame: CGRect(x: 0, y: collectionView!.frame.maxY, width: kWidth, height: 20))
         pageControl.backgroundColor = UIColor.black
