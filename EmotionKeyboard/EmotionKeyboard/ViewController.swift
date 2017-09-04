@@ -14,6 +14,8 @@ class ViewController: UIViewController {
 
     fileprivate var inputToolView = InputToolView.loadFromNib()
     
+    fileprivate var giftBoardView = GiftBoardView.loadFromNib()
+    
     @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
@@ -23,6 +25,9 @@ class ViewController: UIViewController {
         view.addSubview(inputToolView)
         
         let kScreenH = UIScreen.main.bounds.height
+        
+        giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 300)
+        view.addSubview(giftBoardView)
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: nil) { (noti) in
             let duration = noti.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
@@ -37,6 +42,21 @@ class ViewController: UIViewController {
             })
         }
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.textView.resignFirstResponder()
+        
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftBoardView.frame.origin.y = UIScreen.main.bounds.height
+        })
+    }
+    
+    @IBAction func showGiftView() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftBoardView.frame.origin.y = UIScreen.main.bounds.height - self.giftBoardView.bounds.height
+        })
+    }
+    
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)

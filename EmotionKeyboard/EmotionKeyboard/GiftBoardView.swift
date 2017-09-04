@@ -1,49 +1,41 @@
 //
-//  InputToolView.swift
+//  GiftBoardView.swift
 //  EmotionKeyboard
 //
-//  Created by Mazy on 2017/9/1.
+//  Created by Mazy on 2017/9/4.
 //  Copyright © 2017年 Mazy. All rights reserved.
 //
 
 import UIKit
 
-class InputToolView: UIView, NibLoadable {
+class GiftBoardView: UIView, NibLoadable {
 
-    @IBOutlet weak var textField: UITextField!
-    @IBOutlet weak var sendButton: UIButton!
-    
     var emotionButtonClickClosure: ((UIButton)->Void)?
     fileprivate var flowLayout: CollectionViewHorizontalFlowLayout =  CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
     
-    fileprivate lazy var emotionButton = UIButton(frame: CGRect(x: 0, y: 0, width: 32, height: 32))
-    
     fileprivate var emotionView: EmotionView!
-    
     fileprivate lazy var emotionsArray: [[String]] = [[String]]()
+    
+    
+    @IBOutlet weak var topSeparatorView: UIView!
+    
+    @IBOutlet weak var sendButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        emotionButton.setImage(UIImage(named: "chat_btn_emoji"), for: .normal)
-        emotionButton.setImage(UIImage(named: "chat_btn_keyboard"), for: .selected)
-        emotionButton.addTarget(self, action: #selector(emotionButtonClick), for: .touchUpInside)
-        
-        textField.rightView = emotionButton
-        textField.rightViewMode = .always
-        
-        
-        flowLayout = CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
+        flowLayout = CollectionViewHorizontalFlowLayout(rows: 2, cols: 4)
         
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        
         flowLayout.scrollDirection = .horizontal
         
         let property = TitleViewProperty()
-        property.isInTop = true
-        emotionView = EmotionView(frame: CGRect(x: 0, y: 100, width: UIScreen.main.bounds.width, height: 260), layout: flowLayout, property: property)
+        
+        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.bounds.height - sendButton.bounds.height), layout: flowLayout, property: property)
+        addSubview(emotionView)
+        
         emotionView.dataSource = self
         emotionView.delegate = self
         emotionView.register(nib: UINib(nibName: "NormalEmotionCell", bundle: nil), forCellWithReuseIdentifier: normalEmotionCellID)
@@ -62,22 +54,10 @@ class InputToolView: UIView, NibLoadable {
         let giftEmotions: [String] = NSArray(contentsOfFile: giftPath) as! [String]
         emotionsArray.append(giftEmotions)
     }
-
-    
-    @objc fileprivate func emotionButtonClick(button: UIButton) {
-        button.isSelected = !button.isSelected
-        
-        let range = textField.selectedTextRange
-        
-        textField.resignFirstResponder()
-        textField.inputView = textField.inputView == nil ? emotionView : nil
-        textField.becomeFirstResponder()
-        textField.selectedTextRange = range
-    }
     
 }
 
-extension InputToolView: EmotionViewDataSource {
+extension GiftBoardView: EmotionViewDataSource {
     
     func numberOfSections(in emotionView: EmotionView) -> Int {
         return emotionsArray.count
@@ -94,15 +74,7 @@ extension InputToolView: EmotionViewDataSource {
     }
 }
 
-extension InputToolView: EmotionViewDelegate {
+extension GiftBoardView: EmotionViewDelegate {
     func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let emotionString = emotionsArray[indexPath.section][indexPath.row]
-        print(emotionString)
-        if emotionString == "delete-n" {
-            self.textField.deleteBackward()
-            return
-        }
-        self.textField.insertText(emotionString)
     }
 }
-

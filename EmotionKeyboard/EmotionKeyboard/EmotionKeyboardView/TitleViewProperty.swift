@@ -37,4 +37,7 @@ public class TitleViewProperty {
     
     /// titleView 是否需要阴影
     public var isNeedShadowInBottom: Bool = false
+    
+    /// titleView 是否在上面
+    public var isInTop: Bool = false
 }

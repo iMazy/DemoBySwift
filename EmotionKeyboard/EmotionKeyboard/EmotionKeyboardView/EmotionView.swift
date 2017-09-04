@@ -24,17 +24,18 @@ class EmotionView: UIView {
     var delegate: EmotionViewDelegate?
     
     fileprivate var collectionView: UICollectionView?
-    
-    fileprivate var flowLayout: CollectionViewHorizontalFlowLayout!
-    
-    fileprivate var titleView: TopTitlesView!
     fileprivate var pageControl: UIPageControl!
+    fileprivate var flowLayout: CollectionViewHorizontalFlowLayout
+    fileprivate var titleView: TopTitlesView!
+    fileprivate var titleProperty: TitleViewProperty
     
     fileprivate var sourceIndexPath : IndexPath = IndexPath(item: 0, section: 0)
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, layout: CollectionViewHorizontalFlowLayout, property: TitleViewProperty) {
+        self.flowLayout = layout
+        self.titleProperty = property
         super.init(frame: frame)
-        
+    
         setupUI()
     }
     
@@ -50,15 +51,7 @@ extension EmotionView {
         
         let kWidth: CGFloat = UIScreen.main.bounds.width
         
-        flowLayout = CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
-        
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.minimumInteritemSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
-        
-        flowLayout.scrollDirection = .horizontal
-        
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: 0, width: self.bounds.width, height: self.bounds.height - 60), collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: titleProperty.isInTop ? 0 : 40, width: self.bounds.width, height: self.bounds.height - 60), collectionViewLayout: flowLayout)
         collectionView?.isPagingEnabled = true
         collectionView?.dataSource = self
         collectionView?.delegate = self
@@ -69,10 +62,11 @@ extension EmotionView {
         pageControl.isUserInteractionEnabled = false
         addSubview(pageControl)
         
-        let property = TitleViewProperty()
-        property.isScrollEnable = false
-        property.isHiddenBottomLine = false
-        titleView = TopTitlesView(frame: CGRect(x: 0, y: pageControl.frame.maxY, width: kWidth, height: 40), titles: ["普通","会员专属"], titleProperty: property)
+        titleProperty.isScrollEnable = false
+        titleProperty.isHiddenBottomLine = false
+        
+        
+        titleView = TopTitlesView(frame: CGRect(x: 0, y: titleProperty.isInTop ? pageControl.frame.maxY : 0, width: kWidth, height: 40), titles: ["普通","会员专属"], titleProperty: titleProperty)
         titleView.delegate = self
         addSubview(titleView)
         

@@ -12,6 +12,8 @@
 		210EE7001F59448200F16969 /* InputToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE6FF1F59448200F16969 /* InputToolView.swift */; };
 		210EE7021F5944B400F16969 /* InputToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210EE7011F5944B400F16969 /* InputToolView.xib */; };
 		210EE7041F5947B700F16969 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210EE7031F5947B700F16969 /* NibLoadable.swift */; };
+		213298E61F5CE34000140563 /* GiftBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298E51F5CE34000140563 /* GiftBoardView.swift */; };
+		213298E81F5CE35400140563 /* GiftBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213298E71F5CE35400140563 /* GiftBoardView.xib */; };
 		215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */; };
 		215DAB0A1F57FA9700053E68 /* QHNormalEmotionSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */; };
 		215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */ = {isa = PBXBuildFile; fileRef = 215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */; };
@@ -31,6 +33,8 @@
 		210EE6FF1F59448200F16969 /* InputToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputToolView.swift; sourceTree = "<group>"; };
 		210EE7011F5944B400F16969 /* InputToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputToolView.xib; sourceTree = "<group>"; };
 		210EE7031F5947B700F16969 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		213298E51F5CE34000140563 /* GiftBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftBoardView.swift; sourceTree = "<group>"; };
+		213298E71F5CE35400140563 /* GiftBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftBoardView.xib; sourceTree = "<group>"; };
 		215DAB061F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHNormalEmotionSort.plist; sourceTree = "<group>"; };
 		215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = QHSohuGifSort.plist; sourceTree = "<group>"; };
@@ -57,6 +61,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213298E31F5CE2EA00140563 /* InputToolView */ = {
+			isa = PBXGroup;
+			children = (
+				215DAB0C1F58055B00053E68 /* NormalEmotionCell.swift */,
+				215DAB0D1F58055B00053E68 /* NormalEmotionCell.xib */,
+				210EE6FF1F59448200F16969 /* InputToolView.swift */,
+				210EE7011F5944B400F16969 /* InputToolView.xib */,
+			);
+			name = InputToolView;
+			sourceTree = "<group>";
+		};
+		213298E41F5CE31100140563 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				210EE7031F5947B700F16969 /* NibLoadable.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		21B1AA4E1F4FF80600E33F60 = {
 			isa = PBXGroup;
 			children = (
@@ -79,11 +102,10 @@
 				21B1AA6C1F4FF87C00E33F60 /* EmotionKeyboardView */,
 				21B1AA5A1F4FF80600E33F60 /* AppDelegate.swift */,
 				21B1AA5C1F4FF80600E33F60 /* ViewController.swift */,
-				210EE6FF1F59448200F16969 /* InputToolView.swift */,
-				210EE7011F5944B400F16969 /* InputToolView.xib */,
-				210EE7031F5947B700F16969 /* NibLoadable.swift */,
-				215DAB0C1F58055B00053E68 /* NormalEmotionCell.swift */,
-				215DAB0D1F58055B00053E68 /* NormalEmotionCell.xib */,
+				213298E51F5CE34000140563 /* GiftBoardView.swift */,
+				213298E71F5CE35400140563 /* GiftBoardView.xib */,
+				213298E31F5CE2EA00140563 /* InputToolView */,
+				213298E41F5CE31100140563 /* Tools */,
 				21B1AA5E1F4FF80600E33F60 /* Main.storyboard */,
 				215DAB081F57FA9700053E68 /* QHNormalEmotionSort.plist */,
 				215DAB091F57FA9700053E68 /* QHSohuGifSort.plist */,
@@ -171,6 +193,7 @@
 				21B1AA621F4FF80600E33F60 /* Assets.xcassets in Resources */,
 				21B1AA601F4FF80600E33F60 /* Main.storyboard in Resources */,
 				215DAB0B1F57FA9700053E68 /* QHSohuGifSort.plist in Resources */,
+				213298E81F5CE35400140563 /* GiftBoardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,6 +207,7 @@
 				21B1AA6E1F4FF89500E33F60 /* EmotionView.swift in Sources */,
 				21B1AA5D1F4FF80600E33F60 /* ViewController.swift in Sources */,
 				215DAB0E1F58055B00053E68 /* NormalEmotionCell.swift in Sources */,
+				213298E61F5CE34000140563 /* GiftBoardView.swift in Sources */,
 				210EE7041F5947B700F16969 /* NibLoadable.swift in Sources */,
 				215DAB071F57F22800053E68 /* CollectionViewHorizontalFlowLayout.swift in Sources */,
 				210EE6FE1F58F48C00F16969 /* TitleViewProperty.swift in Sources */,

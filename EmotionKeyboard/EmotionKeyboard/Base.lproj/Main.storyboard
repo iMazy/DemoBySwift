@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pmT-oU-ZMf">
-                                <rect key="frame" x="0.0" y="60" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="30" width="375" height="150"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="OtE-Y1-FlP"/>
@@ -30,11 +31,21 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tr7-RV-BPZ">
+                                <rect key="frame" x="116" y="190" width="143" height="30"/>
+                                <state key="normal" title="礼物"/>
+                                <connections>
+                                    <action selector="showGiftView" destination="BYZ-38-t0r" eventType="touchUpInside" id="tT9-Pd-QJk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.5379903198820104" green="1" blue="0.89089864938853047" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="pmT-oU-ZMf" secondAttribute="trailing" id="Imc-U0-eGv"/>
-                            <constraint firstItem="pmT-oU-ZMf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="dAZ-eJ-zpM"/>
+                            <constraint firstItem="pmT-oU-ZMf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="dAZ-eJ-zpM"/>
+                            <constraint firstItem="tr7-RV-BPZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="dzE-zq-ldx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tr7-RV-BPZ" secondAttribute="trailing" constant="100" id="eZS-dC-vEQ"/>
+                            <constraint firstItem="tr7-RV-BPZ" firstAttribute="top" secondItem="pmT-oU-ZMf" secondAttribute="bottom" constant="10" id="xJe-Xu-2wt"/>
                             <constraint firstItem="pmT-oU-ZMf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="xmp-zd-n4E"/>
                         </constraints>
                     </view>
