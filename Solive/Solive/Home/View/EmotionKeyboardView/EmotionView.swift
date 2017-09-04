@@ -53,22 +53,24 @@ extension EmotionView {
         
         let kWidth: CGFloat = UIScreen.main.bounds.width
         
-        collectionView = UICollectionView(frame: CGRect(x: 0, y: titleProperty.isInTop ? 0 : 40, width: self.bounds.width, height: self.bounds.height - 60), collectionViewLayout: flowLayout)
+        collectionView = UICollectionView(frame: CGRect(x: 0, y: titleProperty.isInTop ? 0 : titleProperty.titleHeight, width: self.bounds.width, height: self.bounds.height - titleProperty.titleHeight - titleProperty.titleMargin), collectionViewLayout: flowLayout)
         collectionView?.isPagingEnabled = true
         collectionView?.dataSource = self
         collectionView?.delegate = self
         addSubview(collectionView!)
+        collectionView?.autoresizingMask = [.flexibleWidth, .flexibleBottomMargin, .flexibleHeight]
+        collectionView?.backgroundColor = .green
         
         pageControl = UIPageControl(frame: CGRect(x: 0, y: collectionView!.frame.maxY, width: kWidth, height: 20))
         pageControl.backgroundColor = UIColor.black
         pageControl.isUserInteractionEnabled = false
         addSubview(pageControl)
+        pageControl.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleTopMargin]
         
         titleProperty.isScrollEnable = false
         titleProperty.isHiddenBottomLine = false
         
-        
-        titleView = TopTitlesView(frame: CGRect(x: 0, y: titleProperty.isInTop ? pageControl.frame.maxY : 0, width: kWidth, height: 40), titles: titles, titleProperty: titleProperty)
+        titleView = TopTitlesView(frame: CGRect(x: 0, y: titleProperty.isInTop ? pageControl.frame.maxY : 0, width: kWidth, height: titleProperty.titleHeight), titles: titles, titleProperty: titleProperty)
         titleView.delegate = self
         addSubview(titleView)
         

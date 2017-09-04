@@ -26,7 +26,8 @@ class ViewController: UIViewController {
         
         let kScreenH = UIScreen.main.bounds.height
         
-        giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 300)
+        giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 380)
+        giftBoardView.layoutSubviews()
         view.addSubview(giftBoardView)
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: nil) { (noti) in

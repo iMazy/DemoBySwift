@@ -13,7 +13,8 @@ let giftViewCellID = "GiftViewCellIdentifier"
 class GiftBoardView: UIView, NibLoadable {
 
     var emotionButtonClickClosure: ((UIButton)->Void)?
-    fileprivate var flowLayout: CollectionViewHorizontalFlowLayout =  CollectionViewHorizontalFlowLayout(rows: 3, cols: 7)
+    
+    fileprivate var flowLayout: CollectionViewHorizontalFlowLayout!
     
     fileprivate var emotionView: EmotionView!
     fileprivate lazy var emotionsArray: [[String]] = [[String]]()
@@ -26,8 +27,10 @@ class GiftBoardView: UIView, NibLoadable {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        flowLayout = CollectionViewHorizontalFlowLayout(rows: 2, cols: 4)
+        setNeedsLayout()
+        layoutIfNeeded()
         
+        flowLayout = CollectionViewHorizontalFlowLayout(rows: 2, cols: 4)
         flowLayout.minimumLineSpacing = 10
         flowLayout.minimumInteritemSpacing = 10
         flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
@@ -35,8 +38,9 @@ class GiftBoardView: UIView, NibLoadable {
         
         let property = TitleViewProperty()
         
-        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.bounds.height - sendButton.bounds.height),titles: ["普通","会员", "专属"], layout: flowLayout, property: property)
+        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.frame.maxY - sendButton.bounds.height),titles: ["普通","会员", "专属"], layout: flowLayout, property: property)
         addSubview(emotionView)
+        emotionView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin]
         
         emotionView.dataSource = self
         emotionView.delegate = self

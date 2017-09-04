@@ -12,7 +12,6 @@ class GiftViewCell: UICollectionViewCell {
     
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var giftNameLabel: UILabel!
-    @IBOutlet weak var giftCountLabel: UILabel!
-    
+    @IBOutlet weak var giftCountLabel: UILabel!    
     
 }

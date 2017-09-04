@@ -18,24 +18,26 @@ class GiftBoardView: UIView, NibLoadable {
     fileprivate var emotionView: EmotionView!
     fileprivate lazy var emotionsArray: [[String]] = [[String]]()
     
-    
     @IBOutlet weak var topSeparatorView: UIView!
-    
     @IBOutlet weak var sendButton: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        layoutIfNeeded()
+        setNeedsDisplay()
+        
         flowLayout = CollectionViewHorizontalFlowLayout(rows: 2, cols: 4)
         
-        flowLayout.minimumLineSpacing = 10
-        flowLayout.minimumInteritemSpacing = 10
-        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
+//        flowLayout.minimumLineSpacing = 10
+//        flowLayout.minimumInteritemSpacing = 10
+//        flowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10)
         flowLayout.scrollDirection = .horizontal
         
         let property = TitleViewProperty()
         
-        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.bounds.height - sendButton.bounds.height),titles: ["普通","会员", "专属"], layout: flowLayout, property: property)
+        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.frame.maxY - sendButton.bounds.height - 20),titles: ["普通","会员", "专属"], layout: flowLayout, property: property)
+        emotionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(emotionView)
         
         emotionView.dataSource = self
@@ -71,6 +73,7 @@ extension GiftBoardView: EmotionViewDataSource {
     
     func collectionView(emotionView: EmotionView, collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: GiftViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: giftViewCellID, for: indexPath) as! GiftViewCell
+        cell.backgroundColor = .red
         return cell
     }
 }

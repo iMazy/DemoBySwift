@@ -158,9 +158,9 @@
 			children = (
 				213299051F5D20E500140563 /* GiftBoardView.swift */,
 				213299061F5D20E500140563 /* GiftBoardView.xib */,
-				213299071F5D20E500140563 /* GiftModel.swift */,
 				213299081F5D20E500140563 /* GiftViewCell.swift */,
 				213299091F5D20E500140563 /* GiftViewCell.xib */,
+				213299071F5D20E500140563 /* GiftModel.swift */,
 				2132990A1F5D20E500140563 /* GiftViewModel.swift */,
 			);
 			name = GiftBoardView;

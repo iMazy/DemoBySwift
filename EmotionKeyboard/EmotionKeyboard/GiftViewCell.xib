@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="146" height="174"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xYu-yz-M1W">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="[fan_愤怒]" translatesAutoresizingMaskIntoConstraints="NO" id="xYu-yz-M1W">
                         <rect key="frame" x="0.0" y="0.0" width="146" height="132"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="萌萌哒" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r7a-D7-XKR">
@@ -63,4 +63,7 @@
             <point key="canvasLocation" x="-178" y="137"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="[fan_愤怒]" width="20" height="20"/>
+    </resources>
 </document>

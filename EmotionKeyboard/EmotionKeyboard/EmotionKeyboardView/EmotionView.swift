@@ -58,15 +58,16 @@ extension EmotionView {
         collectionView?.dataSource = self
         collectionView?.delegate = self
         addSubview(collectionView!)
+        collectionView?.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin]
         
         pageControl = UIPageControl(frame: CGRect(x: 0, y: collectionView!.frame.maxY, width: kWidth, height: 20))
         pageControl.backgroundColor = UIColor.black
         pageControl.isUserInteractionEnabled = false
         addSubview(pageControl)
+        pageControl.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleBottomMargin, .flexibleTopMargin]
         
         titleProperty.isScrollEnable = false
         titleProperty.isHiddenBottomLine = false
-        
         
         titleView = TopTitlesView(frame: CGRect(x: 0, y: titleProperty.isInTop ? pageControl.frame.maxY : 0, width: kWidth, height: 40), titles: titles, titleProperty: titleProperty)
         titleView.delegate = self

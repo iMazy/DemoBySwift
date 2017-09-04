@@ -19,7 +19,8 @@ class LiveShowViewController: UIViewController {
     @IBOutlet weak var roomIDLabel: UILabel!
     @IBOutlet weak var focusButton: UIButton!
     
-    fileprivate var inputToolView = InputToolView.loadFromNib()
+    fileprivate lazy var inputToolView = InputToolView.loadFromNib()
+    fileprivate lazy var giftBoardView = GiftBoardView.loadFromNib()
     
     var anchor : AnchorModel?
     
@@ -73,8 +74,9 @@ class LiveShowViewController: UIViewController {
         
         let kScreenH = UIScreen.main.bounds.height
         
-//        giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 300)
-//        view.addSubview(giftBoardView)
+        giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 380)
+        giftBoardView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin]
+        view.addSubview(giftBoardView)
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: nil) { (noti) in
             let duration = noti.userInfo![UIKeyboardAnimationDurationUserInfoKey] as! Double
@@ -93,6 +95,9 @@ class LiveShowViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftBoardView.frame.origin.y = UIScreen.main.bounds.height
+        })
     }
     
     deinit {
@@ -110,6 +115,7 @@ class LiveShowViewController: UIViewController {
             print("分享")
         case 103:
             print("礼物")
+            showGiftView()
         case 104:
             print("更多")
         case 105:
@@ -117,6 +123,12 @@ class LiveShowViewController: UIViewController {
         default: break
         }
         
+    }
+    
+    private func showGiftView() {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.giftBoardView.frame.origin.y = UIScreen.main.bounds.height - self.giftBoardView.bounds.height
+        })
     }
     
     @IBAction func closeButtonClick() {
