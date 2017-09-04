@@ -27,6 +27,12 @@
 		213299011F5D1E9900140563 /* InputToolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298FF1F5D1E9900140563 /* InputToolView.swift */; };
 		213299021F5D1E9900140563 /* InputToolView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213299001F5D1E9900140563 /* InputToolView.xib */; };
 		213299041F5D1EBB00140563 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213299031F5D1EBB00140563 /* NibLoadable.swift */; };
+		2132990B1F5D20E500140563 /* GiftBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213299051F5D20E500140563 /* GiftBoardView.swift */; };
+		2132990C1F5D20E500140563 /* GiftBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213299061F5D20E500140563 /* GiftBoardView.xib */; };
+		2132990D1F5D20E500140563 /* GiftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213299071F5D20E500140563 /* GiftModel.swift */; };
+		2132990E1F5D20E500140563 /* GiftViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213299081F5D20E500140563 /* GiftViewCell.swift */; };
+		2132990F1F5D20E500140563 /* GiftViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213299091F5D20E500140563 /* GiftViewCell.xib */; };
+		213299101F5D20E500140563 /* GiftViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2132990A1F5D20E500140563 /* GiftViewModel.swift */; };
 		215DAB031F57D9BA00053E68 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */; };
 		215DAB051F57E96C00053E68 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 215DAB041F57E96C00053E68 /* libz.tbd */; };
 		216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 216E4DC11F53E5A600D239E4 /* Main.storyboard */; };
@@ -71,6 +77,12 @@
 		213298FF1F5D1E9900140563 /* InputToolView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputToolView.swift; sourceTree = "<group>"; };
 		213299001F5D1E9900140563 /* InputToolView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputToolView.xib; sourceTree = "<group>"; };
 		213299031F5D1EBB00140563 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadable.swift; path = ../NibLoadable.swift; sourceTree = "<group>"; };
+		213299051F5D20E500140563 /* GiftBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftBoardView.swift; sourceTree = "<group>"; };
+		213299061F5D20E500140563 /* GiftBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftBoardView.xib; sourceTree = "<group>"; };
+		213299071F5D20E500140563 /* GiftModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftModel.swift; sourceTree = "<group>"; };
+		213299081F5D20E500140563 /* GiftViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewCell.swift; sourceTree = "<group>"; };
+		213299091F5D20E500140563 /* GiftViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GiftViewCell.xib; sourceTree = "<group>"; };
+		2132990A1F5D20E500140563 /* GiftViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiftViewModel.swift; sourceTree = "<group>"; };
 		215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IJKMediaFramework.framework; sourceTree = "<group>"; };
 		215DAB041F57E96C00053E68 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		216E4DBA1F53E5A600D239E4 /* Solive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Solive.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -141,6 +153,19 @@
 			path = EmotionKeyboardView;
 			sourceTree = "<group>";
 		};
+		213299111F5D20EB00140563 /* GiftBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				213299051F5D20E500140563 /* GiftBoardView.swift */,
+				213299061F5D20E500140563 /* GiftBoardView.xib */,
+				213299071F5D20E500140563 /* GiftModel.swift */,
+				213299081F5D20E500140563 /* GiftViewCell.swift */,
+				213299091F5D20E500140563 /* GiftViewCell.xib */,
+				2132990A1F5D20E500140563 /* GiftViewModel.swift */,
+			);
+			name = GiftBoardView;
+			sourceTree = "<group>";
+		};
 		216E4DB11F53E5A600D239E4 = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				213298F21F5D1D7300140563 /* EmotionKeyboardView */,
+				213299111F5D20EB00140563 /* GiftBoardView */,
 				213017281F56866B00FBE68C /* AnchorViewCell.swift */,
 				213017291F56866B00FBE68C /* AnchorViewCell.xib */,
 			);
@@ -401,12 +427,14 @@
 				216E4DC81F53E5A600D239E4 /* LaunchScreen.storyboard in Resources */,
 				216E4DC51F53E5A600D239E4 /* Assets.xcassets in Resources */,
 				21797A271F5502F7000D30E8 /* types.plist in Resources */,
+				2132990C1F5D20E500140563 /* GiftBoardView.xib in Resources */,
 				21797A261F5502F7000D30E8 /* QHSohuGifSort.plist in Resources */,
 				21797A251F5502F7000D30E8 /* QHNormalEmotionSort.plist in Resources */,
 				216E4DEA1F53F4B900D239E4 /* Mine.storyboard in Resources */,
 				216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */,
 				213299021F5D1E9900140563 /* InputToolView.xib in Resources */,
 				2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */,
+				2132990F1F5D20E500140563 /* GiftViewCell.xib in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
 				2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */,
 				213298FC1F5D1D7300140563 /* NormalEmotionCell.xib in Resources */,
@@ -481,7 +509,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				213298FB1F5D1D7300140563 /* NormalEmotionCell.swift in Sources */,
+				2132990B1F5D20E500140563 /* GiftBoardView.swift in Sources */,
 				21797A291F554E70000D30E8 /* PageTitleView.swift in Sources */,
+				2132990D1F5D20E500140563 /* GiftModel.swift in Sources */,
 				21797A2B1F554E81000D30E8 /* PageContentView.swift in Sources */,
 				216E4DE61F53F43000D239E4 /* MainNavigationController.swift in Sources */,
 				21797A2D1F556B5A000D30E8 /* AnchorViewController.swift in Sources */,
@@ -499,7 +529,9 @@
 				210D81C61F540C1800710C0F /* Foundation.swift in Sources */,
 				21797A1E1F54F953000D30E8 /* PageScrollView.swift in Sources */,
 				213299041F5D1EBB00140563 /* NibLoadable.swift in Sources */,
+				213299101F5D20E500140563 /* GiftViewModel.swift in Sources */,
 				216E4DEC1F53F73D00D239E4 /* HomeViewController.swift in Sources */,
+				2132990E1F5D20E500140563 /* GiftViewCell.swift in Sources */,
 				213298FE1F5D1D7300140563 /* TopTitlesView.swift in Sources */,
 				213298FD1F5D1D7300140563 /* TitleViewProperty.swift in Sources */,
 				213017271F56526900FBE68C /* CollectionViewWaterFlowLayout.swift in Sources */,
