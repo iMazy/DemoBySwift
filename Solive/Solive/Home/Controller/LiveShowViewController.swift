@@ -9,7 +9,7 @@
 import UIKit
 import IJKMediaFramework
 
-class LiveShowViewController: UIViewController {
+class LiveShowViewController: UIViewController, Emitterable {
     
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var topContainerView: UIView!
@@ -119,7 +119,10 @@ class LiveShowViewController: UIViewController {
         case 104:
             print("更多")
         case 105:
-            print("收藏")
+            print("粒子")
+            sender.isSelected = !sender.isSelected
+            let point = CGPoint(x: sender.center.x, y: view.bounds.height - sender.bounds.height * 0.5)
+            sender.isSelected ? startEmittering(point) : stopEmittering()
         default: break
         }
         
