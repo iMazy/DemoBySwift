@@ -15,12 +15,9 @@ class GiftViewModel {
 extension GiftViewModel {
     func loadGiftData(completed: @escaping ()->Void) {
         if giftList.count != 0 { completed() }
-        /*
-         
-         NetworkTools.requestData(.get, URLString: "http://qf.56.com/pay/v4/giftList.ios", parameters: ["type" : 0, "page" : 1, "rows" : 150], finishedCallback: { result in
-         */
+
         NetworkManager.requestData(.GET, urlString: "http://qf.56.com/pay/v4/giftList.ios", parameters: ["type" : 0, "page" : 1, "rows" : 150]) { (result) in
-            
+            print(result)
             guard let resultDict = result as? [String : Any] else { return }
             
             guard let dataDict = resultDict["message"] as? [String : Any] else { return }

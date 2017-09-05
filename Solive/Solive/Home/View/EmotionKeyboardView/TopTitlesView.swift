@@ -134,8 +134,7 @@ extension TopTitlesView {
         indicatorView.frame.size.height = 2
         indicatorView.frame.origin.y = bounds.height - 2
         scrollView.addSubview(indicatorView)
-    }
-    
+    } 
 }
 
 extension TopTitlesView {
@@ -198,7 +197,9 @@ extension TopTitlesView {
 extension TopTitlesView {
     func setTitleWithContentOffset(_ contentOffsetX: CGFloat) {
         
-        let index: Int = Int(contentOffsetX/bounds.width + 0.5)
+        let index: Int = Int(contentOffsetX/bounds.width)
+        
+        if index >= titleLabels.count { return }
         
         currentIndex = index
                 

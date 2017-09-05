@@ -38,7 +38,7 @@ class GiftBoardView: UIView, NibLoadable {
         
         let property = TitleViewProperty()
         
-        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.frame.maxY - sendButton.bounds.height - 20),titles: ["热门", "高级", "豪华", "专属"], layout: flowLayout, property: property)
+        emotionView = EmotionView(frame: CGRect(x: 0, y: topSeparatorView.frame.maxY, width: UIScreen.main.bounds.width, height: bounds.height - topSeparatorView.frame.maxY - sendButton.bounds.height - 20),titles: ["热门", "高级", "豪华", "专属", "VIP专属"], layout: flowLayout, property: property)
         emotionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         addSubview(emotionView)
         
@@ -62,6 +62,7 @@ class GiftBoardView: UIView, NibLoadable {
 extension GiftBoardView: EmotionViewDataSource {
     
     func numberOfSections(in emotionView: EmotionView) -> Int {
+        print(giftVM.giftList.count)
         return giftVM.giftList.count
     }
     
