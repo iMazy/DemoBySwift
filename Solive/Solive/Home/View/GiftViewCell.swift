@@ -22,4 +22,15 @@ class GiftViewCell: UICollectionViewCell {
         }
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        let selectedView = UIView()
+        selectedView.layer.cornerRadius = 5
+        selectedView.layer.masksToBounds = true
+        selectedView.layer.borderWidth = 1
+        selectedView.layer.borderColor = UIColor.orange.cgColor
+        selectedView.backgroundColor = UIColor.black
+        selectedBackgroundView = selectedView
+    }
+    
 }
