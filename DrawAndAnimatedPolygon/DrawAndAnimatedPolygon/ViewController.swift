@@ -10,14 +10,24 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    
+    var polygonView: PolygonView?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        view.backgroundColor = .black
+        
+        let w: CGFloat = UIScreen.main.bounds.width
+        polygonView = PolygonView(frame: CGRect(x: (w-200)/2, y: (w-200)/2, width: 200, height: 200))
+        polygonView?.values = [0.3, 0.7, 0.4, 0.6, 0.7, 0.4]
+        view.addSubview(polygonView!)
+        polygonView?.show()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        
     }
 
 
