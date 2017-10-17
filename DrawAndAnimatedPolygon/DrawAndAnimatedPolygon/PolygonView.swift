@@ -78,6 +78,17 @@ class PolygonView: UIView {
         addStrokeEndAnimationToLayer(layer: shapeLayer)
     }
     
+    func reDraw() {
+        
+        UIView.animate(withDuration: 0.25) {
+            
+            self.valuePath.removeAllPoints()
+
+            self.drawValueSide()
+        }
+        
+    }
+    
     // 绘制线条
     fileprivate func drawLineFromCenter() {
         let points = self.cornerPointArrs.last!

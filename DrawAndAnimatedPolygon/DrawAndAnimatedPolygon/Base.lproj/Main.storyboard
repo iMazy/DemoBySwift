@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +12,76 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawAndAnimatedPolygon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="srr-lN-wZQ">
+                                <rect key="frame" x="0.0" y="427" width="375" height="240"/>
+                                <subviews>
+                                    <slider opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4Bb-Q1-byB">
+                                        <rect key="frame" x="-2" y="0.0" width="379" height="41"/>
+                                        <connections>
+                                            <action selector="silderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="7zz-Yo-TVa"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="zXB-hB-jcj">
+                                        <rect key="frame" x="-2" y="40" width="379" height="41"/>
+                                        <connections>
+                                            <action selector="silderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="52Y-L4-9mn"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tZx-Ht-Xa4">
+                                        <rect key="frame" x="-2" y="80" width="379" height="41"/>
+                                        <connections>
+                                            <action selector="silderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="jsM-BY-fjV"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Czc-cD-30J">
+                                        <rect key="frame" x="-2" y="120" width="379" height="41"/>
+                                        <connections>
+                                            <action selector="silderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8b0-vR-nUG"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="bnu-l0-Hvk">
+                                        <rect key="frame" x="-2" y="160" width="379" height="41"/>
+                                        <connections>
+                                            <action selector="silderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="zKC-20-PVR"/>
+                                        </connections>
+                                    </slider>
+                                    <slider opaque="NO" tag="106" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="v43-lK-Hax">
+                                        <rect key="frame" x="-2" y="200" width="379" height="41"/>
+                                        <connections>
+                                            <action selector="silderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZJ9-Py-FVY"/>
+                                        </connections>
+                                    </slider>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="cBY-sz-hIN"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="srr-lN-wZQ" secondAttribute="trailing" id="EjR-aP-9wQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="srr-lN-wZQ" secondAttribute="bottom" id="aeg-ve-agz"/>
+                            <constraint firstItem="srr-lN-wZQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eV4-oQ-dEP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outletCollection property="sliders" destination="4Bb-Q1-byB" collectionClass="NSMutableArray" id="vjQ-9P-81F"/>
+                        <outletCollection property="sliders" destination="zXB-hB-jcj" collectionClass="NSMutableArray" id="p7U-Ej-bIT"/>
+                        <outletCollection property="sliders" destination="tZx-Ht-Xa4" collectionClass="NSMutableArray" id="ZO6-vN-R9W"/>
+                        <outletCollection property="sliders" destination="Czc-cD-30J" collectionClass="NSMutableArray" id="LjQ-oN-eGN"/>
+                        <outletCollection property="sliders" destination="bnu-l0-Hvk" collectionClass="NSMutableArray" id="Oj6-JU-5nY"/>
+                        <outletCollection property="sliders" destination="v43-lK-Hax" collectionClass="NSMutableArray" id="SB0-Ay-g6k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="41.829085457271368"/>
         </scene>
     </scenes>
 </document>
