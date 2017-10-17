@@ -190,7 +190,7 @@ class PolygonView: UIView {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.fromValue = 0
         animation.toValue = 1
-        animation.duration = 1.35
+        animation.duration = animationDuration
         layer.add(animation, forKey: "stokeEndAnimation")
     }
     
