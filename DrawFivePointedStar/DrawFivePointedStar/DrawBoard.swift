@@ -48,6 +48,11 @@ class DrawBoard: UIView {
         bezierPath.lineWidth = 1
     }
     
+    func beginDrawing() {
+        self.shapeLayer.path = self.bezierPath.cgPath
+        addStrokeEndAnimationToLayer(layer: shapeLayer)
+        setNeedsDisplay()
+    }
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
