@@ -26,6 +26,7 @@
 		21E6FA9C1F94517700FA6DAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21E6FAA21F94571800FA6DAB /* TableViewAnimationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewAnimationProtocol.swift; sourceTree = "<group>"; };
 		21E6FAA41F94589F00FA6DAB /* DemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
+		21EC73D61F984D07004E28AA /* TableViewCellAnimation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = TableViewCellAnimation.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +63,7 @@
 				21E6FA921F94517700FA6DAB /* ViewController.swift */,
 				21E6FAA41F94589F00FA6DAB /* DemoViewController.swift */,
 				21E6FAA21F94571800FA6DAB /* TableViewAnimationProtocol.swift */,
+				21EC73D61F984D07004E28AA /* TableViewCellAnimation.gif */,
 				21E6FA941F94517700FA6DAB /* Main.storyboard */,
 				21E6FA971F94517700FA6DAB /* Assets.xcassets */,
 				21E6FA991F94517700FA6DAB /* LaunchScreen.storyboard */,
