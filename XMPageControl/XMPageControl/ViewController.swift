@@ -21,10 +21,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 1
+        // 1 pageControl1
         pageControl1.dotSize = CGSize(width: 20, height: 4)
         pageControl1.distance = 20 // 点 间距
-        // 2
+        // 2 pageControl2
         pageControl2.dotSize = CGSize(width: 20, height: 4)
         // 3
         pageControl3.dotSize = CGSize(width: 12, height: 12)
