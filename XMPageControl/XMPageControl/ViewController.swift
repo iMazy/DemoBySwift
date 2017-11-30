@@ -26,11 +26,11 @@ class ViewController: UIViewController {
         pageControl1.distance = 20 // 点 间距
         // 2 pageControl2
         pageControl2.dotSize = CGSize(width: 20, height: 4)
-        // 3
+        // 3 pageControl3
         pageControl3.dotSize = CGSize(width: 12, height: 12)
-        // 4
+        // 4 pageControl4
         pageControl4.dotSize = CGSize(width: 7, height: 7)
-        // 5
+        // 5pageControl5
         pageControl5.dotSize = CGSize(width: 7, height: 7)
         pageControl5.distance = 5 // 点 间距
         pageControl5.dotSize = CGSize(width: 5, height: 5) // 点的大小
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
         if currentPage ==  5 {
             currentPage = 0
         }
-        
+        // 设置点的移动
         pageControl1.currentPage = currentPage
         pageControl2.currentPage = currentPage
         pageControl3.currentPage = currentPage
