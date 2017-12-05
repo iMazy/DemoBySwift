@@ -114,9 +114,9 @@ class RefreshBaseView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         // 设置箭头和菊花居中
-        arrowImage.center = self.center
-        indicatorView.center = self.center
-        noMoreLabel.center = self.center
+        arrowImage.center = CGPoint(x: self.width / 2, y: self.height / 2)
+        indicatorView.center = CGPoint(x: self.width / 2, y: self.height / 2)
+        noMoreLabel.center = CGPoint(x: self.width / 2, y: self.height / 2)
     }
     
     //显示到屏幕上
@@ -131,8 +131,9 @@ class RefreshBaseView: UIView {
     override func willMove(toSuperview newSuperview: UIView!) {
         super.willMove(toSuperview: newSuperview)
         // 移走旧的父控件
-        guard let _superView = self.superview else { return }
-        _superView.removeObserver(self, forKeyPath: RefreshContentOffset)
+        if let _superView = self.superview  {
+            _superView.removeObserver(self, forKeyPath: RefreshContentOffset)
+        }
         
         // 新的父控件 添加监听器
         newSuperview.addObserver(self, forKeyPath: RefreshContentOffset, options: .new, context: nil)

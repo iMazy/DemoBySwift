@@ -84,8 +84,9 @@ class RefreshFooterView: RefreshBaseView {
     override func willMove(toSuperview newSuperview: UIView!) {
         super.willMove(toSuperview: newSuperview)
         
-        guard let _superView = self.superview else { return }
-        _superView.removeObserver(self, forKeyPath: RefreshContentSize)
+        if let _superView = self.superview {
+            _superView.removeObserver(self, forKeyPath: RefreshContentSize)
+        }
         
         // 监听contentsize
         newSuperview.addObserver(self, forKeyPath: RefreshContentSize, options: NSKeyValueObservingOptions.new, context: nil)
