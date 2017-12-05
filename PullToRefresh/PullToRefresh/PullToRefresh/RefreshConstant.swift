@@ -18,3 +18,7 @@ let RefreshContentSize:   String =  "contentSize"
 
 let RefreshLabelTextColor: UIColor = UIColor.lightGray
 let RefreshLabelTextFont: UIFont = UIFont.systemFont(ofSize: 10)
+
+// 屏幕宽高
+let SCREEN_WIDTH : CGFloat = UIScreen.main.bounds.width
+let SCREEN_HEIGHT: CGFloat = UIScreen.main.bounds.height
