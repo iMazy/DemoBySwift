@@ -58,4 +58,51 @@ class RefreshHeaderView: RefreshBaseView {
         return RefreshHeaderView(frame: CGRect(x: -RefreshViewHeight, y: 0, width: RefreshViewHeight, height: SCREEN_HEIGHT))
     }
 
+    /// 设置headerView的frame
+    override func willMove(toSuperview newSuperview: UIView!) {
+        super.willMove(toSuperview: newSuperview)
+        self.y = -RefreshViewHeight
+    }
+ 
+
+    /// 这个方法是这个Demo的核心。。监听scrollview的contentoffset属性。 属性变化就会调用。
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        
+        guard !self.isHidden else {
+            return
+        }
+        
+        // 如果当前状态不是刷新状态
+        guard self.State != .refreshing else {
+            return
+        }
+        
+        // 监听到的是contentoffset
+        guard RefreshContentOffset == keyPath else {
+            return
+        }
+        
+        let currentOffsetY : CGFloat = self.scrollView.contentOffset.y
+        let happenOffsetY : CGFloat = -self.scrollViewOriginalInset.top
+        
+        if (currentOffsetY >= happenOffsetY) {
+            return
+        }
+        // 根据scrollview 滑动的位置设置当前状态
+        if self.scrollView.isDragging {
+            let normal2pullingOffsetY : CGFloat = happenOffsetY - RefreshViewHeight
+            if self.State == .normal && currentOffsetY < normal2pullingOffsetY {
+                self.State = .pulling
+            } else if self.State == .pulling && currentOffsetY >= normal2pullingOffsetY{
+                self.State = .normal
+            }
+            
+        } else if self.State == .pulling {
+            self.State = .refreshing
+        }
+    }
+    
+    deinit {
+        self.endRefreshing()
+    }
 }
