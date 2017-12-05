@@ -16,6 +16,7 @@
 		2131B3271FD630A50032EBEC /* RefreshBaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131B3261FD630A50032EBEC /* RefreshBaseView.swift */; };
 		2131B3291FD632A50032EBEC /* RefreshConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131B3281FD632A50032EBEC /* RefreshConstant.swift */; };
 		2131B32B1FD63A8E0032EBEC /* RefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131B32A1FD63A8E0032EBEC /* RefreshHeaderView.swift */; };
+		2131B32D1FD63D2B0032EBEC /* RefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2131B32C1FD63D2B0032EBEC /* RefreshFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		2131B3261FD630A50032EBEC /* RefreshBaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshBaseView.swift; sourceTree = "<group>"; };
 		2131B3281FD632A50032EBEC /* RefreshConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshConstant.swift; sourceTree = "<group>"; };
 		2131B32A1FD63A8E0032EBEC /* RefreshHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshHeaderView.swift; sourceTree = "<group>"; };
+		2131B32C1FD63D2B0032EBEC /* RefreshFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				2131B3241FD62DF80032EBEC /* UIViewExtension.swift */,
 				2131B3261FD630A50032EBEC /* RefreshBaseView.swift */,
 				2131B32A1FD63A8E0032EBEC /* RefreshHeaderView.swift */,
+				2131B32C1FD63D2B0032EBEC /* RefreshFooterView.swift */,
 				2131B3281FD632A50032EBEC /* RefreshConstant.swift */,
 			);
 			path = PullToRefresh;
@@ -161,6 +164,7 @@
 				2131B3141FD62D380032EBEC /* ViewController.swift in Sources */,
 				2131B3291FD632A50032EBEC /* RefreshConstant.swift in Sources */,
 				2131B3121FD62D380032EBEC /* AppDelegate.swift in Sources */,
+				2131B32D1FD63D2B0032EBEC /* RefreshFooterView.swift in Sources */,
 				2131B32B1FD63A8E0032EBEC /* RefreshHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
