@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
+    private var dataSource: [Int] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -21,8 +23,13 @@ class ViewController: UIViewController {
             print("下拉刷新")
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+1, execute: {
                 self.tableView.footerEndRefreshing()
+//                self.tableView.endWithNoMoreData()
+                
+                for i in (self.dataSource[0]+1...self.dataSource[0]+5) {
+                    self.dataSource.insert(i, at: 0)
+                }
                 self.tableView.headerViewStopPullToRefresh()
-                self.tableView.endWithNoMoreData()
+                self.tableView.reloadData()
             })
         }
         
@@ -32,18 +39,25 @@ class ViewController: UIViewController {
                 self.tableView.endWithNoMoreData()
             })
         }
+        
+        
+        for i in (0...15).reversed() {
+            dataSource.append(i)
+        }
+        
+        tableView.footerBeginRefreshing()
     }
 }
 
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 16
+        return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "----\(indexPath.row)----"
+        cell.textLabel?.text = "----\(dataSource[indexPath.row])----"
         cell.textLabel?.textAlignment = .center
         return cell
     }
