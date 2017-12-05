@@ -55,7 +55,7 @@ class RefreshHeaderView: RefreshBaseView {
     }
     // 创建view的静态方法
     class func headerView() -> RefreshHeaderView {
-        return RefreshHeaderView(frame: CGRect(x: -RefreshViewHeight, y: 0, width: RefreshViewHeight, height: SCREEN_HEIGHT))
+        return RefreshHeaderView(frame: CGRect(x: -RefreshViewHeight, y: 0, width: SCREEN_WIDTH, height: RefreshViewHeight))
     }
 
     /// 设置headerView的frame

@@ -104,7 +104,7 @@ class RefreshBaseView: UIView {
         noMoreLabel.isHidden = true
         self.addSubview(noMoreLabel)
 
-        self.autoresizingMask = .flexibleWidth
+//        self.autoresizingMask = .flexibleWidth
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -156,12 +156,11 @@ class RefreshBaseView: UIView {
     
     // 开始刷新
     func beginRefreshing(){
-        // self.State = RefreshState.Refreshing;
         if (self.window != nil) {
-            self.State = .refreshing;
+            self.State = .refreshing
         } else {
             //不能调用set方法
-            State = .willRefreshing;
+            State = .willRefreshing
             super.setNeedsDisplay()
         }
     }

@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             dataSource.append(i)
         }
         
-        tableView.footerBeginRefreshing()
+        tableView.headerViewBeginRefreshing()
     }
 }
 
