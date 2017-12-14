@@ -95,7 +95,7 @@ extension HomeBottomCollectionView {
         UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 5, options: .allowAnimatedContent, animations: {
             
             for cell in self.cellArray {
-                cell.y = cell != self.indexCell ?50:15
+                cell.y = cell != self.indexCell ? 50:15
             }
             
         }, completion: nil)
