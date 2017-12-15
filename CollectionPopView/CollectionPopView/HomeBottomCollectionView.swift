@@ -97,12 +97,12 @@ extension HomeBottomCollectionView {
             for cell in self.cellArray {
                 cell.y = cell != self.indexCell ? 50 : 15
             }
-            
+
         }, completion: nil)
-        
+
         self.lastCell = indexCell
         let indexPath = self.indexPath(for: indexCell!)
-        
+
         // 回调给首页控制器刷新页面
         if let block = touchIndexDidChangeBlock, let indexPath = indexPath {
             block(indexPath)

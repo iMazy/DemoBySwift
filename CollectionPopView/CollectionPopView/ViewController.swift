@@ -91,7 +91,7 @@ class ViewController: UIViewController {
        
         view.backgroundColor = COLOR_APPNORMAL
         
-        for i in 0..<12 {
+        for i in 0..<16 {
             homeModelArray.append(i)
         }
         
@@ -197,25 +197,30 @@ extension ViewController {
         guard homeModelArray.count > 8 && lastIndex != nil else {
             return
         }
-        
-        //
+        // 左边不动
         if cell.x <= SCREEN_WIDTH*0.5{
             bottomCollectionView.setContentOffset(CGPoint.zero, animated: true)
         } else if cell.x > SCREEN_WIDTH*0.5  && cell.x < SCREEN_WIDTH/8*CGFloat(homeModelArray.count)-SCREEN_WIDTH*0.5 {
+            
+            let newX = CGFloat(indexPath.row-3) * (cell.width+2)
+            bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
+            
+            
             // 判断下一个还是上一个
-            if lastIndex!.row < indexPath.row {
-                // 下一个
-                let newX = bottomCollectionView.contentOffset.x + cell.width + 2
-                bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
-            } else  {
-                // 上一个
-                if bottomCollectionView.contentOffset.x > cell.width {
-                    let newX = bottomCollectionView.contentOffset.x - cell.width - 2
-                    bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
-                } else {
-                    bottomCollectionView.setContentOffset(CGPoint.zero, animated: true)
-                }
-            }
+//            if lastIndex!.row < indexPath.row {
+//                // 下一个
+//                let newX = bottomCollectionView.contentOffset.x + cell.width + 2
+//                bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
+//            } else  {
+//                // 上一个
+//                if bottomCollectionView.contentOffset.x > cell.width {
+//                    let newX = bottomCollectionView.contentOffset.x - cell.width - 2
+//                    bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
+//                } else {
+//                    bottomCollectionView.setContentOffset(CGPoint.zero, animated: true)
+//                }
+//            }
+        // 左边不动
         } else {
             bottomCollectionView.setContentOffset(CGPoint(x: SCREEN_WIDTH/8*CGFloat(homeModelArray.count)-SCREEN_WIDTH, y: 0), animated: true)
         }
