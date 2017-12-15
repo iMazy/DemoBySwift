@@ -9,19 +9,19 @@
 import UIKit
 
 // 屏幕宽高
-let SCREEN_WIDTH : CGFloat = UIScreen.main.bounds.width
+let SCREEN_WIDTH  : CGFloat = UIScreen.main.bounds.width
 let SCREEN_HEIGHT : CGFloat = UIScreen.main.bounds.height
 let IPHONE6_WIDTH : CGFloat = 375
-let IPHONE6_HEIGHT : CGFloat = 667
+let IPHONE6_HEIGHT: CGFloat = 667
 let IPHONE5_WIDTH : CGFloat = 320
-let IPHONE5_HEIGHT : CGFloat = 568
+let IPHONE5_HEIGHT: CGFloat = 568
 
 // 默认背景色
 let COLOR_APPNORMAL : UIColor = UIColor(red: 54/255.0, green: 142/255.0, blue: 198/255.0, alpha: 1)
 let COLOR_BORDER : UIColor = UIColor(red: 240/255.0, green: 240/255.0, blue: 240/255.0, alpha: 1)
 
 // 间距
-let MARGIN_5 : CGFloat = 5
+let MARGIN_5  : CGFloat = 5
 let MARGIN_10 : CGFloat = 10
 let MARGIN_15 : CGFloat = 15
 let MARGIN_20 : CGFloat = 20
@@ -68,9 +68,9 @@ class ViewController: UIViewController {
         var collectionView = UICollectionView(frame: CGRect(x: 0, y: MARGIN_20+SCREEN_HEIGHT*50/IPHONE5_HEIGHT, width: SCREEN_WIDTH, height: SCREEN_HEIGHT*420/IPHONE5_HEIGHT), collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.showsHorizontalScrollIndicator = true
+        collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "HomeCenterItemCell")
+        collectionView.register(HomeCenterItemCell.self, forCellWithReuseIdentifier: "HomeCenterItemCell")
         collectionView.backgroundColor = UIColor.clear
         collectionView.tag = 100
         return collectionView
@@ -111,13 +111,6 @@ class ViewController: UIViewController {
             self.lastIndex = indexPath
         })
     }
-
-    func randomColor() -> UIColor{
-        let red = CGFloat(drand48())
-        let green = CGFloat(drand48())
-        let blue = CGFloat(drand48())
-        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
-    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -133,8 +126,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView.tag == 100 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCenterItemCell", for: indexPath)
-            cell.backgroundColor = randomColor()
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeCenterItemCell", for: indexPath) as! HomeCenterItemCell
+            cell.contentText = "\(homeModelArray[indexPath.row])"
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeBottomItemCell", for: indexPath)
