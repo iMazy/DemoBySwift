@@ -114,6 +114,11 @@ class ViewController: UIViewController {
         scrollViewDidEndDecelerating(collectionView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
@@ -139,12 +144,18 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         // 获取cell中的图片 和 rect 用于做转场动画
         let cell = collectionView.cellForItem(at: indexPath)!
         // 计算collection点击的item在屏幕中的位置
         let rectInCollectionView = (collectionView.layoutAttributesForItem(at: indexPath)?.frame)!
         let rectInSuperView = collectionView.convert(rectInCollectionView, to: collectionView.superview)
         self.rectInView = CGRect(x: rectInSuperView.origin.x+cell.x, y: rectInSuperView.origin.y+cell.y, width: rectInSuperView.width, height: cell.height)
+        
+        // 跳转
+        let homeVC = HomeDetailViewController()
+        navigationController?.show(homeVC, sender: nil)
+        
     }
 }
 
