@@ -18,7 +18,7 @@ class HomeBottomCollectionView: UICollectionView {
     fileprivate var indexCell: UICollectionViewCell?
     // 上一个index
     fileprivate var lastCell: UICollectionViewCell?
-    
+    // 点击到 cell 后的回调 blocK
     typealias TouchIndexDidChangeBlock = (_ indexPath: IndexPath) -> Void
     var touchIndexDidChangeBlock: TouchIndexDidChangeBlock?
     

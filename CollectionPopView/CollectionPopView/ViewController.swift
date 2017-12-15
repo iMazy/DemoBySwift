@@ -50,7 +50,7 @@ class ViewController: UIViewController {
 //            self.headerView.homeModel = model
             // 设置背景的动画
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
-//                self.view.backgroundColor = UIColor.hexString(hexString:  model.recommanded_background_color)
+                self.view.backgroundColor = UIColor.randomColor()
             })
 //            self.delegate?.indexDidChange(withBackgroundColor: model.recommanded_background_color)
         }
@@ -110,6 +110,8 @@ class ViewController: UIViewController {
             self.bottomHorizontalAnimation(currentCell: cell!, indexPath: indexPath)
             self.lastIndex = indexPath
         })
+        
+        scrollViewDidEndDecelerating(collectionView)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -139,7 +141,6 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 获取cell中的图片 和 rect 用于做转场动画
         let cell = collectionView.cellForItem(at: indexPath)!
-//        self.curImgView = cell.coverImageView
         // 计算collection点击的item在屏幕中的位置
         let rectInCollectionView = (collectionView.layoutAttributesForItem(at: indexPath)?.frame)!
         let rectInSuperView = collectionView.convert(rectInCollectionView, to: collectionView.superview)
@@ -201,25 +202,8 @@ extension ViewController {
         if cell.x <= SCREEN_WIDTH*0.5{
             bottomCollectionView.setContentOffset(CGPoint.zero, animated: true)
         } else if cell.x > SCREEN_WIDTH*0.5  && cell.x < SCREEN_WIDTH/8*CGFloat(homeModelArray.count)-SCREEN_WIDTH*0.5 {
-            
             let newX = CGFloat(indexPath.row-3) * (cell.width+2)
             bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
-            
-            
-            // 判断下一个还是上一个
-//            if lastIndex!.row < indexPath.row {
-//                // 下一个
-//                let newX = bottomCollectionView.contentOffset.x + cell.width + 2
-//                bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
-//            } else  {
-//                // 上一个
-//                if bottomCollectionView.contentOffset.x > cell.width {
-//                    let newX = bottomCollectionView.contentOffset.x - cell.width - 2
-//                    bottomCollectionView.setContentOffset(CGPoint(x: newX, y: 0), animated: true)
-//                } else {
-//                    bottomCollectionView.setContentOffset(CGPoint.zero, animated: true)
-//                }
-//            }
         // 左边不动
         } else {
             bottomCollectionView.setContentOffset(CGPoint(x: SCREEN_WIDTH/8*CGFloat(homeModelArray.count)-SCREEN_WIDTH, y: 0), animated: true)
