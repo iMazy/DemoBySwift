@@ -10,12 +10,19 @@ import UIKit
 
 class HomeDetailStateView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    @IBOutlet weak var stateLeftView: UIView!
+    
+    @IBOutlet weak var stateRightView: UIView!
+    
+    @IBOutlet weak var commentView: UIView!
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        stateLeftView.layer.cornerRadius = 15
+        stateRightView.layer.cornerRadius = 15
+        commentView.layer.cornerRadius = 15
     }
-    */
-
+    
 }

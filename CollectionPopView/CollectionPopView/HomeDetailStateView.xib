@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeDetailStateView" customModule="CollectionPopView" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="372" height="47"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -82,7 +82,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
             <constraints>
                 <constraint firstItem="YUs-fX-ntB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Fc-b6-yFN"/>
                 <constraint firstAttribute="bottom" secondItem="Ch9-ZP-Qf1" secondAttribute="bottom" constant="5" id="BrY-pZ-vRW"/>
@@ -97,7 +97,52 @@
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="commentView" destination="keo-1l-Erl" id="bAj-FN-8D5"/>
+                <outlet property="stateLeftView" destination="WAD-jL-hKS" id="bp1-kX-cVP"/>
+                <outlet property="stateRightView" destination="Ch9-ZP-Qf1" id="uTO-es-IEh"/>
+            </connections>
             <point key="canvasLocation" x="33" y="-256.5"/>
+        </view>
+        <view contentMode="scaleToFill" id="AnR-hO-NUJ">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detail_icon_drag" translatesAutoresizingMaskIntoConstraints="NO" id="T6i-eF-RKA">
+                    <rect key="frame" x="10" y="0.0" width="8" height="49"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="keo-1l-Erl">
+                    <rect key="frame" x="28" y="5" width="317" height="39"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="写下你的意见吧" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Nhe-TW-kCI">
+                            <rect key="frame" x="15" y="0.0" width="302" height="39"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="Nhe-TW-kCI" secondAttribute="trailing" id="1he-Rr-I6d"/>
+                        <constraint firstAttribute="bottom" secondItem="Nhe-TW-kCI" secondAttribute="bottom" id="9hK-Er-s1R"/>
+                        <constraint firstItem="Nhe-TW-kCI" firstAttribute="top" secondItem="keo-1l-Erl" secondAttribute="top" id="g2t-qf-WNe"/>
+                        <constraint firstItem="Nhe-TW-kCI" firstAttribute="leading" secondItem="keo-1l-Erl" secondAttribute="leading" constant="15" id="t88-Kk-Csi"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="T6i-eF-RKA" firstAttribute="top" secondItem="5wC-AJ-EI1" secondAttribute="top" id="HMd-KX-zYw"/>
+                <constraint firstAttribute="trailing" secondItem="keo-1l-Erl" secondAttribute="trailing" constant="30" id="Vhc-Ub-qwe"/>
+                <constraint firstItem="5wC-AJ-EI1" firstAttribute="bottom" secondItem="T6i-eF-RKA" secondAttribute="bottom" id="bfF-Uc-GA2"/>
+                <constraint firstAttribute="bottom" secondItem="keo-1l-Erl" secondAttribute="bottom" constant="5" id="fcQ-c6-JBt"/>
+                <constraint firstItem="keo-1l-Erl" firstAttribute="leading" secondItem="T6i-eF-RKA" secondAttribute="trailing" constant="10" id="gB1-7Y-piw"/>
+                <constraint firstItem="keo-1l-Erl" firstAttribute="top" secondItem="AnR-hO-NUJ" secondAttribute="top" constant="5" id="mi7-Ef-72M"/>
+                <constraint firstItem="T6i-eF-RKA" firstAttribute="leading" secondItem="5wC-AJ-EI1" secondAttribute="leading" constant="10" id="x9b-h0-Re9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="5wC-AJ-EI1"/>
+            <point key="canvasLocation" x="35" y="-161"/>
         </view>
     </objects>
     <resources>

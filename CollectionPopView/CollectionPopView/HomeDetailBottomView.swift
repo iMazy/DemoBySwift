@@ -24,7 +24,14 @@ class HomeDetailBottomView: UIScrollView {
         contentView.addSubview(blurView)
         
         // 添加控件
+        let bottomStateView: UIView = Bundle.main.loadNibNamed("HomeDetailStateView", owner: nil, options: nil)!.first as! UIView
+        bottomStateView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 40)
         
+        let bottomCommentView: UIView = Bundle.main.loadNibNamed("HomeDetailStateView", owner: nil, options: nil)!.last as! UIView
+        bottomCommentView.frame = CGRect(x: SCREEN_WIDTH, y: 0, width: SCREEN_WIDTH, height: 40)
+        
+        contentView.addSubview(bottomStateView)
+        contentView.addSubview(bottomCommentView)
         
         // 设置属性
         backgroundColor = .clear

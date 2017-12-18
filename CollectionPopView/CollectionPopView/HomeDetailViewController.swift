@@ -36,6 +36,14 @@ class HomeDetailViewController: UIViewController {
         return toolBar
     }()
     
+    // 底部评论条
+    fileprivate lazy var bottomBar: HomeDetailBottomView = {
+        let bottomView = HomeDetailBottomView()
+        bottomView.frame = CGRect(x: 0, y: SCREEN_HEIGHT-40, width: SCREEN_WIDTH, height: 40)
+        return bottomView
+    }()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,7 +52,7 @@ class HomeDetailViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
+        tableView.contentInset = UIEdgeInsetsMake(0, 0, 40, 0)
         view.addSubview(tableView)
         
         toolBar.collectButtonClickClosure = {
@@ -64,9 +72,11 @@ class HomeDetailViewController: UIViewController {
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 170))
         
         view.addSubview(toolBar)
+        view.addSubview(bottomBar)
         
         backButton.frame = CGRect(x: 10, y: 30, width: 30, height: 30)
         view.addSubview(backButton)
+        
         
     }
     
