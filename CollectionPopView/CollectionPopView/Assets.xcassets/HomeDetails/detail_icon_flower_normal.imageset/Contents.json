@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "detail_icon_flower_normal.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "detail_icon_flower_normal@2x-1.png",
       "scale" : "2x"
     },
     {

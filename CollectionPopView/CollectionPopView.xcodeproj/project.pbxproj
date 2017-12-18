@@ -19,6 +19,9 @@
 		21AE78EB1FE27267009F9383 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21AE78E91FE27267009F9383 /* LaunchScreen.storyboard */; };
 		21AE78F31FE27533009F9383 /* HomeBottomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AE78F21FE27533009F9383 /* HomeBottomCollectionView.swift */; };
 		21AE78F51FE27584009F9383 /* HomeBottomItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AE78F41FE27584009F9383 /* HomeBottomItemCell.swift */; };
+		21D96EB41FE766C100091B2C /* HomeDetailBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D96EB31FE766C100091B2C /* HomeDetailBottomView.swift */; };
+		21D96EB61FE7685C00091B2C /* HomeDetailStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D96EB51FE7685C00091B2C /* HomeDetailStateView.swift */; };
+		21D96EB81FE7686C00091B2C /* HomeDetailStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 21D96EB71FE7686C00091B2C /* HomeDetailStateView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		21AE78EC1FE27267009F9383 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21AE78F21FE27533009F9383 /* HomeBottomCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomCollectionView.swift; sourceTree = "<group>"; };
 		21AE78F41FE27584009F9383 /* HomeBottomItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeBottomItemCell.swift; sourceTree = "<group>"; };
+		21D96EB31FE766C100091B2C /* HomeDetailBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailBottomView.swift; sourceTree = "<group>"; };
+		21D96EB51FE7685C00091B2C /* HomeDetailStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailStateView.swift; sourceTree = "<group>"; };
+		21D96EB71FE7686C00091B2C /* HomeDetailStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailStateView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,9 @@
 				21A6CE601FE3BB0800DF3F48 /* HomeDetailViewController.swift */,
 				21A6CE631FE3BF0D00DF3F48 /* HomeDetailToolView.swift */,
 				21A6CE651FE3BF5200DF3F48 /* HomeDetailToolView.xib */,
+				21D96EB31FE766C100091B2C /* HomeDetailBottomView.swift */,
+				21D96EB51FE7685C00091B2C /* HomeDetailStateView.swift */,
+				21D96EB71FE7686C00091B2C /* HomeDetailStateView.xib */,
 				21A6CE3E1FE3690200DF3F48 /* UIKitExtension.swift */,
 				21AE78E41FE27267009F9383 /* Main.storyboard */,
 				21AE78E71FE27267009F9383 /* Assets.xcassets */,
@@ -156,6 +165,7 @@
 				21AE78EB1FE27267009F9383 /* LaunchScreen.storyboard in Resources */,
 				21AE78E81FE27267009F9383 /* Assets.xcassets in Resources */,
 				21AE78E61FE27267009F9383 /* Main.storyboard in Resources */,
+				21D96EB81FE7686C00091B2C /* HomeDetailStateView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,10 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D96EB61FE7685C00091B2C /* HomeDetailStateView.swift in Sources */,
 				21A6CE641FE3BF0D00DF3F48 /* HomeDetailToolView.swift in Sources */,
 				21AE78F51FE27584009F9383 /* HomeBottomItemCell.swift in Sources */,
 				21A6CE3D1FE3686D00DF3F48 /* HomeCenterItemCell.swift in Sources */,
 				21AE78E31FE27267009F9383 /* ViewController.swift in Sources */,
+				21D96EB41FE766C100091B2C /* HomeDetailBottomView.swift in Sources */,
 				21AE78F31FE27533009F9383 /* HomeBottomCollectionView.swift in Sources */,
 				21A6CE3F1FE3690200DF3F48 /* UIKitExtension.swift in Sources */,
 				21A6CE611FE3BB0800DF3F48 /* HomeDetailViewController.swift in Sources */,
