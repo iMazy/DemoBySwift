@@ -21,10 +21,18 @@ class HomeDetailViewController: UIViewController {
         return backBtn
     }()
     
+    fileprivate lazy var headerImgView: UIImageView = {
+        let imgView = UIImageView(image: UIImage(named: "home_logo_normal"))
+        imgView.frame = CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 170)
+        imgView.backgroundColor = .randomColor()
+        imgView.contentMode = .center
+        return imgView
+    }()
+    
     // 工具条
     fileprivate lazy var toolBar: HomeDetailToolView = {
         let toolBar : HomeDetailToolView = HomeDetailToolView.toolView()
-        toolBar.frame = CGRect(x: 0, y: 245, width: SCREEN_WIDTH, height: 30)
+        toolBar.frame = CGRect(x: 0, y: 225, width: SCREEN_WIDTH, height: 30)
         return toolBar
     }()
     
@@ -32,15 +40,11 @@ class HomeDetailViewController: UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = .white
-        
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 170))
-        headerView.backgroundColor = .randomColor()
-        tableView.tableHeaderView = headerView
-            
-        
+
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
         view.addSubview(tableView)
         
         toolBar.collectButtonClickClosure = {
@@ -54,6 +58,10 @@ class HomeDetailViewController: UIViewController {
         toolBar.downloadButtonClickClosure = {
             print("download")
         }
+        
+        tableView.addSubview(headerImgView)
+        headerImgView.center = CGPoint(x: view.center.x, y: headerImgView.center.y)
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 170))
         
         view.addSubview(toolBar)
         
@@ -76,7 +84,7 @@ extension HomeDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "---- \(indexPath.row) ----"
+        cell.textLabel?.text = indexPath.row != 1 ? "---- \(indexPath.row) ----" : ""
         cell.textLabel?.textAlignment = .center
         return cell
     }
@@ -85,14 +93,32 @@ extension HomeDetailViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeDetailViewController: UIScrollViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 更新 headerView 的大小
+        updateHeaderView()
+        
         if scrollView.contentOffset.y >= 215 {
             self.toolBar.y = self.backButton.y
             homeDetailToolBarToNavAnimation(toolView: toolBar)
         } else {
-            self.toolBar.y = 245 - scrollView.contentOffset.y
+            self.toolBar.y = 225 - scrollView.contentOffset.y
             homeDetailToolBarToScrollAnimation(toolView: toolBar)
         }
         
+    }
+}
+
+extension HomeDetailViewController {
+    func updateHeaderView() {
+        let HeaderCutAway: CGFloat = 170
+        
+        let y: CGFloat = -tableView.contentOffset.y
+        
+        if self.tableView.contentOffset.y < 0 {
+
+            headerImgView.frame = CGRect(x: 0, y: tableView.contentOffset.y, width: SCREEN_WIDTH+y, height: HeaderCutAway+y)
+            headerImgView.center = CGPoint(x: view.center.x, y: headerImgView.center.y)
+
+        }
     }
 }
 
