@@ -87,12 +87,7 @@
 				21AE78E01FE27267009F9383 /* AppDelegate.swift */,
 				21AE78E21FE27267009F9383 /* ViewController.swift */,
 				21A6CE621FE3BEF300DF3F48 /* HomeVC */,
-				21A6CE601FE3BB0800DF3F48 /* HomeDetailViewController.swift */,
-				21A6CE631FE3BF0D00DF3F48 /* HomeDetailToolView.swift */,
-				21A6CE651FE3BF5200DF3F48 /* HomeDetailToolView.xib */,
-				21D96EB31FE766C100091B2C /* HomeDetailBottomView.swift */,
-				21D96EB51FE7685C00091B2C /* HomeDetailStateView.swift */,
-				21D96EB71FE7686C00091B2C /* HomeDetailStateView.xib */,
+				21D96EB91FE7711200091B2C /* HomeDetail */,
 				21A6CE3E1FE3690200DF3F48 /* UIKitExtension.swift */,
 				21AE78E41FE27267009F9383 /* Main.storyboard */,
 				21AE78E71FE27267009F9383 /* Assets.xcassets */,
@@ -100,6 +95,19 @@
 				21AE78EC1FE27267009F9383 /* Info.plist */,
 			);
 			path = CollectionPopView;
+			sourceTree = "<group>";
+		};
+		21D96EB91FE7711200091B2C /* HomeDetail */ = {
+			isa = PBXGroup;
+			children = (
+				21A6CE601FE3BB0800DF3F48 /* HomeDetailViewController.swift */,
+				21A6CE631FE3BF0D00DF3F48 /* HomeDetailToolView.swift */,
+				21A6CE651FE3BF5200DF3F48 /* HomeDetailToolView.xib */,
+				21D96EB31FE766C100091B2C /* HomeDetailBottomView.swift */,
+				21D96EB51FE7685C00091B2C /* HomeDetailStateView.swift */,
+				21D96EB71FE7686C00091B2C /* HomeDetailStateView.xib */,
+			);
+			name = HomeDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

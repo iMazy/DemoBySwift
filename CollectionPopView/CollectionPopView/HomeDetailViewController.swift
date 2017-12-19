@@ -89,7 +89,7 @@ class HomeDetailViewController: UIViewController {
 extension HomeDetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
+        return 50
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -114,6 +114,18 @@ extension HomeDetailViewController: UIScrollViewDelegate {
             homeDetailToolBarToScrollAnimation(toolView: toolBar)
         }
         
+//        bottomBar.layoutIfNeeded()
+        if scrollView.contentOffset.y >= 44 * 50 - SCREEN_HEIGHT {
+            if self.bottomBar.contentOffset.x == SCREEN_WIDTH { return }
+            UIView.animate(withDuration: 0.25, animations: {
+                self.bottomBar.contentOffset.x = SCREEN_WIDTH
+            })
+        } else {
+            if self.bottomBar.contentOffset.x == 0 { return }
+             UIView.animate(withDuration: 0.25, animations: {
+                self.bottomBar.contentOffset.x = 0
+            })
+        }
     }
 }
 
