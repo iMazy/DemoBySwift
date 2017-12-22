@@ -59,20 +59,28 @@ class CustomCollectionViewController: UICollectionViewController {
          ]
         
     }
+}
 
+extension CustomCollectionViewController {
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         return dataSource.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CustomCollectionViewCell
         
-        cell.photoUrl = self.dataSource[indexPath.row] 
+        cell.photoUrl = self.dataSource[indexPath.row]
         // Configure the cell
         cell.backgroundColor = .red
         return cell
     }
-
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
+        let rect = cell.photoImageView.convert(cell.photoImageView.bounds, from: UIApplication.shared.keyWindow!)
+        
+        print(rect)
+    }
 }
