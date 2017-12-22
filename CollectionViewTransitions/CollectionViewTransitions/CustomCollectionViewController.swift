@@ -8,7 +8,7 @@
 
 import UIKit
 
-private let reuseIdentifier = "customCellID"
+let reuseIdentifier = "customCellID"
 
 let screenW: CGFloat = UIScreen.main.bounds.width
 let screenH: CGFloat = UIScreen.main.bounds.height
