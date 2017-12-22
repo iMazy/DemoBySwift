@@ -20,6 +20,10 @@ class InteractiveViewController: UIViewController {
     
     private var dataSource: [String] = []
     
+    var containerView: UIView!
+    var pagImageView: UIImageView!
+    var originRect: CGRect!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -72,8 +76,65 @@ extension InteractiveViewController: UICollectionViewDataSource, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
-        let rect = cell.photoImageView.convert(cell.photoImageView.bounds, from: UIApplication.shared.keyWindow!)
         
+        let rect = view.convert(cell.frame, from: collectionView)
         print(rect)
+        print(cell.frame)
+        
+        originRect = rect
+        
+        let image: UIImage = cell.photoImageView.image!
+        
+        let coverView: UIView = UIView(frame: view.bounds)
+        coverView.backgroundColor = UIColor.white
+        coverView.alpha = 0
+        containerView = coverView
+        
+        let gesture = UIPanGestureRecognizer(target: self, action: #selector(swipeAction))
+        coverView.addGestureRecognizer(gesture)
+        view.addSubview(coverView)
+        
+        let imgView = UIImageView()
+        imgView.isUserInteractionEnabled = true
+        imgView.frame = rect
+        imgView.image = image
+        coverView.addSubview(imgView)
+        
+        pagImageView = imgView
+        
+        let imageH: CGFloat = image.size.height
+        let imageW: CGFloat = image.size.width
+        let scale: CGFloat =  imageH/imageW
+        let imgHeight: CGFloat = screenW * scale
+
+        
+        UIView.animate(withDuration: 0.5) {
+            coverView.alpha = 1
+            imgView.frame = CGRect(x: 0, y: (screenH-imgHeight)/2, width: screenW, height: imgHeight)
+        }
+    
+        
+    }
+    
+    
+    @objc func swipeAction(sender: UIPanGestureRecognizer) {
+        let a = sender.translation(in: view)
+        print(a)
+        
+        switch sender.state {
+        case .began:
+            print("begin")
+        case .changed:
+            print("change")
+            pagImageView.transform = CGAffineTransform(scaleX: (375-a.x)/375, y: (375-a.x)/375)
+            containerView.alpha =  (375-a.x)/375
+//            pagImageView.transform = CGAffineTransform(translationX: a.x, y: a.y)
+        case .ended:
+            print("end")
+            pagImageView.frame = originRect
+            containerView.removeFromSuperview()
+        default:
+            break
+        }
     }
 }
