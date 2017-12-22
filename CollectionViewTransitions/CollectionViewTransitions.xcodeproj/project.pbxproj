@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		2128E3101FEBBA46000CB752 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E30F1FEBBA46000CB752 /* AppDelegate.swift */; };
-		2128E3121FEBBA46000CB752 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3111FEBBA46000CB752 /* ViewController.swift */; };
 		2128E3151FEBBA46000CB752 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2128E3131FEBBA46000CB752 /* Main.storyboard */; };
 		2128E3171FEBBA46000CB752 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2128E3161FEBBA46000CB752 /* Assets.xcassets */; };
 		2128E31A1FEBBA46000CB752 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2128E3181FEBBA46000CB752 /* LaunchScreen.storyboard */; };
+		2128E3221FEBBB99000CB752 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3211FEBBB99000CB752 /* HomeViewController.swift */; };
+		2128E3241FEBBC85000CB752 /* InteractiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3231FEBBC85000CB752 /* InteractiveViewController.swift */; };
+		2128E3261FEBBCB8000CB752 /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2128E30C1FEBBA46000CB752 /* CollectionViewTransitions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionViewTransitions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2128E30F1FEBBA46000CB752 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2128E3111FEBBA46000CB752 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2128E3141FEBBA46000CB752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2128E3161FEBBA46000CB752 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2128E3191FEBBA46000CB752 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2128E31B1FEBBA46000CB752 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2128E3211FEBBB99000CB752 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2128E3231FEBBC85000CB752 /* InteractiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveViewController.swift; sourceTree = "<group>"; };
+		2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				2128E30F1FEBBA46000CB752 /* AppDelegate.swift */,
-				2128E3111FEBBA46000CB752 /* ViewController.swift */,
+				2128E3211FEBBB99000CB752 /* HomeViewController.swift */,
+				2128E3231FEBBC85000CB752 /* InteractiveViewController.swift */,
+				2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */,
 				2128E3131FEBBA46000CB752 /* Main.storyboard */,
 				2128E3161FEBBA46000CB752 /* Assets.xcassets */,
 				2128E3181FEBBA46000CB752 /* LaunchScreen.storyboard */,
@@ -136,8 +142,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2128E3121FEBBA46000CB752 /* ViewController.swift in Sources */,
+				2128E3241FEBBC85000CB752 /* InteractiveViewController.swift in Sources */,
+				2128E3261FEBBCB8000CB752 /* CustomCollectionViewController.swift in Sources */,
 				2128E3101FEBBA46000CB752 /* AppDelegate.swift in Sources */,
+				2128E3221FEBBB99000CB752 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
