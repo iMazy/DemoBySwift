@@ -20,9 +20,24 @@ class InteractiveViewController: UIViewController {
     
     private var dataSource: [String] = []
     
-    var containerView: UIView!
-    var pagImageView: UIImageView!
+    lazy var containerView: UIView = {
+        let coverView: UIView = UIView(frame: self.view.bounds)
+        coverView.backgroundColor = UIColor.white
+        return coverView
+    }()
+    
+    lazy var picImageView: UIImageView = {
+        let imgView = UIImageView()
+        imgView.isUserInteractionEnabled = true
+        return imgView
+    }()
+    
     var originRect: CGRect!
+    
+    
+    var startPoint: CGPoint = CGPoint.zero
+    var framePoint: CGPoint = CGPoint.zero
+    var tempPoint: CGPoint = CGPoint.zero
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +54,14 @@ class InteractiveViewController: UIViewController {
         // Register cell classes
         collectionView.register(UINib(nibName: "CustomCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: reuseIdentifier)
         // Do any additional setup after loading the view.
+        
+        containerView.addSubview(picImageView)
+        
+        let swipeGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeAction))
+        picImageView.addGestureRecognizer(swipeGesture)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapAction))
+        picImageView.addGestureRecognizer(tapGesture)
         
         dataSource = [
             // 短图
@@ -75,66 +98,78 @@ extension InteractiveViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
         
         let rect = view.convert(cell.frame, from: collectionView)
-        print(rect)
-        print(cell.frame)
+        
+        
+        guard let image: UIImage = cell.photoImageView.image else {
+            return
+        }
+        self.containerView.backgroundColor = UIColor.white.withAlphaComponent(0)
+        view.addSubview(containerView)
         
         originRect = rect
-        
-        let image: UIImage = cell.photoImageView.image!
-        
-        let coverView: UIView = UIView(frame: view.bounds)
-        coverView.backgroundColor = UIColor.white
-        coverView.alpha = 0
-        containerView = coverView
-        
-        let gesture = UIPanGestureRecognizer(target: self, action: #selector(swipeAction))
-        coverView.addGestureRecognizer(gesture)
-        view.addSubview(coverView)
-        
-        let imgView = UIImageView()
-        imgView.isUserInteractionEnabled = true
-        imgView.frame = rect
-        imgView.image = image
-        coverView.addSubview(imgView)
-        
-        pagImageView = imgView
+    
+        picImageView.frame = rect
+        picImageView.image = image
         
         let imageH: CGFloat = image.size.height
         let imageW: CGFloat = image.size.width
         let scale: CGFloat =  imageH/imageW
         let imgHeight: CGFloat = screenW * scale
 
-        
         UIView.animate(withDuration: 0.5) {
-            coverView.alpha = 1
-            imgView.frame = CGRect(x: 0, y: (screenH-imgHeight)/2, width: screenW, height: imgHeight)
+            self.containerView.backgroundColor = UIColor.white
+            self.picImageView.frame = CGRect(x: 0, y: (screenH-imgHeight)/2, width: screenW, height: imgHeight)
         }
-    
         
+    }
+    
+    @objc func tapAction(sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.25, animations: {
+            self.picImageView.frame = self.originRect
+            self.containerView.backgroundColor = UIColor.white.withAlphaComponent(0)
+        }, completion: { (_) in
+            self.containerView.removeFromSuperview()
+        })
     }
     
     
     @objc func swipeAction(sender: UIPanGestureRecognizer) {
-        let a = sender.translation(in: view)
-        print(a)
-        
+
         switch sender.state {
         case .began:
-            print("begin")
+            startPoint = sender.location(in: containerView)
+            framePoint = picImageView.frame.origin
+            tempPoint = sender.location(in: picImageView)
+            
         case .changed:
-            print("change")
-            pagImageView.transform = CGAffineTransform(scaleX: (375-a.x)/375, y: (375-a.x)/375)
-            containerView.alpha =  (375-a.x)/375
-//            pagImageView.transform = CGAffineTransform(translationX: a.x, y: a.y)
+            let currentPoint = sender.location(in: containerView)
+            let dx = currentPoint.x - startPoint.x
+            let dy = currentPoint.y - startPoint.y
+            picImageView.frame = CGRect(x: (startPoint.x + dx - tempPoint.x), y: (startPoint.y + dy - tempPoint.y), width: picImageView.frame.size.width, height: picImageView.frame.size.height)
+            
+            let distance = startPoint.distanceTo(point: currentPoint)
+            self.containerView.backgroundColor = UIColor.white.withAlphaComponent((375 - distance)/375)
+            
         case .ended:
-            print("end")
-            pagImageView.frame = originRect
-            containerView.removeFromSuperview()
+            UIView.animate(withDuration: 0.25, animations: {
+                self.picImageView.frame = self.originRect
+                self.containerView.backgroundColor = UIColor.white.withAlphaComponent(0)
+            }, completion: { (_) in
+                self.containerView.removeFromSuperview()
+            })
         default:
             break
         }
+    }
+}
+
+extension CGPoint {
+    
+    func distanceTo(point : CGPoint) -> CGFloat {
+        return sqrt(pow((self.x - point.x), 2) + pow((self.y - point.y), 2))
     }
 }

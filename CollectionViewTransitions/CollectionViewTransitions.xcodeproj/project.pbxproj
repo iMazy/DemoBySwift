@@ -16,6 +16,8 @@
 		2128E3261FEBBCB8000CB752 /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */; };
 		2128E3291FEC9477000CB752 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3271FEC9477000CB752 /* CustomCollectionViewCell.swift */; };
 		2128E32A1FEC9477000CB752 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2128E3281FEC9477000CB752 /* CustomCollectionViewCell.xib */; };
+		216958EE1FECFCA0000E09D7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216958EC1FECFCA0000E09D7 /* DetailViewController.swift */; };
+		216958EF1FECFCA0000E09D7 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216958ED1FECFCA0000E09D7 /* DetailViewController.xib */; };
 		DF91E78796AF640C8F71599B /* Pods_CollectionViewTransitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215A58FCF0514AF83F220BF3 /* Pods_CollectionViewTransitions.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		2128E3271FEC9477000CB752 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		2128E3281FEC9477000CB752 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
 		215A58FCF0514AF83F220BF3 /* Pods_CollectionViewTransitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectionViewTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		216958EC1FECFCA0000E09D7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		216958ED1FECFCA0000E09D7 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				2128E30F1FEBBA46000CB752 /* AppDelegate.swift */,
 				2128E3211FEBBB99000CB752 /* HomeViewController.swift */,
 				2128E3231FEBBC85000CB752 /* InteractiveViewController.swift */,
+				216958EC1FECFCA0000E09D7 /* DetailViewController.swift */,
+				216958ED1FECFCA0000E09D7 /* DetailViewController.xib */,
 				2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */,
 				2128E3271FEC9477000CB752 /* CustomCollectionViewCell.swift */,
 				2128E3281FEC9477000CB752 /* CustomCollectionViewCell.xib */,
@@ -164,6 +170,7 @@
 			files = (
 				2128E31A1FEBBA46000CB752 /* LaunchScreen.storyboard in Resources */,
 				2128E3171FEBBA46000CB752 /* Assets.xcassets in Resources */,
+				216958EF1FECFCA0000E09D7 /* DetailViewController.xib in Resources */,
 				2128E3151FEBBA46000CB752 /* Main.storyboard in Resources */,
 				2128E32A1FEC9477000CB752 /* CustomCollectionViewCell.xib in Resources */,
 			);
@@ -237,6 +244,7 @@
 				2128E3241FEBBC85000CB752 /* InteractiveViewController.swift in Sources */,
 				2128E3291FEC9477000CB752 /* CustomCollectionViewCell.swift in Sources */,
 				2128E3261FEBBCB8000CB752 /* CustomCollectionViewController.swift in Sources */,
+				216958EE1FECFCA0000E09D7 /* DetailViewController.swift in Sources */,
 				2128E3101FEBBA46000CB752 /* AppDelegate.swift in Sources */,
 				2128E3221FEBBB99000CB752 /* HomeViewController.swift in Sources */,
 			);

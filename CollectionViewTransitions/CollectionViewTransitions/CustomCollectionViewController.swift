@@ -82,5 +82,6 @@ extension CustomCollectionViewController {
         let rect = cell.photoImageView.convert(cell.photoImageView.bounds, from: UIApplication.shared.keyWindow!)
         
         print(rect)
+        navigationController?.show(DetailViewController(), sender: nil)
     }
 }
