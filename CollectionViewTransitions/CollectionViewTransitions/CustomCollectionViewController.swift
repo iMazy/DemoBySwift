@@ -82,6 +82,22 @@ extension CustomCollectionViewController {
         let rect = cell.photoImageView.convert(cell.photoImageView.bounds, from: UIApplication.shared.keyWindow!)
         
         print(rect)
-        navigationController?.show(DetailViewController(), sender: nil)
+        
+        let detailVC = DetailViewController()
+        detailVC.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        self.present(detailVC, animated: true, completion: nil)
+        
+        
+//        detailVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
+//        navigationController?.pushViewController(detailVC, animated: true)
+//        detailVC.modalPresentationStyle = .custom
+//        detailVC.transitioningDelegate = TransitioningDelegate.shared
+//        let navi = UINavigationController(rootViewController: detailVC)
+//        navi.view.backgroundColor = UIColor.clear
+//        UIApplication.shared.keyWindow?.backgroundColor = UIColor.clear
+//
+//        self.present(navi, animated: false, completion: nil)
+        
+//         (self.navigationController as! MainNavigationController).pushViewController(detailVC)
     }
 }

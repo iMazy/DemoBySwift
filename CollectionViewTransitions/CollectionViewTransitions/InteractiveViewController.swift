@@ -34,10 +34,9 @@ class InteractiveViewController: UIViewController {
     
     var originRect: CGRect!
     
-    
     var startPoint: CGPoint = CGPoint.zero
     var framePoint: CGPoint = CGPoint.zero
-    var tempPoint: CGPoint = CGPoint.zero
+    var originPoint: CGPoint = CGPoint.zero
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -143,13 +142,13 @@ extension InteractiveViewController: UICollectionViewDataSource, UICollectionVie
         case .began:
             startPoint = sender.location(in: containerView)
             framePoint = picImageView.frame.origin
-            tempPoint = sender.location(in: picImageView)
+            originPoint = sender.location(in: picImageView)
             
         case .changed:
             let currentPoint = sender.location(in: containerView)
             let dx = currentPoint.x - startPoint.x
             let dy = currentPoint.y - startPoint.y
-            picImageView.frame = CGRect(x: (startPoint.x + dx - tempPoint.x), y: (startPoint.y + dy - tempPoint.y), width: picImageView.frame.size.width, height: picImageView.frame.size.height)
+            picImageView.frame = CGRect(x: (startPoint.x + dx - originPoint.x), y: (startPoint.y + dy - originPoint.y), width: picImageView.frame.size.width, height: picImageView.frame.size.height)
             
             let distance = startPoint.distanceTo(point: currentPoint)
             self.containerView.backgroundColor = UIColor.white.withAlphaComponent((375 - distance)/375)
