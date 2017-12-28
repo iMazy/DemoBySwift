@@ -31,7 +31,7 @@ class SecondViewController: UIViewController {
         view.addSubview(backButton)
         
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20.0).isActive = true
         
         backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         backButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -42,4 +42,7 @@ class SecondViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
 
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 }

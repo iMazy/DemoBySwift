@@ -31,7 +31,7 @@ class FirstViewController: UIViewController {
         view.addSubview(showSecondVCButton)
         
         titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 16.0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 20.0).isActive = true
         
         showSecondVCButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         showSecondVCButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
@@ -40,5 +40,9 @@ class FirstViewController: UIViewController {
 
     @objc func didTapShowSecondButton() {
         self.navigationController?.pushViewController(SecondViewController(), animated: true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
