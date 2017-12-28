@@ -36,6 +36,16 @@ class SecondViewController: UIViewController {
         backButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         backButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
+        
+        let testLabel = UILabel()
+        testLabel.translatesAutoresizingMaskIntoConstraints = false
+        testLabel.text = "A new way for layout"
+        testLabel.sizeToFit()
+        view.addSubview(testLabel)
+        
+        testLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        testLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        
     }
     
     @objc func didTapBackButton() {
