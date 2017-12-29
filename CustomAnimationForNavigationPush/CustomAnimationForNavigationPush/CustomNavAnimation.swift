@@ -66,7 +66,6 @@ extension CustomNavAnimation: UIViewControllerAnimatedTransitioning {
             let radius: CGFloat = sqrt(x*x + y*y)
 
             
-            
             let outerRect = CGRect(x: point.x, y: point.y, width: 0, height: 0).insetBy(dx: -radius, dy: -radius)
             let finialPath = UIBezierPath(ovalIn: outerRect)
 

@@ -84,8 +84,10 @@ extension CustomCollectionViewController {
         print(rect)
         
         let detailVC = DetailViewController()
-        detailVC.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
-        self.present(detailVC, animated: true, completion: nil)
+        detailVC.modalPresentationStyle = .custom
+        detailVC.transitioningDelegate = TransitioningDelegate.shared
+//        detailVC.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
+//        self.present(detailVC, animated: true, completion: nil)
         
         
 //        detailVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
@@ -97,7 +99,7 @@ extension CustomCollectionViewController {
 //        UIApplication.shared.keyWindow?.backgroundColor = UIColor.clear
 //
 //        self.present(navi, animated: false, completion: nil)
-        
-//         (self.navigationController as! MainNavigationController).pushViewController(detailVC)
+//        detailVC.view.backgroundColor = UIColor.red.withAlphaComponent(0.3)
+         (self.navigationController as! MainNavigationController).pushViewController(detailVC, withCenterButton: UIButton())
     }
 }

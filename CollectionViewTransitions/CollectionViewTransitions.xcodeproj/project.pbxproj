@@ -21,6 +21,8 @@
 		214958941FF3923A003365D2 /* TransitioningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214958931FF3923A003365D2 /* TransitioningDelegate.swift */; };
 		214958961FF39262003365D2 /* XMPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214958951FF39262003365D2 /* XMPresentationController.swift */; };
 		214958981FF39274003365D2 /* XMAnimatedTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 214958971FF39274003365D2 /* XMAnimatedTransitioning.swift */; };
+		21629D171FF5EA90005CF154 /* TransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21629D161FF5EA90005CF154 /* TransitionDelegate.swift */; };
+		21629D191FF5F291005CF154 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21629D181FF5F291005CF154 /* TempViewController.swift */; };
 		216958EE1FECFCA0000E09D7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 216958EC1FECFCA0000E09D7 /* DetailViewController.swift */; };
 		216958EF1FECFCA0000E09D7 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 216958ED1FECFCA0000E09D7 /* DetailViewController.xib */; };
 		DF91E78796AF640C8F71599B /* Pods_CollectionViewTransitions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 215A58FCF0514AF83F220BF3 /* Pods_CollectionViewTransitions.framework */; };
@@ -46,6 +48,8 @@
 		214958951FF39262003365D2 /* XMPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMPresentationController.swift; sourceTree = "<group>"; };
 		214958971FF39274003365D2 /* XMAnimatedTransitioning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XMAnimatedTransitioning.swift; sourceTree = "<group>"; };
 		215A58FCF0514AF83F220BF3 /* Pods_CollectionViewTransitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectionViewTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21629D161FF5EA90005CF154 /* TransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDelegate.swift; sourceTree = "<group>"; };
+		21629D181FF5F291005CF154 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		216958EC1FECFCA0000E09D7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		216958ED1FECFCA0000E09D7 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,9 +90,11 @@
 				2128E30F1FEBBA46000CB752 /* AppDelegate.swift */,
 				2128E3211FEBBB99000CB752 /* HomeViewController.swift */,
 				2128E3231FEBBC85000CB752 /* InteractiveViewController.swift */,
+				21629D181FF5F291005CF154 /* TempViewController.swift */,
 				216958EC1FECFCA0000E09D7 /* DetailViewController.swift */,
 				2149588E1FF38E6C003365D2 /* CustomNavAnimation.swift */,
 				214958901FF38E86003365D2 /* MainNavigationController.swift */,
+				21629D161FF5EA90005CF154 /* TransitionDelegate.swift */,
 				214958921FF39202003365D2 /* ModalAnimationPush */,
 				2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */,
 				216958ED1FECFCA0000E09D7 /* DetailViewController.xib */,
@@ -270,9 +276,11 @@
 				214958911FF38E87003365D2 /* MainNavigationController.swift in Sources */,
 				214958961FF39262003365D2 /* XMPresentationController.swift in Sources */,
 				2128E3291FEC9477000CB752 /* CustomCollectionViewCell.swift in Sources */,
+				21629D191FF5F291005CF154 /* TempViewController.swift in Sources */,
 				2128E3261FEBBCB8000CB752 /* CustomCollectionViewController.swift in Sources */,
 				216958EE1FECFCA0000E09D7 /* DetailViewController.swift in Sources */,
 				2128E3101FEBBA46000CB752 /* AppDelegate.swift in Sources */,
+				21629D171FF5EA90005CF154 /* TransitionDelegate.swift in Sources */,
 				214958981FF39274003365D2 /* XMAnimatedTransitioning.swift in Sources */,
 				2128E3221FEBBB99000CB752 /* HomeViewController.swift in Sources */,
 			);

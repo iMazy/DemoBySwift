@@ -10,6 +10,9 @@ import UIKit
 
 class HomeViewController: UITableViewController {
 
+    // 必须保存为实例变量
+    var tsDelegate = TransitionDelegate()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,8 +27,21 @@ class HomeViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             navigationController?.show(InteractiveViewController(), sender: nil)
-        default:
+        case 1:
             navigationController?.show(CustomCollectionViewController(), sender: nil)
+        case 2:
+            let vc = TempViewController()
+            tsDelegate.animateSlide = true
+            tsDelegate.isBounds = true
+            vc.transitioningDelegate = tsDelegate
+            self.present(vc, animated: true, completion: nil)
+        case 3:
+            let vc = TempViewController()
+            tsDelegate.animateSlide = true
+            tsDelegate.isBounds = false
+            vc.transitioningDelegate = tsDelegate
+            self.present(vc, animated: true, completion: nil)
+        default: break
         }
     }
     

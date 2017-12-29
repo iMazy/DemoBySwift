@@ -15,8 +15,6 @@ class MainNavigationController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.view.backgroundColor = UIColor.clear
-        // Do any additional setup after loading the view.
     }
 
     func pushViewController(_ viewController: UIViewController, withCenterButton button: UIButton) {
