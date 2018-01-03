@@ -16,6 +16,9 @@
 		2128E3261FEBBCB8000CB752 /* CustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */; };
 		2128E3291FEC9477000CB752 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2128E3271FEC9477000CB752 /* CustomCollectionViewCell.swift */; };
 		2128E32A1FEC9477000CB752 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2128E3281FEC9477000CB752 /* CustomCollectionViewCell.xib */; };
+		21328F311FFCAD0700DB3A4E /* CustomTransation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F2E1FFCAD0600DB3A4E /* CustomTransation.gif */; };
+		21328F321FFCAD0700DB3A4E /* OtherCustomTransation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F2F1FFCAD0600DB3A4E /* OtherCustomTransation.gif */; };
+		21328F331FFCAD0700DB3A4E /* interactiveTransation.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F301FFCAD0700DB3A4E /* interactiveTransation.gif */; };
 		2149588F1FF38E6C003365D2 /* CustomNavAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2149588E1FF38E6C003365D2 /* CustomNavAnimation.swift */; };
 		21629D171FF5EA90005CF154 /* TransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21629D161FF5EA90005CF154 /* TransitionDelegate.swift */; };
 		21629D191FF5F291005CF154 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21629D181FF5F291005CF154 /* TempViewController.swift */; };
@@ -38,6 +41,9 @@
 		2128E3251FEBBCB8000CB752 /* CustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewController.swift; sourceTree = "<group>"; };
 		2128E3271FEC9477000CB752 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		2128E3281FEC9477000CB752 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		21328F2E1FFCAD0600DB3A4E /* CustomTransation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = CustomTransation.gif; sourceTree = "<group>"; };
+		21328F2F1FFCAD0600DB3A4E /* OtherCustomTransation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = OtherCustomTransation.gif; sourceTree = "<group>"; };
+		21328F301FFCAD0700DB3A4E /* interactiveTransation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = interactiveTransation.gif; sourceTree = "<group>"; };
 		2149588E1FF38E6C003365D2 /* CustomNavAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomNavAnimation.swift; path = ../../CustomAnimationForNavigationPush/CustomAnimationForNavigationPush/CustomNavAnimation.swift; sourceTree = "<group>"; };
 		215A58FCF0514AF83F220BF3 /* Pods_CollectionViewTransitions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CollectionViewTransitions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21629D161FF5EA90005CF154 /* TransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +99,9 @@
 				2128E3131FEBBA46000CB752 /* Main.storyboard */,
 				2128E3161FEBBA46000CB752 /* Assets.xcassets */,
 				2128E3181FEBBA46000CB752 /* LaunchScreen.storyboard */,
+				21328F2E1FFCAD0600DB3A4E /* CustomTransation.gif */,
+				21328F301FFCAD0700DB3A4E /* interactiveTransation.gif */,
+				21328F2F1FFCAD0600DB3A4E /* OtherCustomTransation.gif */,
 				2128E31B1FEBBA46000CB752 /* Info.plist */,
 			);
 			path = CollectionViewTransitions;
@@ -180,7 +189,10 @@
 				2128E31A1FEBBA46000CB752 /* LaunchScreen.storyboard in Resources */,
 				2128E3171FEBBA46000CB752 /* Assets.xcassets in Resources */,
 				216958EF1FECFCA0000E09D7 /* DetailViewController.xib in Resources */,
+				21328F321FFCAD0700DB3A4E /* OtherCustomTransation.gif in Resources */,
 				2128E3151FEBBA46000CB752 /* Main.storyboard in Resources */,
+				21328F311FFCAD0700DB3A4E /* CustomTransation.gif in Resources */,
+				21328F331FFCAD0700DB3A4E /* interactiveTransation.gif in Resources */,
 				2128E32A1FEC9477000CB752 /* CustomCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
