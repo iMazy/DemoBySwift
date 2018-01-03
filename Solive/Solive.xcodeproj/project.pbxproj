@@ -18,6 +18,7 @@
 		213017371F568D3000FBE68C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017361F568D3000FBE68C /* NetworkManager.swift */; };
 		2130173A1F56ADB600FBE68C /* LiveShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213017381F56ADB600FBE68C /* LiveShowViewController.swift */; };
 		2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 213017391F56ADB600FBE68C /* LiveShowViewController.xib */; };
+		21328F371FFCB96600DB3A4E /* solive.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F361FFCB96500DB3A4E /* solive.gif */; };
 		213298F91F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F31F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift */; };
 		213298FA1F5D1D7300140563 /* EmotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F41F5D1D7300140563 /* EmotionView.swift */; };
 		213298FB1F5D1D7300140563 /* NormalEmotionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213298F51F5D1D7300140563 /* NormalEmotionCell.swift */; };
@@ -70,6 +71,7 @@
 		213017361F568D3000FBE68C /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		213017381F56ADB600FBE68C /* LiveShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LiveShowViewController.swift; sourceTree = "<group>"; };
 		213017391F56ADB600FBE68C /* LiveShowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveShowViewController.xib; sourceTree = "<group>"; };
+		21328F361FFCB96500DB3A4E /* solive.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = solive.gif; sourceTree = "<group>"; };
 		213298F31F5D1D7300140563 /* CollectionViewHorizontalFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewHorizontalFlowLayout.swift; sourceTree = "<group>"; };
 		213298F41F5D1D7300140563 /* EmotionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmotionView.swift; sourceTree = "<group>"; };
 		213298F51F5D1D7300140563 /* NormalEmotionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalEmotionCell.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 		216E4DDC1F53F24200D239E4 /* System */ = {
 			isa = PBXGroup;
 			children = (
+				21328F361FFCB96500DB3A4E /* solive.gif */,
 				215DAB021F57D9BA00053E68 /* IJKMediaFramework.framework */,
 				21797A221F5502F7000D30E8 /* QHNormalEmotionSort.plist */,
 				21797A231F5502F7000D30E8 /* QHSohuGifSort.plist */,
@@ -440,6 +443,7 @@
 				216E4DC31F53E5A600D239E4 /* Main.storyboard in Resources */,
 				213299021F5D1E9900140563 /* InputToolView.xib in Resources */,
 				2130172B1F56866B00FBE68C /* AnchorViewCell.xib in Resources */,
+				21328F371FFCB96600DB3A4E /* solive.gif in Resources */,
 				2132990F1F5D20E500140563 /* GiftViewCell.xib in Resources */,
 				216E4DE81F53F4AD00D239E4 /* Home.storyboard in Resources */,
 				2130173B1F56ADB600FBE68C /* LiveShowViewController.xib in Resources */,
