@@ -28,6 +28,9 @@ class LiveShowViewController: UIViewController, Emitterable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.layoutIfNeeded()
+        view.setNeedsLayout()
 
         setupUI()
         
@@ -37,6 +40,10 @@ class LiveShowViewController: UIViewController, Emitterable {
         
         loadAnchorLiveAddress()
         
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         setupBottomToolViews()
     }
     
@@ -70,12 +77,14 @@ class LiveShowViewController: UIViewController, Emitterable {
     fileprivate func setupBottomToolViews() {
         
         inputToolView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 44)
+        inputToolView.layoutSubviews()
         view.addSubview(inputToolView)
         
         let kScreenH = UIScreen.main.bounds.height
         
         giftBoardView.frame = CGRect(x: 0, y: UIScreen.main.bounds.height, width: UIScreen.main.bounds.width, height: 380)
-        giftBoardView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin]
+//        giftBoardView.autoresizingMask = [.flexibleWidth, .flexibleHeight, .flexibleTopMargin]
+
         view.addSubview(giftBoardView)
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil, queue: nil) { (noti) in

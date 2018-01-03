@@ -676,6 +676,7 @@
 					"$(PROJECT_DIR)/Solive",
 				);
 				INFOPLIST_FILE = Solive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.Solive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -694,6 +695,7 @@
 					"$(PROJECT_DIR)/Solive",
 				);
 				INFOPLIST_FILE = Solive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mazy.Solive;
 				PRODUCT_NAME = "$(TARGET_NAME)";

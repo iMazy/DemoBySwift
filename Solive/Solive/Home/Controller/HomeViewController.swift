@@ -64,7 +64,7 @@ extension HomeViewController {
             childVCs.append(vc)
         }
         
-        let pageView = PageScrollView(frame: CGRect(x: 0, y: 64, width: kScreenW, height: kScreenH-64), titles: titles, childVC: childVCs, parentVC: self)
+        let pageView = PageScrollView(frame: CGRect(x: 0, y: 64+10, width: kScreenW, height: kScreenH-64), titles: titles, childVC: childVCs, parentVC: self)
         view.addSubview(pageView)
     }
     
