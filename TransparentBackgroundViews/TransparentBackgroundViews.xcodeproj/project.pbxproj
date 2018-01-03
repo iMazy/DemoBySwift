@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21328F391FFCBA8B00DB3A4E /* transparentBackgroundViews.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F381FFCBA8B00DB3A4E /* transparentBackgroundViews.gif */; };
 		21FE95D51FF4839700ED31F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE95D41FF4839700ED31F2 /* AppDelegate.swift */; };
 		21FE95D71FF4839700ED31F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FE95D61FF4839700ED31F2 /* ViewController.swift */; };
 		21FE95DA1FF4839700ED31F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21FE95D81FF4839700ED31F2 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21328F381FFCBA8B00DB3A4E /* transparentBackgroundViews.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = transparentBackgroundViews.gif; sourceTree = "<group>"; };
 		21FE95D11FF4839700ED31F2 /* TransparentBackgroundViews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransparentBackgroundViews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21FE95D41FF4839700ED31F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21FE95D61FF4839700ED31F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				21FE95EA1FF4868000ED31F2 /* BackgroundView.swift */,
 				21FE95EC1FF48C6100ED31F2 /* CustomSlideTransition.swift */,
 				21FE95EE1FF48E2600ED31F2 /* CGRect+Extensions.swift */,
+				21328F381FFCBA8B00DB3A4E /* transparentBackgroundViews.gif */,
 				21FE95D81FF4839700ED31F2 /* Main.storyboard */,
 				21FE95DB1FF4839700ED31F2 /* Assets.xcassets */,
 				21FE95DD1FF4839700ED31F2 /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			files = (
 				21FE95DF1FF4839700ED31F2 /* LaunchScreen.storyboard in Resources */,
 				21FE95DC1FF4839700ED31F2 /* Assets.xcassets in Resources */,
+				21328F391FFCBA8B00DB3A4E /* transparentBackgroundViews.gif in Resources */,
 				21FE95DA1FF4839700ED31F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
