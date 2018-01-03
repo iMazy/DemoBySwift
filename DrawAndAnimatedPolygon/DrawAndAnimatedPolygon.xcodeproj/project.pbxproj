@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21328F351FFCB0D900DB3A4E /* polygonDemo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F341FFCB0D900DB3A4E /* polygonDemo.gif */; };
 		21E6FAB31F95A1D000FA6DAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E6FAB21F95A1D000FA6DAB /* AppDelegate.swift */; };
 		21E6FAB51F95A1D000FA6DAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E6FAB41F95A1D000FA6DAB /* ViewController.swift */; };
 		21E6FAB81F95A1D000FA6DAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21E6FAB61F95A1D000FA6DAB /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21328F341FFCB0D900DB3A4E /* polygonDemo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = polygonDemo.gif; sourceTree = "<group>"; };
 		21E6FAAF1F95A1D000FA6DAB /* DrawAndAnimatedPolygon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawAndAnimatedPolygon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21E6FAB21F95A1D000FA6DAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21E6FAB41F95A1D000FA6DAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				21E6FAB21F95A1D000FA6DAB /* AppDelegate.swift */,
 				21E6FAB41F95A1D000FA6DAB /* ViewController.swift */,
 				21E6FAC41F95A27600FA6DAB /* PolygonView.swift */,
+				21328F341FFCB0D900DB3A4E /* polygonDemo.gif */,
 				21E6FAB61F95A1D000FA6DAB /* Main.storyboard */,
 				21E6FAB91F95A1D000FA6DAB /* Assets.xcassets */,
 				21E6FABB1F95A1D000FA6DAB /* LaunchScreen.storyboard */,
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21328F351FFCB0D900DB3A4E /* polygonDemo.gif in Resources */,
 				21E6FABD1F95A1D000FA6DAB /* LaunchScreen.storyboard in Resources */,
 				21E6FABA1F95A1D000FA6DAB /* Assets.xcassets in Resources */,
 				21E6FAB81F95A1D000FA6DAB /* Main.storyboard in Resources */,
