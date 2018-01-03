@@ -75,7 +75,7 @@ extension CustomCollectionViewController: UINavigationControllerDelegate {
 //        animation.centerPoint = centerP
         animation.cellRect = cellRect
         animation.viewCell = viewCell
-        
+        animation.originRect = cellRect
         animation.isPushed = operation.rawValue == 1
         return animation
     }
