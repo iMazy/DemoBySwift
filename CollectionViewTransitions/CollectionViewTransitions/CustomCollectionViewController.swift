@@ -18,6 +18,12 @@ class CustomCollectionViewController: UICollectionViewController {
     private var flowLayout = UICollectionViewFlowLayout()
     private var dataSource: [String] = []
     
+    var centerP: CGPoint = CGPoint.zero
+    
+    
+    var viewCell: CustomCollectionViewCell?
+    
+    var cellRect: CGRect = CGRect.zero
     
     init() {
         super.init(collectionViewLayout: flowLayout)
@@ -58,6 +64,20 @@ class CustomCollectionViewController: UICollectionViewController {
          "http://ww4.sinaimg.cn/large/006wz8acjw1f72ivsyxsdj30j69dge5p.jpg"
          ]
         
+        self.navigationController?.delegate = self
+    }
+}
+
+extension CustomCollectionViewController: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        
+        let animation = CustomNavAnimation()
+//        animation.centerPoint = centerP
+        animation.cellRect = cellRect
+        animation.viewCell = viewCell
+        
+        animation.isPushed = operation.rawValue == 1
+        return animation
     }
 }
 
@@ -78,28 +98,41 @@ extension CustomCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
-        let rect = cell.photoImageView.convert(cell.photoImageView.bounds, from: UIApplication.shared.keyWindow!)
         
-        print(rect)
+        let cell = collectionView.cellForItem(at: indexPath) as! CustomCollectionViewCell
+        let rect = view.convert(cell.frame, from: collectionView)
+        
+        viewCell = cell
+        
+        cellRect = rect
+        
+        
+        
+//        centerP = CGPoint(x: rect.origin.x + rect.size.width/2, y: rect.origin.y + rect.size.height/2)
         
         let detailVC = DetailViewController()
-        detailVC.modalPresentationStyle = .custom
-        detailVC.transitioningDelegate = TransitioningDelegate.shared
+        navigationController?.pushViewController(detailVC, animated: true)
+        
+        
+        
+//        detailVC.modalPresentationStyle = .custom
+//        detailVC.transitioningDelegate = TransitioningDelegate.shared
 //        detailVC.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
 //        self.present(detailVC, animated: true, completion: nil)
         
         
 //        detailVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-//        navigationController?.pushViewController(detailVC, animated: true)
 //        detailVC.modalPresentationStyle = .custom
 //        detailVC.transitioningDelegate = TransitioningDelegate.shared
 //        let navi = UINavigationController(rootViewController: detailVC)
+//        self.present(detailVC, animated: true, completion: nil)
+        
 //        navi.view.backgroundColor = UIColor.clear
 //        UIApplication.shared.keyWindow?.backgroundColor = UIColor.clear
 //
 //        self.present(navi, animated: false, completion: nil)
 //        detailVC.view.backgroundColor = UIColor.red.withAlphaComponent(0.3)
-         (self.navigationController as! MainNavigationController).pushViewController(detailVC, withCenterButton: UIButton())
+        
+//         (self.navigationController as! MainNavigationController).pushViewController(detailVC, withCenterButton: UIButton())
     }
 }

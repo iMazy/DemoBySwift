@@ -18,15 +18,17 @@ class DetailViewController: UIViewController {
         
 //        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(dismissAction))
         
-        self.view.backgroundColor = UIColor.green.withAlphaComponent(0.3)
+//        self.view.backgroundColor = UIColor.green
         
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.navigationController?.show(DetailViewController(), sender: nil)
+//        self.navigationController?.show(DetailViewController(), sender: nil)
+        self.dismiss(animated: false, completion: nil)
+        
     }
     
     @objc  func dismissAction() {
-        self.dismiss(animated: false, completion: nil)
+        
     }
 }

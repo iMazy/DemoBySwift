@@ -14,6 +14,13 @@ class TempViewController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.green
+        
+        
+        let label = UILabel()
+        label.text = "tody is friday"
+        label.sizeToFit()
+        label.center = view.center
+        view.addSubview(label)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

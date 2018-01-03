@@ -30,7 +30,7 @@ extension MainNavigationController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         let animation = CustomNavAnimation()
-         animation.centerButton = centerButton
+//         animation.centerButton = centerButton
         animation.isPushed = operation.rawValue == 1
         return animation
     }

@@ -21,21 +21,30 @@ extension XMAnimatedTransitioning: UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        
+        let toView = transitionContext.view(forKey: .to)!
+        
+        let containerView = transitionContext.containerView
+        let duration = self.transitionDuration(using: transitionContext)
+        
         if presented {
-            let toView = transitionContext.view(forKey: .to)
-            toView?.layer.transform = CATransform3DMakeScale(0.1, 0.1, 0.1)
             
-            UIView.animate(withDuration: 0.4, animations: {
-                toView?.layer.transform = CATransform3DIdentity
+            toView.transform = CGAffineTransform(scaleX: 0, y: 0)
+            containerView.addSubview(toView)
+            
+            UIView.animate(withDuration: duration, animations: {
+                toView.transform = CGAffineTransform.identity
             }, completion: { (_) in
                 transitionContext.completeTransition(true)
             })
         } else {
-            let fromView = transitionContext.view(forKey: .from)
-            fromView?.layer.transform = CATransform3DMakeScale(0.01, 0.01, 0.01)
             
-            UIView.animate(withDuration: 0.4, animations: {
-                fromView?.layer.transform = CATransform3DIdentity
+            let fromView = transitionContext.view(forKey: .from)!
+//            containerView.insertSubview(toView, belowSubview: fromView)
+            containerView.insertSubview(toView, aboveSubview: fromView)
+            
+            UIView.animate(withDuration: duration, animations: {
+                fromView.transform = CGAffineTransform(scaleX: 0.1, y: 0.1)
             }, completion: { (_) in
                 transitionContext.completeTransition(true)
             })

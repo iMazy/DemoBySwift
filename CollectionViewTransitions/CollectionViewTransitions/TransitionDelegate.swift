@@ -23,7 +23,7 @@ extension AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-
+        
         let fromView = transitionContext.view(forKey: .from)!
         let toView = transitionContext.view(forKey: .to)!
         
@@ -140,10 +140,10 @@ extension AnimatedTransitioning: UIViewControllerAnimatedTransitioning {
                     fromView.transform = CGAffineTransform(scaleX: 0.001, y: 0.001)
                 }
             }, completion: { (_) in
-                transitionContext.completeTransition(true)
+                transitionContext.completeTransition(true) 
             })
         }
-       
+        
     }
 }
 
