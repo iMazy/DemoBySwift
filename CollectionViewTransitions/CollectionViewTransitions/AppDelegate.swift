@@ -20,11 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         addBackgroundView()
         
-        // 2
         let homeVC = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateInitialViewController()!
-        let navigationController = MainNavigationController(rootViewController: homeVC)
         
-        window?.rootViewController = navigationController
+        window?.rootViewController = UINavigationController(rootViewController: homeVC)
+        
         window?.backgroundColor = .clear
         
         window?.makeKeyAndVisible()

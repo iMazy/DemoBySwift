@@ -15,20 +15,6 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Mazy"
-        
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(dismissAction))
-        
-//        self.view.backgroundColor = UIColor.green
-        
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        self.navigationController?.show(DetailViewController(), sender: nil)
-        self.dismiss(animated: false, completion: nil)
-        
-    }
-    
-    @objc  func dismissAction() {
-        
     }
 }
+

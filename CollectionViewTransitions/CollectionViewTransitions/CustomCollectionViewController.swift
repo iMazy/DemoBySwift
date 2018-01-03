@@ -25,6 +25,8 @@ class CustomCollectionViewController: UICollectionViewController {
     
     var cellRect: CGRect = CGRect.zero
     
+    var originNavigationDelegate: UINavigationControllerDelegate?
+    
     init() {
         super.init(collectionViewLayout: flowLayout)
     }
@@ -64,15 +66,18 @@ class CustomCollectionViewController: UICollectionViewController {
          "http://ww4.sinaimg.cn/large/006wz8acjw1f72ivsyxsdj30j69dge5p.jpg"
          ]
         
+        originNavigationDelegate = self.navigationController?.delegate
         self.navigationController?.delegate = self
+        
     }
 }
 
 extension CustomCollectionViewController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
+        if toVC.isKind(of: HomeViewController.self) { return nil }
+
         let animation = CustomNavAnimation()
-//        animation.centerPoint = centerP
         animation.cellRect = cellRect
         animation.viewCell = viewCell
         animation.originRect = cellRect
@@ -103,36 +108,10 @@ extension CustomCollectionViewController {
         let rect = view.convert(cell.frame, from: collectionView)
         
         viewCell = cell
-        
         cellRect = rect
-        
-        
-        
-//        centerP = CGPoint(x: rect.origin.x + rect.size.width/2, y: rect.origin.y + rect.size.height/2)
         
         let detailVC = DetailViewController()
         navigationController?.pushViewController(detailVC, animated: true)
-        
-        
-        
-//        detailVC.modalPresentationStyle = .custom
-//        detailVC.transitioningDelegate = TransitioningDelegate.shared
-//        detailVC.view.backgroundColor = UIColor(white: 0, alpha: 0.7)
-//        self.present(detailVC, animated: true, completion: nil)
-        
-        
-//        detailVC.view.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-//        detailVC.modalPresentationStyle = .custom
-//        detailVC.transitioningDelegate = TransitioningDelegate.shared
-//        let navi = UINavigationController(rootViewController: detailVC)
-//        self.present(detailVC, animated: true, completion: nil)
-        
-//        navi.view.backgroundColor = UIColor.clear
-//        UIApplication.shared.keyWindow?.backgroundColor = UIColor.clear
-//
-//        self.present(navi, animated: false, completion: nil)
-//        detailVC.view.backgroundColor = UIColor.red.withAlphaComponent(0.3)
-        
-//         (self.navigationController as! MainNavigationController).pushViewController(detailVC, withCenterButton: UIButton())
+    
     }
 }
