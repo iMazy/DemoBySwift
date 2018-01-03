@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21328F3B1FFCBB2000DB3A4E /* XMPageControl.gif in Resources */ = {isa = PBXBuildFile; fileRef = 21328F3A1FFCBB2000DB3A4E /* XMPageControl.gif */; };
 		2137A7711FCEB7C700DA7E64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2137A7701FCEB7C700DA7E64 /* AppDelegate.swift */; };
 		2137A7731FCEB7C700DA7E64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2137A7721FCEB7C700DA7E64 /* ViewController.swift */; };
 		2137A7761FCEB7C700DA7E64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2137A7741FCEB7C700DA7E64 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21328F3A1FFCBB2000DB3A4E /* XMPageControl.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = XMPageControl.gif; sourceTree = "<group>"; };
 		2137A76D1FCEB7C700DA7E64 /* XMPageControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XMPageControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2137A7701FCEB7C700DA7E64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2137A7721FCEB7C700DA7E64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				2137A7701FCEB7C700DA7E64 /* AppDelegate.swift */,
 				2137A7721FCEB7C700DA7E64 /* ViewController.swift */,
+				21328F3A1FFCBB2000DB3A4E /* XMPageControl.gif */,
 				2137A7821FCEB8AE00DA7E64 /* XMPageControl.swift */,
 				2137A7741FCEB7C700DA7E64 /* Main.storyboard */,
 				2137A7771FCEB7C700DA7E64 /* Assets.xcassets */,
@@ -126,6 +129,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21328F3B1FFCBB2000DB3A4E /* XMPageControl.gif in Resources */,
 				2137A77B1FCEB7C700DA7E64 /* LaunchScreen.storyboard in Resources */,
 				2137A7781FCEB7C700DA7E64 /* Assets.xcassets in Resources */,
 				2137A7761FCEB7C700DA7E64 /* Main.storyboard in Resources */,
