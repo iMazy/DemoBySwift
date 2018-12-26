@@ -12,6 +12,7 @@
 		644E1EC121D3A9B500692E53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644E1EBF21D3A9B500692E53 /* Main.storyboard */; };
 		644E1EC321D3A9B700692E53 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 644E1EC221D3A9B700692E53 /* Assets.xcassets */; };
 		644E1EC621D3A9B700692E53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 644E1EC421D3A9B700692E53 /* LaunchScreen.storyboard */; };
+		644E1ECE21D3AB1800692E53 /* Photos.plist in Resources */ = {isa = PBXBuildFile; fileRef = 644E1ECD21D3AB1800692E53 /* Photos.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		644E1EC221D3A9B700692E53 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		644E1EC521D3A9B700692E53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		644E1EC721D3A9B700692E53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		644E1ECD21D3AB1800692E53 /* Photos.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Photos.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 				644E1EBD21D3A9B500692E53 /* ViewController.swift */,
 				644E1EBF21D3A9B500692E53 /* Main.storyboard */,
 				644E1EC221D3A9B700692E53 /* Assets.xcassets */,
+				644E1ECD21D3AB1800692E53 /* Photos.plist */,
 				644E1EC421D3A9B700692E53 /* LaunchScreen.storyboard */,
 				644E1EC721D3A9B700692E53 /* Info.plist */,
 			);
@@ -125,6 +128,7 @@
 				644E1EC621D3A9B700692E53 /* LaunchScreen.storyboard in Resources */,
 				644E1EC321D3A9B700692E53 /* Assets.xcassets in Resources */,
 				644E1EC121D3A9B500692E53 /* Main.storyboard in Resources */,
+				644E1ECE21D3AB1800692E53 /* Photos.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
