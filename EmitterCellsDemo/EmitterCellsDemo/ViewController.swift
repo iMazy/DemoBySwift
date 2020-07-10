@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         // 发射器的尺寸大小
         emitterLayer.emitterSize = CGSize(width: 20, height: 20)
         // 渲染模式
-        emitterLayer.renderMode = kCAEmitterLayerUnordered
+        emitterLayer.renderMode = CAEmitterLayerRenderMode.unordered
         // 开启三维效果
         emitterLayer.preservesDepth = true
         var array = [CAEmitterCell]()
@@ -49,10 +49,10 @@ class ViewController: UIViewController {
             // 粒子速度的容差
             stepCell.velocityRange = 80
             // 粒子在xy平面的发射角度
-            stepCell.emissionLongitude = CGFloat(M_PI + M_PI_2)
+            stepCell.emissionLongitude = CGFloat(Double.pi + Double.pi/2)
             //            stepCell.emissionLatitude = CGFloat(M_PI_2)
             // 粒子发射角度的容差
-            stepCell.emissionRange = CGFloat(M_PI_2/6)
+            stepCell.emissionRange = CGFloat(Double.pi/2/6)
             // 缩放比例
             stepCell.scale = 0.3
             array.append(stepCell)
